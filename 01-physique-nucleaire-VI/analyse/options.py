@@ -6,11 +6,12 @@ rcParams = {
         r"\usepackage[utf8]{inputenc}",
         # r"\usepackage[detect-all]{siunitx}",
         # r"\usepackage{mathabx}",
+        # r"\usepackage{amsmath}",
     ]),
 
     # Text size
     "axes.labelsize": 14,
-    "font.size": 14,
+    "font.size": 14, # 12?
     "legend.fontsize": 12,
     "xtick.labelsize": 14,
     "ytick.labelsize": 14,
@@ -25,8 +26,15 @@ rcParams = {
     'axes.spines.right': False,  # spineless smh
     'axes.spines.top': False,
     'legend.framealpha': 1.0,
-    
+    # 'axes.grid' : True,
+    # 'grid.linestyle' : '-',
+    # 'grid.linewidth': 0.5,
+    # 'grid.alpha': 0.75,
+    # 'xtick.minor.visible' : True,
+    # 'ytick.minor.visible' : True,
+
     # Saving
-    'savefig.bbox': 'tight',
+    'savefig.bbox': 'tight', # ça donne des figures avec marges irreguliers. 
+        # utiliser plutot figure.subplot.left/right/bottom/top
     # 'savefig.directory': '../figures/'
 }
