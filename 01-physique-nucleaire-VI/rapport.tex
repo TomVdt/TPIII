@@ -1,0 +1,28 @@
+\documentclass[a4paper, 12pt, oneside]{article}
+
+\input{config/imports.tex}
+\input{config/biblatex.tex}
+\input{config/commands.tex}
+
+\begin{document}
+
+\couille{NOM TP}{9}{Matteo Veneziano, Tom Vadot}{ASSITANT}
+
+\input{sections/0-introduction.tex}
+\input{sections/1-theory.tex}
+\input{sections/2-exp-setup.tex}
+\input{sections/3-results.tex}
+\input{sections/4-discussion.tex}
+\input{sections/5-conclusion.tex}
+
+% Bibliography
+% \nocite{*}  % While writing report, ignore unused citations
+\printbibliography
+
+\newpage
+
+\begin{appendices}
+\input{sections/6-appendix.tex}
+\end{appendices}
+
+\end{document}

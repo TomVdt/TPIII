@@ -1,0 +1,33 @@
+% Smallcaps autoref
+\let\oldautoref=\autoref
+\renewcommand{\autoref}[1]{\textsc{\oldautoref{#1}}}
+
+% Legendes correctes
+% \captionsetup[figure]{name=Figure}
+% \captionsetup[table]{name=Tableau}
+
+% Template de mes couilles
+\makeatletter
+\renewcommand{\section}{\@startsection {section}{1}{\z@}
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus.2ex}%
+	{\normalfont\normalsize\bfseries}}
+\makeatother
+
+\makeatletter
+\renewcommand{\subsection}{\@startsection {subsection}{1}{\z@}%
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus.2ex}%
+	{\normalfont\normalsize\bfseries}}
+\makeatother
+
+\newcommand{\couille}[4]{
+	\begin{center}
+		\large\textbf{\sffamily #1}\\%
+		\large\sffamily Group N$^\circ$#2: #3\\%
+		\large\sffamily \today\qquad #4\\%
+	\end{center}
+}
+
+\newcommand{\absfrac}[2]{\ensuremath{\left|\frac{#1}{#2}\right|}}
+\newcommand{\dd}[0]{\ensuremath{\textrm{d}}}
