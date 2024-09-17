@@ -3,13 +3,5 @@ Tenir default ou APA ou un autre?
 Essayer les differents styles.
 (Je sais je suis un petit chiant APA fanboy).
 
-== Makefile ==
-Make install donne erreur:
-matteov@venebook 01-physique-nucleaire-VI % make install
-test -d /Users/matteov/Documents/lab3/01-physique-nucleaire-VI/.venv || (\
-                python -m venv /Users/matteov/Documents/lab3/01-physique-nucleaire-VI/../.venv && \
-                . /Users/matteov/Documents/lab3/01-physique-nucleaire-VI/../.venv/bin/activate && (\
-                        python -m pip install -r /Users/matteov/Documents/lab3/01-physique-nucleaire-VI/../requirements.txt \
-                )
-/bin/sh: -c: line 1: syntax error: unexpected end of file
-make: *** [install] Error 2
+== Notice bibtex entry ==
+Passer à type @Manual
