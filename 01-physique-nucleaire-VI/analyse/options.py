@@ -30,11 +30,11 @@ rcParams = {
     # 'grid.linestyle' : '-',
     # 'grid.linewidth': 0.5,
     # 'grid.alpha': 0.75,
-    # 'xtick.minor.visible' : True,
-    # 'ytick.minor.visible' : True,
+    'xtick.minor.visible' : True,
+    'ytick.minor.visible' : True,
 
     # Saving
-    # 'savefig.bbox': 'tight', # ça donne des figures avec marges irreguliers. 
+    'savefig.bbox': 'tight', # ça donne des figures avec marges irreguliers. 
         # utiliser plutot figure.subplot.left/right/bottom/top
     # 'savefig.directory': '../figures/'
 }

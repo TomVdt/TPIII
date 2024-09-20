@@ -1,2 +1,11 @@
+== Plots jolis des spectres gamma des differentes sources ==
+Est-ce que on garde les bins/canaux sur les x ou on donne les énergies?
+Plus en generale, est-ce que les spectres viennent avant le rapport entre Energie et bin ou après?
+
 == Citation style ==
 Essayer les differents styles.
+
+== Matteo: Setup Venv ==
+
+== Jupyter Notebooks git hooks ==
+Faire de sorte que le metadata soit cancelé avant d'un commit.

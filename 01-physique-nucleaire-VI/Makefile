@@ -19,6 +19,9 @@ plots: folders
 		python -m jupyter execute $(MAKEDIR)/analyse/*.ipynb \
 	)
 
+mplots:
+	jupyter execute $(MAKEDIR)/analyse/*.ipynb
+
 clean:
 	@rm -f $(MAKEDIR)/figures/*.pdf
 	@rm -f $(MAKEDIR)/rapport.aux \
