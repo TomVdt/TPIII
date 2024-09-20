@@ -34,7 +34,7 @@ rcParams = {
     # 'ytick.minor.visible' : True,
 
     # Saving
-    'savefig.bbox': 'tight', # ça donne des figures avec marges irreguliers. 
+    # 'savefig.bbox': 'tight', # ça donne des figures avec marges irreguliers. 
         # utiliser plutot figure.subplot.left/right/bottom/top
     # 'savefig.directory': '../figures/'
 }
