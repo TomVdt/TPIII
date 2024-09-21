@@ -2,6 +2,8 @@
 Est-ce que on garde les bins/canaux sur les x ou on donne les énergies?
 Plus en generale, est-ce que les spectres viennent avant le rapport entre Energie et bin ou après?
 
+Pour moi on montre la callibration, puis apres on montre les spectres avec energies, ca sert a rien de mettre 2 fois le meme plot, et on demande explicitement l'énergie
+
 == Citation style ==
 Essayer les differents styles.
 
@@ -9,3 +11,5 @@ Essayer les differents styles.
 
 == Jupyter Notebooks git hooks ==
 Faire de sorte que le metadata soit cancelé avant d'un commit.
+`nbdev2` semble giga overkill pour ce qu'on veux je crois (a voir...)
+j'ai tenté l'outil `nbstripout` qui fait que git ignore certains changements que tu peux garder localement quand même (a tester)
