@@ -1,0 +1,3 @@
+*.ipynb filter='nbstripout --keep-output'
+*.zpln filter='nbstripout --keep-output'
+*.ipynb diff=ipynb
