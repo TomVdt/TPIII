@@ -13,23 +13,25 @@ rcParams = {
     "axes.labelsize": 14,
     "font.size": 14, # 12?
     "legend.fontsize": 12,
-    "xtick.labelsize": 14,
+    "xtick.labelsize": 14, # 12?
     "ytick.labelsize": 14,
     'lines.markersize': 14,
 
     # Figure options
     "figure.figsize": (3.95, 2.96),
+    'axes.titlesize': 14,
     'lines.color': 'grey',
+    'lines.linewidth' : 1,
     'scatter.marker': '+',
     'errorbar.capsize': 4,
     'axes.formatter.useoffset': False,
-    'axes.spines.right': False,  # spineless smh
-    'axes.spines.top': False,
+    # 'axes.spines.right': False,  # spineless smh
+    # 'axes.spines.top': False,
     'legend.framealpha': 1.0,
-    # 'axes.grid' : True,
-    # 'grid.linestyle' : '-',
-    # 'grid.linewidth': 0.5,
-    # 'grid.alpha': 0.75,
+    'axes.grid' : True,
+    'grid.linestyle' : '-',
+    'grid.linewidth': 0.5,
+    'grid.alpha': 0.75,
     'xtick.minor.visible' : True,
     'ytick.minor.visible' : True,
 

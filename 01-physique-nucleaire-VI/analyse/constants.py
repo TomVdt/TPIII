@@ -3,6 +3,7 @@ from numpy import pi, mean
 
 # Real constants
 CM_PER_INCH = 2.54  # cm/inch
+INCH_PER_CM = 1/2.54 # inch/cm
 
 GAMMA_CS137 = 0.662  # MeV
 GAMMA_PB210 = 0.0465  # MeV
