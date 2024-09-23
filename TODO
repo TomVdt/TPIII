@@ -1,3 +1,6 @@
+== ATTENTION ==
+Selon le point 8 à la page 15 du notice VI, pour la partie statistique, il faut eviter que les deux classes extremes contiennet moins que cinq evenements.
+
 == C'est peut etre un peu trop 14 de police pour le texte des plots
 
 == Plots jolis des spectres gamma des differentes sources ==
@@ -11,6 +14,10 @@ Pour moi on montre la callibration, puis apres on montre les spectres avec energ
 - Spectres gamma de Cs, Pb, Co, Hf
 - Fit linéaire channels / Energie ?
 - Attenuation Pb, Al
+- Fréquences d'observation mesurées et théoriques en histogramme (cf. page 14 Notice VI)
+
+== Tableau à faire ==
+- Fréquences d'observation mesurées et théoriques (cf. page 14 à nouveau)
 
 == Schéma de désintegration en Annexe? ==
 
