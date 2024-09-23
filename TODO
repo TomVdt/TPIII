@@ -1,7 +1,14 @@
 == ATTENTION ==
 Selon le point 8 à la page 15 du notice VI, pour la partie statistique, il faut eviter que les deux classes extremes contiennet moins que cinq evenements.
 
+== Demander à l'assistant ==
+- quoi plotter sur les y des spectres gamma
+- gamma theorique ou obtenu d'un fit sur les x ?
+
 == C'est peut etre un peu trop 14 de police pour le texte des plots
+
+== Matplotlib ==
+Grid derrière plots
 
 == Plots à faire == (qui on est sûr vont dans le rapport)
 - Spectres gamma de Cs, Pb, Co, Hf
