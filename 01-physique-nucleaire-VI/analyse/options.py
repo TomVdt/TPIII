@@ -4,22 +4,23 @@ rcParams = {
     "font.family": "serif",
     "text.latex.preamble": "\n".join([
         r"\usepackage[utf8]{inputenc}",
+        r"\setlength{\parindent}{0pt}",
         # r"\usepackage[detect-all]{siunitx}",
         # r"\usepackage{mathabx}",
         # r"\usepackage{amsmath}",
     ]),
 
     # Text size
-    "axes.labelsize": 14,
-    "font.size": 14, # 12?
+    "axes.labelsize": 12,
+    "font.size": 12, # 12?
     "legend.fontsize": 12,
-    "xtick.labelsize": 14, # 12?
-    "ytick.labelsize": 14,
-    'lines.markersize': 14,
+    "xtick.labelsize": 12, # 12?
+    "ytick.labelsize": 12,
+    'lines.markersize': 12,
 
     # Figure options
     "figure.figsize": (3.95, 2.96),
-    'axes.titlesize': 14,
+    'axes.titlesize': 12,
     'lines.color': 'grey',
     'lines.linewidth' : 1,
     'scatter.marker': '+',
