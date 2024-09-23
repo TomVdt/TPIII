@@ -3,13 +3,6 @@ Selon le point 8 à la page 15 du notice VI, pour la partie statistique, il faut
 
 == C'est peut etre un peu trop 14 de police pour le texte des plots
 
-== Plots jolis des spectres gamma des differentes sources ==
-Est-ce que on garde les bins/canaux sur les x ou on donne les énergies?
-Plus en generale, est-ce que les spectres viennent avant le rapport entre Energie et bin ou après?
-
-Pour moi on montre la callibration, puis apres on montre les spectres avec energies, ca sert a rien de mettre 2 fois le meme plot, et on demande explicitement l'énergie
-->  Oui, totalement d'accord. On devrait demander à l'assistant s'il veut (pour les spectres) sur les y le Count N obtenu ou bien N / DeltaV comme dans la notice. (peut etre on demande pas ce qu'il veut, mais ce qui est "plus physiquement intéressant")
-
 == Plots à faire == (qui on est sûr vont dans le rapport)
 - Spectres gamma de Cs, Pb, Co, Hf
 - Fit linéaire channels / Energie ?
@@ -25,14 +18,3 @@ Pour moi on montre la callibration, puis apres on montre les spectres avec energ
 Essayer les differents styles.
 
 == Matteo: Setup Venv ==
-
-== Jupyter Notebooks git hooks ==
-Faire de sorte que le metadata soit cancelé avant d'un commit.
-`nbdev2` semble giga overkill pour ce qu'on veux je crois (a voir...)
-->  Ouais, l'installation complète est pour les pros, mais se limiter aux hooks semble être rapide, 
-    je vais essayer cette semaine (ref: https://nbdev.fast.ai/tutorials/git_friendly_jupyter.html)
-
-j'ai tenté l'outil `nbstripout` qui fait que git ignore certains changements que tu peux garder localement quand même (a tester)
-->  En vrai l'output est la chose qui me gene le moins
-
-->  Je vais aussi essayer pytext, il a une extension vscode
