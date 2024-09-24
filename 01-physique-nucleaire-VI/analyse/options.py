@@ -12,11 +12,11 @@ rcParams = {
 
     # Text size
     "axes.labelsize": 12,
-    "font.size": 12, # 12?
+    "font.size": 12,
     "legend.fontsize": 12,
-    "xtick.labelsize": 12, # 12?
+    "xtick.labelsize": 12,
     "ytick.labelsize": 12,
-    'lines.markersize': 12,
+    # 'lines.markersize': 12,
 
     # Figure options
     "figure.figsize": (3.95, 2.96),
@@ -28,7 +28,11 @@ rcParams = {
     'axes.formatter.useoffset': False,
     # 'axes.spines.right': False,  # spineless smh
     # 'axes.spines.top': False,
+
     'legend.framealpha': 1.0,
+    "legend.handlelength" : 1.2,
+    "legend.handleheight" : 0.5,
+
     'axes.grid' : True,
     'grid.linestyle' : '-',
     'grid.linewidth': 0.5,
