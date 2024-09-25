@@ -40,6 +40,7 @@ __pycache__
 *-blx.aux
 *-blx.bib
 *.run.xml
+*-SAVE-ERROR
 
 ## Build tool auxiliary files:
 *.fdb_latexmk
