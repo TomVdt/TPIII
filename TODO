@@ -1,8 +1,8 @@
-== Pas d'étude du bruit de fond? ==
-
 == Demander à l'assistant ==
 - quoi plotter sur les y des spectres gamma
 - gamma theorique ou obtenu d'un fit sur les x ?
+- Structure rapport? (abstract ou non?)
+- étude bruit de fond?
 
 == Matplotlib ==
 Grid derrière plots
