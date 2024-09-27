@@ -1,17 +1,14 @@
 == Demander à l'assistant ==
-- quoi plotter sur les y des spectres gamma
+- quoi plotter sur les y des spectres gamma -> ce qu'on veut, count seul ça va aussi
 - gamma theorique ou obtenu d'un fit sur les x ?
-- Structure rapport? (abstract ou non?)
-- étude bruit de fond?
-
-== Matplotlib ==
-Grid derrière plots
+- Structure rapport? -> probablement pas besoin de abstract mais il va nous dire
+- étude bruit de fond? -> non
 
 == Bien regler le parskip ==
 
 == Plots à faire == (qui on est sûr vont dans le rapport)
 - Spectres gamma de Cs, Pb, Co, Hf
-- Fit linéaire channels / Energie ?
+- Fit linéaire channels / Energie
 - Attenuation Pb, Al
 - Fréquences d'observation mesurées et théoriques en histogramme (cf. page 14 Notice VI)
 - Mettre x-axis des plots lowmean en affichage entier
