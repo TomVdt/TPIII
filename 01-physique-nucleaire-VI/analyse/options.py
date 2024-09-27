@@ -29,9 +29,12 @@ rcParams = {
     # 'axes.spines.right': False,  # spineless smh
     # 'axes.spines.top': False,
 
+    # Legend
     'legend.framealpha': 1.0,
     "legend.handlelength" : 1.2,
     "legend.handleheight" : 0.5,
+    "legend.handletextpad" : 0.6,
+    "legend.labelspacing" : 0.3,
 
     'axes.grid' : True,
     'grid.linestyle' : '-',
