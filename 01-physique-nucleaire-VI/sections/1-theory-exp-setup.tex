@@ -2,28 +2,41 @@
 \paragraph{Gamma radiation?}
 
 \paragraph{Scintillation detector}
-Scintillation detectors are based on the properties of \emph{scintillators}, materials that emit photons in the visible spectrum after the passage of a charged particle.
+Scintillation detectors are based on the properties of scintillators, materials that emit photons in the visible spectrum after the passage of a charged particle.
 The scintillators used for particle detection are primarily [split] between two types: organic (or plastic), in which the photon emission has molecular origin, 
 and inorganic (or crystalline), crystals which are doped with activators that can first be excited by electron-hole pairs 
-produced by the charged particle passing in the crystal lattice\footnotemark and then de-excited by photon emission\cite{intro_nuclear_particle_physics}.
+produced by the charged particle passing in the crystal lattice\footnotemark\ and then de-excited by photon emission\cite{intro_nuclear_particle_physics}.
+
 Because of the low intensity of the emitted light, the photon signal must be amplified in order to be properly counted.
 This amplification is commonly achieved through the use of photomultiplier tubes (PMT), a device which converts the photon signal in a detectable electric pulse.
-It consists of a vacuum tube [chamber?] containing several components, pictured in Fig. \ref{fig:photomultiplier}: 
+It consists of a vacuum chamber containing several components, pictured in Fig. \ref{fig:photomultiplier}: 
 after passing a transparent entry window, adjacent to the scintillator, the scintillation photons first encounter a photocatode, 
 where they produce an electron by photoelectric effect with a certain probability $\varepsilon$ (the quantum efficacy).
-Next, a series of dynodes accellerate the electrons and multiply them thorugh secondary emission
-\footnotetext{Ici je pourrai écrire "produced by the passing charged particle" sans specifier, pour rendre la phrase un peu plus legere.}
+Next, a series of dynodes accellerate the electrons and multiply them through secondary emission.
+The anode located at the end of the chamber then allows to read the amplified electric signal, 
+which results linearly proportional to the amount of light incident on the photocathode.
+The voltage applied between cathode and anode determines the value of the total gain $G$.
+\footnotetext{Ici je pourrai écrire "produced by the passing charged particle" sans specifier, pour rendre la phrase un peu plus legere. Or "Excited by th epassing charged particles through [the production of ]electron-hole pairs}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=1]{figures/photomultiplier.jpg}
+    \includegraphics[scale=1.2]{figures/photomultiplier.jpg}
     \caption{Main elements of a photomultiplier tube \cite{intro_nuclear_particle_physics}.}
     \label{fig:photomultiplier}
 \end{figure}
 
 \paragraph{Gamma spectrometry}
-Page 144 de \cite{intro_nuclear_particle_physics} pour expliquer les effets de l'effet compton
-[Expliquer l'apparition d'une gaussienne à la place d'une ligne pour les peaks des spectres]
+WHAT IS THE GAMMA SPECTRUM?
+
+When $\gamma$ rays enter the scintillator, they can interact in two possible ways: through the photoelectric effect or through Compton scattering.
+Any photon converted to an electron by photoelectric effect generally deposits its entire energy within the scintillator, such that the intensity of the subsequent scintillation light is proportional to the energy of the original photon.
+In the case of Compton scattering, instead, the photons do not deposit all of their energy and, once scattered, can produce new interactions.
+A third way would be through $e^+ e^-$ pair production, but it is very unlikely\footnote{'Which is however very unlikely'?} for low-energy photons.
+
+[The energy deposited in the NaI will therefore have two kinds of contributions to the $\gamma$ spectrum.
+First, the full energies of any of the photons that convert into photoelectrons, and, second, a continuous spectrum of energies related to Compton scattering] \hl{$<$-- remanier un peu}
+
 
 
 \paragraph{Experimental setup}
-[? dire que on utilise inorganic?]
+An inorganic scintillation detector consisting of a NaI crystal was used.
+Then Amplifier, discriminateur, analyseur  multi-bande ecc\dots.
