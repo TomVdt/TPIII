@@ -3,10 +3,16 @@
 Radioactive decay is the process by which an unstable atom[nucleus?] transitions to a more stable form through the emission of energy by radiation.
 Decay occurs in three main forms[kinds], each associated with a radiation of different nature and properties: $\alpha$-decay, $\beta$-decay and $\gamma$-decay.
 
-$\alpha$-decay represents the disintegration of a parent nucleus to a daughter through the emission of a nucleus of a helium atom (an $\alpha$ particle).
+$\alpha$-decay represents the disintegration of a parent nucleus to a daughter through the emission of a nucleus of a helium atom (an $\alpha$ particle).\footnote{\hl{Maybe more info on alpha decay?}}
 $\beta$-decay is the transformation of a nucleus with an unstable ratio of protons to neutrons into a stabler one by emitting an electron ($\beta^-$ particle), in the case of a proton-rich nucleus, or a positron ($\beta^+$ particle), in the case of an over-abundance of neutrons.
 Additionally, a proton-rich nucleus can also reduce its charge by the absorption of an atomic electron, in a process called \emph{electron capture}.
 The electron comes most often from the inner $K$-shell, resulting in the outer electrons cascading down to fill the lower levels and emitting [one or more] X-rays\cite{intro_nuclear_particle_physics}.
+
+$\gamma$-decay, on the other hand, occurs mainly[for the most part] right after a heavy nucleus desintegrates by emitting an $\alpha$ particle or a $\beta$ particle.
+The daughter nucleus may be left in an excited state, from which[and] it can deexcite by rearranging the structure of the nuclear shells, 
+a process which is tied to the emission of a high-energy photon (a $\gamma$ ray).
+
+[The typical energies of nuclear $\gamma$-rays range from a fraction to several MeV.]
 
 \paragraph{Scintillation detector}
 Scintillation detectors are based on the properties of scintillators, materials that emit photons in the visible spectrum after the passage of a charged particle.
@@ -42,7 +48,25 @@ A third way would be through $e^+ e^-$ pair production, but it is very unlikely\
 [The energy deposited in the NaI will therefore have two kinds of contributions to the $\gamma$ spectrum.
 First, the full energies of any of the photons that convert into photoelectrons, and, second, a continuous spectrum of energies related to Compton scattering] \hl{$<$-- remanier un peu}
 
-
+\paragraph{Attenuation in matter}
+The [three ways in which photons interact with matter] cause an attenuation of $\gamma$ radiation, i.e. a progressive reduction in the number of photons, without a loss of their individual energy.
+This phenomenon follows an exponential law and can be described in terms of a linear attenuation coefficient $\mu$, which depends on the energy of the incident light and the nature of the material.
+In fact, let $I(x)$ be the intensity of photons at any point $x$ in the medium.
+The change in intensity $dI$ in an infinitesimal thickness of material $dx$ can be written in terms of $\mu$ as follow:
+\begin{equation}
+    dI = I(x + dx) - I(x) = -\mu(E_{\gamma}, Z) I(x) dx
+\end{equation}
+where the negative sign indicates that the intensity decreases with travel.
+Integrating the previous expression yields the attenuation law
+\begin{equation} \label{eq:attenuation_law}
+    I(x) = I_0 e^{-\mu(E_{\gamma}, Z) \, x}
+\end{equation}
+where $I_0$ is the value of the intensity at $x=0$. 
+The law can also be put in a different form:
+\begin{equation} \label{eq:attenuation_law_density}
+    I(x) = I_0 e^{-\mu_d(E_{\gamma}, Z) \, d}
+\end{equation}
+where, if $\rho$ is the density of the material, $\mu_d = \mu / \rho$ is its mass attenuation coefficient and $d = \rho \cdot x$ its surface density.
 
 \paragraph{Experimental setup}
 An inorganic scintillation detector consisting of a NaI crystal was used.
