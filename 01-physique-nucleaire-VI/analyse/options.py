@@ -20,6 +20,7 @@ rcParams = {
 
     # Figure options
     "figure.figsize": (3.95, 2.96),
+    'figure.dpi': 130,
     'axes.titlesize': 12,
     'lines.color': 'grey',
     'lines.linewidth' : 1,
