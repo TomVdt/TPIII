@@ -1,1 +1,17 @@
-\section{Appendix A}
+\section{Probabilities}
+
+\paragraph{Pearson's \(\chi^2\) test}
+Let \(H0\) be the null-hypothesis "\(X \sim F\)", for some random variable \(X\) and some test distribution \(F\). Fix a number of samples \(N\).
+The test statistic \(t\) is then constructed as such: let \(O_i\) be the number of observed events in a class \(i=1,\dots,k\), \(E_i = Np_i\) the expected number of samples in the class \(i\), where \(p_i\) is the expected probability of being in the class \(i\), taken from the test distribution \(F\).
+\begin{equation}
+    t = \sum_{i=0}^k \frac{(O_i - E_i)^2}{E^i}
+\end{equation}
+Due to the test statistic being a sum of squared gaussian random variables, it is expected that \(t\) is sampled from \(T \sim \chi^2(\nu)\), where \(\nu\) is the degrees of freedom. In general,
+\begin{equation}
+    \nu = k-C
+\end{equation} 
+where \(C\) is the number of constraints. The \(p\)-value is then defined as:
+\begin{equation}
+    p = P(T \ge t) = \int_t^\infty p_{\chi^2}(x) \dd x
+\end{equation}
+The \(p\)-value describes the probability of the observed data given that \(H0\) is assumed true. If the \(p\)-value is under a certain threshold \(\alpha\) (usually set to 5\%), \(H0\) is rejected with a probability \(p\) of being falsly rejected. Otherwise, \(H0\) cannot be confidently rejected.
