@@ -18,20 +18,43 @@ This was accomplished using the known decay schems of the four sources.
     \centering
     \begin{subfigure}{0.495\textwidth}
         \includegraphics[scale=1]{figures/lowmean_poisson.pdf}
+        \caption{}
     \end{subfigure}
+    \hfill
     \begin{subfigure}{0.495\textwidth}
         \includegraphics[scale=1]{figures/lowmean_gaussian.pdf}
+        \caption{}
     \end{subfigure}
     \begin{subfigure}{0.495\textwidth}
         \includegraphics[scale=1]{figures/highmean_poisson.pdf}
+        \caption{}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.495\textwidth}
         \includegraphics[scale=1]{figures/highmean_gaussian.pdf}
+        \caption{}
     \end{subfigure}
+    \caption{Statistical tests}
+    \label{fig:statistical_tests}
 \end{figure}
 
-\paragraph{Attenuation [in matter?]}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lllllll}
+        \hline
+        Measure/dataset & Mean & Test distribution & $\nu$ & $p$-value & Result \\
+        \hline
+        \multirow{2}{*}{Low mean} & \multirow{2}{*}{2.27} & Poisson & 8 & 0.86 & Accepted\\
+        & & Gaussian & 7 & $5.7 \times 10^{-117}$ & Rejected \\
+        \multirow{2}{*}{High mean} & \multirow{2}{*}{228.10} & Poisson & 91 & 0.38 & Accepted\\
+        & & Gaussian & 90 & 0.26 & Accepted\\
+        \hline
+    \end{tabular}
+    \caption{Results of the statistical tests.}
+    \label{tab:statistical_tests}
+\end{table}
+
+\paragraph{Attenuation in matter}
 [We chose Cesium because of its high count rate].
 
 Confirmed exponential nature of the attenuation.
