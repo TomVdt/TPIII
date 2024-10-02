@@ -1,24 +1,21 @@
 == Demander à l'assistant ==
-- quoi plotter sur les y des spectres gamma -> ce qu'on veut, count seul ça va aussi
 - gamma theorique ou obtenu d'un fit sur les x ?
-- Structure rapport? -> probablement pas besoin de abstract mais il va nous dire
-- étude bruit de fond? -> non
-
-== Bien regler le parskip ==
 
 == Plots à faire == (qui on est sûr vont dans le rapport)
-- Spectres gamma de Cs, Pb, Co, Hf
-- Fit linéaire channels / Energie
-- Attenuation Pb, Al
-- Fréquences d'observation mesurées et théoriques en histogramme (cf. page 14 Notice VI)
-- Mettre x-axis des plots lowmean en affichage entier
+- Mettre x-axis des plots lowmean en affichage entier? 
 
 == Tableau à faire ==
-- Fréquences d'observation mesurées et théoriques (cf. page 14 à nouveau)
+- Fréquences d'observation mesurées et théoriques (cf. page 14 à nouveau).
+    Vraiment? 90 frequences?
 
-== Schéma de désintegration en Annexe? ==
+== Schéma de désintegration ou coefficient d'attenuation en Annexe? ==
 
 == Citation style ==
 Essayer les differents styles.
 
 == Matteo: Setup Venv ==
+
+== Question repondues par l'assistant ==
+- quoi plotter sur les y des spectres gamma -> ce qu'on veut, count seul ça va aussi
+- Structure rapport? -> probablement pas besoin de abstract mais il va nous dire
+- étude bruit de fond? -> non
