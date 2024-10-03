@@ -1,8 +1,15 @@
+== À écrire ==
+- Une description d'un spectre gamma (en generale, ameliorer le paragraphe Gamma spectrometry)
+- Experimental setup 
+- Principe des coincidences et theorie liée aux dernieres partie de l'éxperience
+- Tous les résultats
+
 == Demander à l'assistant ==
 - gamma theorique ou obtenu d'un fit sur les x ?
 
 == Plots à faire == (qui on est sûr vont dans le rapport)
 - Mettre x-axis des plots lowmean en affichage entier? 
+- Plot à la place de scatter ne marche peut etre pas trop bien maintenant qu'on a reduit le xlim des spectres
 
 == Tableau à faire ==
 - Fréquences d'observation mesurées et théoriques (cf. page 14 à nouveau).
