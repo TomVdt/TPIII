@@ -37,6 +37,7 @@ rcParams = {
     "legend.handletextpad" : 0.6,
     "legend.labelspacing" : 0.3,
 
+    'axes.axisbelow' : True,
     'axes.grid' : True,
     'grid.linestyle' : '-',
     'grid.linewidth': 0.5,
