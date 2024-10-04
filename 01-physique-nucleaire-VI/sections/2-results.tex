@@ -1,7 +1,26 @@
 \section{Results}
-\paragraph{Gamma spectra?}
-The spectra were obtained
+\paragraph{Energy calibration and gamma spectra?}
+[Calibration] was necessary,
+in order [to derive the linear relationship] between [the channels] of the Multi Channel Analyser (MCA) thingy in which signal is detected 
+and the corresponding energy values.
+This was accomplished using the known decay schemes of the four sources, Cesium, Cobalt (which will be studied in more detail later), Lead and Hafnium [METTRE EN BEAU].
+These schemes can be found in \cite{notice_generale} [except Hafnium??].
+Other sources were attempted (Sodium 22 and Cobalt 60), but their low count made for very long times to get reasonable spectrum.
 
+A gaussian fit was [done] on the visible peaks (those we recognised, let's say).
+The bins corresponding to the averages of the obtained curves were associated with these known energies.
+
+Figure \ref{fig:calibration_energy} shows the results of the calibration.
+Linear as expected. Obtained factor of conversion.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=1]{figures/calibration_energy.pdf}
+    \caption{Calibration}
+    \label{fig:calibration_energy}
+\end{figure}
+
+It was then possible to get gamma spectra of the four sources, with energies instead of bins.
+See Figure \ref{fig:gamma_spectra}. Also other peaks were identified from decay schemes.
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.495\textwidth}
@@ -26,16 +45,7 @@ The spectra were obtained
     \label{fig:gamma_spectra}
 \end{figure}
 
-[Calibration] was then necessary,
-in order [to derive the linear relationship] between [the channels] of the Multi Channel Analyser (MCA) thingy in which signal is detected 
-and the corresponding energy values.
-This was accomplished using the known decay schems of the four sources.
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=1]{figures/calibration_energy.pdf}
-    \caption{Calibration}
-    \label{fig:calibration_energy}
-\end{figure}
+
 \paragraph{Statistics}
 
 \begin{figure}[htbp]
