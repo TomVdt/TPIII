@@ -77,9 +77,6 @@ Then Amplifier, discriminateur, analyseur  multi-bande ecc\dots.
 \hl{Bien expliquer les coincidences}
 
 \subsubsection{Coincidences}
-
-TODO: reformuler + check avec la notice (freestyle)
-
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{figures/coincidences.png}
@@ -87,11 +84,54 @@ TODO: reformuler + check avec la notice (freestyle)
     \label{fig:setup_coincidences}
 \end{figure}
 
-To detect desintegrations that cascade from another excited state, the setup shown in Fig. \ref{fig:setup_coincidences} is used. Two scintillators, I and II are placed on opposite sides of the sample to study. A coincidence occurs whenever an event is measured simultaneously in both detectors. The maximum time resulution \(2 \theta\) is then defined as the maximal time difference between the two impulses from the scintillators.
+To detect desintegrations that cascade from another excited state, the setup shown in Fig. \ref{fig:setup_coincidences} is used. Two scintillators, 1 and 2 are placed on opposite sides of the sample to study. A coincidence occurs whenever an event is measured simultaneously in both detectors. The maximum time resulution \(2 \theta\) is then defined as the maximal time difference between the two impulses from the scintillators.
 \begin{equation}
-    2 \theta = \theta_I + \theta_{II}
+    2 \theta = \theta_1 + \theta_{2}
+\end{equation}
+Using the counters denoted "C" in the diagram, the count rate for impulses outputed from the scintillators 1 and 2, and the coincidence detector are \(m_1\), \(m_2\) and \(m_{12}\). 
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+    \includegraphics[width=\linewidth]{figures/coincidence_types.pdf}
+    \caption{Types of coincidences TODO: MAKE SMALLER, PLACE BETTER}
+\end{wrapfigure}
+Due to the random nature of radioactivity, there are multiple types of coincidences:
+\begin{itemize}
+    \item True coincidences: the measurement in both detectors of particles from the same desintegration
+    \item Background noise, for example due to cosmic particles
+    \item Accidental: detection of a particle in each detector within the time resolution due to 2 different desintegrations
+    \item Scattered: due to Compton scattering, a particle detected in one detector might send a particle back to the second detector.
+\end{itemize}
+
+Due to the different types of coincidences, the mesured coincidence rate is
+\begin{equation}
+    m_{12} = m_t + m_c + m_a
+\end{equation}
+where \(m_t\) is the true coincidence rate for the studied phenomenon, \(m_c\) is due to the cosmic noise, and \(m_a\) is the accidental coincidence rate. In this experiment, the cosmic noise is assumed to be \(0\) due to the lead shielding used around the detectors and the source. Assuming the outputs of the scintillators correspond to two independent poissonian random variables, the accidental coincidence rate can be linked to the measured rates with
+\begin{equation}
+    m_a = 2\theta m_1 m_2.
+\end{equation}
+From this, the true coincidence rate is found to be
+\begin{equation}
+    m_t = m_{12} - m_c - 2\theta m_1 m_2
 \end{equation}
 
+\paragraph{Determining the resolution}
+The resolution \(2 \theta\) of the setup can be found by using a source emitting only a single particle per desintegration, such as \cesium. This means that the coincidence rate is purely due to accidental coincidences (\(m_t = 0\)). Thus, the resolution is found to be
 \begin{equation}
-    fromula for true coincidence rates
+    2\theta = \frac{m_{12}}{m_1 m_2}.
+\end{equation}
+
+\paragraph{Activity of the source}
+The measured rates can also be expressed in terms of the activity \(A\) of the source and the probability \(p_1,\ p_2\) of detecting a particle in the scintillator 1, 2:
+\begin{equation}
+    \begin{aligned}
+        m_1 &= A p_1 \\
+        m_2 &= A p_2 \\
+        m_t &= A p_1 p_2 \\
+        m_a &= 2\theta m_1 m_2 = 2\theta A^2 p_1 p_2
+    \end{aligned}
+\end{equation}
+Solving for the activity \(A\) gives
+\begin{equation}
+    A = \frac{m_1 m_2}{m_t} = \frac{m_1 m_2}{m_{12} - m_c - 2\theta m_1 m_2}
 \end{equation}
