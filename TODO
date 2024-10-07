@@ -3,6 +3,7 @@
 - Experimental setup 
 - RELIRE: Principe des coincidences et theorie liée aux dernieres partie de l'éxperience
 - Tous les résultats
+- Reformuler les titres de section
 
 - pour la partie de theorie et demarche:
     on peut peut-etre mettre les sections d'attenuation et statistique avant le detecteur à scintillation,
@@ -10,9 +11,12 @@
 
 == Consistency dans les noms des variables ==
 - Lettre pour les degres de liberté des test statistiques.
+    => Utiliser \nu
 
 == Plots à faire == 
 - Mettre x-axis des plots lowmean en affichage entier? 
+- Rename "Bins" -> "Channel"
+- Add uncertainty to bar chart lowmean highmean
 
 == Schéma de désintegration du Hafnium? ==
 
