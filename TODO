@@ -8,6 +8,9 @@
     on peut peut-etre mettre les sections d'attenuation et statistique avant le detecteur à scintillation,
     de facon à avoir une meilleure séparation theorie / setup experimental.
 
+== Consistency dans les noms des variables ==
+- Lettre pour les degres de liberté des test statistiques.
+
 == Plots à faire == 
 - Mettre x-axis des plots lowmean en affichage entier? 
 

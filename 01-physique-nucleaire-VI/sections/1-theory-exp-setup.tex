@@ -97,21 +97,26 @@ where, if $\rho$ is the density of the material, $\mu_d = \mu / \rho$ is its mas
     \label{fig:setup_coincidences}
 \end{figure}
 
-To detect desintegrations that cascade from another excited state, the setup shown in \hbox{Fig. \ref{fig:setup_coincidences}} is used. Two scintillators, 1 and 2 are placed on opposite sides of the sample to study. A coincidence occurs whenever an event is measured simultaneously in both detectors. The maximum time resulution \(2 \theta\) is then defined as the maximal time difference between the two impulses from the scintillators.
+To detect desintegrations that cascade from another excited state, the setup shown in \hbox{Fig. \ref{fig:setup_coincidences}} is used. 
+Two scintillators, 1 and 2 are placed on opposite sides of the sample to study\footnote{The studied sample}. 
+A coincidence \hl{mettre en emph} occurs whenever an event is measured simultaneously in both detectors. 
+\hl{The coincidence module has a time resolution:}
+The maximum time resulution \(2 \theta\) is then defined as the maximal time difference between the two impulses from the scintillators.
 \begin{equation}
     2 \theta = \theta_1 + \theta_{2}
 \end{equation}
-Using the counters denoted "C" in the diagram, the count rate for impulses outputed from the scintillators 1 and 2, and the coincidence detector are \(m_1\), \(m_2\) and \(m_{12}\). 
+Using the counters denoted "C" \hl{emph?} in the diagram, the count rate for impulses outputed from the scintillators 1 and 2, and the coincidence detector are \(m_1\), \(m_2\) and \(m_{12}\). 
+\hl{Dire que m1 et m2 viennent des singulars detectors, alors que m12 des deux ensemble au meme temps}
 
 \begin{wrapfigure}{R}{0.5\textwidth}
     % [trim={left bottom right top},clip]
     \includegraphics[width=\linewidth, trim={0 1cm 0 1.2cm}, clip]{figures/coincidence_types.pdf}
     \caption{Types of coincidences TODO: MAKE SMALLER, PLACE BETTER}
 \end{wrapfigure}
-Due to the random nature of radioactivity, there are multiple types of coincidences:
+Due to the random nature of radioactivity, there are multiple types of coincidences\footnote{there are multiple ways in which coincidences can be produced}:
 \begin{itemize}
-    \item True coincidences: the measurement in both detectors of particles from the same desintegration
-    \item Background noise, for example due to cosmic particles
+    \item True coincidences: the measurement in both detectors\footnote{the detection in both counters} of particles from the same desintegration
+    \item Background noise, for example due to cosmic particles \footnote{detailler un peu plus: seulement cosmic particles?}
     \item Accidental: detection of a particle in each detector within the time resolution due to 2 different desintegrations
     \item Scattered: due to Compton scattering, a particle detected in one detector might send a particle back to the second detector.
 \end{itemize}

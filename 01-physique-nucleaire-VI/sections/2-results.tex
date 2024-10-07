@@ -1,13 +1,13 @@
 \section{Results}
-\paragraph{Energy calibration and gamma spectra?}
-[Calibration] was necessary,
-in order [to derive the linear relationship] between [the channels] of the Multi Channel Analyser (MCA) thingy in which signal is detected 
-and the corresponding energy values.
-This was accomplished using the known decay schemes of the four sources, Cesium, Cobalt (which will be studied in more detail later), Lead and Hafnium [METTRE EN BEAU].
-These schemes can be found in \cite{notice_generale} [except Hafnium??].
-Other sources were attempted (Sodium 22 and Cobalt 60), but their low count made for very long times to get reasonable spectrum.
+\subsection{Gamma spectra (of four different sources)}
+The MCA assigns all input signals to different channels based on their amplitudes, but no information is a priori known about which values of energy correspond to a certain channel.
+Calibration is necessary to derive this relationship, which is linear
+as the channels uniformly subdivide the total range of input values. \hl{Écrire mieux}
 
-A gaussian fit was [done] on the visible peaks (those we recognised, let's say).
+This was accomplished using the known decay schemes\cite{notice_generale} of four radioactive sources: \cesium, \cobalt, \lead and \hafnium.
+\footnote{Other sources were attempted (Sodium 22 and Cobalt 60), but their low count made for very long times to get reasonable spectrum.\hl{Enlever?}}
+
+The $\gamma$ spectra of each of these sources were recorded and then gaussian fits were carried out on the the most recognisible peaks.
 The bins corresponding to the averages of the obtained curves were associated with these known energies.
 
 Figure \ref{fig:calibration_energy} shows the results of the calibration.
@@ -15,12 +15,13 @@ Linear as expected. Obtained factor of conversion.
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/calibration_energy.pdf}
-    \caption{Calibration}
+    \caption{Energy calibration of the spectrometer: known values of energies versus the channel in which they were registered by the MCA. \hl{Mieux écrire}}
     \label{fig:calibration_energy}
 \end{figure}
 
-It was then possible to get gamma spectra of the four sources, with energies instead of bins.
-See Figure \ref{fig:gamma_spectra}. Also other peaks were identified from decay schemes.
+Once the calibration was completed, it was possible to get gamma spectra of the four sources, with energies instead of bins.
+See Figure \ref{fig:gamma_spectra}. Also other peaks were identified from decay schemes:
+contribution from Compton is clearly visible here and there; collimation Lead.
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.495\textwidth}
@@ -41,13 +42,14 @@ See Figure \ref{fig:gamma_spectra}. Also other peaks were identified from decay 
         \includegraphics[scale=1]{figures/hf181_spectrum.pdf}
         \caption{}
     \end{subfigure}
-    \caption{Gamma spectra of $^{137}$Cs (a), $^{57}$Co (b), $^{210}$Pb (c), $^{181}$Hf (d).}
+    \caption{Gamma spectra of (a) $^{137}$Cs, (b) $^{57}$Co, (c) $^{210}$Pb, (d) $^{181}$Hf.}
     \label{fig:gamma_spectra}
 \end{figure}
 
 
-\paragraph{Statistics}
-
+\subsection{Statistics}
+It was discussed in Section ?? that decay follows a Poisson distribution, but as the mean gets higher the distribution tends to a gaussian one.
+Two sets of measures were taken of the frequency of blabla.
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.495\textwidth}
@@ -68,7 +70,7 @@ See Figure \ref{fig:gamma_spectra}. Also other peaks were identified from decay 
         \includegraphics[scale=1]{figures/highmean_gaussian.pdf}
         \caption{}
     \end{subfigure}
-    \caption{Statistical tests}
+    \caption{Results of the measurements of blabla and test distributions}
     \label{fig:statistical_tests}
 \end{figure}
 
@@ -84,7 +86,7 @@ See Figure \ref{fig:gamma_spectra}. Also other peaks were identified from decay 
         & & Gaussian & 90 & 0.26 & Accepted\\
         \hline
     \end{tabular}
-    \caption{Results of the statistical tests.}
+    \caption{[Characteristics] and results of the statistical tests carried out on two sets of datapoints? of different mean.}
     \label{tab:statistical_tests}
 \end{table}
 
@@ -103,12 +105,6 @@ and $\mu = (1.08 \pm 0.03)$ \unit{\per\cm} for Lead.
     \label{fig:attenuation_coefficient}
 \end{figure}
 
-\paragraph{À METTRE DANS DISCUSSION}
-After obtaining the linear attenuation coefficient it was possible to derive the energies of the $\gamma$ rays emitted from the source by checking the tables contained in Annex D of \cite{notice_generale}.
-These indicate a corresponding energy of $\approx 0.7$ MeV for both materials.
-\hl{maybe faut etre plus clairs sur qu'est-ce que ca contient la table}
-
-The results are compatible with the previously obtained [or known??] spectrum for the $^{137}$Cs
 
 \paragraph{Resolution time of the coincidence selector}
 \begin{figure}[htbp]
