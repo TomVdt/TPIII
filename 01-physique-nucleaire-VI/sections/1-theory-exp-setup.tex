@@ -1,24 +1,30 @@
 \section{Theory and experimental setup}
-\paragraph{Gamma decay}
-Radioactive decay is the process by which an unstable atom[nucleus?] transitions to a more stable form through the emission of energy by radiation.
-Decay occurs in three main forms[kinds], each associated with a radiation of different nature and properties: $\alpha$-decay, $\beta$-decay and $\gamma$-decay.
+\subsection{Radioactive decay}
+Radioactive decay is the process by which an unstable atom transitions to a more stable form through the emission of energy by radiation.
+Decay occurs in three main kinds, each associated with a radiation of different nature and properties: $\alpha$-decay, $\beta$-decay and $\gamma$-decay\footnote{Sans le tiret?}.
+\begin{itemize}
+    %
+    \item $\alpha$-decay represents the disintegration of a heavy parent nucleus to a daughter through the emission of a nucleus of helium.
+    These particles, accordingly called $\alpha$ particles, are the most energetic between the three forms of radiation (with typical energies of about 5 MeV), but also the least penetrating, being able to be stopped by a sheet of paper.
+    %
+    \item $\beta$-decay is instead the transformation of a nucleus with an unstable ratio of protons to neutrons into a stabler one by emitting an electron ($\beta^-$ particle), in the case of a proton-rich nucleus, or a positron ($\beta^+$ particle), in the case of an over-abundance of neutrons.
+    Additionally, a proton-rich nucleus can also reduce its charge by the absorption of an atomic electron, in a process called \emph{electron capture}.
+    The electron comes most often from the inner $K$-shell, resulting in the outer electrons cascading down to fill the lower levels and emitting [one or more] X-rays\cite{intro_nuclear_particle_physics}.
+    Of smaller ionising power than $\alpha$ radiation, $\beta$ radiation is however more penetrating, requiring aluminium sheets to be stopped.
+    %
+    \item $\gamma$-decay, on the other hand, occurs for the most part right after a heavy nucleus desintegrates by emitting an $\alpha$ particle or a $\beta$ particle.
+    The daughter nucleus may be left in an excited state and it can deexcite by rearranging the structure of the nuclear shells, 
+    a process which is tied to the emission of a high-energy photon (a $\gamma$ ray).
+    The typical energies of nuclear $\gamma$ rays range from a fraction to several MeV 
+    and though they have the least ionising power of the three, they are the most penetrating, requiring lead for effective shielding.
+\end{itemize}
 
-$\alpha$-decay represents the disintegration of a heavy parent nucleus to a daughter through the emission of a nucleus of helium (an $\alpha$ particle)[, with typical energies of about 5 MeV].
-$\beta$-decay is the transformation of a nucleus with an unstable ratio of protons to neutrons into a stabler one by emitting an electron ($\beta^-$ particle), in the case of a proton-rich nucleus, or a positron ($\beta^+$ particle), in the case of an over-abundance of neutrons.
-Additionally, a proton-rich nucleus can also reduce its charge by the absorption of an atomic electron, in a process called \emph{electron capture}.
-The electron comes most often from the inner $K$-shell, resulting in the outer electrons cascading down to fill the lower levels and emitting [one or more] X-rays\cite{intro_nuclear_particle_physics}.
-
-$\gamma$-decay, on the other hand, occurs mainly[for the most part] right after a heavy nucleus desintegrates by emitting an $\alpha$ particle or a $\beta$ particle.
-The daughter nucleus may be left in an excited state, from which[and] it can deexcite by rearranging the structure of the nuclear shells, 
-a process which is tied to the emission of a high-energy photon (a $\gamma$ ray).
-
-[The typical energies of nuclear $\gamma$-rays range from a fraction to several MeV.]
-
-\paragraph{Scintillation detector}
+\subsection{Scintillation detectors} \hl{Mettre après? (lire TODO)}
 Scintillation detectors are based on the properties of scintillators, materials that emit photons in the visible spectrum after the passage of a charged particle.
 The scintillators used for particle detection are primarily [split] between two types: organic (or plastic), in which the photon emission has molecular origin, 
 and inorganic (or crystalline), crystals which are doped with activators that can first be excited by electron-hole pairs 
 produced by the charged particle passing in the crystal lattice\footnotemark\ and then de-excited by photon emission\cite{intro_nuclear_particle_physics}.
+\hl{In this experiment, an inorganic NaI scintillator was used.}
 
 Because of the low intensity of the emitted light, the photon signal must be amplified in order to be properly counted.
 This amplification is commonly achieved through the use of photomultiplier tubes (PMT), a device which converts the photon signal in a detectable electric pulse.
@@ -30,6 +36,7 @@ The anode located at the end of the chamber then allows to read the amplified el
 which results linearly proportional to the amount of light incident on the photocathode.
 The voltage applied between cathode and anode determines the value of the total gain $G$.
 \footnotetext{Ici je pourrai écrire "produced by the passing charged particle" sans specifier, pour rendre la phrase un peu plus legere. Or "Excited by th epassing charged particles through [the production of ]electron-hole pairs}
+%
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1.2]{figures/photomultiplier.jpg}
@@ -37,7 +44,12 @@ The voltage applied between cathode and anode determines the value of the total 
     \label{fig:photomultiplier}
 \end{figure}
 
-\paragraph{Gamma spectrometry}
+[After obtaining the electric signal as output of the PMT], [several electronics elements] allow to obtain the $\gamma$ ray energy spectrum of the studied source, 
+showing the intensity of $\gamma$ radiation versus the energy of each photon.
+Another amplifier.
+A band analyser?? working as discriminator?? allows to select a window of signal amplitudes and create digital signals.
+Delay gates can be used to delay \hl{(duh)} the analog signal in order to better match the digital coming from the discriminateur
+
 [The detector, together with the rest of the chaine de spectrometrie] allows to obtain the $\gamma$ ray energy spectrum of the studied source, showing the intensity of $\gamma$ radiation versus the energy of each photon.
 The spectrum will not only show [the actual emission], though.
 When $\gamma$ rays enter the scintillator, they can interact in two possible ways: through the photoelectric effect or through Compton scattering.
@@ -45,10 +57,17 @@ Any photon converted to an electron by photoelectric effect generally deposits i
 In the case of Compton scattering, instead, the photons do not deposit all of their energy and, once scattered, can produce new interactions.
 A third way would be through $e^+ e^-$ pair production, which is however very unlikely for low-energy photons.
 
+The energy deposited in the crystal will therefore have two kinds of contributions to the $\gamma$ spectrum.
+First, the full energies of any of the photons that convert into photoelectrons, and second, a continuous spectrum of energies related to Compton scattering.
 
-
-[The energy deposited in the NaI will therefore have two kinds of contributions to the $\gamma$ spectrum.
-First, the full energies of any of the photons that convert into photoelectrons, and, second, a continuous spectrum of energies related to Compton scattering] \hl{$<$-- remanier un peu}
+There are [some things], though, that will modify the expected appearance of the spectrum.
+\begin{itemize}
+    \item \hl{Itemize seulement pour mettre en clair, mieux de ne pas prendre trop d'éspace}
+    \item The $\gamma$ rays scattered by Compton effect can interact again with the scintillator.
+    \item \hl{pic d'échappement? j'ai pas compris pleinement}
+    \item Parasite contributions from photons scattered in the material entouring the scintillator, which can be removed with appropriate collimation
+    \item The resolution in energy of the scintillator \hl{pas clair}
+\end{itemize}
 
 \paragraph{Attenuation in matter}
 The [three ways in which photons interact with matter] cause an attenuation of $\gamma$ radiation, i.e. a progressive reduction in the number of photons, without a loss of their individual energy.
@@ -70,28 +89,23 @@ The law can also be put in a different form:
 \end{equation}
 where, if $\rho$ is the density of the material, $\mu_d = \mu / \rho$ is its mass attenuation coefficient and $d = \rho \cdot x$ its surface density.
 
-\paragraph{Experimental setup}
-An inorganic scintillation detector consisting of a NaI crystal was used.
-Then Amplifier, discriminateur, analyseur  multi-bande ecc\dots.
-
-\hl{Bien expliquer les coincidences}
-
 \subsubsection{Coincidences}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{figures/coincidences.png}
-    \caption{Experimental setup for coincidence detection \cite{notice_VI}}
+    \includegraphics[width=0.75\textwidth]{figures/coincidences.png}
+    \caption{Experimental setup for coincidence detection. \cite{notice_VI}}
     \label{fig:setup_coincidences}
 \end{figure}
 
-To detect desintegrations that cascade from another excited state, the setup shown in Fig. \ref{fig:setup_coincidences} is used. Two scintillators, 1 and 2 are placed on opposite sides of the sample to study. A coincidence occurs whenever an event is measured simultaneously in both detectors. The maximum time resulution \(2 \theta\) is then defined as the maximal time difference between the two impulses from the scintillators.
+To detect desintegrations that cascade from another excited state, the setup shown in \hbox{Fig. \ref{fig:setup_coincidences}} is used. Two scintillators, 1 and 2 are placed on opposite sides of the sample to study. A coincidence occurs whenever an event is measured simultaneously in both detectors. The maximum time resulution \(2 \theta\) is then defined as the maximal time difference between the two impulses from the scintillators.
 \begin{equation}
     2 \theta = \theta_1 + \theta_{2}
 \end{equation}
 Using the counters denoted "C" in the diagram, the count rate for impulses outputed from the scintillators 1 and 2, and the coincidence detector are \(m_1\), \(m_2\) and \(m_{12}\). 
 
 \begin{wrapfigure}{R}{0.5\textwidth}
-    \includegraphics[width=\linewidth]{figures/coincidence_types.pdf}
+    % [trim={left bottom right top},clip]
+    \includegraphics[width=\linewidth, trim={0 1cm 0 1.2cm}, clip]{figures/coincidence_types.pdf}
     \caption{Types of coincidences TODO: MAKE SMALLER, PLACE BETTER}
 \end{wrapfigure}
 Due to the random nature of radioactivity, there are multiple types of coincidences:
