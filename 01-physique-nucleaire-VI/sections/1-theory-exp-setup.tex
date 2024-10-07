@@ -69,7 +69,25 @@ There are [some things], though, that will modify the expected appearance of the
     \item The resolution in energy of the scintillator \hl{pas clair}
 \end{itemize}
 
-\paragraph{Attenuation in matter}
+\subsubsection{Energy callibration}
+
+In the experimental setup, the energy of a \(\gamma\) is proportional to the amplitude of the resulting impulse outputed from the scintillator. Using a multi-channel analyser (MCA), the ampitude of the impulse is assigned to a channel. A measured peak can be fitted locally with a Gaussian. The mean of this fit is then used as the channel of the peak. A linear relationship between the channel and associated energy can be found using the known decay schemes of different radiactive source.
+
+\subsection{Statistical model of radioactive decay}
+
+% Radioactive decay of an unstable nucleus is equally likely to decay at any instant. This means that the probability of desintegration of a single nucleus for a small time \(\dd t\) is \(\lambda \dd t\). For a sample of \(N\) radioactive atoms, the amount of nuclei \hl{j'aime ce mot} that decay during \(\dd t\) is \(-\dd N = N \lambda \dd t\).
+% Solving this differential equation yields
+% \begin{equation}
+%     N(t) = N_0 e^{-\lambda t}
+% \end{equation}
+% where \(N_0\) is the initial population at \(t = 0\).
+
+% TODO: $\uparrow$ vraiment necessaire?
+
+The decay of an unstable nucleus is a random process that is equally as liquely to occur at any time. In a large sample of \(N\) identical radioactive nuclei, each atom will decay independently from eachother. The number of desintegrations in a given time \(\Delta t\) is thus modeled using a Poisson distribution. Let us denote \(X_i \sim \operatorname{Pois}(\lambda)\) each sample of the distribution for \mbox{\(i = 1, \dots, n\)}. Two sets of samples will be made, once for a short time interval and once for a longer time interval, yielding more counts per sample. These datasets will respectfully be denoted as "low mean" and "high mean", and will both be compared to a Poisson and Gaussian distribution using the Pearson \(\chi^2\) test. The Pearson \(\chi^2\) method for testing a dataset to a given distribution is described in Appendix \ref{sec:pearson}. 
+
+\subsection{Attenuation of photons in matter}
+
 The [three ways in which photons interact with matter] cause an attenuation of $\gamma$ radiation, i.e. a progressive reduction in the number of photons, without a loss of their individual energy.
 This phenomenon follows an exponential law and can be described in terms of a linear attenuation coefficient $\mu$, which depends on the energy of the incident light and the nature of the material.
 In fact, let $I(x)$ be the intensity of photons at any point $x$ in the medium.
@@ -90,33 +108,27 @@ The law can also be put in a different form:
 where, if $\rho$ is the density of the material, $\mu_d = \mu / \rho$ is its mass attenuation coefficient and $d = \rho \cdot x$ its surface density.
 
 \subsubsection{Coincidences}
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/coincidences.png}
     \caption{Experimental setup for coincidence detection. \cite{notice_VI}}
     \label{fig:setup_coincidences}
 \end{figure}
-
 To detect desintegrations that cascade from another excited state, the setup shown in \hbox{Fig. \ref{fig:setup_coincidences}} is used. 
 Two scintillators, 1 and 2 are placed on opposite sides of the sample to study\footnote{The studied sample}. 
-A coincidence \hl{mettre en emph} occurs whenever an event is measured simultaneously in both detectors. 
-\hl{The coincidence module has a time resolution:}
-The maximum time resulution \(2 \theta\) is then defined as the maximal time difference between the two impulses from the scintillators.
-\begin{equation}
-    2 \theta = \theta_1 + \theta_{2}
-\end{equation}
-Using the counters denoted "C" \hl{emph?} in the diagram, the count rate for impulses outputed from the scintillators 1 and 2, and the coincidence detector are \(m_1\), \(m_2\) and \(m_{12}\). 
-\hl{Dire que m1 et m2 viennent des singulars detectors, alors que m12 des deux ensemble au meme temps}
+A \emph{coincidence} occurs whenever an event is measured simultaneously in both detectors. A coincidence is only detected whenever pulses from scinitillators 1 and 2 overlap. This means that the coincidence module has a time resolution of \(2 \theta = \theta_1 + \theta_2\), where \(\theta_1\) and \(\theta_2\) are the durations of the pulses from scintillators 1 and 2.
+Using the counters denoted \emph{C} in the diagram, the rate of impulses outputed from the scintillators 1 and 2, \(m_1\) and \(m_2\), as well as the rate of coincidences from the coincidence detector \(m_{12}\) are measured. 
 
 \begin{wrapfigure}{R}{0.5\textwidth}
-    % [trim={left bottom right top},clip]
+    % [trim={left bottom right top},clip] interesting thx
     \includegraphics[width=\linewidth, trim={0 1cm 0 1.2cm}, clip]{figures/coincidence_types.pdf}
-    \caption{Types of coincidences TODO: MAKE SMALLER, PLACE BETTER}
+    \caption{Types of coincidences TODO: PLACE BETTER}
 \end{wrapfigure}
-Due to the random nature of radioactivity, there are multiple types of coincidences\footnote{there are multiple ways in which coincidences can be produced}:
+Due to the random nature of radioactivity, there are multiple there are multiple ways in which coincidences can be produced:
 \begin{itemize}
-    \item True coincidences: the measurement in both detectors\footnote{the detection in both counters} of particles from the same desintegration
-    \item Background noise, for example due to cosmic particles \footnote{detailler un peu plus: seulement cosmic particles?}
+    \item True coincidences: the detection in both detectors of particles from the same desintegration
+    \item Background noise, for example due to cosmic particles or other radioactive sources
     \item Accidental: detection of a particle in each detector within the time resolution due to 2 different desintegrations
     \item Scattered: due to Compton scattering, a particle detected in one detector might send a particle back to the second detector.
 \end{itemize}
@@ -125,7 +137,7 @@ Due to the different types of coincidences, the mesured coincidence rate is
 \begin{equation}
     m_{12} = m_t + m_c + m_a
 \end{equation}
-where \(m_t\) is the true coincidence rate for the studied phenomenon, \(m_c\) is due to the cosmic noise, and \(m_a\) is the accidental coincidence rate. In this experiment, the cosmic noise is assumed to be \(0\) due to the lead shielding used around the detectors and the source. Assuming the outputs of the scintillators correspond to two independent poissonian random variables, the accidental coincidence rate can be linked to the measured rates with
+where \(m_t\) is the true coincidence rate for the studied phenomenon, \(m_c\) is due to the background noise, and \(m_a\) is the accidental coincidence rate. In this experiment, the background noise is assumed to be \(0\) due to the lead shielding and collimation used around the detectors and the source. Assuming the outputs of the scintillators correspond to two independent poissonian random variables, the accidental coincidence rate can be linked to the measured rates with
 \begin{equation}
     m_a = 2\theta m_1 m_2.
 \end{equation}
@@ -154,3 +166,18 @@ Solving for the activity \(A\) gives
 \begin{equation}
     A = \frac{m_1 m_2}{m_t} = \frac{m_1 m_2}{m_{12} - m_c - 2\theta m_1 m_2}
 \end{equation}
+
+\subsection{Separating \(\gamma_2\) and \(\gamma_3\) from the spectrum of \cobalt TODO: reformuler}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/decay_cobalt57.png}
+    \caption{Decay scheme of \cobalt \cite{notice_VI}}
+    \label{fig:cobalt_decay}
+\end{figure}
+
+nope, trop fatigué j'écrit et j'efface 5 fois de suite. TODO: demain
+
+A spectrum of \cobalt containing only the \(\gamma_1\) and \(\gamma_2\) peaks. 
+
+\subsection{Half life of the 14.4 keV transition state}
