@@ -19,15 +19,15 @@ Decay occurs in three main kinds, each associated with a radiation of different 
     and though they have the least ionising power of the three, they are the most penetrating, requiring lead for effective shielding.
 \end{itemize}
 
-\subsection{Scintillation detectors} \hl{Mettre après? (lire TODO)}
+\subsection{Scintillation detectors}
 Scintillation detectors are based on the properties of scintillators, materials that emit photons in the visible spectrum after the passage of a charged particle.
 The scintillators used for particle detection are primarily [split] between two types: organic (or plastic), in which the photon emission has molecular origin, 
 and inorganic (or crystalline), crystals which are doped with activators that can first be excited by electron-hole pairs 
 produced by the charged particle passing in the crystal lattice\footnotemark\ and then de-excited by photon emission\cite{intro_nuclear_particle_physics}.
-\hl{In this experiment, an inorganic NaI scintillator was used.}
+The scintillator used in this experiment, a NaI crystal, belongs to this second class.
 
 Because of the low intensity of the emitted light, the photon signal must be amplified in order to be properly counted.
-This amplification is commonly achieved through the use of photomultiplier tubes (PMT), a device which converts the photon signal in a detectable electric pulse.
+This amplification is commonly achieved through the use of a photomultiplier tube (PMT), a device which converts the photon signal in a detectable electric pulse.
 It consists of a vacuum chamber containing several components, pictured in Fig. \ref{fig:photomultiplier}: 
 after passing a transparent entry window, adjacent to the scintillator, the scintillation photons first encounter a photocatode, 
 where they produce an electron by photoelectric effect with a certain probability $\varepsilon$ (the quantum efficacy).
@@ -44,21 +44,30 @@ The voltage applied between cathode and anode determines the value of the total 
     \label{fig:photomultiplier}
 \end{figure}
 
-[After obtaining the electric signal as output of the PMT], [several electronics elements] allow to obtain the $\gamma$ ray energy spectrum of the studied source, 
+The output of the PMT is therefore an electric signal proportional to the energy deposited by the photon in the scintillator.
+Several electronics instruments are then necessary to obtain the $\gamma$ ray energy spectrum of the studied source, 
 showing the intensity of $\gamma$ radiation versus the energy of each photon.
-Another amplifier.
-A band analyser?? working as discriminator?? allows to select a window of signal amplitudes and create digital signals.
-Delay gates can be used to delay \hl{(duh)} the analog signal in order to better match the digital coming from the discriminateur
+The signal first passes an amplifier and band analyser, which allows to accurately select the window of interest of signal amplitudes and to generate digital signals used to trigger data acquisition of later\footnote{following?} instruments.
+Delay modules can be used to correct any mismatch between the analog and digital signals\footnotemark.
+A counter keeps count \hl{j'attend mon prix Nobel pour la literature}.
+Finally, a Multi-Channel Analyser (MCA) digitalises the signal and sends the information to a computer, operating in one of two modes:
+In Pulse Height Analysis (PHA) mode the input pulses are
+sorted into bins (channels) according to their amplitude, while in Multi-Channel Scaling (MCS) mode they are sorted according to the time when they arrive, subdivided in intervals of a given time (dwell time).
+\hl{PHA will be used for spectrum acquisition, MCS will be used for statistics}
 
-[The detector, together with the rest of the chaine de spectrometrie] allows to obtain the $\gamma$ ray energy spectrum of the studied source, showing the intensity of $\gamma$ radiation versus the energy of each photon.
-The spectrum will not only show [the actual emission], though.
-When $\gamma$ rays enter the scintillator, they can interact in two possible ways: through the photoelectric effect or through Compton scattering.
+\footnotetext{Alternativement:
+Delay gates can be used to delay \hl{(duh)} the analog signal in order to better match the digital coming from the discriminateur}
+
+\subsection{The $\gamma$ spectrum}
+The spectrum output from the MCA will not only [show the energy of the emission].
+When $\gamma$ rays enter the scintillator, they can interact in two possible ways: through photoelectric effect or through Compton scattering.
+A third way\footnote{option, possibility?} would be through $e^+ e^-$ pair production, which is however very unlikely for low-energy photons.
 Any photon converted to an electron by photoelectric effect generally deposits its entire energy within the scintillator, such that the intensity of the subsequent scintillation light is proportional to the energy of the original photon.
 In the case of Compton scattering, instead, the photons do not deposit all of their energy and, once scattered, can produce new interactions.
-A third way would be through $e^+ e^-$ pair production, which is however very unlikely for low-energy photons.
 
 The energy deposited in the crystal will therefore have two kinds of contributions to the $\gamma$ spectrum.
-First, the full energies of any of the photons that convert into photoelectrons, and second, a continuous spectrum of energies related to Compton scattering.
+First, the full energies of any of the photons that convert into photoelectrons, and second, a continuous spectrum of energies related to Compton scattering, whose values depend on the scattering angle of the photon.
+The peak corresponding to the highest energy that can be deposited, in the case of full backscatter, is called the Compton edge.
 
 There are [some things], though, that will modify the expected appearance of the spectrum.
 \begin{itemize}
@@ -84,11 +93,18 @@ In the experimental setup, the energy of a \(\gamma\) is proportional to the amp
 
 % TODO: $\uparrow$ vraiment necessaire?
 
-The decay of an unstable nucleus is a random process that is equally as liquely to occur at any time. In a large sample of \(N\) identical radioactive nuclei, each atom will decay independently from eachother. The number of desintegrations in a given time \(\Delta t\) is thus modeled using a Poisson distribution. Let us denote \(X_i \sim \operatorname{Pois}(\lambda)\) each sample of the distribution for \mbox{\(i = 1, \dots, n\)}. Two sets of samples will be made, once for a short time interval and once for a longer time interval, yielding more counts per sample. These datasets will respectfully be denoted as "low mean" and "high mean", and will both be compared to a Poisson and Gaussian distribution using the Pearson \(\chi^2\) test. The Pearson \(\chi^2\) method for testing a dataset to a given distribution is described in Appendix \ref{sec:pearson}. 
+The decay of an unstable nucleus is a random process that is equally as likely to occur at any time. 
+In a large sample of \(N\) identical radioactive nuclei, each atom will decay independently from eachother. 
+The number of desintegrations in a given time \(\Delta t\) is thus modeled using a Poisson distribution. 
+Let us denote \(X_i \sim \operatorname{Pois}(\lambda)\) each sample of the distribution for \mbox{\(i = 1, \dots, n\)}.
+\hl{Et après on utilise pas ces samples dans le texte?} 
+Two sets of samples will be made \hl{will be taken during this experiment?}, once for a short time interval and once for a longer time interval, yielding more counts per sample. \hl{Pas clair, mieux expliquer ce que c'est le time interval}
+These datasets will respectfully be denoted as "low mean" and "high mean" \hl{emph?}, and will both be compared to a Poisson and Gaussian distribution using the Pearson \(\chi^2\) test. 
+Pearson's \(\chi^2\) method for testing a dataset to a given distribution is described in Appendix \ref{sec:pearson}. 
 
 \subsection{Attenuation of photons in matter}
 
-The [three ways in which photons interact with matter] cause an attenuation of $\gamma$ radiation, i.e. a progressive reduction in the number of photons, without a loss of their individual energy.
+The interactions of the photons with matter causes an attenuation of $\gamma$ radiation, i.e. a progressive reduction in the number of photons, without a loss of their individual energy.
 This phenomenon follows an exponential law and can be described in terms of a linear attenuation coefficient $\mu$, which depends on the energy of the incident light and the nature of the material.
 In fact, let $I(x)$ be the intensity of photons at any point $x$ in the medium.
 The change in intensity $dI$ in an infinitesimal thickness of material $dx$ can be written in terms of $\mu$ as follow:
