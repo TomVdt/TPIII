@@ -58,6 +58,7 @@ sorted into bins (channels) according to their amplitude, while in Multi-Channel
 \footnotetext{Alternativement:
 Delay gates can be used to delay \hl{(duh)} the analog signal in order to better match the digital coming from the discriminateur}
 
+
 \subsection{The $\gamma$ spectrum}
 The spectrum output from the MCA will not only [show the energy of the emission].
 When $\gamma$ rays enter the scintillator, they can interact in two possible ways: through photoelectric effect or through Compton scattering.
@@ -66,21 +67,27 @@ Any photon converted to an electron by photoelectric effect generally deposits i
 In the case of Compton scattering, instead, the photons do not deposit all of their energy and, once scattered, can produce new interactions.
 
 The energy deposited in the crystal will therefore have two kinds of contributions to the $\gamma$ spectrum.
-First, the full energies of any of the photons that convert into photoelectrons, and second, a continuous spectrum of energies related to Compton scattering, whose values depend on the scattering angle of the photon.
-The peak corresponding to the highest energy that can be deposited, in the case of full backscatter, is called the Compton edge.
+First, the full energies of any of the photons that convert into photoelectrons, and 
+second, a continuous spectrum of energies related to Compton scattering, 
+whose values depend on the scattering angle of the photon.
+In the case of full backscatter the highest possible energy is deposited
+and the corresponding peak in the spectrum is referred to as the Compton edge.
 
-There are [some things], though, that will modify the expected appearance of the spectrum.
+There are a few of phenomena, though, that will modify the expected appearance of the spectrum:
 \begin{itemize}
-    \item \hl{Itemize seulement pour mettre en clair, mieux de ne pas prendre trop d'éspace}
     \item The $\gamma$ rays scattered by Compton effect can interact again with the scintillator.
-    \item \hl{pic d'échappement? j'ai pas compris pleinement}
-    \item Parasite contributions from photons scattered in the material entouring the scintillator, which can be removed with appropriate collimation
-    \item The resolution in energy of the scintillator \hl{pas clair}
+    \item The rearrangement X-ray emitted following photoelectric effect, whose energy is usually reabsorbed in the scintillator, can escape from the detector.
+    The peak related to this phenomenon is called escape peak and corresponds to energy $E = E_{\gamma} - E_X$
+    \item There could be parasite contributions from photons scattered in the material entouring the scintillator. 
+    These can be removed with appropriate collimation.
+    \item The scintillator has a finite resolution in energy, such that all energy peaks in the $\gamma$ spectrum form gaussian bells rather than discrete lines.
 \end{itemize}
 
-\subsubsection{Energy callibration}
+
+\subsubsection{Energy calibration}
 
 In the experimental setup, the energy of a \(\gamma\) is proportional to the amplitude of the resulting impulse outputed from the scintillator. Using a multi-channel analyser (MCA), the ampitude of the impulse is assigned to a channel. A measured peak can be fitted locally with a Gaussian. The mean of this fit is then used as the channel of the peak. A linear relationship between the channel and associated energy can be found using the known decay schemes of different radiactive source.
+
 
 \subsection{Statistical model of radioactive decay}
 
@@ -102,8 +109,8 @@ Two sets of samples will be made \hl{will be taken during this experiment?}, onc
 These datasets will respectfully be denoted as "low mean" and "high mean" \hl{emph?}, and will both be compared to a Poisson and Gaussian distribution using the Pearson \(\chi^2\) test. 
 Pearson's \(\chi^2\) method for testing a dataset to a given distribution is described in Appendix \ref{sec:pearson}. 
 
-\subsection{Attenuation of photons in matter}
 
+\subsection{Attenuation of photons in matter}
 The interactions of the photons with matter causes an attenuation of $\gamma$ radiation, i.e. a progressive reduction in the number of photons, without a loss of their individual energy.
 This phenomenon follows an exponential law and can be described in terms of a linear attenuation coefficient $\mu$, which depends on the energy of the incident light and the nature of the material.
 In fact, let $I(x)$ be the intensity of photons at any point $x$ in the medium.
@@ -193,6 +200,9 @@ Solving for the activity \(A\) gives
 \end{figure}
 
 nope, trop fatigué j'écrit et j'efface 5 fois de suite. TODO: demain
+
+The energy resolution of this detector sucks.
+Black magic, in the form of coincidence selection, is therefore required.
 
 A spectrum of \cobalt containing only the \(\gamma_1\) and \(\gamma_2\) peaks. 
 

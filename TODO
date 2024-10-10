@@ -5,10 +5,6 @@
 - Tous les résultats
 - Reformuler les titres de section
 
-- pour la partie de theorie et demarche:
-    on peut peut-etre mettre les sections d'attenuation et statistique avant le detecteur à scintillation,
-    de facon à avoir une meilleure séparation theorie / setup experimental.
-
 == Consistency dans les noms des variables ==
 - Lettre pour les degres de liberté des test statistiques.
     => Utiliser \nu
