@@ -58,13 +58,24 @@ sorted into bins (channels) according to their amplitude, while in Multi-Channel
 \footnotetext{Alternativement:
 Delay gates can be used to delay \hl{(duh)} the analog signal in order to better match the digital coming from the discriminateur}
 
+\subsubsection{Energy calibration}
+The MCA assigns all input signals to different channels based on their amplitudes, 
+but no information is a priori known about which values of energy correspond to a certain channel,
+other than that the relationship is linear: 
+the channels uniformly subdivide the total range of input values.
+It is then necessary to calibrate the experimental setup using known decay schemes.
+Once the gamma spectra of the chosen sources are recorded, peaks associated with known energies can be fitted locally with gaussian curves.
+The means of the fits are then used as the channels corresponding to the peaks and the linear relationship between energy and channels can be obtained. \hl{Rendre un peu plus clean, mais pas plus long.}
+
+%In the experimental setup, the energy of a \(\gamma\) is proportional to the amplitude of the resulting impulse outputed from the scintillator. Using a multi-channel analyser (MCA), the ampitude of the impulse is assigned to a channel. A measured peak can be fitted locally with a Gaussian. The mean of this fit is then used as the channel of the peak. A linear relationship between the channel and associated energy can be found using the known decay schemes of different radiactive source.
+
 
 \subsection{The $\gamma$ spectrum}
-The spectrum output from the MCA will not only [show the energy of the emission].
+% Ligne non nécessaire: The spectrum output from the MCA will not only show the energies associated with $\gamma$ radiation.
 When $\gamma$ rays enter the scintillator, they can interact in two possible ways: through photoelectric effect or through Compton scattering.
-A third way\footnote{option, possibility?} would be through $e^+ e^-$ pair production, which is however very unlikely for low-energy photons.
 Any photon converted to an electron by photoelectric effect generally deposits its entire energy within the scintillator, such that the intensity of the subsequent scintillation light is proportional to the energy of the original photon.
 In the case of Compton scattering, instead, the photons do not deposit all of their energy and, once scattered, can produce new interactions.
+A third way\footnote{option, possibility?} would be through $e^+ e^-$ pair production, which is however very unlikely for low-energy photons.
 
 The energy deposited in the crystal will therefore have two kinds of contributions to the $\gamma$ spectrum.
 First, the full energies of any of the photons that convert into photoelectrons, and 
@@ -72,7 +83,6 @@ second, a continuous spectrum of energies related to Compton scattering,
 whose values depend on the scattering angle of the photon.
 In the case of full backscatter the highest possible energy is deposited
 and the corresponding peak in the spectrum is referred to as the Compton edge.
-
 There are a few of phenomena, though, that will modify the expected appearance of the spectrum:
 \begin{itemize}
     \item The $\gamma$ rays scattered by Compton effect can interact again with the scintillator.
@@ -82,11 +92,6 @@ There are a few of phenomena, though, that will modify the expected appearance o
     These can be removed with appropriate collimation.
     \item The scintillator has a finite resolution in energy, such that all energy peaks in the $\gamma$ spectrum form gaussian bells rather than discrete lines.
 \end{itemize}
-
-
-\subsubsection{Energy calibration}
-
-In the experimental setup, the energy of a \(\gamma\) is proportional to the amplitude of the resulting impulse outputed from the scintillator. Using a multi-channel analyser (MCA), the ampitude of the impulse is assigned to a channel. A measured peak can be fitted locally with a Gaussian. The mean of this fit is then used as the channel of the peak. A linear relationship between the channel and associated energy can be found using the known decay schemes of different radiactive source.
 
 
 \subsection{Statistical model of radioactive decay}
@@ -135,20 +140,20 @@ where, if $\rho$ is the density of the material, $\mu_d = \mu / \rho$ is its mas
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/coincidences.png}
-    \caption{Experimental setup for coincidence detection. \cite{notice_VI}}
+    \caption{Experimental setup for coincidence detection. \cite{notice_VI} \hl{Est-ce qu'il faut traduire en anglais?}}
     \label{fig:setup_coincidences}
 \end{figure}
 To detect desintegrations that cascade from another excited state, the setup shown in \hbox{Fig. \ref{fig:setup_coincidences}} is used. 
-Two scintillators, 1 and 2 are placed on opposite sides of the sample to study\footnote{The studied sample}. 
+Two scintillators, 1 and 2 are placed on opposite sides of the sample to study.
 A \emph{coincidence} occurs whenever an event is measured simultaneously in both detectors. A coincidence is only detected whenever pulses from scinitillators 1 and 2 overlap. This means that the coincidence module has a time resolution of \(2 \theta = \theta_1 + \theta_2\), where \(\theta_1\) and \(\theta_2\) are the durations of the pulses from scintillators 1 and 2.
-Using the counters denoted \emph{C} in the diagram, the rate of impulses outputed from the scintillators 1 and 2, \(m_1\) and \(m_2\), as well as the rate of coincidences from the coincidence detector \(m_{12}\) are measured. 
+Using the counters denoted \emph{C} in the diagram, the rate of impulses outputed from the scintillators 1 and 2, \(m_1\) and \(m_2\), as well as the rate of coincidences from the coincidence detector \(m_{12}\) are measured. % super clean gg
 
 \begin{wrapfigure}{R}{0.5\textwidth}
     % [trim={left bottom right top},clip] interesting thx
     \includegraphics[width=\linewidth, trim={0 1cm 0 1.2cm}, clip]{figures/coincidence_types.pdf}
     \caption{Types of coincidences TODO: PLACE BETTER}
 \end{wrapfigure}
-Due to the random nature of radioactivity, there are multiple there are multiple ways in which coincidences can be produced:
+Due to the random nature of radioactivity, there are multiple ways in which coincidences can be produced:
 \begin{itemize}
     \item True coincidences: the detection in both detectors of particles from the same desintegration
     \item Background noise, for example due to cosmic particles or other radioactive sources
@@ -156,7 +161,7 @@ Due to the random nature of radioactivity, there are multiple there are multiple
     \item Scattered: due to Compton scattering, a particle detected in one detector might send a particle back to the second detector.
 \end{itemize}
 
-Due to the different types of coincidences, the mesured coincidence rate is
+Due to the different types of coincidences, the \hl{total} mesured coincidence rate is
 \begin{equation}
     m_{12} = m_t + m_c + m_a
 \end{equation}
@@ -171,7 +176,7 @@ From this, the true coincidence rate is found to be
 
 \paragraph{Determining the resolution}
 The resolution \(2 \theta\) of the setup can be found by using a source emitting only a single particle per desintegration, such as \cesium. This means that the coincidence rate is purely due to accidental coincidences (\(m_t = 0\)). Thus, the resolution is found to be
-\begin{equation}
+\begin{equation} \label{eq:coincidence_time_resolution}
     2\theta = \frac{m_{12}}{m_1 m_2}.
 \end{equation}
 
@@ -186,7 +191,7 @@ The measured rates can also be expressed in terms of the activity \(A\) of the s
     \end{aligned}
 \end{equation}
 Solving for the activity \(A\) gives
-\begin{equation}
+\begin{equation} \label{eq:activity}
     A = \frac{m_1 m_2}{m_t} = \frac{m_1 m_2}{m_{12} - m_c - 2\theta m_1 m_2}
 \end{equation}
 
