@@ -1,30 +1,33 @@
 \section{Results}
-\subsection{Gamma spectra (of four different sources)}
-The MCA assigns all input signals to different channels based on their amplitudes, but no information is a priori known about which values of energy correspond to a certain channel.
-Calibration is necessary to derive this relationship, which is linear
-as the channels uniformly subdivide the total range of input values. \hl{Écrire mieux}
-
-\hl{j'ai déplacé ce paragraphe dans la partie démarche exp, je pense qu'elle est mieux la bas}
-
-
-This was accomplished using the known decay schemes\cite{notice_generale} of four radioactive sources: \cesium, \cobalt, \lead and \hafnium.
-\footnote{Other sources were attempted (Sodium 22 and Cobalt 60), but their low count made for very long times to get reasonable spectrum.\hl{Enlever?}}
-
-The $\gamma$ spectra of each of these sources were recorded and then gaussian fits were carried out on the the most recognisible peaks.
-The bins corresponding to the averages of the obtained curves were associated with these known energies.
-
-Figure \ref{fig:calibration_energy} shows the results of the calibration.
-Linear as expected. Obtained factor of conversion.
+\subsection{$\gamma$ spectra of four different sources}
+The energy calibration of the MCA was accomplished using the known decay 
+schemes\cite{notice_generale} of four radioactive sources: 
+\cesium, \cobalt, \lead and \hafnium \footnotemark.
+\footnotetext{Other sources were attempted (Sodium 22 and Cobalt 60), 
+but their low count made for very long times to get reasonable spectrum.\hl{Enlever?}}
+Figure \ref{fig:calibration_energy} shows the linear fit 
+and the resulting calibration factor, relating the channel number 
+and the energy $E$ expressed in keV.
+%
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/calibration_energy.pdf}
-    \caption{Energy calibration of the spectrometer: known values of energies versus the channel in which they were registered by the MCA. \hl{Mieux écrire}}
+    \caption{Energy calibration of the spectrometer: known values of energies 
+    versus the channel to which they were assigned by the MCA.}
     \label{fig:calibration_energy}
 \end{figure}
 
-Once the calibration was completed, it was possible to get gamma spectra of the four sources, with energies instead of bins.
-See Figure \ref{fig:gamma_spectra}. Also other peaks were identified from decay schemes:
-contribution from Compton is clearly visible here and there; collimation Lead.
+Once the calibration was performed, it was possible to draw the $\gamma$ spectra 
+of the four sources, as depicted in Figure \ref{fig:gamma_spectra}.
+Comparing with the decay schemes, their $\gamma$ peaks were identified,
+as well as the other contributions detailed in Section ????:
+the parasite contributions coming from the lead used to collimate 
+the $\gamma$ rays (marked Pb), visible in the \cesium and \hafnium spectra, 
+and the Compton edge, which appears most notably in the \cesium 
+and the \lead spectra.
+As expected (or detailed in Section ????), the $\gamma_2$ and $\gamma_3$ peaks of \cobalt are not distinguishable, due to blabla.
+Also, only one $\gamma$ peak was detected for \hafnium, DETAIL.
+
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.495\textwidth}
@@ -45,14 +48,25 @@ contribution from Compton is clearly visible here and there; collimation Lead.
         \includegraphics[scale=1]{figures/hf181_spectrum.pdf}
         \caption{}
     \end{subfigure}
-    \caption{Gamma spectra of (a) $^{137}$Cs, (b) $^{57}$Co, (c) $^{210}$Pb, (d) $^{181}$Hf.}
+    \caption{Gamma spectra of (a) $^{137}$Cs, (b) $^{57}$Co, (c) $^{210}$Pb, (d) $^{181}$Hf. \hl{METTRE LIGNE HORIZONTALE AU COMPTON PLATEAU}}
     \label{fig:gamma_spectra}
 \end{figure}
 
 
 \subsection{Statistics}
-It was discussed in Section ?? that decay follows a Poisson distribution, but as the mean gets higher the distribution tends to a gaussian one.
-Two sets of measures were taken of the frequency of blabla.
+It was discussed in Section ?? that the number of desintegrations detected 
+in a fixed interval of time follows a Poisson distribution, which tends to 
+a gaussian distribution for a high mean.
+To test these assumptions, two sets of measures were taken, using the MCA in MCS mode: 
+the first ("lowmean") with a dwell time of $3$ ms, which gave an average of $m = 2.27$ desintegrations per interval, 
+and the second ("highmean") with a dwell time of $300$ ms, with an average of $m = 228.10$.
+Both were compared through Pearson's $\chi^2$ test 
+with a Poisson distribution of parameter $\lambda = m$ 
+and a gaussian distribution of mean $m$ and standard variation $\sqrt{m}$.
+These test distributions are depicted in Figure \ref{fig:statistical_tests} with
+the respective data sets
+and the results of the statistical tests are summarised in Table \ref{tab:statistical_tests}.
+%
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.495\textwidth}
@@ -73,7 +87,7 @@ Two sets of measures were taken of the frequency of blabla.
         \includegraphics[scale=1]{figures/highmean_gaussian.pdf}
         \caption{}
     \end{subfigure}
-    \caption{Results of the measurements of blabla and test distributions}
+    \caption{Frequencies of the number of desintegrations detected in a fixed interval of time, compared with test distributions: (a) lowmean and Poisson, (b) lowmean and gaussian, (c) highmean and Poisson, (d) highmean and gaussian \hl{Plus formel}}
     \label{fig:statistical_tests}
 \end{figure}
 
@@ -81,7 +95,7 @@ Two sets of measures were taken of the frequency of blabla.
     \centering
     \begin{tabular}{lllllll}
         \hline
-        Measure/dataset & Mean & Test distribution & $\nu$ & $p$-value & Result \\
+        Data set & Mean & Test distribution & $\nu$ (or dof?) & $p$-value & Result \\
         \hline
         \multirow{2}{*}{Low mean} & \multirow{2}{*}{2.27} & Poisson & 8 & 0.86 & Accepted\\
         & & Gaussian & 7 & $5.7 \times 10^{-117}$ & Rejected \\
@@ -89,7 +103,7 @@ Two sets of measures were taken of the frequency of blabla.
         & & Gaussian & 90 & 0.26 & Accepted\\
         \hline
     \end{tabular}
-    \caption{[Characteristics] and results of the statistical tests carried out on two sets of datapoints? of different mean.}
+    \caption{Results of the statistical tests on the distribution of the number of desintegrations detected in a fixed interval of time, carried out on two data sets of different mean.\hl{rendre plus clair} }
     \label{tab:statistical_tests}
 \end{table}
 
