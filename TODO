@@ -1,7 +1,8 @@
 == À écrire ==
-- RELIRE: Principe des coincidences et theorie liée aux dernieres partie de l'éxperience
-- Tous les résultats
-- Reformuler les titres de section
+- Résultats à partir de Activity
+- Discussion
+- Introduction
+- Conclusion
 
 == Consistency dans les noms des variables ==
 - Lettre pour les degres de liberté des test statistiques.
@@ -11,6 +12,7 @@
 - Mettre x-axis des plots lowmean en affichage entier? 
 - Rename "Bins" -> "Channel"
 - Add uncertainty to bar chart lowmean highmean
+- Est-ce que le plot de calibration du TAC va dans le rapport?
 
 == Schéma de désintegration du Hafnium? ==
 
