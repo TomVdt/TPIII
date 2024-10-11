@@ -69,7 +69,6 @@ The means of the fits are then used as the channels corresponding to the peaks a
 
 %In the experimental setup, the energy of a \(\gamma\) is proportional to the amplitude of the resulting impulse outputed from the scintillator. Using a multi-channel analyser (MCA), the ampitude of the impulse is assigned to a channel. A measured peak can be fitted locally with a Gaussian. The mean of this fit is then used as the channel of the peak. A linear relationship between the channel and associated energy can be found using the known decay schemes of different radiactive source.
 
-
 \subsection{The $\gamma$ spectrum}
 % Ligne non nécessaire: The spectrum output from the MCA will not only show the energies associated with $\gamma$ radiation.
 When $\gamma$ rays enter the scintillator, they can interact in two possible ways: through photoelectric effect or through Compton scattering.
@@ -88,9 +87,9 @@ There are a few of phenomena, though, that will modify the expected appearance o
     \item The $\gamma$ rays scattered by Compton effect can interact again with the scintillator.
     \item The rearrangement X-ray emitted following photoelectric effect, whose energy is usually reabsorbed in the scintillator, can escape from the detector.
     The peak related to this phenomenon is called escape peak and corresponds to energy $E = E_{\gamma} - E_X$
-    \item There could be parasite contributions from photons scattered in the material entouring the scintillator. 
+    \item There could be parasite contributions from photons scattered in the material surrounding the scintillator. 
     These can be removed with appropriate collimation.
-    \item The scintillator has a finite resolution in energy, such that all energy peaks in the $\gamma$ spectrum form gaussian bells rather than discrete lines.
+    \item The scintillator has a finite resolution in energy, such that all energy peaks in the $\gamma$ spectrum form gaussian curves rather than discrete lines.
 \end{itemize}
 
 
@@ -114,6 +113,7 @@ Two sets of samples will be made \hl{will be taken during this experiment?}, onc
 These datasets will respectfully be denoted as "low mean" and "high mean" \hl{emph?}, and will both be compared to a Poisson and Gaussian distribution using the Pearson \(\chi^2\) test. 
 Pearson's \(\chi^2\) method for testing a dataset to a given distribution is described in Appendix \ref{sec:pearson}. 
 
+TODO: add talk about highmean poisson ~ gaussian, remove useless Xi talk
 
 \subsection{Attenuation of photons in matter}
 The interactions of the photons with matter causes an attenuation of $\gamma$ radiation, i.e. a progressive reduction in the number of photons, without a loss of their individual energy.
@@ -139,8 +139,8 @@ where, if $\rho$ is the density of the material, $\mu_d = \mu / \rho$ is its mas
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/coincidences.png}
-    \caption{Experimental setup for coincidence detection. \cite{notice_VI} \hl{Est-ce qu'il faut traduire en anglais?}}
+    \includegraphics[width=0.8\textwidth]{figures/coincidence_schematic.pdf}
+    \caption{Experimental setup for coincidence detection \cite{notice_VI}}
     \label{fig:setup_coincidences}
 \end{figure}
 To detect desintegrations that cascade from another excited state, the setup shown in \hbox{Fig. \ref{fig:setup_coincidences}} is used. 
@@ -161,7 +161,7 @@ Due to the random nature of radioactivity, there are multiple ways in which coin
     \item Scattered: due to Compton scattering, a particle detected in one detector might send a particle back to the second detector.
 \end{itemize}
 
-Due to the different types of coincidences, the \hl{total} mesured coincidence rate is
+Due to the different types of coincidences, the \hl{total} measured coincidence rate is
 \begin{equation}
     m_{12} = m_t + m_c + m_a
 \end{equation}
@@ -204,11 +204,14 @@ Solving for the activity \(A\) gives
     \label{fig:cobalt_decay}
 \end{figure}
 
-nope, trop fatigué j'écrit et j'efface 5 fois de suite. TODO: demain
+Due to the proximity of the \(\gamma_2\) and \(\gamma_3\) peaks for \cobalt, at 122.1 keV and 136.5 keV respectively as shown in Figure \ref{fig:cobalt_decay}, and the limited resolution of the detectors, the energy peaks for these desintegrations cannot be distinguished. In order to obtain a spectrum containing only the \(\gamma_3\) peak (\(S_{\gamma_3}\)), a coincidence setup as shown in Figure \ref{fig:setup_coincidences} is used. An impulse from scintillator 2, measuring only \(\gamma_2\) and \(\gamma_3\), is only recorded when a \(\gamma_1\) is detected in scintillator 1, within the time resolution \(2\theta\). The crystal of scintillator 1 has a specific thickness as to only measure \(\gamma_1\). The obtained spectrum is thus only composed of \(\gamma_2\). \(S_{\gamma_3}\) can then be obtained by substracting \(S_{\gamma_2}\) from \(S_{^{57}\textrm{Co}}\). Due to the branching ratio of about \(80\%\) \(\gamma_2\) and \(20\%\) \(\gamma_3\), a correction of \(0.8 S_{\gamma_2}\) must first be applied \cite{notice_VI}. This yields \(S_{\gamma_3} = S_{^{57}\textrm{Co}} - S_{\gamma_2}\).
 
-The energy resolution of this detector sucks.
-Black magic, in the form of coincidence selection, is therefore required.
-
-A spectrum of \cobalt containing only the \(\gamma_1\) and \(\gamma_2\) peaks. 
+TODO: revoir la formulation, dire que "S gamma3" contient aussi gamma 1?
 
 \subsection{Half life of the 14.4 keV transition state}
+
+TODO: review draft
+
+To measure the half life of the intermediary excited 14.4 keV state of \(^{57}\textrm{Fe}\), coming from the successive desintegration of \cobalt through electron capture and the \(\gamma_2\) decay path, the time between the detection of a \(\gamma_2\) and \(\gamma_1\) is measured. A time to amplitude converter (TAC) is used to convert the time difference to an amplitude which can be measured by the MCA. The impulse from scintillator 2 (detecting \(\gamma_2\) and \(\gamma_3\)) is routed to the "start" input of the TAC, and a delayed impulse from scintillator 1, measuring \(\gamma_1\), is used as the "stop" input. The delay has to be introduced such that the impulses don't exceed the range of the TAC.
+
+A prerequisite callibration is needed to map the channel measured by the MCA to the corresponding time. This is achieved by routing the output of one detector to the input of the TAC and to a delay gate which then goes to the TAC. Varying the delay on the delay gate gives a linear relationship between the channel and the time delay.
