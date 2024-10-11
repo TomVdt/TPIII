@@ -21,23 +21,28 @@ Decay occurs in three main kinds, each associated with a radiation of different 
     and though they have the least ionising power of the three, they are the most penetrating, requiring lead for effective shielding.
 \end{itemize}
 
+TODO: add small description of \cobalt decay?
+Overdetailed description of EC?
+Necessaire de mettre l'ionisation / stopped by \_\_\_?
+
+
 \subsection{Scintillation detectors}
 \label{sec:scinitillators}
 
 Scintillation detectors are based on the properties of scintillators, materials that emit photons in the visible spectrum after the passage of a charged particle.
-The scintillators used for particle detection are primarily [split] between two types: organic (or plastic), in which the photon emission has molecular origin, 
+The scintillators used for particle detection are primarily \hl{[split] between} \hl{of} two types: organic (or plastic), in which the photon emission has molecular origin, 
 and inorganic (or crystalline), crystals which are doped with activators that can first be excited by electron-hole pairs 
 produced by the charged particle passing in the crystal lattice\footnotemark\ and then de-excited by photon emission\cite{intro_nuclear_particle_physics}.
 The scintillator used in this experiment, a NaI crystal, belongs to this second class.
 
-Because of the low intensity of the emitted light, the photon signal must be amplified in order to be properly counted.
-This amplification is commonly achieved through the use of a photomultiplier tube (PMT), a device which converts the photon signal in a detectable electric pulse.
-It consists of a vacuum chamber containing several components, pictured in Fig. \ref{fig:photomultiplier}: 
+Because of the low intensity of the emitted light, the photon signal must be amplified in order to be properly counted \hl{measured/detected}.
+This amplification is commonly achieved through the use of a photomultiplier tube (PMT), a device which converts the photon signal in\hl{to} a detectable electric pulse.
+It consists of a vacuum chamber containing several components, pictured in \hl{Utiliser Fig. ou Figure?} Fig. \ref{fig:photomultiplier}: 
 after passing a transparent entry window, adjacent to the scintillator, the scintillation photons first encounter a photocatode, 
 where they produce an electron by photoelectric effect with a certain probability $\varepsilon$ (the quantum efficacy).
-Next, a series of dynodes accellerate the electrons and multiply them through secondary emission.
+Next, a series of dynodes accelerate the electrons and multiply them through secondary emission.
 The anode located at the end of the chamber then allows to read the amplified electric signal, 
-which results linearly proportional to the amount of light incident on the photocathode.
+which results \hl{Il manque un mot je crois} linearly proportional to the amount of light incident on the photocathode.
 The voltage applied between cathode and anode determines the value of the total gain $G$.
 \footnotetext{Ici je pourrai écrire "produced by the passing charged particle" sans specifier, pour rendre la phrase un peu plus legere. Or "Excited by th epassing charged particles through [the production of ]electron-hole pairs}
 %
@@ -51,12 +56,12 @@ The voltage applied between cathode and anode determines the value of the total 
 The output of the PMT is therefore an electric signal proportional to the energy deposited by the photon in the scintillator.
 Several electronics instruments are then necessary to obtain the $\gamma$ ray energy spectrum of the studied source, 
 showing the intensity of $\gamma$ radiation versus the energy of each photon.
-The signal first passes an amplifier and band analyser, which allows to accurately select the window of interest of signal amplitudes and to generate digital signals used to trigger data acquisition of later\footnote{following?} instruments.
-Delay modules can be used to correct any mismatch between the analog and digital signals\footnotemark.
-A counter keeps count \hl{j'attend mon prix Nobel pour la literature}.
-Finally, a Multi-Channel Analyser (MCA) digitalises the signal and sends the information to a computer, operating in one of two modes:
+The signal first passes an amplifier and band analyser, which allows to accurately select the window of interest of signal amplitudes and to generate digital signals used to trigger data acquisition of later\footnote{following?} \hl{other/further down the chain} instruments.
+Delay modules can be used to correct any mismatch between the analog and digital signals\footnotemark \hl{can be used to align the amplitude peak and digital signal}.
+A counter keeps count \hl{records the impulses from the scintillators} \hl{j'attend mon prix Nobel pour la literature}.
+Finally, a Multi-Channel Analyser (MCA) digitalises the signal and sends the information to a computer, operating in one of two modes: \hl{fin de phrase?}
 In Pulse Height Analysis (PHA) mode the input pulses are
-sorted into bins (channels) according to their amplitude, while in Multi-Channel Scaling (MCS) mode they are sorted according to the time when they arrive, subdivided in intervals of a given time (dwell time).
+sorted into bins (channels) according to their amplitude, while in Multi-Channel Scaling (MCS) mode they are sorted according to the time when \hl{at which} they arrive, subdivided in intervals of a given time (dwell time).
 \hl{PHA will be used for spectrum acquisition, MCS will be used for statistics}
 
 \footnotetext{Alternativement:
@@ -71,7 +76,7 @@ other than that the relationship is linear:
 the channels uniformly subdivide the total range of input values.
 It is then necessary to calibrate the experimental setup using known decay schemes.
 Once the gamma spectra of the chosen sources are recorded, peaks associated with known energies can be fitted locally with gaussian curves.
-The means of the fits are then used as the channels corresponding to the peaks and the linear relationship between energy and channels can be obtained. \hl{Rendre un peu plus clean, mais pas plus long.}
+The means of the fits \hl{gaussians} are then used as the channels corresponding to the peaks, following which a linear relationship between energy and channels can be obtained. \hl{Rendre un peu plus clean, mais pas plus long.}
 
 %In the experimental setup, the energy of a \(\gamma\) is proportional to the amplitude of the resulting impulse outputed from the scintillator. Using a multi-channel analyser (MCA), the ampitude of the impulse is assigned to a channel. A measured peak can be fitted locally with a Gaussian. The mean of this fit is then used as the channel of the peak. A linear relationship between the channel and associated energy can be found using the known decay schemes of different radiactive source.
 
@@ -79,7 +84,7 @@ The means of the fits are then used as the channels corresponding to the peaks a
 \label{sec:spectrum}
 
 % Ligne non nécessaire: The spectrum output from the MCA will not only show the energies associated with $\gamma$ radiation.
-When $\gamma$ rays enter the scintillator, they can interact in two possible ways: through photoelectric effect or through Compton scattering.
+When $\gamma$ rays enter the scintillator, they can interact in two possible ways: through \hl{the} photoelectric effect or through Compton scattering.
 Any photon converted to an electron by photoelectric effect generally deposits its entire energy within the scintillator, such that the intensity of the subsequent scintillation light is proportional to the energy of the original photon.
 In the case of Compton scattering, instead, the photons do not deposit all of their energy and, once scattered, can produce new interactions.
 A third way\footnote{option, possibility?} would be through $e^+ e^-$ pair production, which is however very unlikely for low-energy photons.
@@ -88,7 +93,7 @@ The energy deposited in the crystal will therefore have two kinds of contributio
 First, the full energies of any of the photons that convert into photoelectrons, and 
 second, a continuous spectrum of energies related to Compton scattering, 
 whose values depend on the scattering angle of the photon.
-In the case of full backscatter the highest possible energy is deposited
+In the case of full backscatter, the highest possible energy is deposited
 and the corresponding peak in the spectrum is referred to as the Compton edge.
 There are a few of phenomena, though, that will modify the expected appearance of the spectrum:
 \begin{itemize}
@@ -97,9 +102,8 @@ There are a few of phenomena, though, that will modify the expected appearance o
     The peak related to this phenomenon is called escape peak and corresponds to energy $E = E_{\gamma} - E_X$
     \item There could be parasite contributions from photons scattered in the material surrounding the scintillator. 
     These can be removed with appropriate collimation.
-    \item The scintillator has a finite resolution in energy, such that all energy peaks in the $\gamma$ spectrum form gaussian curves rather than discrete lines.
+    \item The scintillator has a finite \hl{energy} resolution in energy, such that all energy peaks in the $\gamma$ spectrum form gaussian curves rather than discrete lines.
 \end{itemize}
-
 
 \subsection{Statistical model of radioactive decay}
 \label{sec:statistics}
@@ -115,14 +119,7 @@ There are a few of phenomena, though, that will modify the expected appearance o
 
 The decay of an unstable nucleus is a random process that is equally as likely to occur at any time. 
 In a large sample of \(N\) identical radioactive nuclei, each atom will decay independently from eachother. 
-The number of desintegrations in a given time \(\Delta t\) is thus modeled using a Poisson distribution. 
-Let us denote \(X_i \sim \operatorname{Pois}(\lambda)\) each sample of the distribution for \mbox{\(i = 1, \dots, n\)}.
-\hl{Et après on utilise pas ces samples dans le texte?} 
-Two sets of samples will be made \hl{will be taken during this experiment?}, once for a short time interval and once for a longer time interval, yielding more counts per sample. \hl{Pas clair, mieux expliquer ce que c'est le time interval}
-These datasets will respectfully be denoted as "low mean" and "high mean" \hl{emph?}, and will both be compared to a Poisson and Gaussian distribution using the Pearson \(\chi^2\) test. 
-Pearson's \(\chi^2\) method for testing a dataset to a given distribution is described in Appendix \ref{sec:pearson}. 
-
-TODO: add talk about highmean poisson ~ gaussian, remove useless Xi talk
+The number of desintegrations in a given time \(\Delta t\) is thus modeled using a Poisson distribution. Two sets of samples will be taken during this experiment, using the MCA in MCS mode, once for a short dwell time and once for a longer dwell time, yielding more counts per sample. These datasets will respectfully be denoted as "low mean" and "high mean", and will both be compared to a Poisson and Gaussian distribution using the Pearson \(\chi^2\) test. Due to the nature of a Poisson distribution, it expected that the higher mean Poisson distribution will resemble a Gaussian of same mean and variance. Pearson's \(\chi^2\) method for testing a dataset to a given distribution is described in Appendix \ref{sec:pearson}. 
 
 \subsection{Attenuation of photons in matter}
 \label{sec:attenuation}
@@ -134,8 +131,8 @@ The change in intensity $dI$ in an infinitesimal thickness of material $dx$ can 
 \begin{equation}
     dI = I(x + dx) - I(x) = -\mu(E_{\gamma}, Z) I(x) dx
 \end{equation}
-where the negative sign indicates that the intensity decreases with travel.
-Integrating the previous expression yields the attenuation law
+where the negative sign indicates that the intensity decreases with travel. \hl{Expliquer Egamma et Z + unités de mu et I}  % \si{\per\meter}
+Integrating \hl{Solving the differential equation?} the previous expression yields the attenuation law
 \begin{equation} \label{eq:attenuation_law}
     I(x) = I_0 e^{-\mu(E_{\gamma}, Z) \, x}
 \end{equation}
