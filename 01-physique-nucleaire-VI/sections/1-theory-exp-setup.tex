@@ -1,5 +1,7 @@
 \section{Theory and experimental setup}
 \subsection{Radioactive decay}
+\label{sec:radioactivity}
+
 Radioactive decay is the process by which an unstable atom transitions to a more stable form through the emission of energy by radiation.
 Decay occurs in three main kinds, each associated with a radiation of different nature and properties: $\alpha$-decay, $\beta$-decay and $\gamma$-decay\footnote{Sans le tiret?}.
 \begin{itemize}
@@ -20,6 +22,8 @@ Decay occurs in three main kinds, each associated with a radiation of different 
 \end{itemize}
 
 \subsection{Scintillation detectors}
+\label{sec:scinitillators}
+
 Scintillation detectors are based on the properties of scintillators, materials that emit photons in the visible spectrum after the passage of a charged particle.
 The scintillators used for particle detection are primarily [split] between two types: organic (or plastic), in which the photon emission has molecular origin, 
 and inorganic (or crystalline), crystals which are doped with activators that can first be excited by electron-hole pairs 
@@ -59,6 +63,8 @@ sorted into bins (channels) according to their amplitude, while in Multi-Channel
 Delay gates can be used to delay \hl{(duh)} the analog signal in order to better match the digital coming from the discriminateur}
 
 \subsubsection{Energy calibration}
+\label{sec:energy_calibration}
+
 The MCA assigns all input signals to different channels based on their amplitudes, 
 but no information is a priori known about which values of energy correspond to a certain channel,
 other than that the relationship is linear: 
@@ -70,6 +76,8 @@ The means of the fits are then used as the channels corresponding to the peaks a
 %In the experimental setup, the energy of a \(\gamma\) is proportional to the amplitude of the resulting impulse outputed from the scintillator. Using a multi-channel analyser (MCA), the ampitude of the impulse is assigned to a channel. A measured peak can be fitted locally with a Gaussian. The mean of this fit is then used as the channel of the peak. A linear relationship between the channel and associated energy can be found using the known decay schemes of different radiactive source.
 
 \subsection{The $\gamma$ spectrum}
+\label{sec:spectrum}
+
 % Ligne non nécessaire: The spectrum output from the MCA will not only show the energies associated with $\gamma$ radiation.
 When $\gamma$ rays enter the scintillator, they can interact in two possible ways: through photoelectric effect or through Compton scattering.
 Any photon converted to an electron by photoelectric effect generally deposits its entire energy within the scintillator, such that the intensity of the subsequent scintillation light is proportional to the energy of the original photon.
@@ -94,6 +102,7 @@ There are a few of phenomena, though, that will modify the expected appearance o
 
 
 \subsection{Statistical model of radioactive decay}
+\label{sec:statistics}
 
 % Radioactive decay of an unstable nucleus is equally likely to decay at any instant. This means that the probability of desintegration of a single nucleus for a small time \(\dd t\) is \(\lambda \dd t\). For a sample of \(N\) radioactive atoms, the amount of nuclei \hl{j'aime ce mot} that decay during \(\dd t\) is \(-\dd N = N \lambda \dd t\).
 % Solving this differential equation yields
@@ -116,6 +125,8 @@ Pearson's \(\chi^2\) method for testing a dataset to a given distribution is des
 TODO: add talk about highmean poisson ~ gaussian, remove useless Xi talk
 
 \subsection{Attenuation of photons in matter}
+\label{sec:attenuation}
+
 The interactions of the photons with matter causes an attenuation of $\gamma$ radiation, i.e. a progressive reduction in the number of photons, without a loss of their individual energy.
 This phenomenon follows an exponential law and can be described in terms of a linear attenuation coefficient $\mu$, which depends on the energy of the incident light and the nature of the material.
 In fact, let $I(x)$ be the intensity of photons at any point $x$ in the medium.
@@ -135,7 +146,8 @@ The law can also be put in a different form:
 \end{equation}
 where, if $\rho$ is the density of the material, $\mu_d = \mu / \rho$ is its mass attenuation coefficient and $d = \rho \cdot x$ its surface density.
 
-\subsubsection{Coincidences}
+\subsection{Coincidences}
+\label{sec:coincidences}
 
 \begin{figure}[h]
     \centering
@@ -196,6 +208,7 @@ Solving for the activity \(A\) gives
 \end{equation}
 
 \subsection{Separating \(\gamma_2\) and \(\gamma_3\) in the spectrum of \cobalt TODO: reformuler}
+\label{sec:seperation}
 
 \begin{figure}[htbp]
     \centering
@@ -204,14 +217,15 @@ Solving for the activity \(A\) gives
     \label{fig:cobalt_decay}
 \end{figure}
 
-Due to the proximity of the \(\gamma_2\) and \(\gamma_3\) peaks for \cobalt, at 122.1 keV and 136.5 keV respectively as shown in Figure \ref{fig:cobalt_decay}, and the limited resolution of the detectors, the energy peaks for these desintegrations cannot be distinguished. In order to obtain a spectrum containing only the \(\gamma_3\) peak (\(S_{\gamma_3}\)), a coincidence setup as shown in Figure \ref{fig:setup_coincidences} is used. An impulse from scintillator 2, measuring only \(\gamma_2\) and \(\gamma_3\), is only recorded when a \(\gamma_1\) is detected in scintillator 1, within the time resolution \(2\theta\). The crystal of scintillator 1 has a specific thickness as to only measure \(\gamma_1\). The obtained spectrum is thus only composed of \(\gamma_2\). \(S_{\gamma_3}\) can then be obtained by substracting \(S_{\gamma_2}\) from \(S_{^{57}\textrm{Co}}\). Due to the branching ratio of about \(80\%\) \(\gamma_2\) and \(20\%\) \(\gamma_3\), a correction of \(0.8 S_{\gamma_2}\) must first be applied \cite{notice_VI}. This yields \(S_{\gamma_3} = S_{^{57}\textrm{Co}} - S_{\gamma_2}\).
+Due to the proximity of the \(\gamma_2\) and \(\gamma_3\) peaks for \cobalt, at 122.1 keV and 136.5 keV respectively as shown in Figure \ref{fig:cobalt_decay}, and the limited resolution of the detectors, the energy peaks for these desintegrations cannot be distinguished. In order to obtain a spectrum containing only the \(\gamma_3\) peak (which will be referred to as \(S_{\gamma_3}\)), a coincidence setup as shown in Figure \ref{fig:setup_coincidences} is used. An impulse from scintillator 2, measuring only \(\gamma_2\) and \(\gamma_3\), is only recorded when a \(\gamma_1\) is detected in scintillator 1, within the time resolution \(2\theta\). The crystal of scintillator 1 has a specific thickness as to only measure \(\gamma_1\). The obtained spectrum is thus only composed of \(\gamma_2\). \(S_{\gamma_3}\) can then be obtained by substracting \(S_{\gamma_2}\) from the total spectrum. Due to the branching ratio of about \(80\%\) \(\gamma_2\) and \(20\%\) \(\gamma_3\), a correction of \(0.8 S_{\gamma_2}\) must first be applied \cite{notice_VI}.
 
-TODO: revoir la formulation, dire que "S gamma3" contient aussi gamma 1?
+TODO: yeet S sub shit
 
 \subsection{Half life of the 14.4 keV transition state}
+\label{sec:half_life}
 
 TODO: review draft
 
-To measure the half life of the intermediary excited 14.4 keV state of \(^{57}\textrm{Fe}\), coming from the successive desintegration of \cobalt through electron capture and the \(\gamma_2\) decay path, the time between the detection of a \(\gamma_2\) and \(\gamma_1\) is measured. A time to amplitude converter (TAC) is used to convert the time difference to an amplitude which can be measured by the MCA. The impulse from scintillator 2 (detecting \(\gamma_2\) and \(\gamma_3\)) is routed to the "start" input of the TAC, and a delayed impulse from scintillator 1, measuring \(\gamma_1\), is used as the "stop" input. The delay has to be introduced such that the impulses don't exceed the range of the TAC.
+To measure the half life of the intermediary excited 14.4 keV state of \(^{57}\textrm{Fe}\), coming from the successive desintegration of \cobalt through electron capture and the \(\gamma_2\) decay, the time between the detection of a \(\gamma_2\) and \(\gamma_1\) ray is measured. A Time to Amplitude Converter (TAC) is used to convert the time difference to an amplitude which can be measured by the MCA. The impulse from scintillator 2 (detecting \(\gamma_2\) and \(\gamma_3\)) is routed to the "start" input of the TAC, and a delayed impulse from scintillator 1, measuring \(\gamma_1\), is used as the "stop" input. The delay has to be introduced such that the impulses don't exceed the range of the TAC.
 
-A prerequisite callibration is needed to map the channel measured by the MCA to the corresponding time. This is achieved by routing the output of one detector to the input of the TAC and to a delay gate which then goes to the TAC. Varying the delay on the delay gate gives a linear relationship between the channel and the time delay.
+A prerequisite callibration is required to be needed to map the channel measured by the MCA to the corresponding time. This is achieved by spliting the output of one detector to the input of the TAC and delaying one of the signals using a delay gate, before going to the TAC. Varying the delay on the delay gate gives a linear relationship between the channel and the time interval.
