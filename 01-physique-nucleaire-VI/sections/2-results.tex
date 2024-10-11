@@ -20,12 +20,12 @@ and the energy $E$ expressed in keV.
 Once the calibration was performed, it was possible to draw the $\gamma$ spectra 
 of the four sources, as depicted in Figure \ref{fig:gamma_spectra}.
 Comparing with the decay schemes, their $\gamma$ peaks were identified,
-as well as the other contributions detailed in Section ????:
+as well as the other contributions detailed in Section \ref{sec:spectrum}
 the parasite contributions coming from the lead used to collimate 
 the $\gamma$ rays (marked Pb), visible in the \cesium and \hafnium spectra, 
 and the Compton edge, which appears most notably in the \cesium 
 and the \lead spectra.
-As expected (or detailed in Section ????), the $\gamma_2$ and $\gamma_3$ peaks of \cobalt are not distinguishable, due to blabla.
+As expected (or detailed in Section \ref{sec:separation}), the $\gamma_2$ and $\gamma_3$ peaks of \cobalt are not distinguishable, due to blabla.
 Also, only one $\gamma$ peak was detected for \hafnium, DETAIL.
 
 \begin{figure}[htbp]
@@ -54,7 +54,7 @@ Also, only one $\gamma$ peak was detected for \hafnium, DETAIL.
 
 
 \subsection{Statistics}
-It was discussed in Section ?? that the number of desintegrations detected 
+It was discussed in Section \ref{sec:statistics} that the number of desintegrations detected 
 in a fixed interval of time follows a Poisson distribution, which tends to 
 a gaussian distribution for a high mean.
 To test these assumptions, two sets of measures were taken, using the MCA in MCS mode: 
@@ -107,12 +107,19 @@ and the results of the statistical tests are summarised in Table \ref{tab:statis
     \label{tab:statistical_tests}
 \end{table}
 
-\paragraph{Attenuation in matter}
-[We chose Cesium because of its high count rate].
-
-Confirmed exponential nature of the attenuation.
-The linear attenuation coefficient was found to be $\mu = (0.20 \pm 0.01)$ \unit{\per\cm} for Aluminium
-and $\mu = (1.08 \pm 0.03)$ \unit{\per\cm} for Lead.
+\subsection{Attenuation in matter}
+The study of the attenuation of $\gamma$ rays in matter was conducted using 
+a sample of \cesium, a source more suited to the role than 
+the others which were previously studied due to its higher activity\footnotemark.
+Measures of the intensity of the radiation were taken for
+different widths of aluminium and lead shielding applied 
+between the source and the detector.
+Figure \ref{fig:attenuation_coefficient} depicts the results obtained with 
+the two materials:
+the attenuation is exponential in nature, as described 
+by Eq.\eqref{eq:attenuation_law}, and more effective using lead than aluminum.
+The linear attenuation coefficient of each material was obtained by linear regression, yielding \mbox{$\mu = (0.20 \pm 0.01)$ \unit{\per\cm}} for aluminium
+and \mbox{$\mu = (1.08 \pm 0.03)$ \unit{\per\cm}} for lead.\hl{$\mu_{\mathrm{Pb}}$?}
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/attenuation_coefficient.pdf}
@@ -121,7 +128,8 @@ and $\mu = (1.08 \pm 0.03)$ \unit{\per\cm} for Lead.
              (1\% on the intensity and $1$ $\mu$m on the thickness of the material).}
     \label{fig:attenuation_coefficient}
 \end{figure}
-
+\footnotetext{J'ai comme l'impression que je peux écrire une phrase meilleure,
+je vais probablement avoir l'idée pendant que je nage ou sous la douche.}
 
 \paragraph{Resolution time of the coincidence selector}
 \begin{figure}[htbp]
