@@ -1,4 +1,7 @@
 == À écrire ==
+- Mettre plot de calibration énergie en Annexe
+- Paragraphe initial sur decay Co-57
+- Schémas de désintegration en Annexe? Faut trouver le Hafniummmm
 - Résultats à partir de Activity
 - Discussion
 - Introduction
@@ -12,7 +15,6 @@
 - Mettre x-axis des plots lowmean en affichage entier? 
 - Rename "Bins" -> "Channel"
 - Add uncertainty to bar chart lowmean highmean
-- Est-ce que le plot de calibration du TAC va dans le rapport?
 
 == Schéma de désintegration du Hafnium? ==
 
