@@ -12,9 +12,9 @@
     => Utiliser \nu
 
 == Plots à faire == 
-- Mettre x-axis des plots lowmean en affichage entier? 
-- Rename "Bins" -> "Channel"
-- Add uncertainty to bar chart lowmean highmean
+- consistency entre les plots de calibration
+- Dimensions plot 2theta
+- Ameliorer plot half-life
 
 == Schéma de désintegration du Hafnium? ==
 
