@@ -21,16 +21,6 @@ Decay occurs in three main kinds, each associated with a radiation of different 
     and though they have the least ionising power of the three, they are the most penetrating, requiring lead for effective shielding.
 \end{itemize}
 
-TODO: add small description of \cobalt decay?
-Overdetailed description of EC?
-Necessaire de mettre l'ionisation / stopped by \_\_\_?
-
-ANSWER: bonne idée la description du \cobalt, de plus que ça permet 
-de donner déja en Annexe le schéma.
-EC peut etre pas si overdetailed que ça si tu considère que le \cobalt se desintegre par EC.
-Absolument d'accord que ionisation et attenuation pas nécessaires, ils vont être
-les premieres parties à partir lorsqu'on a un rapport de 17 pages.
-
 
 \subsection{Scintillation detectors}
 \label{sec:scinitillators}
@@ -233,13 +223,17 @@ Solving for the activity \(A\) gives
 
 Due to the proximity of the \(\gamma_2\) and \(\gamma_3\) peaks for \cobalt, at 122.1 keV and 136.5 keV respectively as shown in \autoref{fig:cobalt_decay}, and the limited resolution of the detectors, the energy peaks for these desintegrations cannot be distinguished. In order to obtain a spectrum containing only the \(\gamma_3\) peak (which will be referred to as \(S_{\gamma_3}\)), a coincidence setup as shown in \autoref{fig:setup_coincidences} is used. An impulse from scintillator 2, measuring only \(\gamma_2\) and \(\gamma_3\), is only recorded when a \(\gamma_1\) is detected in scintillator 1, within the time resolution \(2\theta\). The crystal of scintillator 1 has a specific thickness as to only measure \(\gamma_1\). The obtained spectrum is thus only composed of \(\gamma_2\). \(S_{\gamma_3}\) can then be obtained by substracting \(S_{\gamma_2}\) from the total spectrum. Due to the branching ratio of about \(80\%\) \(\gamma_2\) and \(20\%\) \(\gamma_3\), a correction of \(0.8 S_{\gamma_2}\) must first be applied \cite{notice_VI}.
 
-TODO: yeet S sub shit
 
 \subsection{Half-life of the 14.4 keV transition state}
 \label{sec:half_life}
 
-TODO: review draft
-
-To measure the half-life of the intermediary excited 14.4 keV state of \(^{57}\textrm{Fe}\), coming from the successive desintegration of \cobalt through electron capture and the \(\gamma_2\) decay, the time between the detection of a \(\gamma_2\) and \(\gamma_1\) ray is measured. A Time to Amplitude Converter (TAC) is used to convert the time difference to an amplitude which can be measured by the MCA. The impulse from scintillator 2 (detecting \(\gamma_2\) and \(\gamma_3\)) is routed to the "start" input of the TAC, and a delayed impulse from scintillator 1, measuring \(\gamma_1\), is used as the "stop" input. The delay has to be introduced such that the impulses don't exceed the range of the TAC.
+To measure the half-life $t_{1/2}$ of the intermediary excited 14.4 keV state of \(^{57}\textrm{Fe}\), coming from the successive desintegration of \cobalt through electron capture and the \(\gamma_2\) decay, the time interval $\Delta t$ between the detection of a \(\gamma_2\) and a \(\gamma_1\) ray is measured. A Time to Amplitude Converter (TAC) is used to convert the time difference to an amplitude which can be measured by the MCA. The impulse from scintillator 2 (detecting \(\gamma_2\) and \(\gamma_3\)) is routed to the "start" input of the TAC, and a delayed impulse from scintillator 1, measuring \(\gamma_1\), is used as the "stop" input. The delay has to be introduced such that the impulses don't exceed the range of the TAC.
+In this way, the half-life can be obtained from the 
+produced spectrum of amplitudes: as $\Delta t$ is a 
+random variable following the exponential decay law, 
+the spectrum will result of a convolution
+between the exponential distribution of parameter
+$\lambda = \ln{2} / t_{1/2}$ and a gaussian distribution 
+due to the time resolution  of the instrument.
 
 A prerequisite callibration is required to be needed to map the channel measured by the MCA to the corresponding time. This is achieved by spliting the output of one detector to the input of the TAC and delaying one of the signals using a delay gate, before going to the TAC. Varying the delay on the delay gate gives a linear relationship between the channel and the time interval.
