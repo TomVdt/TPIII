@@ -1,7 +1,7 @@
 \section{Results}
 \subsection{$\gamma$ spectra of four different sources}
 The energy calibration of the MCA was accomplished using the known decay 
-schemes\cite{notice_generale} of four radioactive sources: 
+schemes (see \autoref{sec:decay_schemes}) of four radioactive sources: 
 \cesium, \cobalt, \lead and \hafnium.
 Figure \ref{fig:calibration_energy} in \autoref{sec:calibration} 
 shows the linear fit and the resulting calibration factor, 
@@ -48,14 +48,14 @@ It was discussed in Section \ref{sec:statistics} that the number of desintegrati
 in a fixed interval of time follows a Poisson distribution, which tends to 
 a gaussian distribution for a high mean.
 To test these assumptions, two sets of measures were taken, using the MCA in MCS mode: 
-the first ("lowmean") with a dwell time of $3$ ms, which gave an average of $m = 2.27$ desintegrations per interval, 
-and the second ("highmean") with a dwell time of $300$ ms, with an average of $m = 228.10$.
+the first ("Low Mean") with a dwell time of $3$ ms, which gave an average of $m = 2.27$ desintegrations per interval, 
+and the second ("High Mean") with a dwell time of $300$ ms, with an average of $m = 228.10$.
 Both were compared through Pearson's $\chi^2$ test 
 with a Poisson distribution of parameter $\lambda = m$ 
 and a gaussian distribution of mean $m$ and standard variation $\sqrt{m}$.
 These test distributions are depicted in Figure \ref{fig:statistical_tests} with
-the respective data sets
-and the results of the statistical tests are summarised in Table \ref{tab:statistical_tests}.
+the respective data sets.
+while the results of the statistical tests are summarised in Table \ref{tab:statistical_tests}.
 %
 \begin{figure}[htbp]
     \centering
@@ -79,9 +79,9 @@ and the results of the statistical tests are summarised in Table \ref{tab:statis
     \end{subfigure}
     \caption{Frequencies of the number of desintegrations detected 
     in a fixed interval of time, compared with test distributions: 
-    (a) lowmean and Poisson, (b) lowmean and gaussian, 
-    (c) highmean and Poisson, (d) highmean and gaussian.
-    The error bars on the frequencies were omitted for visibility and in reason of their small size. \hl{AMELIORER}}
+    (a) Low Mean and Poisson, (b) Low Mean and gaussian, 
+    (c) High Mean and Poisson, (d) High Mean and gaussian.
+    The error bars on the frequencies were omitted for visibility and in reason of their small size.}
     \label{fig:statistical_tests}
 \end{figure}
 
@@ -97,7 +97,10 @@ and the results of the statistical tests are summarised in Table \ref{tab:statis
         & & Gaussian & 90 & 0.26 & Accepted\\
         \hline
     \end{tabular}
-    \caption{Results of the statistical tests on the distribution of the number of desintegrations detected in a fixed interval of time, carried out on two data sets of different mean.\hl{rendre plus clair} }
+    \caption{Results of the statistical tests carried out on 
+    the distribution of the number of desintegrations detected 
+    in a fixed interval of time, carried out on two data sets 
+    of different mean.}
     \label{tab:statistical_tests}
 \end{table}
 
@@ -112,36 +115,36 @@ Figure \ref{fig:attenuation_coefficient} depicts the results obtained with
 the two materials:
 the attenuation is exponential in nature, as described 
 by Eq.\eqref{eq:attenuation_law}, and more effective using lead than aluminum.
-The linear attenuation coefficient of each material was obtained by linear regression, yielding \mbox{$\mu = (0.20 \pm 0.01)$ \unit{\per\cm}} for aluminium
-and \mbox{$\mu = (1.08 \pm 0.03)$ \unit{\per\cm}} for lead.\hl{$\mu_{\mathrm{Pb}}$?}
+The linear attenuation coefficient of each material was obtained by linear regression, yielding \mbox{$\mu_{\mathrm{Al}} = (0.20 \pm 0.01)$ \unit{\per\cm}} for aluminium
+and \mbox{$\mu_{\mathrm{Pb}} = (1.08 \pm 0.03)$ \unit{\per\cm}} for lead.
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/attenuation_coefficient.pdf}
     \caption{Radiation attenuation through Aluminum (Al) and Lead (Pb). 
              The error bars were omitted in reason of their small relative size 
-             (1\% on the intensity and $1$ $\mu$m on the thickness of the material).}
+             (1\% on the intensity and $1$ $\mu$m on the thickness of the material \hl{shielding}).}
     \label{fig:attenuation_coefficient}
 \end{figure}
 \footnotetext{J'ai comme l'impression que je peux écrire une phrase meilleure,
 je vais probablement avoir l'idée pendant que je nage ou sous la douche.}
 
 \subsection{Activity of \cobalt}
-The experimental setup for coincidence detection described in Section \ref{sec:coincidences} allows for the calculation
-of the activity A (see \autoref{eq:activity}). \hl{RÉECRIRE}
-However, it was first necessary to determine the time resolution $2\theta$ of 
-the instrument.
-
-To this end, BLABLA
+The experimental setup for coincidence detection described 
+in Section \ref{sec:coincidences} allows for the calculation
+of the activity $A$ of the sample of \cobalt.
+After determining the time resolution $2\theta$ of 
+the instrument, by means of the linear fit depicted in
+\autoref{fig:twotheta_cs137}, \autoref{eq:activity} allowed 
+to obtain a value of $A= (4127 \pm 53)$ Bq.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/twotheta_cs137.pdf}
-    \caption{\hl{Parler du cluster en haut à droite.}}
+    \caption{Determination of the time resolution of the coincidence
+    selector, as described by \autoref{eq:coincidence_time_resolution}.}
     \label{fig:twotheta_cs137}
 \end{figure}
 
-
-Having determined the resolution time of the coincidence selector, an activity $A= (4127 \pm 53)$ Bq was obtained.
 
 \subsection{$\gamma_3$ spectrum}
 
