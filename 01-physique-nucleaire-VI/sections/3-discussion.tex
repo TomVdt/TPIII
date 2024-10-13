@@ -1,37 +1,31 @@
 \section{Discussion}
 The energy calibration of the MCA:
 
-One way to get a quantitative appreciation of the accuracy of the calibration is to compare the obtained[?] energies of the peaks with the values of energy used for the calibration.
-Let us consider \cesium first: the peak of $\gamma_1$ radiation, known to have a photon energy $E_{\gamma_1} = 662$ keV (see \autoref{sec:decay_schemes}) was assigned after calibration an energy $E_{\gamma_1} = (672 \pm 35)$ keV, for a relative error of 2\%.
-In the case of \cobalt, whose $\gamma_2$ and $\gamma_3$ peaks were indistinguishable before the separation carried out in \autoref{sec:separation},
-the choice was made to use the $\gamma_2$ decay for calibration, with tabulated energy $E_{\gamma_2} = 122.1$ keV, as it is more likely than the $\gamma_3$ (88\% versus 12\%).
-The peak was assigned an energy $E_{\gamma_2} = (124 \pm 10)$ keV, for a relative error of 2\%.
-The $\gamma_1$ radiation of \lead, of tabulated energy $E_{\gamma_1} = 46.5$ keV, 
-was assigned energy $E_{\gamma_1} = (77 \pm 18)$ keV, for a relative error of 66\%.
-Only one peak in the \hafnium spectrum was associated with $\gamma$ decay, the $\gamma_2$ peak of energy $E_{\gamma_2} = 346$ keV, later assigned to $E_{\gamma_2} = (347 \pm 26)$, for a relative error of 0.3\%.
+One way to get a quantitative appreciation of the accuracy of the calibration is to compare the obtained[?] energies of the peaks with the values of energy used for the calibration:
+\begin{itemize}
+    \item Let us consider \cesium first \hl{enlever, juste dire Cs:?}: the peak of $\gamma_1$ radiation, known to have a photon energy $E_{\gamma_1} = 662$ keV (see \autoref{sec:decay_schemes}) was assigned after calibration an energy $E_{\gamma_1} = (672 \pm 35)$ keV, for a relative error of 2\%.
+    \item In the case of \cobalt, whose $\gamma_2$ and $\gamma_3$ peaks were indistinguishable before the separation carried out in \autoref{sec:separation},
+    the choice was made to use the $\gamma_2$ decay for calibration, with tabulated energy $E_{\gamma_2} = 122.1$ keV, as it is more likely than the $\gamma_3$ (88\% versus 12\%).
+    The peak was assigned an energy $E_{\gamma_2} = (124 \pm 10)$ keV, for a relative error of 2\%.
+    \item The $\gamma_1$ radiation of \lead, of tabulated energy $E_{\gamma_1} = 46.5$ keV, was assigned energy $E_{\gamma_1} = (77 \pm 18)$ keV, for a relative error of 66\%.
+    \item Only one peak in the \hafnium spectrum was associated with $\gamma$ decay, the $\gamma_2$ peak of energy $E_{\gamma_2} = 346$ keV, later assigned to $E_{\gamma_2} = (347 \pm 26)$, for a relative error of 0.3\%.
+\end{itemize}
+One can see how the most visible problem\footnote{j'aime pas trop cette phrase} with the calibration is the use of the $\gamma_1$ peak of \lead, whose tabulated energy does not fit in the confidence interval of the energy assigned later.
+This is due to two reasons: first, the analysed sample had a low activity and not enough time was available to detect a number of events high enough to form a clear peak;
+second, the $\gamma_1$ peak is located in the middle of the Compton plateau of the spectrum, adding noise to the curve.
+The same problem of a relatively low activity affected the measurement of the \hafnium sample:
+with a lower number of detections than any other recorded $\gamma$ decay, its $\gamma_2$ peak has an overestimated uncertainty, as it wasn't yet well defined when the measurement was interrupted.
 
-- A better calibration would have been obtained by using larger gain, because blablablabla
-- Hafnium erreur trop grand (surestimé) parce que peu de données, trop peu de temps la gaussienne ne s'est pas assez formé. pas assez de samples.
-On n'a pas attendu parce que peu d'activité pas assez de temps.
-
-- On rentre pas dans la barre d'erreur avec le plomb (mais proche).
-Cause possibles: peu actif (on n'a pas assez attendus) et au plein milieu plateau compton
+The overrall quality of the calibration would have been improved by using a larger  gain in the signal amplifier:
+in effect, the gain was set to a value low enough to enable the acquisition in the MCA of the $\gamma$ peaks of two other sources, $^{22}$Na and $^{60}$Co, whose $\gamma$ radiations are more energetic than the others considered.
+These two sources were however to no use to the calibration, as their low activity mean their spectrum would have required a longer time then available to be properly acquired.
 
 
-
-
-
-A mistake was made quand on a choisi de tenter Na e Co-60, du coup on a moins de resolution en energie que possible.
-
-Other sources were attempted (Sodium 22 and Cobalt 60), 
-but their low count made for very long times to get reasonable spectrum.
-
-Pourquoi pic de Plomb dans le Cesium et Hafnium mais pas dans les autres?
+\hl{Pourquoi pic de Plomb dans le Cesium et Hafnium mais pas dans les autres?
 peut etre caché? aussi peu de compton dans le Cobalt pourquoi?
 Ça a un sense que on ait beaucoup de plomb dans le cesium parce que tres actif = beaucoup de photons qui frappent le plomb??
-Pas assez d'informations
-
-Dans le hafnium gamma 1 caché par compton plateau?
+Pas assez d'informations.
+Dans le hafnium gamma 1 caché par compton plateau?}
 
 \paragraph{Fitting distributions}
 For the High Mean dataset, the Gaussian and Poisson distribution hypothesis could not be rejected, while for the Low Mean dataset, the Gaussian distribution hypothesis was rejected due to a low p-value. This result is coherent with probability theory, as for a high mean, a Poisson distribution tends towards a Gaussian distribution \cite{notice_generale}. It is worth noting that the p-value does not allow us to confirm that a dataset follows some distribution, it is only an indicator of when a proposed distribution can safely be rejected, within some margin of error \(\alpha\), most commonly 5\%.
