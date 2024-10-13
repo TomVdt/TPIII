@@ -144,14 +144,22 @@ To this end, BLABLA
 Having determined the resolution time of the coincidence selector, an activity $A= (4127 \pm 53)$ Bq was obtained.
 
 \subsection{$\gamma_3$ spectrum}
+
+Following the setup described in \autoref{sec:separation}, a spectrum containing only the \(\gamma_2\) rays of the \cobalt desintegration was aquired. Using a gaussian fit around the seperated \(\gamma_2\) and \(\gamma_3\) peaks, as shown in \autoref{fig:co57_gamma3_spectrum}, the energy of both rays were determined. The energy of the \(\gamma_2\) ray was found to be \(E_{\gamma_2} = (119 \pm 23)\) keV, and \(E_{\gamma_3} = (129 \pm 24)\) for \(\gamma_3\).
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=1]{figures/co57_halflife.pdf}
+    \includegraphics[scale=1]{figures/co57_gamma2_gamma3.pdf}
     \caption{}
     \label{fig:co57_gamma3_spectrum}
 \end{figure}
 
 \subsection{Half-life of 14.4 keV excited state}
+
+\begin{equation}
+    f(x;\mu,\sigma,\lambda, N) = \frac{1}{N} \frac{\lambda}{2} e^{\frac{\lambda}{2} (2 \mu + \lambda \sigma^2 - 2 x)}
+             \operatorname{erfc} \left(\frac{\mu + \lambda \sigma^2 - x}{ \sqrt{2} \sigma}\right)
+\end{equation}
 
 \begin{figure}[h]
     \centering
