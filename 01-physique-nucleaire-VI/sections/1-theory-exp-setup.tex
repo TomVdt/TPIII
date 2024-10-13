@@ -20,6 +20,11 @@ Decay occurs in three main kinds, each associated with a radiation of different 
     The typical energies of nuclear $\gamma$ rays range from a fraction to several MeV 
     and though they have the least ionising power of the three, they are the most penetrating, requiring lead for effective shielding.
 \end{itemize}
+The decay of \cobalt, represented in \autoref{fig:cobalt_decay} 
+of \autoref{sec:decay_schemes}, consists in a process of electron capture transforming it into $^{57}$Fe, with a half-life of 270 days.
+Then, to deexcite, the nucleus emits 
+either a single photon ($\gamma_1$) in 12\% of cases
+or two successive ones ($\gamma_2$ and $\gamma_3$) in 88\% of cases.
 
 
 \subsection{Scintillation detectors}
@@ -64,12 +69,12 @@ A counter then records the impulses from the scintillators.
 Finally, a Multi-Channel Analyser (MCA) digitalises the signal and sends the information to a computer, operating in one of two modes: 
 in Pulse Height Analysis (PHA) mode the input pulses are
 sorted into bins (channels) according to their amplitude, while in Multi-Channel Scaling (MCS) mode they are sorted according to the time at which they arrive, subdivided in intervals of a given time (dwell time).
-\hl{PHA will be used for spectrum acquisition, MCS will be used for statistics}
+
 
 \subsubsection{Energy calibration}
 \label{sec:energy_calibration}
 
-The MCA assigns all input signals to different channels based on their amplitudes, 
+The MCA operating in PHA mode assigns all input signals to different channels based on their amplitudes, 
 but no information is a priori known about which values of energy correspond to a certain channel,
 other than that the relationship is linear: 
 the channels uniformly subdivide the total range of input values.
@@ -214,14 +219,7 @@ Solving for the activity \(A\) gives
 \subsection{Separating \(\gamma_2\) and \(\gamma_3\) in the spectrum of \cobalt TODO: reformuler}
 \label{sec:separation}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/decay_cobalt57.png}
-    \caption{Decay scheme of \cobalt \cite{notice_VI}}
-    \label{fig:cobalt_decay}
-\end{figure}
-
-Due to the proximity of the \(\gamma_2\) and \(\gamma_3\) peaks for \cobalt, at 122.1 keV and 136.5 keV respectively as shown in \autoref{fig:cobalt_decay}, and the limited resolution of the detectors, the energy peaks for these desintegrations cannot be distinguished. In order to obtain a spectrum containing only the \(\gamma_3\) peak (which will be referred to as \(S_{\gamma_3}\)), a coincidence setup as shown in \autoref{fig:setup_coincidences} is used. An impulse from scintillator 2, measuring only \(\gamma_2\) and \(\gamma_3\), is only recorded when a \(\gamma_1\) is detected in scintillator 1, within the time resolution \(2\theta\). The crystal of scintillator 1 has a specific thickness as to only measure \(\gamma_1\). The obtained spectrum is thus only composed of \(\gamma_2\). \(S_{\gamma_3}\) can then be obtained by substracting \(S_{\gamma_2}\) from the total spectrum. Due to the branching ratio of about \(80\%\) \(\gamma_2\) and \(20\%\) \(\gamma_3\), a correction of \(0.8 S_{\gamma_2}\) must first be applied \cite{notice_VI}.
+Due to the proximity of the \(\gamma_2\) and \(\gamma_3\) peaks for \cobalt, at 122.1 keV and 136.5 keV respectively as shown in \autoref{fig:cobalt_decay} of \autoref{sec:decay_schemes}, and the limited resolution of the detectors, the energy peaks for these desintegrations cannot be distinguished. In order to obtain a spectrum containing only the \(\gamma_3\) peak (which will be referred to as \(S_{\gamma_3}\)), a coincidence setup as shown in \autoref{fig:setup_coincidences} is used. An impulse from scintillator 2, measuring only \(\gamma_2\) and \(\gamma_3\), is only recorded when a \(\gamma_1\) is detected in scintillator 1, within the time resolution \(2\theta\). The crystal of scintillator 1 has a specific thickness as to only measure \(\gamma_1\). The obtained spectrum is thus only composed of \(\gamma_2\). \(S_{\gamma_3}\) can then be obtained by substracting \(S_{\gamma_2}\) from the total spectrum. Due to the branching ratio of about \(80\%\) \(\gamma_2\) and \(20\%\) \(\gamma_3\), a correction of \(0.8 S_{\gamma_2}\) must first be applied \cite{notice_VI}.
 
 
 \subsection{Half-life of the 14.4 keV transition state}
