@@ -7,7 +7,7 @@ INCH_PER_CM = 1/2.54 # inch/cm
 
 GAMMA_CS137 = 662  # keV
 GAMMA_PB210 = 46.5  # keV
-GAMMA_CO57 = 136.4  # keV
+GAMMA_CO57 = 121.9  # keV
 GAMMA_HF181 = 482 - 136  # keV
 
 # Uncertainties
