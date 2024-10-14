@@ -20,13 +20,20 @@ The overal quality of the calibration would have been improved by using a larger
 in effect, the gain was set to a value low enough to enable the acquisition in the MCA of the $\gamma$ peaks of two other sources, $^{22}$Na and $^{60}$Co, whose $\gamma$ radiations are more energetic than the others considered.
 These two sources were however to no use to the calibration, as their low activity mean their spectrum would have required a longer alloted time than available to be properly acquired.
 
-\paragraph{Obtained spectra}
-It was observed or one can remark 
-\hl{Pourquoi pic de Plomb dans le Cesium et Hafnium mais pas dans les autres?
-peut etre caché? aussi peu de compton dans le Cobalt pourquoi?
-Ça a un sense que on ait beaucoup de plomb dans le cesium parce que tres actif = beaucoup de photons qui frappent le plomb??
-Pas assez d'informations.
-Dans le hafnium gamma 1 caché par compton plateau?}
+\paragraph{Gamma spectra}
+A peak situated around $45$ keV in the $\gamma$ spectra of \cesium and \hafnium was associated to the contribution from the shielding lead of the experimental setup.
+It indicates the presence of the \lead isotope of lead inside the otherwise stable shielding:
+as stated in \cite{korun_influence_2009}, \lead can in effect be found in newly produced lead, with an activity which depends on the concentration of uranium and lead in the ore of origin, and it cannot be chemically removed.
+Furthermore, it is the only long-lived radioactive isotope of lead and its energy matches the observed peak.
+The contributions from \lead to $\gamma$ spectra are extensively studied in literature, as lead is the most common shielding used when dealing with $\gamma$ radiation.
+In effect, other than the 46.5 keV $\gamma$ emission, the $\beta$ emissions of the \lead component in lead shielding produce a low-energy bremsstrahlung
+continuum, from low energies up to 1.16 MeV, which adds noise to the spectrum \cite{smith_evaluation_2008} \hl{i want fancy citation}.
+Since these contributions decrease with time (\lead decays with a half-life of about 22 years), older lead is more suitable to $\gamma$ rays collimation.
+\cite{korun_influence_2009} contains a detailed study of the reduction of noise in time at every energy level.
+
+It is remarkable that in \hl{our} results the \lead peak does not appear in the \cobalt spectrum. 
+This is most likely due to the poor energy resolution of the neighboring $\gamma_1$ and $\gamma_2$ peaks.
+No clear explanation was however found for the absence of the $\gamma_1$, $\gamma_3$ and $\gamma_4$ peaks in the \hafnium spectrum, other than the fact that a very low number of detection was recorded for the sample, whose spectrum as a result is very noisy.
 
 \paragraph{Fitting distributions}
 For the High Mean dataset, the Gaussian and Poisson distribution hypothesis could not be rejected, while for the Low Mean dataset, the Gaussian distribution hypothesis was rejected due to a low p-value. This result is coherent with the theory presented in \autoref{sec:statistics}, which detailed how, for a high mean, a Poisson distribution tends towards a Gaussian distribution. It is worth noting that the p-value does not allow us to confirm that a dataset follows some distribution, it is only an indicator of when a proposed distribution can safely be rejected, within some margin of error \(\alpha\), most commonly 5\%.
