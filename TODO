@@ -1,29 +1,18 @@
 == À écrire ==
-- Mettre plot de calibration énergie en Annexe
-- Paragraphe initial sur decay Co-57
-- Schémas de désintegration en Annexe? Faut trouver le Hafniummmm
-- Résultats à partir de Activity
-- Discussion
+- Relire/terminer discussion
 - Introduction
 - Conclusion
+
+== Mise en page ==
+- distance entre items itemize
 
 == Consistency dans les noms des variables ==
 - Lettre pour les degres de liberté des test statistiques.
     => Utiliser \nu
 
 == Plots à faire == 
-- consistency entre les plots de calibration
 - Dimensions plot 2theta
 - Ameliorer plot half-life
 
-== Schéma de désintegration du Hafnium? ==
-
-== Citation style ==
-Essayer les differents styles.
-
-== Question repondues par l'assistant ==
-- quoi plotter sur les y des spectres gamma -> ce qu'on veut, count seul ça va aussi
-- Structure rapport? -> probablement pas besoin de abstract mais il va nous dire
-- étude bruit de fond? -> non
 
 - COINCIDENCES: p30, mesurer \theta_1 et \theta_2, comparer avec 2\theta?
