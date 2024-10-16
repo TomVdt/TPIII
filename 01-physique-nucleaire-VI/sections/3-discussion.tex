@@ -10,7 +10,7 @@ One way to get a quantitative appreciation of the accuracy of the calibration is
     \item The $\gamma_1$ radiation of \lead, of tabulated energy $E_{\gamma_1} = 46.5$ keV, was assigned energy \mbox{$E_{\gamma_1} = (77 \pm 18)$ keV}, for a relative error of 66\%.
     \item Only one peak in the \hafnium spectrum was associated with $\gamma$ decay, the $\gamma_2$ peak of energy $E_{\gamma_2} = 346$ keV, later assigned to $E_{\gamma_2} = (347 \pm 26)$ keV, for a relative error of 0.3\%.
 \end{itemize}
-One can see how the most visible problem\footnote{j'aime pas trop cette phrase} \hl{MIEUX: THE THING GIVING THE BIGGER ERROR IS} with the calibration is the use of the $\gamma_1$ peak of \lead, whose tabulated energy does not fit in the confidence interval of the energy assigned later.
+The largest source of uncertainty in the calibration is the use of the $\gamma_1$ peak of \lead, whose tabulated energy does not fit in the confidence interval of the energy assigned later.
 This is due to two reasons: first, the analysed sample had a low activity and not enough time was available to detect a number of events high enough to form a clear peak;
 second, the $\gamma_1$ peak is located in the middle of the Compton plateau of the spectrum, adding noise to the curve.
 The same problem of a relatively low activity affected the measurement of the \hafnium sample:
@@ -27,11 +27,11 @@ as stated in \cite{korun_influence_2009}, \lead can in effect be found in newly 
 Furthermore, it is the only long-lived radioactive isotope of lead and its energy matches the observed peak.
 The contributions from \lead to $\gamma$ spectra are extensively studied in literature, as lead is the most common shielding used when dealing with $\gamma$ radiation.
 In effect, other than the 46.5 keV $\gamma$ emission, the $\beta$ emissions of the \lead component in lead shielding produce a low-energy bremsstrahlung
-continuum, from low energies up to 1.16 MeV, which adds noise to the spectrum \cite{smith_evaluation_2008} \hl{i want fancy citation}.
+continuum, from low energies up to 1.16 MeV, which adds noise to the spectrum \cite{smith_evaluation_2008}.
 Since these contributions decrease with time (\lead decays with a half-life of about 22 years), older lead is more suitable to $\gamma$ rays collimation.
 \cite{korun_influence_2009} contains a detailed study of the reduction of noise in time at every energy level.
 
-It is remarkable that in \hl{our} results the \lead peak does not appear in the \cobalt spectrum. 
+It is remarkable that in our results the \lead peak does not appear in the \cobalt spectrum. 
 This is most likely due to the poor energy resolution of the neighboring $\gamma_1$ and $\gamma_2$ peaks.
 No clear explanation was however found for the absence of the $\gamma_1$, $\gamma_3$ and $\gamma_4$ peaks in the \hafnium spectrum, other than the fact that a very low number of detection was recorded for the sample, whose spectrum as a result is very noisy.
 
@@ -39,8 +39,8 @@ No clear explanation was however found for the absence of the $\gamma_1$, $\gamm
 For the High Mean dataset, the Gaussian and Poisson distribution hypothesis could not be rejected, while for the Low Mean dataset, the Gaussian distribution hypothesis was rejected due to a low p-value. This result is coherent with the theory presented in \autoref{sec:statistics}, which detailed how, for a high mean, a Poisson distribution tends towards a Gaussian distribution. It is worth noting that the p-value does not allow us to confirm that a dataset follows some distribution, it is only an indicator of when a proposed distribution can safely be rejected, within some margin of error \(\alpha\), most commonly 5\%.
 
 \paragraph{Linear attenuation coefficients}
-To analyse the coherence of the obtained attenuation coefficients \(\mu_\textrm{Al}\) and \(\mu_\textrm{Pb}\), the results are compared to the mass attenuation coefficients found in \hl{the} NIST database \cite{massic-linear-attenuation}. 
-Expressed as mass attenuation coefficients, the results are \linebreak \mbox{\(\mu_{d,\textrm{Al}} = \mu_{\textrm{Al}} / \rho_\textrm{Al} = \left(0.0744 \pm 0.0042\right)\) \si{\centi\meter\squared\per\gram}}, and \(\mu_{d,\textrm{Pb}} = \left(0.0953 \pm 0.0029\right)\) \si{\centi\meter\squared\per\gram}, using the density of aluminium and lead from \hl{the} NIST database \cite{material-density}. 
+To analyse the coherence of the obtained attenuation coefficients \(\mu_\textrm{Al}\) and \(\mu_\textrm{Pb}\), the results are compared to the mass attenuation coefficients found in the NIST database \cite{massic-linear-attenuation}. 
+Expressed as mass attenuation coefficients, the results are \linebreak \mbox{\(\mu_{d,\textrm{Al}} = \mu_{\textrm{Al}} / \rho_\textrm{Al} = \left(0.0744 \pm 0.0042\right)\) \si{\centi\meter\squared\per\gram}}, and \(\mu_{d,\textrm{Pb}} = \left(0.0953 \pm 0.0029\right)\) \si{\centi\meter\squared\per\gram}, using the density of aluminium and lead from the NIST database \cite{material-density}. 
 As the experiment for attenuation was done using \cesium, the energy of the attenuated \(\gamma\) ray was \(E_\gamma = 662\) keV.
 The reference value for aluminium and lead for a photon of \(E_\gamma = 600\) keV are \mbox{\(\mu_{d,\textrm{Al,ref}} = 0.07802\) \si{\centi\meter\squared\per\gram}} and \mbox{\(\mu_{d,\textrm{Pb,ref}} = 0.1248\) \si{\centi\meter\squared\per\gram}}, while for \(E_\gamma = 800\) keV, \mbox{\(\mu_{d,\textrm{Al,ref}} = 0.
 06841\) \si{\centi\meter\squared\per\gram}} and \linebreak \mbox{\(\mu_{d,\textrm{Pb,ref}} = 0.0887\) \si{\centi\meter\squared\per\gram}}. 
@@ -53,7 +53,7 @@ $\mu_{\mathrm{Pb}} \approx 1.1$ \unit{\per\cm} for lead,
 values which are fully compatible with the findings of this experiment.
 
 \paragraph{\cobalt source activity}
-The activity of the source can be estimated using the production date of the used sample, 2019/09/01, and the initial activity of 366.4 kBq. The desintegrations follow an exponential law of parameter \(\lambda = \ln 2 / t_{1/2}\), where \(t_{1/2} = 270\) days. This yields a theoretical activity of \(3015\) Bq. This is much lower than the calculated activity of \(A = (4120 \pm 50)\) Bq. While the error on the calculated activity could be \hl{how? why?} underestimated, the results are of the same order of magnitude, whilst being a random process. Hence, the result seems plausible.
+The activity of the source can be estimated using the production date of the used sample, 2019/09/01, and the initial activity of 366.4 kBq. The desintegrations follow an exponential law of parameter \(\lambda = \ln 2 / t_{1/2}\), where \(t_{1/2} = 270\) days. This yields a theoretical activity of \((3015 \ pm 107)\) Bq. This is much lower than the calculated activity of \(A = (4120 \pm 50)\) Bq. While the error on the calculated activity could be underestimated, the results are of the same order of magnitude, whilst being a random process. Hence, the result seems plausible.
 
 \paragraph{Peak separation}
 The energy of the seperated \(\gamma_2\) and \(\gamma_3\) peaks are not exactly at their theoretical value, with a relative error of \(0.2\%\) and \(8\%\) respectively. 

@@ -7,18 +7,13 @@ Decay occurs in three main kinds, each associated with a radiation of different 
 \begin{itemize}
     %
     \item $\alpha$-decay represents the disintegration of a heavy parent nucleus to a daughter through the emission of a nucleus of helium.
-    \hl{These particles, accordingly called $\alpha$ particles, are the most energetic between the three forms of radiation (with typical energies of about 5 MeV), but also the least penetrating, being able to be stopped by a sheet of paper.}
     %
     \item $\beta$-decay is instead the transformation of a nucleus with an unstable ratio of protons to neutrons into a stabler one by emitting an electron ($\beta^-$ particle), in the case of a proton-rich nucleus, or a positron ($\beta^+$ particle), in the case of an over-abundance of neutrons.
     Additionally, a proton-rich nucleus can also reduce its charge by the absorption of an atomic electron, in a process called \emph{electron capture}.
-    \hl{The electron comes most often from the inner $K$-shell, resulting in the outer electrons cascading down to fill the lower levels and emitting [one or more] X-rays}\cite{intro_nuclear_particle_physics}.
-    \hl{Of smaller ionising power than $\alpha$ radiation, $\beta$ radiation is however more penetrating, requiring aluminium sheets to be stopped.}
     %
     \item $\gamma$-decay, on the other hand, occurs for the most part right after a heavy nucleus desintegrates by emitting an $\alpha$ particle or a $\beta$ particle.
     The daughter nucleus may be left in an excited state and it can deexcite by rearranging the structure of the nuclear shells, 
     a process which is tied to the emission of a high-energy photon (a $\gamma$ ray).
-    \hl{The typical energies of nuclear $\gamma$ rays range from a fraction to several MeV 
-    and though they have the least ionising power of the three, they are the most penetrating, requiring lead for effective shielding.}
 \end{itemize}
 The decay of \cobalt, represented in \autoref{fig:cobalt_decay} 
 of \autoref{sec:decay_schemes}, consists in a process of electron capture transforming it into $^{57}$Fe, with a half-life of 270 days.
@@ -80,8 +75,7 @@ other than that the relationship is linear:
 the channels uniformly subdivide the total range of input values.
 It is then necessary to calibrate the experimental setup using known decay schemes.
 Once the gamma spectra of the chosen sources are recorded, peaks associated with known energies can be fitted locally with gaussian curves.
-The means of the gaussians are then used as the channels corresponding to the peaks, following which a linear relationship between energy and channels can be obtained. \hl{Rendre un peu plus clean, mais pas plus long.}
-
+The means of the gaussians are then used as the channels corresponding to the peaks, following which a linear relationship between energy and channels can be obtained.
 
 \subsection{The $\gamma$ spectrum}
 \label{sec:spectrum}
@@ -105,21 +99,11 @@ There are a few of phenomena, though, that will modify the expected appearance o
     The peak related to this phenomenon is called escape peak and corresponds to energy $E = E_{\gamma} - E_X$
     \item There could be parasite contributions from photons scattered in the material surrounding the scintillator. 
     These can be removed with appropriate collimation.
-    \item The scintillator has a finite energy resolution, such that all energy peaks in the $\gamma$ spectrum form gaussian curves rather than discrete lines. \hl{The width of this distribution is a measure of the energy resolution of the
-    detector}
+    \item The scintillator has a finite energy resolution, such that all energy peaks in the $\gamma$ spectrum form gaussian curves rather than discrete lines. The width of this distribution is a measure of the energy resolution of the detector.
 \end{itemize}
 
 \subsection{Statistical model of radioactive decay}
 \label{sec:statistics}
-
-% Radioactive decay of an unstable nucleus is equally likely to decay at any instant. This means that the probability of desintegration of a single nucleus for a small time \(\dd t\) is \(\lambda \dd t\). For a sample of \(N\) radioactive atoms, the amount of nuclei \hl{j'aime ce mot} that decay during \(\dd t\) is \(-\dd N = N \lambda \dd t\).
-% Solving this differential equation yields
-% \begin{equation}
-%     N(t) = N_0 e^{-\lambda t}
-% \end{equation}
-% where \(N_0\) is the initial population at \(t = 0\).
-
-% TODO: $\uparrow$ vraiment necessaire?
 
 The decay of an unstable nucleus is a random process that is equally as likely to occur at any time. 
 In a large sample of \(N\) identical radioactive nuclei, each atom will decay independently from eachother. 
