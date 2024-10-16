@@ -1,20 +1,20 @@
 \section{Results}
-\subsection{$\gamma$ spectra of four different sources}
+\subsection{$\gamma$ spectra of \cesium, \cobalt, \lead and \hafnium}
 The energy calibration of the MCA was accomplished using the known decay 
 schemes (see \autoref{sec:decay_schemes}) of four radioactive sources: 
 \cesium, \cobalt, \lead and \hafnium.
-Figure \ref{fig:calibration_energy} in \autoref{sec:calibration} 
+\autoref{fig:calibration_energy} in \autoref{sec:calibration} 
 shows the linear fit and the resulting calibration factor, 
 relating the channel number and the energy $E$ expressed in keV.
 
 Once the calibration was performed, it was possible to draw the $\gamma$ spectra 
-of the four sources, as depicted in Figure \ref{fig:gamma_spectra}.
+of the four sources, as depicted in \autoref{fig:gamma_spectra}.
 Comparing with the decay schemes, their $\gamma$ peaks were identified,
 as well as other contributions:
 the Compton edge, which appears most notably in the \cesium 
 and the \lead spectra, and a peak whose energy matches the $\gamma_1$ peak of \lead,
 visible in the \cesium and \hafnium spectra. 
-As expected (or detailed in Section \ref{sec:separation}), the $\gamma_2$ and $\gamma_3$ peaks of \cobalt are not distinguishable, due the energetic proximity of these rays.
+As mentioned in \autoref{sec:separation}, the $\gamma_2$ and $\gamma_3$ peaks of \cobalt are not distinguishable, due the energetic proximity of these rays.
 Only one $\gamma$ peak was detected for \hafnium, of the 4 expected from its decay scheme.
 
 \begin{figure}[htbp]
@@ -43,10 +43,11 @@ Only one $\gamma$ peak was detected for \hafnium, of the 4 expected from its dec
 
 
 \subsection{Statistics}
+% To this part of the study, a \cesium sample was used due to its high activity.
+This part of the study was conducted using a sample of \cesium, a source more suited to the role than the others available due to its higher activity.
 It was discussed in Section \ref{sec:statistics} that the number of desintegrations detected 
 in a fixed interval of time follows a Poisson distribution, which tends to 
 a gaussian distribution for a high mean.
-To this end, \cesium was used due to its high activity.
 To test these assumptions, two sets of measurements were taken, using the MCA in MCS mode: 
 the first ("Low Mean") with a dwell time of $3$ ms, which gave an average of $m = 2.27$ desintegrations per interval, 
 and the second ("High Mean") with a dwell time of $300$ ms, with an average of $m = 228.10$.
@@ -54,7 +55,7 @@ Both were compared through Pearson's $\chi^2$ test
 with a Poisson distribution of parameter $\lambda = m$ 
 and a gaussian distribution of mean $m$ and standard deviation $\sqrt{m}$.
 These test distributions are depicted in \autoref{fig:statistical_tests} with
-the respective data sets.
+the respective data sets,
 while the results of the statistical tests are summarised in \autoref{tab:statistical_tests}.
 %
 \begin{figure}[htbp]
@@ -99,7 +100,7 @@ while the results of the statistical tests are summarised in \autoref{tab:statis
     \end{tabular}
     \caption{Results of the statistical tests carried out on 
     the distribution of the number of desintegrations detected 
-    in a fixed interval of time, carried out on two data sets 
+    in a fixed interval of time, with two data sets 
     of different mean.}
     \label{tab:statistical_tests}
 \end{table}
@@ -111,16 +112,16 @@ the others available due to its higher activity.
 Measurements of the intensity of the radiation were taken for
 different widths of aluminium and lead shielding applied 
 between the source and the detector.
-Figure \ref{fig:attenuation_coefficient} depicts the results obtained with 
+\autoref{fig:attenuation_coefficient} depicts the results obtained with 
 the two materials:
 the attenuation is exponential in nature, as described 
-by Eq.\eqref{eq:attenuation_law}, and more effective using lead than aluminum.
+by \autoref{eq:attenuation_law}, and more effective using lead than aluminium.
 The linear attenuation coefficient of each material was obtained by linear regression, yielding \mbox{$\mu_{\mathrm{Al}} = (0.20 \pm 0.01)$ \unit{\per\cm}} for aluminium
 and \mbox{$\mu_{\mathrm{Pb}} = (1.08 \pm 0.03)$ \unit{\per\cm}} for lead.
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/attenuation_coefficient.pdf}
-    \caption{Radiation attenuation through Aluminum (Al) and Lead (Pb). 
+    \caption{Radiation attenuation through aluminium (Al) and lead (Pb). 
              The error bars were omitted in reason of their small relative size 
              (1\% on the intensity and $1$ $\mu$m on the thickness of the material).}
     \label{fig:attenuation_coefficient}
@@ -152,7 +153,7 @@ Following the setup described in \autoref{sec:separation}, a spectrum containing
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/co57_gamma2_gamma3.pdf}
-    \caption{Separated peaks of $\gamma_2$ and $\gamma_3$ rays of \cobalt desintegration and their respective energy.}
+    \caption{Separated peaks of $\gamma_2$ and $\gamma_3$ rays of \cobalt desintegration and their respective energy, compared with tabulated values.}
     \label{fig:co57_gamma3_spectrum}
 \end{figure}
 
@@ -169,7 +170,7 @@ The exponential distribution factor was found to be \(\lambda = 5.94 \pm 0.01\),
 \begin{figure}[h]
     \centering
     \includegraphics[scale=1]{figures/co57_halflife.pdf}    
-    \caption{Distribution of the measured delays between \(\gamma_2\) and \(\gamma_1\) signals. The fit was done according to \autoref{eq:gaussian_modified_exp}.}
+    \caption{Distribution of the measured delays between \(\gamma_2\) and \(\gamma_1\) signals. The fit was performed according to \autoref{eq:gaussian_modified_exp}.}
     \label{fig:delay_gamma12}
 \end{figure}
 
