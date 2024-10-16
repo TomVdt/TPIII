@@ -34,23 +34,6 @@
     \end{minipage}
 \end{figure}
 
-\section{Instrument calibration}
-\label{sec:calibration}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=1]{figures/calibration_energy.pdf}
-    \caption{Energy calibration of the spectrometer: known values of energies 
-    versus the channel to which they were assigned by the MCA.}
-    \label{fig:calibration_energy}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=1]{figures/calibration_time_interval.pdf}    
-    \caption{Calibration of channel to time for half-life measurement}
-    \label{fig:calibration_halflife}
-\end{figure}
-
 \section{Probabilities}
 \label{sec:pearson}
 
@@ -69,3 +52,20 @@ where \(C\) is the number of constraints. Let \(p_{\chi^2}\) be the PDF of the \
     p = P(T \ge t) = \int_t^\infty p_{\chi^2}(x) \dd x
 \end{equation}
 The \(p\)-value describes the probability of the observed data given that \(H0\) is assumed true. If the \(p\)-value is under a certain threshold \(\alpha\) (usually set to 5\%), \(H0\) is rejected with a probability \(p\) of being falsly rejected. Otherwise, \(H0\) cannot be confidently rejected.
+
+\section{Instrument calibration}
+\label{sec:calibration}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=1]{figures/calibration_energy.pdf}
+    \caption{Energy calibration of the spectrometer: known values of energies 
+    versus the channel to which they were assigned by the MCA.}
+    \label{fig:calibration_energy}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=1]{figures/calibration_time_interval.pdf}    
+    \caption{Calibration of channel to time for half-life measurement}
+    \label{fig:calibration_halflife}
+\end{figure}
