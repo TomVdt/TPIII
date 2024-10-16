@@ -31,6 +31,10 @@
 
 % bullet itemize
 \setlist[itemize]{label={$\vcenter{\hbox{\scriptsize$\bullet$}}$}, leftmargin=0.6cm}
+% smaller space between itemize
+\let\tempone\itemize
+\let\temptwo\enditemize
+\renewenvironment{itemize}{\tempone\addtolength{\itemsep}{-0.4\baselineskip}}{\temptwo}
 % format autoref
 \renewcommand{\figureautorefname}{Fig.}
 \renewcommand{\tableautorefname}{Tab.}
