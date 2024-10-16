@@ -28,7 +28,7 @@ or two successive ones ($\gamma_2$ and $\gamma_3$) in 88\% of cases \cite{notice
 Scintillation detectors are based on the properties of scintillators, materials that emit photons in the visible spectrum after the passage of a charged particle.
 The scintillators used for particle detection are primarily split between two types: organic (or plastic), in which the photon emission has molecular origin, 
 and inorganic (or crystalline), crystals which are doped with activators that can first be excited by electron-hole pairs 
-produced by the charged particle passing in the crystal lattice\footnotemark\ and then de-excited by photon emission\cite{intro_nuclear_particle_physics}.
+produced by the charged particle passing in the crystal lattice  and then de-excited by photon emission \cite{intro_nuclear_particle_physics}.
 The scintillator used in this experiment, a NaI crystal, belongs to this second class.
 
 Because of the low intensity of the emitted light, the photon signal must be amplified in order to be properly detected.
@@ -46,7 +46,6 @@ which results being linearly proportional to the amount of
 light incident on the photocathode.
 The voltage applied between cathode and anode determines 
 the value of the total gain $G$.
-\footnotetext{Ici je pourrai écrire "produced by the passing charged particle" sans specifier, pour rendre la phrase un peu plus legere. Or "Excited by th epassing charged particles through [the production of ]electron-hole pairs}
 %
 \begin{figure}[htbp]
     \centering
@@ -92,11 +91,11 @@ and second, a continuous spectrum of energies related to Compton scattering (the
 whose values depend on the scattering angle of the photon.
 In the case of full backscatter, the highest possible energy is deposited
 and the corresponding peak in the spectrum is referred to as the Compton edge.
-There are a few of phenomena, though, that will modify the expected appearance of the spectrum:
+There are a few phenomena, though, that will modify the expected appearance of the spectrum:
 \begin{itemize}
     \item The $\gamma$ rays scattered by Compton effect can interact again with the scintillator.
     \item The rearrangement X-ray emitted following photoelectric effect, whose energy is usually reabsorbed in the scintillator, can escape from the detector.
-    The peak related to this phenomenon is called escape peak and corresponds to energy $E = E_{\gamma} - E_X$
+    The peak related to this phenomenon is called escape peak.
     \item There could be parasite contributions from photons scattered in the material surrounding the scintillator. 
     These can be removed with appropriate collimation.
     \item The scintillator has a finite energy resolution, such that all energy peaks in the $\gamma$ spectrum form gaussian curves rather than discrete lines. The width of this distribution is a measure of the energy resolution of the detector.
@@ -106,13 +105,13 @@ There are a few of phenomena, though, that will modify the expected appearance o
 \label{sec:statistics}
 
 The decay of an unstable nucleus is a random process that is equally as likely to occur at any time. 
-In a large sample of \(N\) identical radioactive nuclei, each atom will decay independently from eachother. 
+In a large sample of \(N\) identical radioactive nuclei, each atom will decay independently from each other. 
 The number of desintegrations in a given time \(\Delta t\) is thus modeled 
 using a Poisson distribution. Two sets of samples will be taken during this 
 experiment, using the MCA in MCS mode, once for a short dwell time and once for a 
 longer dwell time, yielding more counts per sample. These datasets will 
 respectively be referred to as "Low Mean" and "High Mean", and will 
-both be compared to a Poisson and Gaussian distribution using the Pearson 
+both be compared to a Poisson and Gaussian distribution using Pearson's 
 \(\chi^2\) test. Due to the nature of a Poisson distribution, it is expected that 
 the higher mean Poisson distribution will resemble a Gaussian of same mean and 
 variance (an approximation generally valid when the mean is higher than 5) \cite{statistics_nuclear_particle_physicists}. Pearson's \(\chi^2\) method for testing a dataset to a given 
@@ -124,7 +123,7 @@ distribution is described in \autoref{sec:pearson}.
 The interactions of the photons with matter causes an attenuation of $\gamma$ radiation, i.e. a progressive reduction in the number of photons, without a loss of their individual energy.
 This phenomenon follows an exponential law and can be described in terms of a linear attenuation coefficient $\mu$, which depends on the energy of the incident light $E_{\gamma}$ and the nature of the material.
 In fact, let $I(x)$ be the intensity of photons at any point $x$ in the medium.
-The change in intensity $dI$ in an infinitesimal thickness of material $dx$ can be written in terms of $\mu$ as follow:
+The change in intensity $dI$ in an infinitesimal thickness of material $dx$ can be written in terms of $\mu$ as follows:
 \begin{equation}
     dI = I(x + dx) - I(x) = -\mu(E_{\gamma}, Z) I(x) dx
 \end{equation}
@@ -150,7 +149,7 @@ where, if $\rho$ is the density of the material, $\mu_d = \mu / \rho$ is its mas
     \label{fig:setup_coincidences}
 \end{figure}
 To detect desintegrations that cascade from another excited state, the setup shown in \hbox{\autoref{fig:setup_coincidences}} is used. 
-Two scintillators, 1 and 2 are placed on opposite sides of the sample to study.
+Two scintillators, 1 and 2, are placed on opposite sides of the sample to study.
 A \emph{coincidence} occurs whenever an event is measured simultaneously in both detectors. A coincidence is only detected whenever pulses from scinitillators 1 and 2 overlap. This means that the coincidence module has a time resolution of \(2 \theta = \theta_1 + \theta_2\), where \(\theta_1\) and \(\theta_2\) are the durations of the pulses from scintillators 1 and 2.
 Using the counters denoted \emph{C} in the diagram, the rate of impulses outputed from the scintillators 1 and 2, \(m_1\) and \(m_2\), as well as the rate of coincidences from the coincidence detector \(m_{12}\) are measured. % super clean gg
 
@@ -204,7 +203,7 @@ Solving for the activity \(A\) gives
 \subsection{Separating \(\gamma_2\) and \(\gamma_3\) in the spectrum of \cobalt}
 \label{sec:separation}
 
-Due to the proximity of the \(\gamma_2\) and \(\gamma_3\) peaks for \cobalt, at 122.1 keV and 136.5 keV respectively as shown in \autoref{fig:cobalt_decay} of \autoref{sec:decay_schemes}, and the limited resolution of the detectors, the energy peaks for these desintegrations cannot be distinguished. In order to obtain a spectrum containing only the \(\gamma_3\) peak (which will be referred to as \(S_{\gamma_3}\)), a coincidence setup as shown in \autoref{fig:setup_coincidences} is used. An impulse from scintillator 2, measuring only \(\gamma_2\) and \(\gamma_3\), is only recorded when a \(\gamma_1\) is detected in scintillator 1, within the time resolution \(2\theta\). The crystal of scintillator 1 has a specific thickness as to only measure \(\gamma_1\). The obtained spectrum is thus only composed of \(\gamma_2\). \(S_{\gamma_3}\) can then be obtained by substracting \(S_{\gamma_2}\) from the total spectrum. Due to the branching ratio of  \(88\%\) for \(\gamma_2\) and \(12\%\) for \(\gamma_3\), a correction of \(0.88 S_{\gamma_2}\) must first be applied \cite{notice_VI}.
+Due to the proximity of the \(\gamma_2\) and \(\gamma_3\) peaks for \cobalt, at 122.1 keV and 136.5 keV respectively as shown in \autoref{fig:cobalt_decay} of \autoref{sec:decay_schemes}, and the limited resolution of the detectors, the energy peaks for these desintegrations cannot be distinguished. In order to obtain a spectrum containing only the \(\gamma_3\) peak (which will be referred to as \(S_{\gamma_3}\)), a coincidence setup as shown in \autoref{fig:setup_coincidences} is used. An impulse from scintillator 2, measuring only \(\gamma_2\) and \(\gamma_3\), is only recorded when a \(\gamma_1\) is detected in scintillator 1, within the time resolution \(2\theta\). The crystal of scintillator 1 has a specific thickness as to only measure \(\gamma_1\). The obtained spectrum, $S_{\gamma_2}$, is thus only composed of \(\gamma_2\). \(S_{\gamma_3}\) can then be obtained by substracting \(S_{\gamma_2}\) from the total spectrum. Due to the branching ratio of  \(88\%\) for \(\gamma_2\) and \(12\%\) for \(\gamma_3\), a correction of \(0.88 S_{\gamma_2}\) must first be applied \cite{notice_VI}.
 
 
 \subsection{Half-life of the 14.4 keV transition state}
@@ -219,4 +218,4 @@ between the exponential distribution of parameter
 $\lambda = \ln{2} / t_{1/2}$ and a gaussian distribution 
 due to the time resolution  of the instrument.
 
-A prerequisite callibration is required to be needed to map the channel measured by the MCA to the corresponding time. This is achieved by spliting the output of one detector to the input of the TAC and delaying one of the signals using a delay gate, before going to the TAC. Varying the delay on the delay gate gives a linear relationship between the channel and the time interval.
+A prerequisite calibration is required to map the channel measured by the MCA to the corresponding time. This is achieved by spliting the output of one detector to the input of the TAC and delaying one of the signals using a delay gate, before going to the TAC. Varying the delay on the delay gate gives a linear relationship between the channel and the time interval.
