@@ -162,13 +162,14 @@ The recorded delays between a detected \(\gamma_2\) and \(\gamma_1\) ray are sho
 \begin{equation}
     f(x;\mu,\sigma,\lambda, N) = \frac{1}{N} \frac{\lambda}{2} e^{\frac{\lambda}{2} (2 \mu + \lambda \sigma^2 - 2 x)}
              \operatorname{erfc} \left(\frac{\mu + \lambda \sigma^2 - x}{ \sqrt{2} \sigma}\right)
+    \label{eq:gaussian_modified_exp}
 \end{equation}
 The exponential distribution factor was found to be \(\lambda = 5.94 \pm 0.01\), which yields an estimated half-life of \(t_{1/2} = (116 \pm 1)\) ns for the 14.4 keV excited state.
 
 \begin{figure}[h]
     \centering
     \includegraphics[scale=1]{figures/co57_halflife.pdf}    
-    \caption{Distribution of the measured delays between \(\gamma_2\) and \(\gamma_1\) signals.}
+    \caption{Distribution of the measured delays between \(\gamma_2\) and \(\gamma_1\) signals. The fit was done according to \autoref{eq:gaussian_modified_exp}.}
     \label{fig:delay_gamma12}
 \end{figure}
 
