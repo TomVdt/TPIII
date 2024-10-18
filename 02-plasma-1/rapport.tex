@@ -1,0 +1,34 @@
+\documentclass[a4paper, 12pt, oneside]{article}
+
+\input{config/imports.tex}
+\input{config/biblatex.tex}
+\input{config/commands.tex}
+
+\title{Title}
+\author{Tom Vadot \and Matteo Veneziano}
+\date{\today}
+
+% \graphicspath{./figures/}
+
+\begin{document}
+
+% \maketitle
+\couille{Title}{9}{Tom Vadot, Matteo Veneziano}{Yiyang Ding}
+
+\input{sections/0-introduction.tex}
+\input{sections/1-theory-exp-setup.tex}
+\input{sections/2-results.tex}
+\input{sections/3-discussion.tex}
+\input{sections/4-conclusion.tex}
+
+% Bibliography
+% \nocite{*}  % While writing report, ignore unused citations
+\printbibliography
+
+\newpage
+
+\begin{appendices}
+\input{sections/5-appendix.tex}
+\end{appendices}
+
+\end{document}
