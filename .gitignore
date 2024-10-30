@@ -5,6 +5,7 @@ output/
 __pycache__
 *.pyc
 .DS_Store
+res/
 
 ## https://github.com/github/gitignore/blob/main/TeX.gitignore
 ## Core latex/pdflatex auxiliary files:
