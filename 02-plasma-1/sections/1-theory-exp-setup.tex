@@ -3,14 +3,35 @@
 \subsection{General explanation about plasma}
 Though every gas always has a small degree of ionisation, plasma has some defining qualities [which sets it apart][which require a separate description][which justify the need to properly define it [the need for a proper definition]].
 [A common definition of plasma is that of a] [a simple textbook definition would be a] \emph{quasineutral} gas of charged and neutral particles which exhibits \emph{collective} behaviour \cite{chen_introduction_1990}.
-
-The concepts of quasineutrality and collectivity need further explanation.
+[The concepts of quasineutrality and collectivity need further explanation.]
 [While this may seem precise, we must define what quasineutral and collective means]
 
-Quasineutrality is a mathematical way of saying that eventhough the particles making up a plasma consist of free electrons and ions, 
+Quasineutrality is a mathematical way of saying that even though the particles making up a plasma consist of free electrons and ions, 
 their overall charge densities cancel each other in equilibrium\cite{gibbon_introduction_2016}.
-(La citation a aussi une formule pour expliquer).
+In other words, if $n_e$ and $n_i$ are respectively the number densities of electrons and ions with charge number $Z$, then these are locally balanced, i.e.
+\begin{equation}
+    n_e \simeq Z n_i
+\end{equation}
+This property is closely related to the phenomenon of Debye shielding:
+if hypothetically we tried to put an electric field inside a plasma by inserting two spheres with charges of opposite sign and absolute value $Q$, almost immediately a cloud of ions would surround the negative sphere and a cloud of electrons the positive sphere, in such a way as to shield the newly created field.
+The effectiveness of this shielding will depend on the electron temperature $T_e$, as the thermal agitation of the particles allows them to escape the electrostatic potential well.
+It is the electron temperature which is considered because the ions are less mobile and rarely contribute to the shielding\cite{chen_introduction_1990}.
+The potential $\phi(r)$ around the spheres after the readjustement of the charges has taken place can be calculated \cite{sanjines_notice_2014}:
+\begin{equation}
+    \phi(r) = \frac{Q}{4\pi \epsilon_0 r} e^{-r / \lambda_d} \quad \mathrm{with} \quad \lambda_d = \sqrt{\frac{\epsilon_0 K_B T_e}{n_0 e^2}}
+\end{equation}
+where $n_0 \simeq n_i$ is the gas number density\cite{gibbon_introduction_2016}.
+The characteristic length $\lambda_d$ inside the exponential, known as \emph{Debye length}, is a measure of the shielding distance around the sphere.
+As such, another criterion to define a plasma is for $\lambda_d$ to be much smaller than the size of the system.
 
+The term collective behaviour refers instead to the fact that as the charged particles move around, they generate both local concentrations of positive or negative charges, giving rise to electric fields, and currents, and so magnetic fields\cite{chen_introduction_1990}.
+These fields can then affect other charged particles far away\footnotemark, which means that plasmas show a \emph{simultaneous} response of many particles to an external stimulus\footnotemark.
+This is [very different] from the behaviour of a neutral gas, in which particles interact only during collisions as a result of the short-range van der Waals force \cite{piel_plasma_2017}.
+\footnotetext{On peut mettre ici une description de l'action des champs sur des volumes de plasma, Section 1.2 \cite{chen_introduction_1990}.}
+\footnotetext{Alternatively, "macroscopic fields usually dominate over short-lived microscopic fluctuations".}
+
+
+A third criterion is collisions
 
 Explain concept of Debye sphere and length, ion and electron temperature and the difference between "hot" and "cold" plasma/
 
