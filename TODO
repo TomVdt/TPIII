@@ -1,5 +1,6 @@
 === Analyse ===
-- incertitude de tous les plots
+- incertitude de tous les plots (on peut rajouter une incertitude venant de la plage de valeurs possibles du start/stop des fits)
+- wtf est-ce qui s'est passé avec la tension sur la grille
 
 === Plots ===
 - Peut-etre assigner une couleur differente à chaque plot des exp2,3,4 (Temperature des electrons, KB Temperature des électrons, densité des électrons)
