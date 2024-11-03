@@ -1,42 +1,95 @@
 \documentclass[11pt]{beamer}
 
-% packages
+% ===== Packages =====
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
 \usepackage{graphicx}
+\usepackage{tikz}
 
-% Beamer theme
+% ===== Typeface =====
+\usepackage[sfdefault]{FiraSans} % !
+% \usepackage{helvet}
+% \usepackage[sfdefault]{AlegreyaSans}
+% \usepackage[sfdefault]{plex-sans} % !
+% \usepackage{avant}
+% \usepackage{montserrat}
+% \usepackage{raleway}
+
+% ===== Beamer theme =====
 \usetheme{Boadilla} % other interesting built-in: Boadilla, CambridgeUS (if we want sections in header), Pittsburgh (super-plain)
-\usecolortheme{beaver}
+
+% \useoutertheme{infolines} % Alternatively: miniframes, infolines, split
+\useinnertheme{circles}
 
 \setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{navigation symbols}{}
 
-\setbeamercolor{block title}{bg=cyan!50, fg=white} % modifying colors (the ! is for trasparency)
+% ===== Colors =====
+% \usecolortheme{beaver}
+\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+\usecolortheme[named=UBCblue]{structure}
 
-\definecolor{cyanish}{RGB}{10,250,250}  % different ways to define colors
-\definecolor{lightgreen}{HTML}{CCFF99}
-\definecolor{orangish}{wave}{620}
-\colorlet{ochre}{blue!30!yellow!70!}
+% \setbeamercolor{block title}{bg=cyan!50, fg=white} % modifying colors (the ! is for trasparency)
+% \definecolor{darkred}{rgb}{0.8,0,0}
 
-% Text properties 
+% \setbeamercolor{section in toc}{fg=black,bg=white}
+% \setbeamercolor{alerted text}{fg=darkred!80!gray}
+% \setbeamercolor*{palette primary}{fg=darkred!60!black,bg=gray!30!white}
+% \setbeamercolor*{palette secondary}{fg=darkred!70!black,bg=gray!15!white}
+% \setbeamercolor*{palette tertiary}{bg=darkred!80!black,fg=gray!10!white}
+% \setbeamercolor*{palette quaternary}{fg=darkred,bg=gray!5!white}
+
+% \setbeamercolor*{sidebar}{fg=darkred,bg=gray!15!white}
+
+% \setbeamercolor*{palette sidebar primary}{fg=darkred!10!black}
+% \setbeamercolor*{palette sidebar secondary}{fg=white}
+% \setbeamercolor*{palette sidebar tertiary}{fg=darkred!50!black}
+% \setbeamercolor*{palette sidebar quaternary}{fg=gray!10!white}
+
+% \setbeamercolor*{titlelike}{parent=palette primary}
+% \setbeamercolor{titlelike}{parent=palette primary,fg=darkred}
+% \setbeamercolor{frametitle}{bg=gray!10!white}
+% \setbeamercolor{frametitle right}{bg=gray!60!white}
+
+% \setbeamercolor*{separation line}{}
+% \setbeamercolor*{fine separation line}{}
+
+% \definecolor{cyanish}{RGB}{10,250,250}  % different ways to define colors
+% \definecolor{lightgreen}{HTML}{CCFF99}
+% \definecolor{orangish}{wave}{620}
+% \colorlet{ochre}{blue!30!yellow!70!}
+
+% ===== Text properties =====
+\renewcommand*\familydefault{\sfdefault}
 % \linespread{1.3} % Change line spacing
 \usefonttheme{professionalfonts}
 
+% ===== Global background =====
 % %Global Background must be put in preamble
 % \usebackgroundtemplate%
 % {%
 %     \includegraphics[width=\paperwidth,height=\paperheight]{newton.jpg}%
 % }
 
-% 
-\title{Testing a Beamer \LaTeX{} Presentation}
+% ===== Title logo =====
+\titlegraphic { 
+\begin{tikzpicture}[overlay,remember picture]
+\node[right=0.2cm] at (current page.147){
+    \includegraphics[width=1.5cm]{../figures/EPFL_logo.png}
+};
+\end{tikzpicture}
+}
+% Or more simply:
+% \titlegraphic{\includegraphics[width=1.5cm]{../figures/EPFL_logo.png}} % Title logo
+
+% ===== Presentation =====
+\title{Testing a Beamer Presentation}
 \subtitle{Is it good?}
 \author[Tom Vadot \and Matteo Veneziano]{Tom Vadot \and Matteo Veneziano}
 \institute[]{EPFL Section of Physics}
-\date{\today}
-\logo{\includegraphics[width=2cm]{../figures/Placeholder_EPFL_logo.pdf}} % on peut le mettre où on veut
-% \titlegraphic{\includegraphics[width=4cm]{../figures/density_position.png}} % Title logo
+\date{November 29, 2024}
+% \logo{\includegraphics[width=1.5cm]{../figures/EPFL_logo.png}} % logo en chaque page
 
 \begin{document}
 
