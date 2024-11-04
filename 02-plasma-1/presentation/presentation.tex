@@ -1,11 +1,15 @@
 \documentclass[11pt]{beamer}
 
+
 % ===== Packages =====
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
 \usepackage{graphicx}
 \usepackage{tikz}
+
+\usepackage[backend=biber, autolang=other, style=phys, sorting=none]{biblatex}  % Citing
+\addbibresource{../bibliography/bibliography.bib}
 
 % ===== Typeface =====
 \usepackage[sfdefault]{FiraSans} % !
@@ -64,6 +68,9 @@
 \renewcommand*\familydefault{\sfdefault}
 % \linespread{1.3} % Change line spacing
 \usefonttheme{professionalfonts}
+\setbeamerfont{bibliography entry author}{size=\scriptsize, series=\normalfont} 
+\setbeamerfont{bibliography entry title}{size=\scriptsize, series=\bfseries} 
+\setbeamerfont{bibliography entry location}{size=\scriptsize, series=\normalfont} 
 
 % ===== Global background =====
 % %Global Background must be put in preamble
@@ -84,8 +91,7 @@
 % \titlegraphic{\includegraphics[width=1.5cm]{../figures/EPFL_logo.png}} % Title logo
 
 % ===== Presentation =====
-\title{Testing a Beamer Presentation}
-\subtitle{Is it good?}
+\title[(À enlever)]{Argon plasma analysis using Langmuir probes}
 \author[Tom Vadot \and Matteo Veneziano]{Tom Vadot \and Matteo Veneziano}
 \institute[]{EPFL Section of Physics}
 \date{November 29, 2024}
@@ -97,19 +103,48 @@
     \titlepage
 \end{frame}
 
-\begin{frame}{What is plasma?}{A subtitle about plasma}
-    \begin{itemize}
-    \item Tizio
-    \item Caio
-    \item Sempronio
-    \end{itemize}
-\end{frame}
+\begin{frame}{Defining plasma}{Maybe split in the middle between quasineutral and collective behaviour?}
+    "A \emph{quasineutral} gas of charged and neutral particles which exhibit \emph{collective} behaviour" \footfullcite{chen_introduction_2006}
 
-\begin{frame}[plain]{Ciao}
-When you want to hide the footer for dramatic effect.
+    Quasineutrality: even though the particles making up a plasma consist of free electrons and ions, their overall charge densities cancel each other in equilibrium \footfullcite{gibbon_introduction_2016}
+
+    Collective behaviour: macroscopic fields dominate over short-lived microscopic fluctuations
+
 \end{frame}
 
 
+\begin{frame}{Langmuir probes}
+
+\end{frame}
+
+
+\begin{frame}{The $I$--$V$ characteristic curve}
+    
+\end{frame}
+
+
+\begin{frame}{Ion acustic waves}
+    
+\end{frame}
+
+
+\begin{frame}{Experimental setup}
+    \includegraphics[width=6cm]{../figures/experimental-setup.png}
+\end{frame}
+
+
+\begin{frame}{(Variation avec position, differentes pressions)}{Mise en page en dernier, avant écrire les phrases}
+    \begin{columns}
+        \column{0.5\textwidth}
+        [Observations]
+
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/temperatureeV_position.pdf}
+        \includegraphics[width=\textwidth]{../figures/density_position.pdf}
+    \end{columns}
+\end{frame}
+    
 \begin{frame}{Some other stuff about Plasma}
     \begin{columns}[T]
         \column{0.6\textwidth}
@@ -140,7 +175,7 @@ When you want to hide the footer for dramatic effect.
     \end{column}
    % Column 3    
     \begin{column}{0.49\textwidth}
-        \includegraphics[width=\textwidth]{../figures/temperatureeV_position.png}
+        \includegraphics[width=\textwidth]{../figures/temperatureeV_position.pdf}
     \end{column}
     \end{columns}
 \end{frame}
@@ -159,16 +194,6 @@ When you want to hide the footer for dramatic effect.
     \pause
 
     There are other very customisable ways but we won't need them.
-\end{frame}
-
-\begin{frame}[fragile]{Beamer Font family}
-    \verb|\rmfamily|: \rmfamily CM Roman
-
-    \verb|\sffamily|: \sffamily CM Sans serif
-
-    \verb|\ttfamily|: \ttfamily CM Typewriter
-
-    some math: $y = f(x)$
 \end{frame}
 
 \end{document}
