@@ -6,7 +6,8 @@
 \usepackage[T1]{fontenc}
 
 \usepackage{graphicx}
-\usepackage{tikz}
+\usepackage{tikz}  % TODO: utilisé pourquoi? (il est particulierement lent a compiler avec)
+\usepackage{enumitem} % Custom lists
 
 \usepackage[backend=biber, autolang=other, style=phys, sorting=none]{biblatex}  % Citing
 \addbibresource{../bibliography/bibliography.bib}
@@ -138,6 +139,12 @@
         \column{0.5\textwidth}
         [Observations]
 
+        \begin{itemize}[label={--}]
+            \item Close to heating elements \(\rightarrow\) higher \(e^-\) temperature
+            \item Higher pressure decreases temperature
+            \item Maximal density for distances 3-6 cm from heating element (or is it completely arbitrary?)
+        \end{itemize}
+
         \column{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{../figures/temperatureeV_position.pdf}
@@ -165,7 +172,7 @@
     \begin{column}{0.49\textwidth}
         \begin{itemize}
             \item Mmmh yes the plasma is made of plasma
-            \item Second smart remark
+            \item It do be warm tho (and cold too how cool is that?)
             \item Third smart remark
         \end{itemize}
     \end{column}
@@ -194,6 +201,12 @@
     \pause
 
     There are other very customisable ways but we won't need them.
+    \pause
+
+    wait i can animate anything here
+    \pause
+
+    you just lost the game
 \end{frame}
 
 \end{document}
