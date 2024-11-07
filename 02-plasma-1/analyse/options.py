@@ -11,17 +11,17 @@ rcParams = {
     ]),
 
     # Text size
-    "axes.labelsize": 12,
-    "font.size": 12,
-    "legend.fontsize": 12,
-    "xtick.labelsize": 12,
-    "ytick.labelsize": 12,
-    # 'lines.markersize': 12,
+    "axes.labelsize": 11,
+    "font.size": 11,
+    "legend.fontsize": 11,
+    "xtick.labelsize": 11,
+    "ytick.labelsize": 11,
+    # 'lines.markersize': 11,
 
     # Figure options
     "figure.figsize": (6, 4.5),
     'figure.dpi': 130,
-    'axes.titlesize': 12,
+    'axes.titlesize': 11,
     'lines.color': 'grey',
     'lines.linewidth' : 1,
     'scatter.marker': '+',

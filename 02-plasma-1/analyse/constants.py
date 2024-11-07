@@ -2,8 +2,8 @@ from uncertainties import ufloat
 from numpy import pi, mean
 
 # Real constants
-CM_PER_INCH = 2.54  # cm/inch
-INCH_PER_CM = 1/2.54 # inch/cm
+INCH_PER_CM = 2.54  # cm/inch
+CM_PER_INCH = 1/2.54 # inch/cm
 
 ELEMENTARY_CHARGE = 1.602_176_634e-19  # C
 BOLTZMANN_CONSTANT_JOULE = 1.380_649e-23  # J/K

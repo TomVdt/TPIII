@@ -1,5 +1,5 @@
 \documentclass[10pt]{beamer}
-
+% Beamer uses a standard paper size of 128x96mm
 
 % ===== Packages =====
 \usepackage[utf8]{inputenc}
@@ -73,6 +73,21 @@
 \setbeamerfont{bibliography entry title}{size=\scriptsize, series=\bfseries} 
 \setbeamerfont{bibliography entry location}{size=\scriptsize, series=\normalfont} 
 
+% ===== Avoid footnotes at the end of columns =====
+\makeatletter
+\renewrobustcmd{\blx@mkbibfootnote}[2]{%
+  \iftoggle{blx@footnote}
+    {\blx@warning{Nested notes}%
+     \addspace\mkbibparens{#2}}
+    {\unspace
+     \ifnum\blx@notetype=\tw@
+       \expandafter\@firstoftwo
+     \else
+       \expandafter\@secondoftwo
+     \fi
+       {\csuse{blx@theendnote#1}{\protecting{\blxmkbibnote{end}{#2}}}}
+       {\csuse{footnote#1}[frame]{\protecting{\blxmkbibnote{foot}{#2}}}}}}
+\makeatother
 % \setlist[itemize]{label={$\vcenter{\hbox{\scriptsize$\bullet$}}$}, leftmargin=0.6cm, topsep=-3pt}
 \setlist[itemize]{label={--}, leftmargin=0.6cm, topsep=-3pt}
 
@@ -163,7 +178,7 @@
         \column{0.5\textwidth}
         \centering
         \begin{figure}
-            \includegraphics[width=\textwidth]{../figures/temperatureeV_pressure.pdf}
+            \includegraphics[scale=1]{../figures/temperatureeV_pressure.pdf}
             \caption{ciao}
             
         \end{figure}
@@ -171,7 +186,7 @@
 
         \column{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figures/density_pressure.pdf}
+        \includegraphics[scale=1]{../figures/density_pressure.pdf}
         Higher pressure leads to higher density.
 
     \end{columns}
@@ -190,6 +205,8 @@
 
     \end{columns}
 \end{frame}
+
+
 
 
 \begin{frame}{Some other stuff about Plasma}{Now with lines!}
