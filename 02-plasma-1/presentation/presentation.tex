@@ -1,4 +1,4 @@
-\documentclass[11pt]{beamer}
+\documentclass[10pt]{beamer}
 
 
 % ===== Packages =====
@@ -73,6 +73,9 @@
 \setbeamerfont{bibliography entry title}{size=\scriptsize, series=\bfseries} 
 \setbeamerfont{bibliography entry location}{size=\scriptsize, series=\normalfont} 
 
+% \setlist[itemize]{label={$\vcenter{\hbox{\scriptsize$\bullet$}}$}, leftmargin=0.6cm, topsep=-3pt}
+\setlist[itemize]{label={--}, leftmargin=0.6cm, topsep=-3pt}
+
 % ===== Global background =====
 % %Global Background must be put in preamble
 % \usebackgroundtemplate%
@@ -106,10 +109,12 @@
 
 \begin{frame}{Defining plasma}{Maybe split in the middle between quasineutral and collective behaviour?}
     "A \emph{quasineutral} gas of charged and neutral particles which exhibit \emph{collective} behaviour" \footfullcite{chen_introduction_2006}
-
-    Quasineutrality: even though the particles making up a plasma consist of free electrons and ions, their overall charge densities cancel each other in equilibrium \footfullcite{gibbon_introduction_2016}
-
-    Collective behaviour: macroscopic fields dominate over short-lived microscopic fluctuations
+    \begin{columns}
+        \column{0.5\textwidth}
+        Quasineutrality: even though the particles making up a plasma consist of free electrons and ions, their overall charge densities cancel each other in equilibrium \footfullcite{gibbon_introduction_2016}
+        \column{0.5\textwidth}
+        Collective behaviour: macroscopic fields dominate over short-lived microscopic fluctuations
+    \end{columns}
 
 \end{frame}
 
@@ -139,7 +144,7 @@
         \column{0.5\textwidth}
         [Observations]
 
-        \begin{itemize}[label={--}]
+        \begin{itemize}
             \item Close to heating elements \(\rightarrow\) higher \(e^-\) temperature
             \item Higher pressure decreases temperature
             \item Maximal density for distances 3-6 cm from heating element (or is it completely arbitrary?)
@@ -147,24 +152,45 @@
 
         \column{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figures/temperatureeV_position.pdf}
-        \includegraphics[width=\textwidth]{../figures/density_position.pdf}
+        \includegraphics[scale=1]{../figures/temperatureeV_position.pdf}
+        \includegraphics[scale=1]{../figures/density_position.pdf}
     \end{columns}
 \end{frame}
     
-\begin{frame}{Some other stuff about Plasma}
-    \begin{columns}[T]
-        \column{0.6\textwidth}
+\begin{frame}{Variation avec pression}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
+    "Ensuite on a mieux etudié la variation en pression"
+    \begin{columns}
+        \column{0.5\textwidth}
         \centering
-        This is column one with 75\% text width.
+        \begin{figure}
+            \includegraphics[width=\textwidth]{../figures/temperatureeV_pressure.pdf}
+            \caption{ciao}
+            
+        \end{figure}
+        As observed before, higher pressure decreases temperature.
 
-        \column{0.4\textwidth}
+        \column{0.5\textwidth}
         \centering
-        This is column two with 25\% text width.
-        % \vspace{5cm}
-        % And something in the bottom right corner.
+        \includegraphics[width=\textwidth]{../figures/density_pressure.pdf}
+        Higher pressure leads to higher density.
+
     \end{columns}
 \end{frame}
+
+\begin{frame}{Variation avec filament current}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/temperatureeV_current.pdf}
+
+
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/density_current.pdf}
+
+    \end{columns}
+\end{frame}
+
 
 \begin{frame}{Some other stuff about Plasma}{Now with lines!}
     \begin{columns}
