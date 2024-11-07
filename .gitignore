@@ -1,5 +1,6 @@
 # Eviter les conflits, normalement les rapports ca se recompile sans problème
 rapport.pdf
+presentation.pdf
 output/
 .venv
 __pycache__
