@@ -13,13 +13,20 @@
 \addbibresource{../bibliography/bibliography.bib}
 
 % ===== Typeface =====
-\usepackage[sfdefault]{FiraSans} % !
+% \usepackage[sfdefault]{FiraSans} % peculiar but nice
+% \usepackage{tgheros} % nice
+\usepackage[sfdefault]{plex-sans} % nice
+% \usepackage[sfdefault]{noto}
+% \usepackage[sfdefault, light]{FiraSans} 
 % \usepackage{helvet}
-% \usepackage[sfdefault]{AlegreyaSans}
-% \usepackage[sfdefault]{plex-sans} % !
-% \usepackage{avant}
+% \usepackage[sfdefault]{AlegreyaSans} % peculiar
 % \usepackage{montserrat}
 % \usepackage{raleway}
+% \usepackage{avant} % nah
+% \usepackage{tgadventor} % nah
+% \usepackage{cmbright} % meh
+% \usepackage{DejaVuSans} % big
+% https://tug.org/FontCatalogue/sansseriffonts.html
 
 % ===== Beamer theme =====
 \usetheme{Boadilla} % other interesting built-in: Boadilla, CambridgeUS (if we want sections in header), Pittsburgh (super-plain)
@@ -128,21 +135,20 @@
 \end{frame}
 
 
-\begin{frame}{Defining plasma}{Maybe split in the middle between quasineutral and collective behaviour?}
-    "A \emph{quasineutral} gas of charged and neutral particles which exhibit \emph{collective} behaviour" \footfullcite{chen_introduction_2006}
-    \vspace{1cm}
-    \begin{columns}[T]
-        \column{0.5\textwidth}
-        \emph{Quasineutrality}: even though the particles making up a plasma consist of free electrons and ions, their overall charge densities cancel each other in equilibrium \footfullcite{gibbon_introduction_2016}
+\begin{frame}{Defining plasma}
+    A \emph{quasineutral} gas of charged and neutral particles which exhibit \emph{collective} behaviour" \footfullcite{chen_introduction_2006}
+    \vspace{0.5cm}
+    \begin{itemize}
+        \item \textbf{Quasineutrality}: even though the particles making up a plasma consist of free electrons and ions, their overall charge densities cancel each other in equilibrium \footfullcite{gibbon_introduction_2016}
         % maybe formula?
 
-        \column{0.5\textwidth}
-        \emph{Collective behaviour}: macroscopic fields dominate over short-lived microscopic fluctuations.
+        \item \textbf{Collective behaviour}: macroscopic fields dominate over short-lived microscopic fluctuations.
         Plasmas show a simultaneous response of many particles
         to an external stimulus
         % an external stimulus [creates] a simultaneous response of many particles
-    \end{columns}
-
+    \end{itemize}
+    \vspace{0.5cm}
+    Cold plasma: a gas where ions are not thermalised and electrons have a temperature such that $T_e >> T_i$.
 \end{frame}
 
 
