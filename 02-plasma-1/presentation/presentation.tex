@@ -96,7 +96,7 @@
        {\csuse{footnote#1}[frame]{\protecting{\blxmkbibnote{foot}{#2}}}}}}
 \makeatother
 % \setlist[itemize]{label={$\vcenter{\hbox{\scriptsize$\bullet$}}$}, leftmargin=0.6cm, topsep=-3pt}
-\setlist[itemize]{label={--}, leftmargin=0.6cm, topsep=-3pt}
+\setlist[itemize]{label={--}, leftmargin=0.6cm}
 
 % ===== Global background =====
 % %Global Background must be put in preamble
@@ -116,6 +116,11 @@
 % Or more simply:
 % \titlegraphic{\includegraphics[width=1.5cm]{../figures/EPFL_logo.png}} % Title logo
 
+% ===== Commands =====
+\newcommand{\probecurrent}[0]{\ensuremath{I_{\mathrm{probe}}}}
+\newcommand{\electronsaturationcurrent}[0]{\ensuremath{I_{e,{\mathrm{sat}}}}}
+
+
 % ===== Presentation =====
 \title[(À enlever)]{Argon plasma analysis using Langmuir probes}
 \author[Tom Vadot \and Matteo Veneziano]{Tom Vadot \and Matteo Veneziano}
@@ -129,36 +134,62 @@
     \titlepage
 \end{frame}
 
-
+\section{Introduction}
 \begin{frame}{Introduction}
     intro
 \end{frame}
 
-
+\section{Theory and experimental setup}
 \begin{frame}{Defining plasma}
     A \emph{quasineutral} gas of charged and neutral particles which exhibit \emph{collective} behaviour" \footfullcite{chen_introduction_2006}
     \vspace{0.5cm}
     \begin{itemize}
-        \item \textbf{Quasineutrality}: even though the particles making up a plasma consist of free electrons and ions, their overall charge densities cancel each other in equilibrium \footfullcite{gibbon_introduction_2016}
-        % maybe formula?
+        \item \textbf{Quasineutrality}: even though the particles making up a plasma consist of free electrons and ions, their overall charge densities cancel each other in equilibrium: 
+            $n_e \simeq Z n_i$ \footfullcite{gibbon_introduction_2016}
 
         \item \textbf{Collective behaviour}: macroscopic fields dominate over short-lived microscopic fluctuations.
-        Plasmas show a simultaneous response of many particles
-        to an external stimulus
-        % an external stimulus [creates] a simultaneous response of many particles
+            An external stimulus creates a simultaneous response of many particles \footfullcite{piel_plasma_2017}.
     \end{itemize}
     \vspace{0.5cm}
-    Cold plasma: a gas where ions are not thermalised and electrons have a temperature such that $T_e >> T_i$.
+    Cold plasma: ions are not thermalised and electrons have a temperature such that $T_e \gg T_i$ \footfullcite{bagnato_notice_2019}.
 \end{frame}
 
 
 \begin{frame}{Langmuir probes}
+    Widely used devices for measuring different properties of plasma, e.g. electron temperature and density.
+    \vspace{0.4cm}
 
+    They consist of a plane electrode OF SURFACE A PROBE (e.g. a small tantalum disk) inserted into the chamber and biased by an external voltage.
+    The charges (both ions and electrons) reach the surface and generate probe current $\probecurrent$, which is measured\footfullcite{piel_plasma_2017}.
+    NOTE: DONNER FORMULE RELATION ENTRE BIAIS, PLASMA, PROBE ET LA FORMULE DU COURANT
+    \centering
+    \includegraphics[width=0.75\textwidth]{../figures/langmuir_probe.png}
 \end{frame}
 
 
 \begin{frame}{The $I$--$V$ characteristic curve}
-    
+    Measure of the probe current as a function of the bias potential.
+    Three regions
+    \begin{enumerate}
+        \item[I] High negative bias: no electrons reach the probe. Constant ion saturation current.
+        \item[II] Electron retardation regime: part of the electrons reach the probe. The electron current increases exponentially with the bias voltage (\footfullcite{piel_plasma_2017} or \footfullcite{bagnato_notice_2019})
+            \begin{equation*}
+                I = blabla
+            \end{equation*}
+        \item[III] High positive bias: constant electron saturation current.
+    \end{enumerate}
+    Two points of physical significance
+    \begin{itemize}
+        \item Floating potential $\Phi_f$: no current flows in the probe
+        \item Plasma potential $\Phi_p$: the potential inside the ambient plasma, corresponds to electron saturation current
+            \begin{equation*}
+                \electronsaturationcurrent = \frac{1}{4}e n_e v_{e,th} A_{\mathrm{probe}}
+            \end{equation*}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Extracting electron temperature and density}
+
 \end{frame}
 
 
@@ -171,7 +202,7 @@
     \includegraphics[width=6cm]{../figures/experimental-setup.png}
 \end{frame}
 
-
+\section{Results}
 \begin{frame}{(Variation avec position, differentes pressions)}{Mise en page en dernier, avant écrire les phrases}
     \begin{columns}
         \column{0.5\textwidth}
@@ -266,6 +297,7 @@
     \end{columns}
 \end{frame}
 
+\section{Discussion}
 \begin{frame}{Hysteresis}
     During measures,
     hysteresis observed for high current and (high?) pressure, caused by impurities\footfullcite{hassouba_analysis_2013}
@@ -275,47 +307,43 @@
 \end{frame}
 
 
-\begin{frame}{Some other stuff about Plasma}{Now with lines!}
-    \begin{columns}
-    % Column 1
-    \begin{column}{0.49\textwidth}
-        \begin{itemize}
-            \item Mmmh yes the plasma is made of plasma
-            \item It do be warm tho (and cold too how cool is that?)
-            \item Third smart remark
-        \end{itemize}
-    \end{column}
-   % Column 2 (vertical line)
-    \begin{column}{.02\textwidth}
-        \rule{.1mm}{0.7\textheight}
-    \end{column}
-   % Column 3    
-    \begin{column}{0.49\textwidth}
-        \includegraphics[width=\textwidth]{../figures/temperatureeV_position.pdf}
-    \end{column}
-    \end{columns}
-\end{frame}
+% \begin{frame}{Some other stuff about Plasma}{Now with lines!}
+%     \begin{columns}
+%     % Column 1
+%     \begin{column}{0.49\textwidth}
+%         \begin{itemize}
+%             \item Mmmh yes the plasma is made of plasma
+%             \item It do be warm tho (and cold too how cool is that?)
+%             \item Third smart remark
+%         \end{itemize}
+%     \end{column}
+%    % Column 2 (vertical line)
+%     \begin{column}{.02\textwidth}
+%         \rule{.1mm}{0.7\textheight}
+%     \end{column}
+%    % Column 3    
+%     \begin{column}{0.49\textwidth}
+%         \includegraphics[width=\textwidth]{../figures/temperatureeV_position.pdf}
+%     \end{column}
+%     \end{columns}
+% \end{frame}
 
-\begin{frame}{On the thermal properties of plasma}
-    \begin{block}{Caution!}
-        Plasma is hot
-    \end{block}
-\end{frame}
 
-\begin{frame}{Overlays in Beamer}
-    The easiest way is to use the stop command
-    \pause
 
-    Like this
-    \pause
+% \begin{frame}{Overlays in Beamer}
+%     The easiest way is to use the stop command
+%     \pause
 
-    There are other very customisable ways but we won't need them.
-    \pause
+%     Like this
+%     \pause
 
-    wait i can animate anything here
-    \pause
+%     There are other very customisable ways but we won't need them.
+%     \pause
 
-    you just lost the game
-\end{frame}
+%     wait i can animate anything here
+%     \pause
+
+%     you just lost the game
+% \end{frame}
 
 \end{document}
