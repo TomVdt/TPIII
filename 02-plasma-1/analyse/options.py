@@ -19,7 +19,7 @@ rcParams = {
     # 'lines.markersize': 10,
 
     # Figure options
-    "figure.figsize": (6, 4.5),
+    "figure.figsize": (2.26377952756, 1.77165354331),
     'figure.dpi': 130,
     'axes.titlesize': 10,
     'lines.color': 'grey',

@@ -13,6 +13,8 @@
 \addbibresource{../bibliography/bibliography.bib}
 
 % ===== Typeface =====
+\usepackage{mlmodern} % thicker math, do not touch
+
 % \usepackage[sfdefault]{FiraSans} % peculiar but nice
 % \usepackage{tgheros} % nice
 \usepackage[sfdefault]{plex-sans} % nice
@@ -31,12 +33,19 @@
 % ===== Beamer theme =====
 \usetheme{Boadilla} % other interesting built-in: Boadilla, CambridgeUS (if we want sections in header), Pittsburgh (super-plain)
 
-% \useoutertheme{infolines} % Alternatively: miniframes, infolines, split
-\useinnertheme{circles}
-
-\setbeamertemplate{blocks}[rounded][shadow=false]
-\setbeamertemplate{navigation symbols}{}
-
+\setbeamertemplate{footline}{   % only page number in footline
+    \hfill%
+    \usebeamercolor[fg]{page number in head/foot}%
+    % \usebeamerfont{page number in head/foot}%
+    \small%
+    \setbeamertemplate{page number in head/foot}[framenumber]%
+    \usebeamertemplate*{page number in head/foot}\kern1em\vskip4pt%
+    }
+    \addtobeamertemplate{footline}{\vspace*{-0.5cm}}{}
+    
+    \setbeamertemplate{blocks}[rounded][shadow=false]
+    \setbeamertemplate{navigation symbols}{}
+    
 % ===== Colors =====
 % \usecolortheme{beaver}
 \definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
@@ -73,9 +82,9 @@
 % \colorlet{ochre}{blue!30!yellow!70!}
 
 % ===== Text properties =====
-\renewcommand*\familydefault{\sfdefault}
+\renewcommand*\familydefault{\sfdefault} % sans-serif as default
 % \linespread{1.3} % Change line spacing
-\usefonttheme{professionalfonts}
+\usefonttheme{professionalfonts} % uses Computer Modern for math as God intended
 \setbeamerfont{bibliography entry author}{size=\scriptsize, series=\normalfont} 
 \setbeamerfont{bibliography entry title}{size=\scriptsize, series=\bfseries} 
 \setbeamerfont{bibliography entry location}{size=\scriptsize, series=\normalfont} 
@@ -83,17 +92,17 @@
 % ===== Avoid footnotes at the end of columns =====
 \makeatletter
 \renewrobustcmd{\blx@mkbibfootnote}[2]{%
-  \iftoggle{blx@footnote}
-    {\blx@warning{Nested notes}%
-     \addspace\mkbibparens{#2}}
-    {\unspace
-     \ifnum\blx@notetype=\tw@
-       \expandafter\@firstoftwo
-     \else
-       \expandafter\@secondoftwo
-     \fi
-       {\csuse{blx@theendnote#1}{\protecting{\blxmkbibnote{end}{#2}}}}
-       {\csuse{footnote#1}[frame]{\protecting{\blxmkbibnote{foot}{#2}}}}}}
+\iftoggle{blx@footnote}
+{\blx@warning{Nested notes}%
+\addspace\mkbibparens{#2}}
+{\unspace
+\ifnum\blx@notetype=\tw@
+\expandafter\@firstoftwo
+\else
+\expandafter\@secondoftwo
+\fi
+{\csuse{blx@theendnote#1}{\protecting{\blxmkbibnote{end}{#2}}}}
+{\csuse{footnote#1}[frame]{\protecting{\blxmkbibnote{foot}{#2}}}}}}
 \makeatother
 % \setlist[itemize]{label={$\vcenter{\hbox{\scriptsize$\bullet$}}$}, leftmargin=0.6cm, topsep=-3pt}
 \setlist[itemize]{label={--}, leftmargin=0.6cm}
@@ -199,26 +208,30 @@
 
 
 \begin{frame}{Experimental setup}
+    Prendre figure dans vieux rapport et citer.
     \includegraphics[width=6cm]{../figures/experimental-setup.png}
 \end{frame}
 
 \section{Results}
 \begin{frame}{(Variation avec position, differentes pressions)}{Legend outside!}
-    \begin{columns}
+    \begin{columns}[T]
         \column{0.5\textwidth}
-        [Observations]
-
-        \begin{itemize}
-            \item Close to heating elements \(\rightarrow\) higher \(e^-\) temperature
-            \item Higher pressure decreases temperature
-            \item Maximal density for distances 3-6 cm from heating element (or is it completely arbitrary?)
-        \end{itemize}
+        \centering
+        \begin{figure}
+            \includegraphics[scale=1]{../figures/temperatureeV_position.pdf}
+            \caption{ciao}
+        \end{figure}
 
         \column{0.5\textwidth}
         \centering
-        \includegraphics[scale=1]{../figures/temperatureeV_position.pdf}
         \includegraphics[scale=1]{../figures/density_position.pdf}
     \end{columns}
+
+    \begin{itemize}
+            \item Close to heating elements \(\rightarrow\) higher \(e^-\) temperature
+            \item Higher pressure decreases temperature
+            \item Maximal density for distances 3-6 cm from heating element (or is it completely arbitrary?)
+    \end{itemize}
 \end{frame}
     
 \begin{frame}{Variation avec pression}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
@@ -226,16 +239,13 @@
     \begin{columns}
         \column{0.5\textwidth}
         \centering
-        \begin{figure}
-            \includegraphics[scale=1]{../figures/temperatureeV_pressure.pdf}
-            \caption{ciao}
-            
-        \end{figure}
+        \fbox{\includegraphics[scale=1]{../figures/temperatureeV_pressure.pdf}}
+
         As observed before, higher pressure decreases temperature.
 
         \column{0.5\textwidth}
         \centering
-        \includegraphics[scale=1]{../figures/density_pressure.pdf}
+        \fbox{\includegraphics[scale=1]{../figures/density_pressure.pdf}}
         Higher pressure leads to higher density.
 
     \end{columns}
@@ -301,8 +311,9 @@
 \begin{frame}{Hysteresis}
     During measures,
     hysteresis observed for high current and (high?) pressure, caused by impurities\footfullcite{hassouba_analysis_2013}
-
-    \includegraphics[scale=1]{../figures/hysteresis.pdf}
+    \begin{center}
+        \includegraphics[scale=1]{../figures/hysteresis.pdf}
+    \end{center}
 
 \end{frame}
 
