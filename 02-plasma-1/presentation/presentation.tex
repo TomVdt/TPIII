@@ -38,7 +38,7 @@
     \hfill%
     \usebeamercolor[fg]{page number in head/foot}%
     % \usebeamerfont{page number in head/foot}%
-    \small%
+    \footnotesize%
     \setbeamertemplate{page number in head/foot}[framenumber]%
     \usebeamertemplate*{page number in head/foot}\kern1em\vskip4pt%
     }
@@ -129,6 +129,9 @@
 % ===== Commands =====
 \newcommand{\probecurrent}[0]{\ensuremath{I_{\mathrm{probe}}}}
 \newcommand{\electronsaturationcurrent}[0]{\ensuremath{I_{e,{\mathrm{sat}}}}}
+\newcommand{\biasvoltage}{\ensuremath{V_{\mathrm{bias}}}}
+\newcommand{\probevoltage}{\ensuremath{V_{\mathrm{probe}}}}
+\newcommand{\plasmavoltage}{\ensuremath{V_{\mathrm{plasma}}}}
 \newcommand{\electron}[0]{$e^{-}$}
 
 % ===== Presentation =====
@@ -166,40 +169,63 @@
 
 
 \begin{frame}{Langmuir probes}
-    Widely used devices for measuring different properties of plasma, e.g. electron temperature and density.
-    \vspace{0.4cm}
+    Widely used devices for measuring different properties of plasma, e.g. electron temperature $T_e$ and density $n_e$.
+    % \vspace{0.4cm}
 
-    They consist of a plane electrode OF SURFACE A PROBE (e.g. a small tantalum disk) inserted into the chamber and biased by an external voltage.
-    The charges (both ions and electrons) reach the surface and generate probe current $\probecurrent$, which is measured\footfullcite{piel_plasma_2017}.
-    NOTE: DONNER FORMULE RELATION ENTRE BIAIS, PLASMA, PROBE ET LA FORMULE DU COURANT
-    \centering
-    \includegraphics[width=0.75\textwidth]{../figures/langmuir_probe.png}
+    Plane electrode (e.g. a small tantalum disk) of surface $A_{\mathrm{probe}}$, inserted into the chamber and biased by an external voltage $\biasvoltage$.
+    \begin{equation*}
+        \biasvoltage= \probevoltage - \plasmavoltage
+    \end{equation*}
+    The charges (both ions and electrons) reach the surface and generate probe current $\probecurrent = I_e + I_i$.
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{../figures/langmuir_probe.png}
+        \\
+        Typical Langmuir probe \footfullcite{piel_plasma_2017}
+    \end{center}
 \end{frame}
 
 
 \begin{frame}{The $I$--$V$ characteristic curve}
-    Measure of the probe current as a function of the bias potential.
-    Three regions
-    \begin{enumerate}
-        \item[I] High negative bias: no electrons reach the probe. Constant ion saturation current.
-        \item[II] Electron retardation regime: part of the electrons reach the probe. The electron current increases exponentially with the bias voltage (\footfullcite{piel_plasma_2017} or \footfullcite{bagnato_notice_2019})
+    \begin{columns}
+        \column{0.6\textwidth}
+        Three regions:
+        \begin{enumerate}
+            \item[I] High negative bias: no electrons reach the probe. Constant ion saturation current.
+            \item[II] Electron retardation regime: part of the electrons reach the probe. Electron current (\footfullcite{piel_plasma_2017} or \footfullcite{bagnato_notice_2019})
             \begin{equation*}
-                I = blabla
+                I_e = \electronsaturationcurrent \frac{e^{q(\probevoltage - \biasvoltage)}}{k_B T_e}
             \end{equation*}
-        \item[III] High positive bias: constant electron saturation current.
-    \end{enumerate}
-    Two points of physical significance
-    \begin{itemize}
-        \item Floating potential $\Phi_f$: no current flows in the probe
-        \item Plasma potential $\Phi_p$: the potential inside the ambient plasma, corresponds to electron saturation current
+            \item[III] High positive bias: constant electron saturation current $\electronsaturationcurrent$.
             \begin{equation*}
                 \electronsaturationcurrent = \frac{1}{4}e n_e v_{e,th} A_{\mathrm{probe}}
             \end{equation*}
+        \end{enumerate}
+        \column{0.4\textwidth}
+        \includegraphics[width=\textwidth]{../figures/langmuir_characteristic_PLACEHOLDER.png}
+    \end{columns}
+    Two points of physical significance:
+    \begin{itemize}
+        \item Floating potential $\Phi_f$: no current flows in the probe
+        \item Plasma potential $\Phi_p$: the potential inside the ambient plasma, corresponds to $\electronsaturationcurrent$.
+            
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Extracting electron temperature and density}
+    \begin{columns}
+        \column{0.5\textwidth}
+        Linear regression in region II allows to find $T_e$.
+        \begin{equation*}
+            \ln\left(\frac{I_e}{I_e,sat} \right) = \frac{e(V_{probe} - V_{bias})}{k_B T_e}
+        \end{equation*} 
+        Electron saturation current allows to find $n_e$
+        \begin{equation*}
+            n_e = \frac{4}{e v_e A_p} I_{e,sat} = \frac{1}{e A_p} \sqrt{\frac{2 \pi m_e}{k_B T_e}} I_{e,sat}
+        \end{equation*}
 
+        \column{0.5\textwidth}
+        \includegraphics[scale=1]{../figures/IV_fit.pdf}
+    \end{columns}
 \end{frame}
 
 
@@ -266,7 +292,7 @@
     
 \end{frame}
     
-\begin{frame}{Variation avec pression}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
+\begin{frame}{Electron density increases with pressure}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
     "Ensuite on a mieux etudié la variation en pression"
     \begin{columns}
         \column{0.5\textwidth}
@@ -295,6 +321,8 @@
         \includegraphics[scale=1]{../figures/density_current.pdf}
 
     \end{columns}
+    \vspace{0.5cm}
+    Heating more leads to higher temperature and higher density
 \end{frame}
 
 \begin{frame}{Variation avec filament polarisation}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
@@ -309,9 +337,10 @@
         \includegraphics[scale=1]{../figures/density_filament_polarisation.pdf}
 
     \end{columns}
+    What is happening for density?
 \end{frame}
 
-\begin{frame}{Variation avec position radiale}
+\begin{frame}{Radially positioned Langmuir probe}
     \begin{columns}
         \column{0.5\textwidth}
         \centering
@@ -322,11 +351,12 @@
         \includegraphics[scale=1]{../figures/density_position_radial.pdf}
 
     \end{columns}
+    \vspace{0.5cm}
+    Temperature and density falls off near the external walls.
 \end{frame}
 
 \begin{frame}{Difference between using one and two filaments}
     {A study in position}
-    Until here, only one filament was used to do the thing.
     \begin{columns}
         \column{0.5\textwidth}
         \centering
@@ -337,6 +367,8 @@
         \includegraphics[scale=1]{../figures/density_position_twofilaments.pdf}
 
     \end{columns}
+    \vspace{0.5cm}
+    No great difference between using only one or both filaments.
 \end{frame}
 
 
@@ -351,10 +383,23 @@
         \fbox{\includegraphics[scale=1]{../figures/density_profile.pdf}}
 
     \end{columns}
+    Say where the maximums and minimums are.
+
+    Difference de geometrie -> orientation langmuir probe. Cherche champ magnetique.
     
 
 \end{frame}
+
+
 \section{Discussion}
+\begin{frame}{Observations to put in discussion slides}
+    \begin{itemize}
+        \item Difficult to propagate ion-acoustic waves in cold plasma [SEARCH AND EXPLAIN WHY].
+        \item The grid doesn't have a visible effect on the observed waves.
+    \end{itemize}
+\end{frame}
+
+
 \begin{frame}{Hysteresis}
     During measures,
     hysteresis observed for high current and (high?) pressure, caused by impurities\footfullcite{hassouba_analysis_2013}
@@ -364,44 +409,5 @@
 
 \end{frame}
 
-
-% \begin{frame}{Some other stuff about Plasma}{Now with lines!}
-%     \begin{columns}
-%     % Column 1
-%     \begin{column}{0.49\textwidth}
-%         \begin{itemize}
-%             \item Mmmh yes the plasma is made of plasma
-%             \item It do be warm tho (and cold too how cool is that?)
-%             \item Third smart remark
-%         \end{itemize}
-%     \end{column}
-%    % Column 2 (vertical line)
-%     \begin{column}{.02\textwidth}
-%         \rule{.1mm}{0.7\textheight}
-%     \end{column}
-%    % Column 3    
-%     \begin{column}{0.49\textwidth}
-%         \includegraphics[width=\textwidth]{../figures/temperatureeV_position.pdf}
-%     \end{column}
-%     \end{columns}
-% \end{frame}
-
-
-
-% \begin{frame}{Overlays in Beamer}
-%     The easiest way is to use the stop command
-%     \pause
-
-%     Like this
-%     \pause
-
-%     There are other very customisable ways but we won't need them.
-%     \pause
-
-%     wait i can animate anything here
-%     \pause
-
-%     you just lost the game
-% \end{frame}
 
 \end{document}
