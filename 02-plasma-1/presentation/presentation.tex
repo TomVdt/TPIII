@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}  % TODO: utilisé pourquoi? (il est particulierement lent a compiler avec)
 \usepackage{enumitem} % Custom lists
+\usepackage{mathtools} % endlesssssss maths
 
 \usepackage[backend=biber, autolang=other, style=phys, sorting=none]{biblatex}  % Citing
 \addbibresource{../bibliography/bibliography.bib}
@@ -128,7 +129,7 @@
 % ===== Commands =====
 \newcommand{\probecurrent}[0]{\ensuremath{I_{\mathrm{probe}}}}
 \newcommand{\electronsaturationcurrent}[0]{\ensuremath{I_{e,{\mathrm{sat}}}}}
-
+\newcommand{\electron}[0]{$e^{-}$}
 
 % ===== Presentation =====
 \title[(À enlever)]{Argon plasma analysis using Langmuir probes}
@@ -202,14 +203,47 @@
 \end{frame}
 
 
-\begin{frame}{Ion acustic waves}
+\begin{frame}{Ion acoustic waves}
+    \begin{itemize}
+        \item Longitudal oscillation of charges in plasma
+        \item Low pressure $\implies$ almost no collisions, only Coulomb interactions
+        \item 1 type of ion: $_{18}$Ar
+    \end{itemize}
     
+    \vspace{0.5cm}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        Dispersion relation
+        \begin{equation}
+            v_s^2 = \frac{\gamma_e Z_i k_B T_e + \gamma_i k_B T_i}{M(1+\gamma_e(k\lambda_d)^2)}
+        \end{equation}
+        
+        \column{0.5\textwidth}
+        \vfill
+        \centering
+        $M$ mass of ion \\
+        $Z$ charge of ion \\
+        $T_e$/$T_i$ temperature of \electron/ion \\
+        $\gamma_e=3$, $\gamma_i=1$
+        \vfill
+    \end{columns}
+
+    \vspace{0.8cm}
+    Under long wavelength and cold plasma assumption
+    \begin{equation}
+        \begin{rcases}
+            \lambda \gg \lambda_d \\
+            T_i \ll 1
+        \end{rcases}
+        \implies v_s^2 = \frac{\gamma_e Z k_B T_e}{M}
+    \end{equation}
 \end{frame}
 
 
 \begin{frame}{Experimental setup}
-    Prendre figure dans vieux rapport et citer.
-    \includegraphics[width=6cm]{../figures/experimental-setup.png}
+    % Prendre figure dans vieux rapport et citer?
+    \includegraphics[width=\textwidth]{../figures/experimental_setup_Willemin_Zahar.png} \footfullcite{experimental_setup_Willemin_Zahar}
+    % il est morlement impossible qua u fond ce brave monsieur ai tort
 \end{frame}
 
 \section{Results}
@@ -219,7 +253,7 @@
         \centering
         \fbox{\includegraphics[scale=1]{../figures/temperatureeV_position.pdf}}
         \begin{itemize}
-            \item Close to heating elements \(\rightarrow\) higher \(e^-\) temperature
+            \item Close to heating elements \(\rightarrow\) higher \electron temperature
             \item Higher pressure decreases temperature
             \item Maximal density for distances 3-6 cm from heating element (or is it completely arbitrary?)
         \end{itemize}
