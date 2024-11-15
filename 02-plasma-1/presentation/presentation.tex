@@ -213,25 +213,23 @@
 \end{frame}
 
 \section{Results}
-\begin{frame}{(Variation avec position, differentes pressions)}{Legend outside!}
+\begin{frame}{(Variation avec position, differentes pressions)}{[Il est possible et peut-être mieux de mettre la legende dans un fichier separé]}
     \begin{columns}[T]
         \column{0.5\textwidth}
         \centering
-        \begin{figure}
-            \includegraphics[scale=1]{../figures/temperatureeV_position.pdf}
-            \caption{ciao}
-        \end{figure}
-
-        \column{0.5\textwidth}
-        \centering
-        \includegraphics[scale=1]{../figures/density_position.pdf}
-    \end{columns}
-
-    \begin{itemize}
+        \fbox{\includegraphics[scale=1]{../figures/temperatureeV_position.pdf}}
+        \begin{itemize}
             \item Close to heating elements \(\rightarrow\) higher \(e^-\) temperature
             \item Higher pressure decreases temperature
             \item Maximal density for distances 3-6 cm from heating element (or is it completely arbitrary?)
-    \end{itemize}
+        \end{itemize}
+
+        \column{0.5\textwidth}
+        \centering
+        \fbox{\includegraphics[scale=1]{../figures/density_position.pdf}}
+    \end{columns}
+
+    
 \end{frame}
     
 \begin{frame}{Variation avec pression}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
