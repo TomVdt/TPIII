@@ -149,7 +149,9 @@
 
 \section{Introduction}
 \begin{frame}{Introduction}
-    intro
+    À quoi sert le plasma?
+
+    Où sont utilisés les sondes Langmuir.
 \end{frame}
 
 \section{Theory and experimental setup}
@@ -157,7 +159,7 @@
     A \emph{quasineutral} gas of charged and neutral particles which exhibit \emph{collective} behaviour" \footfullcite{chen_introduction_2006}
     \vspace{0.5cm}
     \begin{itemize}
-        \item \textbf{Quasineutrality}: even though the particles making up a plasma consist of free electrons and ions, their overall charge densities cancel each other in equilibrium: 
+        \item \textbf{Quasineutrality}: the overall charge densities of free electrons and ions cancel each other in equilibrium: 
             $n_e \simeq Z n_i$ \footfullcite{gibbon_introduction_2016}
 
         \item \textbf{Collective behaviour}: macroscopic fields dominate over short-lived microscopic fluctuations.
@@ -169,18 +171,20 @@
 
 
 \begin{frame}{Langmuir probes}
-    Widely used devices for measuring different properties of plasma, e.g. electron temperature $T_e$ and density $n_e$.
-    % \vspace{0.4cm}
+    Widely used devices [to obtain] different properties of plasma, e.g. electron temperature $T_e$ and density $n_e$.
+    \vspace{0.4cm}
 
-    Plane electrode (e.g. a small tantalum disk) of surface $A_{\mathrm{probe}}$, inserted into the chamber and biased by an external voltage $\biasvoltage$.
+    Electrode of surface $A_{\mathrm{probe}}$, inserted into the chamber and biased by an external voltage $\biasvoltage$.
     \begin{equation*}
         \biasvoltage= \probevoltage - \plasmavoltage
     \end{equation*}
     The charges (both ions and electrons) reach the surface and generate probe current $\probecurrent = I_e + I_i$.
+
+    PUT EQUATION AFTER, EXPLAIN V PROBE AND V PLASMA 
     \begin{center}
         \includegraphics[width=0.75\textwidth]{../figures/langmuir_probe.png}
         \\
-        Typical Langmuir probe \footfullcite{piel_plasma_2017}
+        PLANE Langmuir probe \footfullcite{piel_plasma_2017}
     \end{center}
 \end{frame}
 
@@ -203,7 +207,7 @@
         \column{0.4\textwidth}
         \includegraphics[width=\textwidth]{../figures/langmuir_characteristic_PLACEHOLDER.png}
     \end{columns}
-    Two points of physical significance:
+    Two points of physical significance: PAS BESOIN SI LA FIGURE EXPLIQUE (ET ON LE DIT À L'ORALE)
     \begin{itemize}
         \item Floating potential $\Phi_f$: no current flows in the probe
         \item Plasma potential $\Phi_p$: the potential inside the ambient plasma, corresponds to $\electronsaturationcurrent$.
@@ -214,6 +218,7 @@
 \begin{frame}{Extracting electron temperature and density}
     \begin{columns}
         \column{0.5\textwidth}
+        LOG OF PLOT (LINEARISED CURRENT)
         Linear regression in region II allows to find $T_e$.
         \begin{equation*}
             \ln\left(\frac{I_e}{I_e,sat} \right) = \frac{e(V_{probe} - V_{bias})}{k_B T_e}
@@ -240,9 +245,9 @@
     \begin{columns}[T]
         \column{0.5\textwidth}
         Dispersion relation
-        \begin{equation}
+        \begin{equation*}
             v_s^2 = \frac{\gamma_e Z_i k_B T_e + \gamma_i k_B T_i}{M(1+\gamma_e(k\lambda_d)^2)}
-        \end{equation}
+        \end{equation*}
         
         \column{0.5\textwidth}
         \vfill
@@ -256,19 +261,22 @@
 
     \vspace{0.8cm}
     Under long wavelength and cold plasma assumption
-    \begin{equation}
+    \begin{equation*}
         \begin{rcases}
             \lambda \gg \lambda_d \\
             T_i \ll 1
         \end{rcases}
         \implies v_s^2 = \frac{\gamma_e Z k_B T_e}{M}
-    \end{equation}
+    \end{equation*}
 \end{frame}
 
 
 \begin{frame}{Experimental setup}
     % Prendre figure dans vieux rapport et citer?
-    \includegraphics[width=\textwidth]{../figures/experimental_setup_Willemin_Zahar.png} \footfullcite{experimental_setup_Willemin_Zahar}
+    \centering
+    \includegraphics[width=\textwidth]{../figures/experimental_setup_Willemin_Zahar.png} 
+    \\
+    Diagram/schematics whatever of what we did\footfullcite{experimental_setup_Willemin_Zahar}
     % il est morlement impossible qua u fond ce brave monsieur ai tort
 \end{frame}
 
@@ -279,9 +287,9 @@
         \centering
         \fbox{\includegraphics[scale=1]{../figures/temperatureeV_position.pdf}}
         \begin{itemize}
-            \item Close to heating elements \(\rightarrow\) higher \electron temperature
-            \item Higher pressure decreases temperature
-            \item Maximal density for distances 3-6 cm from heating element (or is it completely arbitrary?)
+            \item Close to heating element and grid \(\rightarrow\) higher \electron temperature
+            \item Higher pressure decreases temperature and increases density
+            \item Maximal density for distances $\sim 10$ cm from heating element
         \end{itemize}
 
         \column{0.5\textwidth}
@@ -289,27 +297,28 @@
         \fbox{\includegraphics[scale=1]{../figures/density_position.pdf}}
     \end{columns}
 
-    
 \end{frame}
     
-\begin{frame}{Electron density increases with pressure}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
-    "Ensuite on a mieux etudié la variation en pression"
+\begin{frame}{Effects of pressure}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
+
     \begin{columns}
         \column{0.5\textwidth}
         \centering
         \fbox{\includegraphics[scale=1]{../figures/temperatureeV_pressure.pdf}}
 
-        As observed before, higher pressure decreases temperature.
 
         \column{0.5\textwidth}
         \centering
         \fbox{\includegraphics[scale=1]{../figures/density_pressure.pdf}}
-        Higher pressure leads to higher density.
 
     \end{columns}
+    \begin{itemize}
+        \item Higher pressure decreases temperature and decreases temperature.
+        \item Non linear
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Variation avec filament current}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
+\begin{frame}{Heating something}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
     \begin{columns}
         \column{0.5\textwidth}
         \centering
@@ -323,6 +332,8 @@
     \end{columns}
     \vspace{0.5cm}
     Heating more leads to higher temperature and higher density
+
+    [On ne pouvait pas monter plus en haut]
 \end{frame}
 
 \begin{frame}{Variation avec filament polarisation}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
@@ -337,10 +348,14 @@
         \includegraphics[scale=1]{../figures/density_filament_polarisation.pdf}
 
     \end{columns}
-    What is happening for density?
+    \vspace{0.5cm}
+    \begin{itemize}
+        \item Temperature increases with polarisation
+        \item What is happening for density?
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Radially positioned Langmuir probe}
+\begin{frame}{Radial Langmuir probe profile boh}
     \begin{columns}
         \column{0.5\textwidth}
         \centering
@@ -369,6 +384,7 @@
     \end{columns}
     \vspace{0.5cm}
     No great difference between using only one or both filaments.
+    Maybe maybe maybe on higher $d$.
 \end{frame}
 
 
@@ -396,6 +412,7 @@
     \begin{itemize}
         \item Difficult to propagate ion-acoustic waves in cold plasma [SEARCH AND EXPLAIN WHY].
         \item The grid doesn't have a visible effect on the observed waves.
+        \item Why so sensitive
     \end{itemize}
 \end{frame}
 
