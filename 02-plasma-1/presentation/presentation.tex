@@ -12,7 +12,9 @@
 
 \usepackage[backend=biber, autolang=other, style=phys, sorting=none]{biblatex}  % Citing
 \addbibresource{../bibliography/bibliography.bib}
-
+\makeatletter
+\renewcommand\@makefnmark{\hbox{{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]}}}     %% to replace "[#1]" with "(#1)"
+\makeatother
 % ===== Typeface =====
 \usepackage{mlmodern} % thicker math, do not touch
 
@@ -35,10 +37,10 @@
 \usetheme{Boadilla} % other interesting built-in: Boadilla, CambridgeUS (if we want sections in header), Pittsburgh (super-plain)
 
 \setbeamertemplate{footline}{   % only page number in footline
-    \hfill%
-    \usebeamercolor[fg]{page number in head/foot}%
-    % \usebeamerfont{page number in head/foot}%
-    \footnotesize%
+\hfill%
+\usebeamercolor[fg]{page number in head/foot}%
+% \usebeamerfont{page number in head/foot}%
+\footnotesize%
     \setbeamertemplate{page number in head/foot}[framenumber]%
     \usebeamertemplate*{page number in head/foot}\kern1em\vskip4pt%
     }
@@ -171,27 +173,29 @@
 
 
 \begin{frame}{Langmuir probes}
-    Widely used devices [to obtain] different properties of plasma, e.g. electron temperature $T_e$ and density $n_e$.
-    \vspace{0.4cm}
+    \vspace{0.2cm}
+    \begin{itemize}
+        \item Devices widely used to study different properties of plasma, e.g. electron temperature $T_e$ and density $n_e$.
+        
+        \item Electrode of surface $A_{\mathrm{probe}}$, inserted into the chamber and biased by an external voltage $\biasvoltage$.
+        \item The charges (both ions and electrons) reach the surface and generate probe current $\probecurrent = I_e + I_i$.
+        \item Measuring the probe potential $\probevoltage$ yields the plasma space potential $\plasmavoltage$:
+        \begin{equation*}
+            \biasvoltage= \probevoltage - \plasmavoltage
+        \end{equation*}
+    \end{itemize}
 
-    Electrode of surface $A_{\mathrm{probe}}$, inserted into the chamber and biased by an external voltage $\biasvoltage$.
-    \begin{equation*}
-        \biasvoltage= \probevoltage - \plasmavoltage
-    \end{equation*}
-    The charges (both ions and electrons) reach the surface and generate probe current $\probecurrent = I_e + I_i$.
-
-    PUT EQUATION AFTER, EXPLAIN V PROBE AND V PLASMA 
     \begin{center}
-        \includegraphics[width=0.75\textwidth]{../figures/langmuir_probe.png}
+        \includegraphics[width=0.65\textwidth]{../figures/langmuir_probe.png}
         \\
-        PLANE Langmuir probe \footfullcite{piel_plasma_2017}
+        \small Structure of a common plane Langmuir probe \footfullcite{piel_plasma_2017}
     \end{center}
 \end{frame}
 
 
 \begin{frame}{The $I$--$V$ characteristic curve}
     \begin{columns}
-        \column{0.6\textwidth}
+        \column{0.5\textwidth}
         Three regions:
         \begin{enumerate}
             \item[I] High negative bias: no electrons reach the probe. Constant ion saturation current.
@@ -204,15 +208,13 @@
                 \electronsaturationcurrent = \frac{1}{4}e n_e v_{e,th} A_{\mathrm{probe}}
             \end{equation*}
         \end{enumerate}
-        \column{0.4\textwidth}
-        \includegraphics[width=\textwidth]{../figures/langmuir_characteristic_PLACEHOLDER.png}
+        \column{0.5\textwidth}
+        \fbox{\includegraphics[scale=1]{../figures/langmuir_characteristic.pdf}}
     \end{columns}
-    Two points of physical significance: PAS BESOIN SI LA FIGURE EXPLIQUE (ET ON LE DIT À L'ORALE)
-    \begin{itemize}
-        \item Floating potential $\Phi_f$: no current flows in the probe
-        \item Plasma potential $\Phi_p$: the potential inside the ambient plasma, corresponds to $\electronsaturationcurrent$.
-            
-    \end{itemize}
+    % \begin{itemize}
+    %     \item Floating potential $\Phi_f$: no current flows in the probe
+    %     \item Plasma potential $\Phi_p$: the potential inside the ambient plasma, corresponds to $\electronsaturationcurrent$.
+    % \end{itemize}
 \end{frame}
 
 \begin{frame}{Extracting electron temperature and density}
