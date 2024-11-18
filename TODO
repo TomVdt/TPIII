@@ -1,11 +1,13 @@
 === Analyse ===
-- Estimate temperature filament
+
 
 === Plots ===
 - Peut-etre assigner une couleur differente à chaque plot des exp2,3,4 (Temperature des electrons, KB Temperature des électrons, densité des électrons)
-- Maybe rajouter la grille secondaire secondaire
-- Bonnes dimensions
 
 Cold plasamas in linear
 Magnetic field effect => accelerates electrons to "the right"
 Add reference for distance
+
+Paper possibles pour l'intro:
+10.2514/6.2003-1081
+10.1007/s11214-015-0194-3

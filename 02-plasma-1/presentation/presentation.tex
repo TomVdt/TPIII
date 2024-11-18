@@ -134,6 +134,9 @@
 \newcommand{\biasvoltage}{\ensuremath{V_{\mathrm{bias}}}}
 \newcommand{\probevoltage}{\ensuremath{V_{\mathrm{probe}}}}
 \newcommand{\plasmavoltage}{\ensuremath{V_{\mathrm{plasma}}}}
+\newcommand{\filamentcurrent}{\ensuremath{I_{\mathrm{filament}}}}
+\newcommand{\filamentpolarisation}{\ensuremath{V_{\mathrm{filament}}}}
+\newcommand{\gridpolarisation}{\ensuremath{V_{\mathrm{grid}}}}
 \newcommand{\electron}[0]{$e^{-}$}
 
 % ===== Presentation =====
@@ -284,11 +287,11 @@
 \end{frame}
 
 \section{Results}
-\begin{frame}{(Variation avec position, differentes pressions)}
+\begin{frame}{(Variation avec position, differentes pressions)}{$\filamentcurrent = 50$ A, $\filamentpolarisation = 60$ V, $\gridpolarisation = -100$ V}
     \begin{columns}[T]
         \column{0.5\textwidth}
         \centering
-        \fbox{\includegraphics[scale=1]{../figures/temperatureeV_position.pdf}}
+        {\includegraphics[scale=1]{../figures/temperatureeV_position.pdf}}
         \begin{itemize}
             \item Close to heating element and grid \(\rightarrow\) higher \electron temperature
             \item Higher pressure decreases temperature and increases density
@@ -297,7 +300,7 @@
 
         \column{0.5\textwidth}
         \centering
-        \fbox{\includegraphics[scale=1]{../figures/density_position.pdf}}
+        {\includegraphics[scale=1]{../figures/density_position.pdf}}
     \end{columns}
 
 \end{frame}
@@ -307,12 +310,12 @@
     \begin{columns}
         \column{0.5\textwidth}
         \centering
-        \fbox{\includegraphics[scale=1]{../figures/temperatureeV_pressure.pdf}}
+        {\includegraphics[scale=1]{../figures/temperatureeV_pressure.pdf}}
 
 
         \column{0.5\textwidth}
         \centering
-        \fbox{\includegraphics[scale=1]{../figures/density_pressure.pdf}}
+        {\includegraphics[scale=1]{../figures/density_pressure.pdf}}
 
     \end{columns}
     \begin{itemize}
@@ -391,21 +394,21 @@
 \end{frame}
 
 
-\begin{frame}{Temperature and density profile}{[Needs serious work]}
+\begin{frame}{Temperature and density profile}
     \begin{columns}
         \column{0.5\textwidth}
         \centering
-        \fbox{\includegraphics[scale=1]{../figures/temperatureEV_profile.pdf}}
+        {\includegraphics[scale=1]{../figures/temperatureEV_profile.pdf}}
 
         \column{0.5\textwidth}
         \centering
-        \fbox{\includegraphics[scale=1]{../figures/density_profile.pdf}}
+        {\includegraphics[scale=1]{../figures/density_profile.pdf}}
 
     \end{columns}
     Say where the maximums and minimums are.
 
     Difference de geometrie -> orientation langmuir probe. Cherche champ magnetique.
-    
+    test
 
 \end{frame}
 
@@ -421,8 +424,10 @@
 
 
 \begin{frame}{Hysteresis}
-    During measures,
-    hysteresis observed for high current and (high?) pressure, caused by impurities\footfullcite{hassouba_analysis_2013}
+    \begin{itemize}
+        \item Hysteresis observed for high filament current and high Ar pressure
+        \item Caused by impurities \footfullcite{hassouba_analysis_2013} OR BETTER: contamination layer on the probe surface \footfullcite{hirao_critical_1972} \footfullcite{oyama_systematic_1976}
+    \end{itemize}
     \begin{center}
         \includegraphics[scale=1]{../figures/hysteresis.pdf}
     \end{center}
