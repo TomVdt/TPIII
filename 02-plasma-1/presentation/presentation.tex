@@ -42,7 +42,7 @@
 % \usebeamerfont{page number in head/foot}%
 \footnotesize%
     \setbeamertemplate{page number in head/foot}[framenumber]%
-    \usebeamertemplate*{page number in head/foot}\kern1em\vskip4pt%
+    \usebeamertemplate*{page number in head/foot}\kern0.5em\vskip4pt%
     }
     \addtobeamertemplate{footline}{\vspace*{-0.5cm}}{}
     
@@ -220,19 +220,24 @@
     % \end{itemize}
 \end{frame}
 
-\begin{frame}{Extracting electron temperature and density}{[Pas definitif, faut que je choisisse quoi dire]}
+\begin{frame}{Extracting electron temperature and density}
     \begin{columns}
         \column{0.5\textwidth}
-        Linearise region II by computing logarithm
+        \begin{itemize}
+            \item Acquire $I$-$V$ curve.
+            \item Linearise region II.
+            \item Linear regression in region II allows to find $T_e$.
+                \begin{equation*}
+                    \ln\left(\frac{I_e}{\electronsaturationcurrent} \right) = \frac{e}{k_B T_e}(\probevoltage - \biasvoltage)
+                \end{equation*}
+            \item Electron saturation current allows to find $n_e$
+                \begin{equation*}
+                    n_e = \frac{4}{e v_e A_p} \electronsaturationcurrent = \frac{1}{e A_p} \sqrt{\frac{2 \pi m_e}{k_B T_e}} \electronsaturationcurrent
+                \end{equation*}
+        \end{itemize}
 
-        Linear regression in region II allows to find $T_e$.
-        \begin{equation*}
-            \ln\left(\frac{I_e}{I_e,sat} \right) = \frac{e(V_{probe} - V_{bias})}{k_B T_e}
-        \end{equation*} 
-        Electron saturation current allows to find $n_e$
-        \begin{equation*}
-            n_e = \frac{4}{e v_e A_p} I_{e,sat} = \frac{1}{e A_p} \sqrt{\frac{2 \pi m_e}{k_B T_e}} I_{e,sat}
-        \end{equation*}
+         
+        
 
         \column{0.5\textwidth}
         \includegraphics[scale=1]{../figures/IV_fit.pdf}
@@ -417,7 +422,8 @@
 \begin{frame}{Discussiooooon}
     Found similar results in literature: 
     \begin{itemize}
-        \item \footfullcite{hassouba_analysis_2013} describes the same behaviour of temperature and density as a function of pressure.
+        \item \footfullcite{hassouba_analysis_2013} \footfullcite{li__experimental_2024} both describe the same general behaviour of temperature and density as a function of pressure.
+        \item \footfullcite{kim_electron_2025} says that both temperature and density decrease from the center of the plasma to outside.
     \end{itemize}
 \end{frame}
 
