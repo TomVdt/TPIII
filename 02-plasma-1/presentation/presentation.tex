@@ -202,7 +202,7 @@
         Three regions:
         \begin{enumerate}
             \item[I] High negative bias: no electrons reach the probe. Constant ion saturation current.
-            \item[II] Electron retardation regime: part of the electrons reach the probe. Electron current (\footfullcite{piel_plasma_2017} or \footfullcite{bagnato_notice_2019})
+            \item[II] Electron retardation regime: part of the electrons reach the probe. Electron current \footfullcite{bagnato_notice_2019}
             \begin{equation*}
                 I_e = \electronsaturationcurrent \frac{e^{q(\probevoltage - \biasvoltage)}}{k_B T_e}
             \end{equation*}
@@ -245,7 +245,7 @@
 \end{frame}
 
 
-\begin{frame}{Ion acoustic waves}{CITATION?}
+\begin{frame}{Ion acoustic waves}{CITATION??????}
     \begin{itemize}
         \item Longitudal oscillation of charges in plasma
         \item Low pressure $\implies$ almost no collisions, only Coulomb interactions
@@ -255,7 +255,7 @@
     \vspace{0.5cm}
     \begin{columns}[T]
         \column{0.5\textwidth}
-        Dispersion relation
+        Dispersion relation \footfullcite{bagnato_notice_2019}
         \begin{equation*}
             v_s^2 = \frac{\gamma_e Z_i k_B T_e + \gamma_i k_B T_i}{M(1+\gamma_e(k\lambda_d)^2)}
         \end{equation*}
@@ -282,6 +282,8 @@
         \end{rcases}
         \implies v_s^2 = \frac{\gamma_e Z k_B T_e}{M}
     \end{equation*}
+
+    VE EGAL OMEGA SUR K
 \end{frame}
 
 
@@ -303,7 +305,8 @@
         \begin{itemize}
             \item Close to heating element and grid \(\rightarrow\) higher \electron temperature
             \item Higher pressure decreases temperature and increases density
-            \item Maximal density for distances $\sim 10$ cm from heating element
+            % \item Maximum of density 
+            % \item Maximal density for distances $\sim 10$ cm from heating element
         \end{itemize}
 
         \column{0.5\textwidth}
@@ -347,27 +350,29 @@
     \vspace{0.5cm}
     Heating more leads to higher temperature and higher density
 
+    more electrons emitted from Tungsten
+
     [On ne pouvait pas monter plus en haut]
 \end{frame}
 
-\begin{frame}{Variation avec filament polarisation}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
-    \begin{columns}
-        \column{0.5\textwidth}
-        \centering
-        \includegraphics[scale=1]{../figures/temperatureeV_filament_polarisation.pdf}
+% \begin{frame}{Variation avec filament polarisation}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
+%     \begin{columns}
+%         \column{0.5\textwidth}
+%         \centering
+%         \includegraphics[scale=1]{../figures/temperatureeV_filament_polarisation.pdf}
 
 
-        \column{0.5\textwidth}
-        \centering
-        \includegraphics[scale=1]{../figures/density_filament_polarisation.pdf}
+%         \column{0.5\textwidth}
+%         \centering
+%         \includegraphics[scale=1]{../figures/density_filament_polarisation.pdf}
 
-    \end{columns}
-    \vspace{0.5cm}
-    \begin{itemize}
-        \item Temperature increases with polarisation
-        \item What is happening for density?
-    \end{itemize}
-\end{frame}
+%     \end{columns}
+%     \vspace{0.5cm}
+%     \begin{itemize}
+%         \item Temperature increases with polarisation
+%         \item What is happening for density?
+%     \end{itemize}
+% \end{frame}
 
 \begin{frame}{Radial Langmuir probe profile boh}
     \begin{columns}
@@ -384,8 +389,28 @@
     Temperature and density falls off near the external walls.
 \end{frame}
 
+
+
+\begin{frame}{Temperature and density profile}{FIX LEGEND}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \centering
+        {\includegraphics[scale=1]{../figures/temperatureEV_profile.pdf}}
+        
+        \column{0.5\textwidth}
+        \centering
+        {\includegraphics[scale=1]{../figures/density_profile.pdf}}
+        
+    \end{columns}
+    Say where the maximums and minimums are.
+    
+    Difference de geometrie -> orientation langmuir probe. Cherche champ magnetique.
+    test
+    
+\end{frame}
+
 \begin{frame}{Difference between using one and two filaments}
-    {A study in position}
+    {MEILLEUR TITRE ET LEGEND ET PARAMETRES}
     \begin{columns}
         \column{0.5\textwidth}
         \centering
@@ -398,49 +423,34 @@
     \end{columns}
     \vspace{0.5cm}
     No great difference between using only one or both filaments.
-    Maybe maybe maybe on higher $d$.
+
+    Thanks to grid.
+
+    Only difference closer to grid.
 \end{frame}
-
-
-\begin{frame}{Temperature and density profile}
-    \begin{columns}
-        \column{0.5\textwidth}
-        \centering
-        {\includegraphics[scale=1]{../figures/temperatureEV_profile.pdf}}
-
-        \column{0.5\textwidth}
-        \centering
-        {\includegraphics[scale=1]{../figures/density_profile.pdf}}
-
-    \end{columns}
-    Say where the maximums and minimums are.
-
-    Difference de geometrie -> orientation langmuir probe. Cherche champ magnetique.
-    test
-
-\end{frame}
-
 
 \section{Discussion}
-\begin{frame}{Discussiooooon}
+\begin{frame}{Comparing results}
     Found similar results in literature: 
     \begin{itemize}
         \item \footfullcite{hassouba_analysis_2013} \footfullcite{li__experimental_2024} both describe the same general behaviour of temperature and density as a function of pressure.
         \item \footfullcite{kim_electron_2025} says that both temperature and density decrease from the center of the plasma to outside.
     \end{itemize}
+
+    RELATION DISPERSION
 \end{frame}
 
 
-\begin{frame}{Observations to put in discussion slides}
-    \begin{itemize}
-        \item Difficult to propagate ion-acoustic waves in cold plasma [SEARCH AND EXPLAIN WHY].
-        \item The grid doesn't have a visible effect on the observed waves.
-        \item Why so sensitive
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Observations to put in discussion slides}
+%     \begin{itemize}
+%         \item Difficult to propagate ion-acoustic waves in cold plasma [SEARCH AND EXPLAIN WHY].
+%         \item The grid doesn't have a visible effect on the observed waves.
+%         \item Why so sensitive
+%     \end{itemize}
+% \end{frame}
 
 
-\begin{frame}{Hysteresis}{WE CAN PUT COOL FIGURE FROM PAPER}
+\begin{frame}{Hysteresis}{PUT COOL FIGURE FROM PAPER}
     \begin{itemize}
         \item Hysteresis observed for high filament current and high Ar pressure
         \item Caused by contamination layer on the probe surface \footfullcite{oyama_systematic_1976}
@@ -449,6 +459,15 @@
         \includegraphics[scale=1]{../figures/hysteresis.pdf}
     \end{center}
 
+\end{frame}
+
+
+\begin{frame}{Further possible studies}
+    array of probes, more probes even more probes 2d probes
+
+    different probe geometries 
+
+    different mixtures of gas species
 \end{frame}
 
 
