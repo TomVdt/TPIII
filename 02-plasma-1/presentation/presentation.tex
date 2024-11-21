@@ -48,14 +48,17 @@
     
     \setbeamertemplate{blocks}[rounded][shadow=false]
     \setbeamertemplate{navigation symbols}{}
+
     
 % ===== Colors =====
 % \usecolortheme{beaver}
 \definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+% \definecolor{EPFLred}{RGB}{255, 0, 0}
+\definecolor{darkred}{rgb}{0.7,0,0}
+
 \usecolortheme[named=UBCblue]{structure}
 
 % \setbeamercolor{block title}{bg=cyan!50, fg=white} % modifying colors (the ! is for trasparency)
-% \definecolor{darkred}{rgb}{0.8,0,0}
 
 % \setbeamercolor{section in toc}{fg=black,bg=white}
 % \setbeamercolor{alerted text}{fg=darkred!80!gray}
@@ -72,8 +75,8 @@
 % \setbeamercolor*{palette sidebar quaternary}{fg=gray!10!white}
 
 % \setbeamercolor*{titlelike}{parent=palette primary}
-% \setbeamercolor{titlelike}{parent=palette primary,fg=darkred}
-% \setbeamercolor{frametitle}{bg=gray!10!white}
+\setbeamercolor{titlelike}{fg=black}
+\setbeamercolor{frametitle}{fg=black}
 % \setbeamercolor{frametitle right}{bg=gray!60!white}
 
 % \setbeamercolor*{separation line}{}
@@ -140,9 +143,9 @@
 \newcommand{\electron}[0]{$e^{-}$}
 
 % ===== Presentation =====
-\title[(À enlever)]{Argon plasma analysis using Langmuir probes}
-\author[Tom Vadot \and Matteo Veneziano]{Tom Vadot \and Matteo Veneziano}
-\institute[]{EPFL Section of Physics}
+\title{Argon plasma analysis using Langmuir probes}
+\author{Tom Vadot \and Matteo Veneziano}
+\institute{EPFL Section of Physics}
 \date{November 29, 2024}
 % \logo{\includegraphics[width=1.5cm]{../figures/EPFL_logo.png}} % logo en chaque page
 
@@ -297,7 +300,7 @@
 \end{frame}
 
 \section{Results}
-\begin{frame}{(Variation avec position, differentes pressions)}{$\filamentcurrent = 50$ A, $\filamentpolarisation = 60$ V, $\gridpolarisation = -100$ V}
+\begin{frame}{Temperature and density along the chamber axis}{$\filamentcurrent = (50.0 \pm 0.1)$ A, $\filamentpolarisation = (60 \pm 1)$ V, $\gridpolarisation = - (100 \pm 1)$ V}
     \begin{columns}[T]
         \column{0.5\textwidth}
         \centering
@@ -316,7 +319,7 @@
 
 \end{frame}
     
-\begin{frame}{Effects of pressure}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
+\begin{frame}{Effects of pressure}{$d = (3.0 \pm 0.5)$ cm, $\filamentcurrent = (49.9 \pm 0.1)$ A}
 
     \begin{columns}
         \column{0.5\textwidth}
@@ -335,7 +338,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Heating something}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
+\begin{frame}{Heating less}{$p = (4.2 \pm 0.1) \times 10^{-3}$ mbar, $d = (3.0 \pm 0.5)$ cm}
     \begin{columns}
         \column{0.5\textwidth}
         \centering
@@ -348,11 +351,10 @@
 
     \end{columns}
     \vspace{0.5cm}
-    Heating more leads to higher temperature and higher density
-
-    more electrons emitted from Tungsten
-
-    [On ne pouvait pas monter plus en haut]
+    \begin{itemize}
+        \item A higher filament current leads to more electrons emitted from the Tungsten and thus to higher temperature and density
+        \item It was not possible to sustain a plasma at currents higher than $(50.0 \pm 0.1)$ A
+    \end{itemize}
 \end{frame}
 
 % \begin{frame}{Variation avec filament polarisation}{IMPORTANT! donner les autres parametres (ceux qui n'ont pas été variés pour faire le plot)}
@@ -391,7 +393,7 @@
 
 
 
-\begin{frame}{Temperature and density profile}{FIX LEGEND}
+\begin{frame}{Temperature and density profile of the chamber}{$p = (9.5 \pm 0.1) \times 10^{-3}$ mbar, $\filamentcurrent = (50.0 \pm 0.1)$ A}
     \begin{columns}
         \column{0.5\textwidth}
         \centering
@@ -402,15 +404,13 @@
         {\includegraphics[scale=1]{../figures/density_profile.pdf}}
         
     \end{columns}
-    Say where the maximums and minimums are.
-    
-    Difference de geometrie -> orientation langmuir probe. Cherche champ magnetique.
-    test
-    
+    \begin{itemize}
+        \item The different orientation of the Langmuir probes leads to different results in the two halves of the chamber
+        \item Density is highest closest to the filaments and to the cylinder axis
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Difference between using one and two filaments}
-    {MEILLEUR TITRE ET LEGEND ET PARAMETRES}
+\begin{frame}{Turning off one filament}{$p = (1.3 \pm 0.1) \times 10^{-3}$ mbar, $\filamentcurrent = (50.0 \pm 0.1)$ A}
     \begin{columns}
         \column{0.5\textwidth}
         \centering
@@ -422,19 +422,18 @@
 
     \end{columns}
     \vspace{0.5cm}
-    No great difference between using only one or both filaments.
-
-    Thanks to grid.
-
-    Only difference closer to grid.
+    \begin{itemize}
+        \item Only difference observed closest to the grid.
+        \item No significant difference in the rest of the chamber, possibly due to the effect of the grid
+    \end{itemize}
 \end{frame}
 
 \section{Discussion}
-\begin{frame}{Comparing results}
-    Found similar results in literature: 
+\begin{frame}{Comparisons with literature}
+    % Found similar results in literature: 
     \begin{itemize}
-        \item \footfullcite{hassouba_analysis_2013} \footfullcite{li__experimental_2024} both describe the same general behaviour of temperature and density as a function of pressure.
-        \item \footfullcite{kim_electron_2025} says that both temperature and density decrease from the center of the plasma to outside.
+        \item \footfullcite{hassouba_analysis_2013} and \, \footfullcite{li__experimental_2024} both describe the same general behaviour of temperature and density as a function of pressure.
+        \item \footfullcite{kim_electron_2025} found that both temperature and density decrease from the center of the plasma to the outer walls.
     \end{itemize}
 
     RELATION DISPERSION
@@ -450,24 +449,36 @@
 % \end{frame}
 
 
-\begin{frame}{Hysteresis}{PUT COOL FIGURE FROM PAPER}
+\begin{frame}{Hysteresis}
     \begin{itemize}
         \item Hysteresis observed for high filament current and high Ar pressure
         \item Caused by contamination layer on the probe surface \footfullcite{oyama_systematic_1976}
     \end{itemize}
-    \begin{center}
-        \includegraphics[scale=1]{../figures/hysteresis.pdf}
-    \end{center}
+    \vspace{-0.5cm}
+    \begin{columns}[b]
+        \column{0.65\textwidth}
+        \begin{center}
+            \includegraphics[scale=1]{../figures/hysteresis.pdf}\\
+            \small $I$-$V$ curve acquired at $p = (7.2 \pm 0.1) \times 10^{-3}$ mbar and $\filamentcurrent = (55.5 \pm 0.1)$ A
+        \end{center}
+
+        \column{0.35\textwidth}
+        \begin{center}
+            \includegraphics[width=3.5cm]{../figures/contamination_layer.png}\\
+            \small Model for the contamination layer [12]
+        \end{center}
+        
+    \end{columns}
 
 \end{frame}
 
 
-\begin{frame}{Further possible studies}
-    array of probes, more probes even more probes 2d probes
-
-    different probe geometries 
-
-    different mixtures of gas species
+\begin{frame}{Possible further studies}
+    \begin{itemize}
+        \item Different probe geometry: complete 2D profile of the chamber
+        \item Higher number of probes (e.g. an array)
+        \item Mixtures of gas species
+    \end{itemize}
 \end{frame}
 
 
