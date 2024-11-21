@@ -157,9 +157,19 @@
 
 \section{Introduction}
 \begin{frame}{Introduction}
-    À quoi sert le plasma?
+    Space stuff
 
-    Où sont utilisés les sondes Langmuir.
+    Langmuir on ISS
+
+    Solar events
+
+    Communication and GPS satelites
+
+    \url{https://www.space.com/space-weather-sensors-heads-to-space-station}
+    \url{https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Probe_the_space_weather_around_Earth}
+    \url{https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Shaping_the_Future/Multi-Needle_Langmuir_Probe_Tested_and_Ready_for_Launch}
+    \url{https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Probe_the_space_weather_around_Earth}
+    \url{https://www.esa.int/Education/ESEO/Langmuir_Probe}
 \end{frame}
 
 \section{Theory and experimental setup}
@@ -246,49 +256,6 @@
         \includegraphics[scale=1]{../figures/IV_fit.pdf}
     \end{columns}
 \end{frame}
-
-
-\begin{frame}{Ion acoustic waves}{CITATION??????}
-    \begin{itemize}
-        \item Longitudal oscillation of charges in plasma
-        \item Low pressure $\implies$ almost no collisions, only Coulomb interactions
-        \item 1 type of ion: $_{18}$Ar
-    \end{itemize}
-    
-    \vspace{0.5cm}
-    \begin{columns}[T]
-        \column{0.5\textwidth}
-        Dispersion relation \footfullcite{bagnato_notice_2019}
-        \begin{equation*}
-            v_s^2 = \frac{\gamma_e Z_i k_B T_e + \gamma_i k_B T_i}{M(1+\gamma_e(k\lambda_d)^2)}
-        \end{equation*}
-        
-        \column{0.01\textwidth}
-        \rule{.1mm}{1.5cm}
-
-        \column{0.49\textwidth}
-        \vfill
-        \centering
-        $M$ mass of ion \\
-        $Z$ charge of ion \\
-        $T_e$/$T_i$ temperature of \electron/ion \\
-        $\gamma_e=3$, $\gamma_i=1$
-        \vfill
-    \end{columns}
-
-    \vspace{0.8cm}
-    Under long wavelength and cold plasma assumption
-    \begin{equation*}
-        \begin{rcases}
-            \lambda \gg \lambda_d \\
-            T_i \ll 1
-        \end{rcases}
-        \implies v_s^2 = \frac{\gamma_e Z k_B T_e}{M}
-    \end{equation*}
-
-    VE EGAL OMEGA SUR K
-\end{frame}
-
 
 \begin{frame}{Experimental setup}
     % Prendre figure dans vieux rapport et citer?
@@ -428,15 +395,88 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Ion acoustic waves}
+    \begin{itemize}
+        \item Longitudal oscillation of charges in plasma
+        \item Low pressure $\implies$ almost no collisions, only Coulomb interactions
+        \item 1 type of ion: $_{18}$Ar
+    \end{itemize}
+    
+    \vspace{0.5cm}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        Dispersion relation \space \footfullcite{bagnato_notice_2019}
+        \begin{equation*}
+            v_s^2 = \frac{\gamma_e Z_i k_B T_e + \gamma_i k_B T_i}{M(1+\gamma_e(k\lambda_d)^2)}
+        \end{equation*}
+        
+        \column{0.01\textwidth}
+        \rule{.1mm}{1.5cm}
+
+        \column{0.49\textwidth}
+        \vfill
+        \centering
+        $M$ mass of ion \\
+        $Z$ charge of ion \\
+        $T_e$/$T_i$ temperature of \electron/ion \\
+        $\gamma_e=3$, $\gamma_i=1$
+        \vfill
+    \end{columns}
+
+    \vspace{0.8cm}
+    Under long wavelength and cold plasma assumption
+    \begin{equation*}
+        \begin{rcases}
+            \lambda \gg \lambda_d \\
+            T_i \ll 1
+        \end{rcases}
+        \implies v_s^2 = \frac{\gamma_e Z k_B T_e}{M}
+    \end{equation*}
+
+    Dispersionless assumption: $v_s = \frac{\omega}{k}$
+\end{frame}
+
+\begin{frame}{Estimating temperature}{$p = feur$, $I_\text{filament} = truc$, $V_\text{filament}$, $V_\text{grid} = chose$}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[scale=1]{../figures/ion_acoustic_temperature.pdf}
+        \begin{itemize}
+            \item Source wave not exactly replicated
+            \item Unexpected temperature increase for higher source frequency
+        \end{itemize}
+        
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[scale=1]{../figures/ion_acoustic_wave.pdf}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Establishing the dispersion relation}{$p = feur$, $I_\text{filament} = truc$, $V_\text{filament}$, $V_\text{grid} = chose$}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \centering
+        \vspace{-1cm}
+        \begin{itemize}
+            \item Very few data points due to unstable system
+            \item Doesn't seem linear $\implies$ not dispersionless
+            \item If dispersionless assumption does not hold, could explain the increasing temperature
+        \end{itemize}
+        
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[scale=1]{../figures/dispersion_relation.pdf}
+    \end{columns}
+\end{frame}
+
 \section{Discussion}
 \begin{frame}{Comparisons with literature}
     % Found similar results in literature: 
     \begin{itemize}
         \item \footfullcite{hassouba_analysis_2013} and \, \footfullcite{li__experimental_2024} both describe the same general behaviour of temperature and density as a function of pressure.
         \item \footfullcite{kim_electron_2025} found that both temperature and density decrease from the center of the plasma to the outer walls.
+        \item [CITATION A METTRE] also finds dispersion in ion-acoustic waves.
     \end{itemize}
-
-    RELATION DISPERSION
 \end{frame}
 
 
