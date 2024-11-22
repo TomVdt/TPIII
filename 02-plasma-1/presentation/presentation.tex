@@ -9,6 +9,7 @@
 \usepackage{tikz}  % TODO: utilisé pourquoi? (il est particulierement lent a compiler avec)
 \usepackage{enumitem} % Custom lists
 \usepackage{mathtools} % endlesssssss maths
+\usepackage{xcolor}
 
 \usepackage[backend=biber, autolang=other, style=phys, sorting=none]{biblatex}  % Citing
 \addbibresource{../bibliography/bibliography.bib}
@@ -156,21 +157,35 @@
 \end{frame}
 
 \section{Introduction}
-\begin{frame}{Introduction}
-    Space stuff
 
-    Langmuir on ISS
+{  % load bearing curly brace, do not remove
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{../figures/bartolomeo.jpg}}
+\setbeamercolor{normal text}{fg=white}
+\setbeamercolor{footnote}{bg=black, fg=white}
+\setbeamercolor{footnote mark}{bg=black, fg=white}
+\setbeamercolor{frametitle}{fg=white}
+\usebeamercolor[fg]{normal text}
+\begin{frame}[t]{Introduction}
+    \vspace{1cm}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item Probes used on NorSat-1 
+            \item Study of ionosphere \footfullcite{tmp}
+            \item Solar events can have destructive effects on equipment \footfullcite{tmp}
+        \end{itemize}
 
-    Solar events
-
-    Communication and GPS satelites
-
-    \url{https://www.space.com/space-weather-sensors-heads-to-space-station}
-    \url{https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Probe_the_space_weather_around_Earth}
-    \url{https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Shaping_the_Future/Multi-Needle_Langmuir_Probe_Tested_and_Ready_for_Launch}
-    \url{https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Probe_the_space_weather_around_Earth}
-    \url{https://www.esa.int/Education/ESEO/Langmuir_Probe}
+        \column{0.5\textwidth}
+    \end{columns}
+    \footnotetext{\colorbox{black}{\emph{Bartolomeo connected to Columbus}, ESA/NASA, ESA Standard License}}
+    
+    % \url{https://www.space.com/space-weather-sensors-heads-to-space-station}
+    % \url{https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Probe_the_space_weather_around_Earth}
+    % \url{https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Shaping_the_Future/Multi-Needle_Langmuir_Probe_Tested_and_Ready_for_Launch}
+    % \url{https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Probe_the_space_weather_around_Earth}
+    % \url{https://www.esa.int/Education/ESEO/Langmuir_Probe}
 \end{frame}
+}
 
 \section{Theory and experimental setup}
 \begin{frame}{Defining plasma}
@@ -458,7 +473,7 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{Establishing the dispersion relation}{$p = (7.1 \pm 0.1) \times 10^{-3}$ mbar, $I_\text{filament,left} = (49.7 \pm 0.1)$ A, $I_\text{filament,right} = (48.5 \pm 0.1)$ A, $V_\text{filament} = (-60 \pm 2)$ V, $V_\text{grid} = (-100 \pm 1)$ V}
+\begin{frame}{Establishing the dispersion relation}{$p = (7.1 \pm 0.1) \times 10^{-3}$ mbar, $I_\text{filament,left} = (49.7 \pm 0.1)$ A, $I_\text{filament,right} = (48.5 \pm 0.1)$ A}
     \begin{columns}
         \column{0.5\textwidth}
         \centering
