@@ -1,0 +1,301 @@
+{
+    "Core facility": "",
+    "Hardware configurations": {
+        "{8d5edfb1-2717-430c-874b-2aa80f94c0b2}": {
+            "Module": "SAFe 180",
+            "Slots": [
+                {
+                    "Reference": "",
+                    "Slot index": 1,
+                    "Type": "Camera"
+                },
+                {
+                    "Reference": "",
+                    "Slot index": 3,
+                    "Type": "Excitation dichroic"
+                },
+                {
+                    "Reference": "",
+                    "Slot index": 5,
+                    "Type": "Wheel filter"
+                }
+            ],
+            "System description": "SAFe 180 - Single color - Nanoscopy - 2D"
+        }
+    },
+    "Id": "{9edee6ce-6ae6-43af-a0fe-c5bada063693}",
+    "Name": "vadot-veneziano",
+    "Root": "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano",
+    "Samples": [
+    ],
+    "Sequences": [
+        {
+            "Acquisition": [
+                {
+                    "Cameras": [
+                        {
+                            "Baseline image path removed": "",
+                            "Baseline value removed": 0,
+                            "Camera binning": 1,
+                            "Camera horizontal flip": false,
+                            "Camera index": 0,
+                            "Camera vertical flip": false,
+                            "Exposure time (sec)": 0.05000000074505806,
+                            "Readout speed (sec)": 0.043093353509902954,
+                            "Sensor height (px)": 2304,
+                            "Sensor width (px)": 2304,
+                            "Trigger mode": "TRIGGERMODE_EXTERNAL_SYNCREADOUT"
+                        }
+                    ],
+                    "Channels": [
+                        {
+                            "Camera index": 0,
+                            "Flip horizontal": false,
+                            "Flip vertical": false,
+                            "Name": "Camera",
+                            "ROI (px)": "xy(0, 0), wh(2304, 2304)",
+                            "ROI norm": "xy(0, 0), wh(1, 1)",
+                            "Tags": [
+                                "Camera1"
+                            ]
+                        },
+                        {
+                            "Camera index": 0,
+                            "Flip horizontal": false,
+                            "Flip vertical": false,
+                            "Name": "ROI",
+                            "ROI (px)": "xy(917, 917), wh(469, 469)",
+                            "ROI norm": "xy(0.398058, 0.398058), wh(0.203883, 0.203883)",
+                            "Tags": [
+                                "Camera1"
+                            ]
+                        }
+                    ],
+                    "Date time": "2024-11-22T13:35:32",
+                    "Detection modality": "STORM",
+                    "Dynamics params file id": "{2776b8a9-4ddb-4e4a-bca8-35d33811276b}",
+                    "Experimental condition": {
+                    },
+                    "Extra info file": "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-1/AcquisitionDynamicsParams.json",
+                    "Illumination mode": "EPI",
+                    "Name": "Acquisition-1",
+                    "Nb cameras": 1,
+                    "Note": "",
+                    "Path": "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-1",
+                    "Pixel nano size (nm)": 108,
+                    "Saved CSV": [
+                        "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-1/Nano-2D_drifted.csv",
+                        "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-1/Nano-2D_stable.csv"
+                    ],
+                    "Saved images": [
+                        {
+                            "Camera index": 0,
+                            "Files": [
+                                {
+                                    "Channel name": "ROI",
+                                    "Dimension order": "XYT",
+                                    "File path": "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-1/ROI.tif",
+                                    "Focus z positions": [
+                                    ],
+                                    "Frame idx": 0,
+                                    "Image height (px)": 468,
+                                    "Image width (px)": 468,
+                                    "Nb frame": 100,
+                                    "Timestamp": 1732278932.480444
+                                }
+                            ]
+                        }
+                    ],
+                    "Stars": 0,
+                    "TIRF position": 149971,
+                    "hardware_System": "SAFe 180 - Single color - Nanoscopy - 2D",
+                    "z stack": false
+                }
+            ],
+            "Hardware config id": "{8d5edfb1-2717-430c-874b-2aa80f94c0b2}",
+            "Sample id": "",
+            "Software version": "NEO LiveImaging 2.15.1"
+        },
+        {
+            "Acquisition": [
+                {
+                    "Cameras": [
+                        {
+                            "Baseline image path removed": "",
+                            "Baseline value removed": 0,
+                            "Camera binning": 1,
+                            "Camera horizontal flip": false,
+                            "Camera index": 0,
+                            "Camera vertical flip": false,
+                            "Exposure time (sec)": 0.05000000074505806,
+                            "Readout speed (sec)": 0.043093353509902954,
+                            "Sensor height (px)": 2304,
+                            "Sensor width (px)": 2304,
+                            "Trigger mode": "TRIGGERMODE_EXTERNAL_SYNCREADOUT"
+                        }
+                    ],
+                    "Channels": [
+                        {
+                            "Camera index": 0,
+                            "Flip horizontal": false,
+                            "Flip vertical": false,
+                            "Name": "Camera",
+                            "ROI (px)": "xy(0, 0), wh(2304, 2304)",
+                            "ROI norm": "xy(0, 0), wh(1, 1)",
+                            "Tags": [
+                                "Camera1"
+                            ]
+                        },
+                        {
+                            "Camera index": 0,
+                            "Flip horizontal": false,
+                            "Flip vertical": false,
+                            "Name": "ROI",
+                            "ROI (px)": "xy(917, 917), wh(469, 469)",
+                            "ROI norm": "xy(0.398058, 0.398058), wh(0.203883, 0.203883)",
+                            "Tags": [
+                                "Camera1"
+                            ]
+                        }
+                    ],
+                    "Date time": "2024-11-22T14:25:04",
+                    "Detection modality": "STORM",
+                    "Dynamics params file id": "{a5492077-be19-491a-8369-5649111be7c5}",
+                    "Experimental condition": {
+                    },
+                    "Extra info file": "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-2/AcquisitionDynamicsParams.json",
+                    "Illumination mode": "EPI",
+                    "Name": "Acquisition-2",
+                    "Nb cameras": 1,
+                    "Note": "",
+                    "Path": "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-2",
+                    "Pixel nano size (nm)": 108,
+                    "Saved CSV": [
+                        "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-2/Nano-2D_drifted.csv",
+                        "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-2/Nano-2D_stable.csv"
+                    ],
+                    "Saved images": [
+                        {
+                            "Camera index": 0,
+                            "Files": [
+                                {
+                                    "Channel name": "ROI",
+                                    "Dimension order": "XYT",
+                                    "File path": "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-2/ROI.tif",
+                                    "Focus z positions": [
+                                    ],
+                                    "Frame idx": 0,
+                                    "Image height (px)": 468,
+                                    "Image width (px)": 468,
+                                    "Nb frame": 100,
+                                    "Timestamp": 1732281904.383516
+                                }
+                            ]
+                        }
+                    ],
+                    "Stars": 0,
+                    "TIRF position": 149971,
+                    "hardware_System": "SAFe 180 - Single color - Nanoscopy - 2D",
+                    "z stack": false
+                }
+            ],
+            "Hardware config id": "{8d5edfb1-2717-430c-874b-2aa80f94c0b2}",
+            "Sample id": "",
+            "Software version": "NEO LiveImaging 2.15.1"
+        },
+        {
+            "Acquisition": [
+                {
+                    "Cameras": [
+                        {
+                            "Baseline image path removed": "",
+                            "Baseline value removed": 0,
+                            "Camera binning": 1,
+                            "Camera horizontal flip": false,
+                            "Camera index": 0,
+                            "Camera vertical flip": false,
+                            "Exposure time (sec)": 0.05000000074505806,
+                            "Readout speed (sec)": 0.043093353509902954,
+                            "Sensor height (px)": 2304,
+                            "Sensor width (px)": 2304,
+                            "Trigger mode": "TRIGGERMODE_EXTERNAL_SYNCREADOUT"
+                        }
+                    ],
+                    "Channels": [
+                        {
+                            "Camera index": 0,
+                            "Flip horizontal": false,
+                            "Flip vertical": false,
+                            "Name": "Camera",
+                            "ROI (px)": "xy(0, 0), wh(2304, 2304)",
+                            "ROI norm": "xy(0, 0), wh(1, 1)",
+                            "Tags": [
+                                "Camera1"
+                            ]
+                        },
+                        {
+                            "Camera index": 0,
+                            "Flip horizontal": false,
+                            "Flip vertical": false,
+                            "Name": "ROI",
+                            "ROI (px)": "xy(918, 918), wh(467, 467)",
+                            "ROI norm": "xy(0.398512, 0.398512), wh(0.202976, 0.202976)",
+                            "Tags": [
+                                "Camera1"
+                            ]
+                        }
+                    ],
+                    "Date time": "2024-11-22T14:59:54",
+                    "Detection modality": "STORM",
+                    "Dynamics params file id": "{0db17469-e7ca-49ab-9619-83d6375072eb}",
+                    "Experimental condition": {
+                    },
+                    "Extra info file": "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-3/AcquisitionDynamicsParams.json",
+                    "Illumination mode": "EPI",
+                    "Name": "Acquisition-3",
+                    "Nb cameras": 1,
+                    "Note": "",
+                    "Path": "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-3",
+                    "Pixel nano size (nm)": 108,
+                    "Saved CSV": [
+                        "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-3/Nano-2D_drifted.csv",
+                        "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-3/Nano-2D_stable.csv"
+                    ],
+                    "Saved images": [
+                        {
+                            "Camera index": 0,
+                            "Files": [
+                                {
+                                    "Channel name": "ROI",
+                                    "Dimension order": "XYT",
+                                    "File path": "C:/Users/WorkStation/Documents/acquisition/2024-11-22-vadot-veneziano/vadot-veneziano/Acquisition-3/ROI.tif",
+                                    "Focus z positions": [
+                                    ],
+                                    "Frame idx": 0,
+                                    "Image height (px)": 464,
+                                    "Image width (px)": 464,
+                                    "Nb frame": 100,
+                                    "Timestamp": 1732283994.611845
+                                }
+                            ]
+                        }
+                    ],
+                    "Stars": 0,
+                    "TIRF position": 149971,
+                    "hardware_System": "SAFe 180 - Single color - Nanoscopy - 2D",
+                    "z stack": false
+                }
+            ],
+            "Hardware config id": "{8d5edfb1-2717-430c-874b-2aa80f94c0b2}",
+            "Sample id": "",
+            "Software version": "NEO LiveImaging 2.15.1"
+        }
+    ],
+    "Text": "",
+    "Users": [
+        {
+            "Name": "",
+            "ORCID id": ""
+        }
+    ]
+}

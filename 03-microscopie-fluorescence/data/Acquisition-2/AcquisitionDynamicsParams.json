@@ -1,0 +1,195 @@
+{
+    "Camera": {
+        "Exposure (ms)": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 50
+            }
+        ],
+        "Readout speed": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": "Normal"
+            }
+        ],
+        "Readout time (s)": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 0.04309335294117647
+            }
+        ]
+    },
+    "Id": "{a5492077-be19-491a-8369-5649111be7c5}",
+    "Light source": {
+        "AdjustDt": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 0
+            }
+        ],
+        "Field of Excitation": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 52
+            }
+        ],
+        "LASER_1_On": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": false
+            }
+        ],
+        "LASER_1_Power": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 125
+            }
+        ],
+        "LASER_2_On": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": false
+            },
+            {
+                "frameIdx": 3506,
+                "timestamp": 1732281891.947595,
+                "value": true
+            },
+            {
+                "frameIdx": 99,
+                "timestamp": 1732281909.361162,
+                "value": false
+            }
+        ],
+        "LASER_2_Power": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 123
+            }
+        ],
+        "LASER_3_On": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": false
+            }
+        ],
+        "LASER_3_Power": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 0
+            }
+        ],
+        "LASER_4_On": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": false
+            }
+        ],
+        "LASER_4_Power": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 0
+            }
+        ],
+        "Offset X": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 14
+            }
+        ],
+        "Offset Y": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 8
+            }
+        ],
+        "TIRF position": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 149972
+            }
+        ]
+    },
+    "Microscope": {
+        "Micro Actual Reference (um)": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": "Bottom"
+            }
+        ],
+        "Micro Enable ZStack": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": false
+            }
+        ],
+        "Micro Interval Step (nm)": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 100
+            }
+        ],
+        "Micro Position (um)": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": "0.000µm"
+            }
+        ],
+        "Micro Range Info": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": "0µm"
+            }
+        ],
+        "Micro Use Addon Stage": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": false
+            }
+        ],
+        "Micro ZStack Info": [
+        ]
+    },
+    "Processing": {
+        "Single Molecule min distance (nm)": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 11
+            }
+        ],
+        "Threshold factor Std": [
+            {
+                "frameIdx": 0,
+                "timestamp": 1732281904.383516,
+                "value": 1
+            }
+        ]
+    },
+    "Stage": {
+    },
+    "Wheel filter": {
+    }
+}

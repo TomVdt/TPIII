@@ -1,0 +1,15 @@
+Fit for Plot of ROI: Data Set 1: (10 data points)
+Formula: y = a + (b-a)*exp(-(x-c)*(x-c)/(2*d*d))
+Macro code: y = a+(b-a)*Math.exp(-(x-c)*(x-c)/(2*d*d))
+Status: Success
+Number of completed minimizations: 2
+Number of iterations: 94 (max: 6000)
+Time: 1 ms
+Sum of residuals squared: 22998591.1
+Standard deviation: 1598.56155
+R^2: 0.98245
+Parameters:
+	a = 15066.6909
+	b = 47518.0162
+	c = 4.06346
+	d = 1.65443
