@@ -45,10 +45,13 @@
     \setbeamertemplate{page number in head/foot}[framenumber]%
     \usebeamertemplate*{page number in head/foot}\kern0.5em\vskip4pt%
     }
-    \addtobeamertemplate{footline}{\vspace*{-0.5cm}}{}
-    
-    \setbeamertemplate{blocks}[rounded][shadow=false]
-    \setbeamertemplate{navigation symbols}{}
+\addtobeamertemplate{footline}{\vspace*{-0.5cm}}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
+  color(0pt)=(upper.bg); color(2pt)=(upper.bg); color(4pt)=(upper.bg)}
+\makeatother
+\setbeamertemplate{navigation symbols}{}
 
     
 % ===== Colors =====
@@ -188,29 +191,32 @@
 }
 
 \section{Theory and experimental setup}
-\begin{frame}{Defining plasma}
-    A \emph{quasineutral} gas of charged and neutral particles which exhibit \emph{collective} behaviour" \footfullcite{chen_introduction_2006}
-    \vspace{0.5cm}
+\begin{frame}{What is plasma?}
+    \begin{definition}
+        A \emph{quasineutral} gas of charged and neutral particles which exhibit \emph{collective} behaviour\, \footfullcite{chen_introduction_2006}
+        
+    \end{definition}
+    \vspace{0.3cm}
     \begin{itemize}
         \item \textbf{Quasineutrality}: the overall charge densities of free electrons and ions cancel each other in equilibrium: 
-            $n_e \simeq Z n_i$ \footfullcite{gibbon_introduction_2016}
+            $n_e \simeq Z n_i$\, \footfullcite{gibbon_introduction_2016}
 
         \item \textbf{Collective behaviour}: macroscopic fields dominate over short-lived microscopic fluctuations.
-            An external stimulus creates a simultaneous response of many particles \footfullcite{piel_plasma_2017}.
+            An external stimulus creates a simultaneous response of many particles\, \footfullcite{piel_plasma_2017}.
     \end{itemize}
     \vspace{0.5cm}
-    Cold plasma: ions are not thermalised and electrons have a temperature such that $T_e \gg T_i$ \footfullcite{bagnato_notice_2019}.
+    \textbf{Cold plasma}: ions are not thermalised and electrons have a temperature such that $T_e \gg T_i$\, \footfullcite{bagnato_notice_2019}.
 \end{frame}
 
 
-\begin{frame}{Langmuir probes}
+\begin{frame}{{Langmuir probes}}
     \vspace{0.2cm}
     \begin{itemize}
-        \item Devices widely used to study different properties of plasma, e.g. electron temperature $T_e$ and density $n_e$.
+        \item Devices widely used to study different properties of plasma, e.g. \textbf{electron temperature} $T_e$ and \textbf{density} $n_e$.
         
         \item Electrode of surface $A_{\mathrm{probe}}$, inserted into the chamber and biased by an external voltage $\biasvoltage$.
-        \item The charges (both ions and electrons) reach the surface and generate probe current $\probecurrent = I_e + I_i$.
-        \item Measuring the probe potential $\probevoltage$ yields the plasma space potential $\plasmavoltage$:
+        \item The charges (both ions and electrons) reach the surface and generate \textbf{probe current} $\probecurrent = I_e + I_i$.
+        \item Measuring the \textbf{probe potential} $\probevoltage$ yields the plasma space potential $\plasmavoltage$:
         \begin{equation*}
             \biasvoltage= \probevoltage - \plasmavoltage
         \end{equation*}
@@ -229,12 +235,12 @@
         \column{0.5\textwidth}
         Three regions:
         \begin{enumerate}
-            \item[I] High negative bias: no electrons reach the probe. Constant ion saturation current.
-            \item[II] Electron retardation regime: part of the electrons reach the probe. Electron current \footfullcite{bagnato_notice_2019}
+            \item[I] High negative bias: no electrons reach the probe. Constant \textbf{ion saturation current} $I_{i,\mathrm{sat}}$.
+            \item[II] Electron retardation regime: part of the electrons reach the probe. \textbf{Electron current}\, \footfullcite{bagnato_notice_2019}
             \begin{equation*}
                 I_e = \electronsaturationcurrent \frac{e^{q(\probevoltage - \biasvoltage)}}{k_B T_e}
             \end{equation*}
-            \item[III] High positive bias: constant electron saturation current $\electronsaturationcurrent$.
+            \item[III] High positive bias: constant \textbf{electron saturation current} $\electronsaturationcurrent$.
             \begin{equation*}
                 \electronsaturationcurrent = \frac{1}{4}e n_e v_{e,th} A_{\mathrm{probe}}
             \end{equation*}
@@ -256,7 +262,7 @@
         \begin{itemize}
             \item Acquire $I$-$V$ curve.
             \item Linearise region II.
-            \item Linear regression in region II allows to find $T_e$.
+            \item \textbf{Linear regression} in region II allows to find $T_e$.
                 \begin{equation*}
                     \ln\left(\frac{I_e}{\electronsaturationcurrent} \right) = \frac{e}{k_B T_e}(\probevoltage - \biasvoltage)
                 \end{equation*}
@@ -416,27 +422,27 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Ion acoustic waves}
+\begin{frame}{{Ion acoustic waves}}
     \begin{itemize}
-        \item Longitudal oscillation of charges in plasma
-        \item Low pressure $\implies$ almost no collisions, only Coulomb interactions
+        \item \textbf{Longitudinal oscillation} of charges in plasma
+        \item Low pressure $\implies$ almost no collisions, only \textbf{Coulomb interactions}
         \item 1 type of ion: $_{18}$Ar
     \end{itemize}
     
     \vspace{0.5cm}
     \begin{columns}[T]
-        \column{0.5\textwidth}
-        Dispersion relation \space \footfullcite{bagnato_notice_2019}
+        \column{0.6\textwidth}
+        \centering
+        Dispersion relation \, \footfullcite{bagnato_notice_2019}
         \begin{equation*}
             v_s^2 = \frac{\gamma_e Z_i k_B T_e + \gamma_i k_B T_i}{M(1+\gamma_e(k\lambda_d)^2)}
         \end{equation*}
         
         \column{0.01\textwidth}
-        \rule{.1mm}{1.5cm}
+        \rule{.2mm}{1.7cm}
 
-        \column{0.49\textwidth}
+        \column{0.39\textwidth}
         \vfill
-        \centering
         $M$ mass of ion \\
         $Z$ charge of ion \\
         $T_e$/$T_i$ temperature of \electron/ion \\
@@ -454,7 +460,7 @@
         \implies v_s^2 = \frac{\gamma_e Z k_B T_e}{M}
     \end{equation*}
 
-    Dispersionless assumption: $v_s = \frac{\omega}{k}$
+    \textbf{Dispersionless} assumption: $v_s = \frac{\omega}{k}$
 \end{frame}
 
 \begin{frame}{Estimating temperature}{$p = (7.1 \pm 0.1) \times 10^{-3}$ mbar, $I_\text{filament,left} = (49.7 \pm 0.1)$ A, $I_\text{filament,right} = (48.5 \pm 0.1)$ A, $V_\text{filament} = (-60 \pm 2)$ V, $V_\text{grid} = (-100 \pm 1)$ V}
