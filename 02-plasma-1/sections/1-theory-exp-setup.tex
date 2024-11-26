@@ -94,7 +94,6 @@ As a reference, the location of the probes is measured relatively, where "0 cm" 
 % from a hot tungsten filament.
 
 \subsection{Ion-acoustic waves}
-Plasma goes boing boing.
 
 It is possible to induce a longitudal oscillation of the ions and electrons in a plasma. These types of waves are called "ion acoustic waves". In the context of our experiment, the plasma is at a low pressure, meaning that the wave can only propagate through the Coulomb force between charged particles, because collisions are too rare.
 For plasmas composed of only 1 type of ion, and considering that the wavelength of the induced wave is much larger than the Debye length $\lambda_d$, the ion-acoustic waves are disperionless, meaning $v_s = \omega/k = \lambda \nu$. The expression for the speed of the wave is then
@@ -107,3 +106,32 @@ M mass of ion, Z charge of ion, which in this experiment we set to $18$ because 
 \end{equation}
 % this speed can be interpreted as the thermal speed the ions would have if they were at the electron's temperature
 If we then measure the speed of the propagating wave we can find the electron temperature. We measured the speed by inducing an ion-acoustic wave at a specific frequency, and measuring the wavelength by moving the probe and measuring the position of the maxima of the wave.
+
+\subsection{Experimental setup}
+Plasma is created in a cylindrical chamber depicted here. Air is removed from the chamber and replaced by Argon, through the use of the micro-flow valve and a vacuum pump. Two tungsten heating filaments on either side of the chamber acts as our heat and electron source, which allow the formation of the plasma. The filaments are also polarised to eject the electrons at a greater velocity. The chamber is surrounded by magnets to confine the plasma near the center of the chamber.
+In the middle of the cylinder a grill is set at a negative voltage to stop electrons from flowing from one side to the other.
+At the heart of our experiment, there are 2 Langmuir probes on either side of the chamber. The left probe can be moved in the radial direction of the cylinder, while the right probe can move along the axis of the cylinder.
+During this experiment, the pressure, heating current, filament polarisation, grill polarisation and location of the probes will be varied to analyse the Argon plasma under different conditions.
+
+As a reference, the location of the probes is measured relatively, where "0 cm" means closest to the back wall and "15 cm" mean closer to the front wall for the left probe, while "0 cm" for the right probe means closest to the heating filament and "15 cm" means closest to the grill.
+
+
+% We have a chamber and two probes (one like this, the other like that) and a bunch of voltage sources.
+% Also two tungsten filaments to heat the whole thing up.
+% With two voltage sources attached.
+% Also the grill and the cage and the whole thing is grounded but not really.
+
+% And here a very nice figure with the schematics of the setup.
+\begin{figure}
+    \centering
+    \includegraphics[width=12cm]{figures/experimental-setup.png}
+    \caption{The experimental setup}
+    \label{fig:experimental_setup}
+\end{figure}
+
+% The plasma is produced by electron impact ionization
+% of argon atoms by electrons that are thermionically emitted and accelerated
+% from a hot tungsten filament.
+
+\cite{merlino_understanding_2007} a une explication magnifique de à quoi est-ce que ça sert les aimants.
+Aussi il explique bien la courbe I-V, si on a besoin de citer quelque chose on peut balancer ça.
