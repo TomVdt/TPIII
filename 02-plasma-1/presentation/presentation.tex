@@ -185,18 +185,18 @@
     \end{definition}
     \vspace{0.3cm}
     \begin{itemize}
-        \item \textbf{Quasineutrality}: the overall charge densities of free electrons and ions cancel each other in equilibrium: 
-            $n_e \simeq Z n_i$\, \footfullcite{gibbon_introduction_2016}
+        \item \textbf{Quasineutrality}: the overall charge densities of free electrons and ions cancel each other in equilibrium
+             \footfullcite{gibbon_introduction_2016}
 
         \item \textbf{Collective behaviour}: 
             % macroscopic fields dominate over short-lived microscopic fluctuations.
             An external stimulus creates a simultaneous response of many particles\, \footfullcite{piel_plasma_2017}.
     \end{itemize}
     \vspace{0.4cm}
-    \textbf{Cold plasma}: ions are not thermalised and electrons have a temperature such that $T_e \gg T_i$\, \footfullcite{bagnato_notice_2019}.
-
+    \textbf{Debye length} $\lambda_d$: characteristic distance over which a charge is screened [7].
+    
     \vspace{0.2cm}
-    \textbf{Debye length}: characteristic distance over which a charge is screened [7].
+    \textbf{Cold plasma}: ions are not thermalised and electrons have a temperature such that $T_e \gg T_i$\, \footfullcite{bagnato_notice_2019}.
 
 \end{frame}
 
@@ -230,7 +230,7 @@
             \item[I] High negative bias: no electrons reach the probe. Constant \textbf{ion saturation current} $I_{i,\mathrm{sat}}$.
             \item[II] Electron retardation regime: part of the electrons reach the probe. \textbf{Electron current}\, \footfullcite{bagnato_notice_2019}
             \begin{equation*}
-                I_e = \electronsaturationcurrent \frac{e^{q(\probevoltage - \biasvoltage)}}{k_B T_e}
+                I_e = \electronsaturationcurrent \frac{\exp({q(\probevoltage - \biasvoltage)})}{k_B T_e}
             \end{equation*}
             \item[III] High positive bias: constant \textbf{electron saturation current} $\electronsaturationcurrent$.
             \begin{equation*}
@@ -318,7 +318,7 @@
         \vspace{0.5cm}
         \item Higher pressure decreases temperature and increases density.
         \item Non-linear behaviour in the studied range of pressures.
-        \item Plasma wasn't able to sustain itself outside of this range.
+        \item Plasma wasn't able to form below $\sim 0.5 \times 10^{-3}$ mbar.
     \end{itemize}
 \end{frame}
 
@@ -360,23 +360,23 @@
 %     \end{itemize}
 % \end{frame}
 
-\begin{frame}{Temperature and density along the chamber radius}
-    \begin{columns}
-        \column{0.5\textwidth}
-        \centering
-        \includegraphics[scale=1]{../figures/temperatureeV_position_radial.pdf}
+% \begin{frame}{Temperature and density along the chamber radius}
+%     \begin{columns}
+%         \column{0.5\textwidth}
+%         \centering
+%         \includegraphics[scale=1]{../figures/temperatureeV_position_radial.pdf}
 
-        \column{0.5\textwidth}
-        \centering
-        \includegraphics[scale=1]{../figures/density_position_radial.pdf}
+%         \column{0.5\textwidth}
+%         \centering
+%         \includegraphics[scale=1]{../figures/density_position_radial.pdf}
 
-    \end{columns}
-    \vspace{0.5cm}
-    \begin{itemize}
-        \item Both temperature and density fall off near the external walls.
-        \item Plasma confined in the center by the outer magnets.
-    \end{itemize}
-\end{frame}
+%     \end{columns}
+%     \vspace{0.5cm}
+%     \begin{itemize}
+%         \item Both temperature and density fall off near the external walls.
+%         \item Plasma confined in the center by the outer magnets.
+%     \end{itemize}
+% \end{frame}
 
 
 
@@ -471,23 +471,23 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{Additional observations: Turning off one filament}{$p = (1.3 \pm 0.1) \times 10^{-3}$ mbar, $\filamentcurrent = (50.0 \pm 0.1)$ A}
-    \begin{columns}
-        \column{0.5\textwidth}
-        \centering
-        \includegraphics[scale=1]{../figures/temperatureeV_position_twofilaments.pdf}
+% \begin{frame}{Additional observations: Turning off one filament}{$p = (1.3 \pm 0.1) \times 10^{-3}$ mbar, $\filamentcurrent = (50.0 \pm 0.1)$ A}
+%     \begin{columns}
+%         \column{0.5\textwidth}
+%         \centering
+%         \includegraphics[scale=1]{../figures/temperatureeV_position_twofilaments.pdf}
 
-        \column{0.5\textwidth}
-        \centering
-        \includegraphics[scale=1]{../figures/density_position_twofilaments.pdf}
+%         \column{0.5\textwidth}
+%         \centering
+%         \includegraphics[scale=1]{../figures/density_position_twofilaments.pdf}
 
-    \end{columns}
-    \vspace{0.5cm}
-    \begin{itemize}
-        \item Only difference observed closest to the grid.
-        \item No significant difference in the rest of the chamber, possibly due to the effect of the grid
-    \end{itemize}
-\end{frame}
+%     \end{columns}
+%     \vspace{0.5cm}
+%     \begin{itemize}
+%         \item Only difference observed closest to the grid.
+%         \item No significant difference in the rest of the chamber, possibly due to the effect of the grid
+%     \end{itemize}
+% \end{frame}
 
 \begin{frame}{Additional observations: Hysteresis}
     \begin{itemize}
@@ -514,14 +514,22 @@
 
 \section{Discussion}
 \begin{frame}{Comparisons with literature}
-    % Found similar results in literature: 
-    \begin{itemize}
-        \itemsep10pt
-        \item \footfullcite{hassouba_analysis_2013} and \, \footfullcite{li__experimental_2024} both describe the same general behaviour of temperature and density as a function of pressure.
-        \item \footfullcite{kim_electron_2025} found that both temperature and density decrease from the center of the plasma to the outer walls.
-        % \item a[CITATION A METTRE] also finds dispersion in ion-acoustic waves.
-        % J'ai trouvé des trucs mais c'est soit un vieux rapport de 1964, soit mentionné dans la théorie rapidement qu'au plasma sheath il y a des choses qui se passent, je sais pas trop quoi faire
-    \end{itemize}
+    \begin{columns}
+        \column{0.6\textwidth}
+        \begin{itemize}
+            \itemsep8pt
+            \item \footfullcite{hassouba_analysis_2013} and \, \footfullcite{li__experimental_2024} both describe the same general behaviour of temperature and density as a function of pressure.
+            \item \footfullcite{kim_electron_2025} found that both temperature and density decrease from the center of the plasma to the outer walls.
+            \item \footfullcite{chen_introduction_2006} predicts non-zero dispersion in the propagation of ion waves for some range of frequencies.
+            % \item a[CITATION A METTRE] also finds dispersion in ion-acoustic waves.
+            % J'ai trouvé des trucs mais c'est soit un vieux rapport de 1964, soit mentionné dans la théorie rapidement qu'au plasma sheath il y a des choses qui se passent, je sais pas trop quoi faire
+        \end{itemize}
+
+        \column{0.4\textwidth}
+        \includegraphics[width=4.5cm]{../figures/chen-dispersion.png} \\
+        \centering
+        \small Dispersion curve \\ for ion-acoustic wave [16]
+    \end{columns}
 \end{frame}
 
 
@@ -551,5 +559,11 @@
     \end{columns}
 \end{frame}
 
+
+\begin{frame}
+    \vspace{7cm}
+    % \small Thank you for your attention \\
+    % Thanks to lab assistant Jesús Poley Sanjuán
+\end{frame}
 
 \end{document}
