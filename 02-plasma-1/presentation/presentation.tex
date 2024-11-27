@@ -41,7 +41,7 @@
 \hfill%
 \usebeamercolor[fg]{page number in head/foot}%
 % \usebeamerfont{page number in head/foot}%
-\footnotesize%
+\scriptsize%
     \setbeamertemplate{page number in head/foot}[framenumber]%
     \usebeamertemplate*{page number in head/foot}\kern0.5em\vskip4pt%
     }
@@ -155,7 +155,7 @@
 
 \begin{document}
 
-\begin{frame}
+\begin{frame}[plain]
     \titlepage
 \end{frame}
 
@@ -188,14 +188,15 @@
         \item \textbf{Quasineutrality}: the overall charge densities of free electrons and ions cancel each other in equilibrium: 
             $n_e \simeq Z n_i$\, \footfullcite{gibbon_introduction_2016}
 
-        \item \textbf{Collective behaviour}: macroscopic fields dominate over short-lived microscopic fluctuations.
+        \item \textbf{Collective behaviour}: 
+            % macroscopic fields dominate over short-lived microscopic fluctuations.
             An external stimulus creates a simultaneous response of many particles\, \footfullcite{piel_plasma_2017}.
     \end{itemize}
     \vspace{0.4cm}
     \textbf{Cold plasma}: ions are not thermalised and electrons have a temperature such that $T_e \gg T_i$\, \footfullcite{bagnato_notice_2019}.
 
     \vspace{0.2cm}
-    \textbf{Debye length}: radius of sphere after which a charge is shielded
+    \textbf{Debye length}: characteristic distance over which a charge is screened [7].
 
 \end{frame}
 
@@ -209,7 +210,7 @@
         \item The charges (both ions and electrons) reach the surface and generate \textbf{probe current} $\probecurrent = I_e + I_i$.
         \item Measuring the \textbf{probe potential} $\probevoltage$ yields the plasma space potential $\plasmavoltage$:
         \begin{equation*}
-            \biasvoltage= \probevoltage - \plasmavoltage
+            \plasmavoltage = \probevoltage - \biasvoltage
         \end{equation*}
     \end{itemize}
 
@@ -391,7 +392,7 @@
         
     \end{columns}
     \begin{itemize}
-        \item The different orientation of the Langmuir probes leads to different results in the two halves of the chamber
+        \item The \textbf{different orientation} of the Langmuir probes leads to different results in the two halves of the chamber
         \item Density is highest closest to the filaments and to the cylinder axis
     \end{itemize}
 \end{frame}
@@ -515,6 +516,7 @@
 \begin{frame}{Comparisons with literature}
     % Found similar results in literature: 
     \begin{itemize}
+        \itemsep10pt
         \item \footfullcite{hassouba_analysis_2013} and \, \footfullcite{li__experimental_2024} both describe the same general behaviour of temperature and density as a function of pressure.
         \item \footfullcite{kim_electron_2025} found that both temperature and density decrease from the center of the plasma to the outer walls.
         % \item a[CITATION A METTRE] also finds dispersion in ion-acoustic waves.
@@ -536,6 +538,7 @@
     \begin{columns}
         \column{0.5\textwidth}
         \begin{itemize}
+            \itemsep10pt
             \item Different probe geometry: complete 2D profile of the chamber
             \item Higher number of probes (e.g. an array)
             \item Mixtures of gas species (as was done for example in\, \footfullcite{kim_electron_2025} and\, \footfullcite{li__experimental_2024}).
