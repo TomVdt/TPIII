@@ -9,7 +9,7 @@ __pycache__
 res/
 *.tif
 # THICC FILES
-03-microscopie-fluorescence/data/microtubule/*
+03-microscopie-fluorescence/data/microtubules/*
 
 ## https://github.com/github/gitignore/blob/main/TeX.gitignore
 ## Core latex/pdflatex auxiliary files:
