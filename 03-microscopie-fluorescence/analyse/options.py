@@ -38,7 +38,7 @@ rcParams = {
     "legend.labelspacing" : 0.3,
 
     'axes.axisbelow' : True,
-    # 'axes.grid' : True,
+    'axes.grid' : True,
     'grid.linestyle' : '-',
     'grid.linewidth': 0.5,
     'grid.alpha': 0.75,
