@@ -2,17 +2,20 @@
 ESSENTIALLY: STORM IS A METHOD FOR SMLM (j'avais eu un doute que c'était deux choses differentes mais non)
 
 \subsection{Epifluorescence Microscopes}
-A common architecture for fluorescence microscopes is that of an upright epifluorescence microscope, pictured in figure ??.
+A common architecture for fluorescence microscopes is that of an upright epifluorescence microscope, pictured in figure ?? \hl{do we use the notice figure 3.1 or make one ourselves?}.
 
 Light emitted from a source such as a laser or a high-intensity LED enters the microscope and is reflected into the objective lens by a dichroic mirror, capable of reflecting some wavelengths of light and transmitting others (a passband filter)\cite{douglass_notice_2023}.
 The excitation light is then focused by the objective lens onto the studied sample, where it excites the fluorescent molecules therein\footnote{lol} present.
-The fluorescent light (emitted by the molecules) is then collected by the same objective lens and passes again through the dichroic mirror.
-The dichroic mirror thus acts as a beam splitter, separating the excitation and emission light paths\cite{sachl_introduction_2022}.
-Finally, a second lens known as the tube lens\footnotemark collects the fluorescence light and forms the image of the sample on the camera.
-\footnotetext{Necessary for the infinity correction}
+The fluorescent light emitted by the molecules is collimated by the same objective lens and passes again through the dichroic mirror, which therefore acts as a beam splitter, separating the excitation and emission light paths\cite{sachl_introduction_2022}.
+Finally, a second lens, known as tube lens, focuses the parallel rays coming from the objective lens and forms the image of the sample on the camera or eyepiece.
+This setup using two lenses, called an infinity-corrected system, allows to add or replace optical elements (such as filters or additional beamsplitters) in the space between the two lenses (the infinity space) without disturbing/modifying the wavefront of the light and thus keeping the same focus and magnification.
 
-This means that the excitation light is delivered to the specimen by the same objective lens which is used for collecting the fluorescence, an episcopic mode of observation commonly referred [called][known in short] to as epi-illumination.
+This mode of observation, where the excitation light is delivered to the specimen by the same objective lens which is used for collecting the fluorescence, 
+is known as epi-illumination.
+\hl{The following is cut and copy, modifier}It solves the problem of the excitation light dominating the weaker fluorescence signal, as most of the excitation light propagates away from the objective after leaving  the sample.
 
+THINGS WHICH CAN BE REMOVED IF SPACE IS NECESSARY:
+Epi-illumination iluminates the whole samople at once, in order to BLABLA. 
 Other illumination geometries include BLABLABLA.
 Also people use reversed epifluorescence microscopes which are better for this and that.
 
@@ -39,7 +42,16 @@ The behaviour of Fluorophores, the energetic states (rapidly), Photoswitching (n
     can be spatially resolved] \hl{utile lorsqu'on explique STORM}.
 
 \subsection{Experimental setup}
-The microscope we used, the camera, the laser engine and the fact a computer was used?
+All results contained in this document were obtained using an Abbelight SAFe 180 Single Molecule Localization Microscope, an Oxxius ?? laser engine and a Hamamatsu ORCA-Fusion digital CMOS camera.
+Three different laser wavelengths were used: \mbox{488 nm}, \mbox{561 nm} and \mbox{647 nm}.
+
+To test the performance of the microscope, the localization precision of single fluorescente molecules was estimated.
+Tetraspeck Microspheres, 0.1 $\mu$m diameter fluorescent beads.
+
+Then STORM imaging of tubulin. Tubulin in COS7 cells labeled with AlexaFluor 647 fluorescent dye.
+
+Then mitochondria, also using AlexaFluor 647 as fluorescent marker for the mitochondrial outer membrane in COS7 cells.
+Data acquisition was conducted using the NEO Live Imaging software, while the STORM data was analysed with the NEO Analysis software.
 
 
 \subsection{UTILE POUR ÉCRIRE:}
