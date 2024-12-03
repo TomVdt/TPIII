@@ -7,11 +7,18 @@ Matteo: Setup
 === Analyse ===
 Matteo: beautify width microtubule
 
+=== Current state des images à flexer ===
+Différentes options possibles:
+- on regarde dans le logiciel NEO Analysis la manière plus simple d'éxporter en PNG -> simple, ça se visualise bien, mais c'est moins cool
+- on imshow le tiff (peut-etre avec le package microfilm qui permet de mettre une scalebar très utile) -> marche relativement bien, faut juste bidouiller un peu avec les parametres
+- check si le NEO analysis permet d'avoir un tiff plus simple à plotter
+- interpolated 2d histogram (https://colab.research.google.com/drive/14OCvRUAUFp9JXK6HVyj18fndGY92-Dsx?usp=sharing#scrollTo=cwhMCgAIPb_l) -> classe, on a déja le code, on peut citer l'article scientifique, c'est la methode qui est vraiment utilisé en  recherche parce qu'on commence des coordonnées des molecules localisées, donne des bonnes images mais il faut encore y travailler un peu
+
 === Plots ===
 Est-ce qu'on utilise le diagram du microscope de la notice (fig. 3.1) ou on le refait?
-Inset axis?
+Inset axis améliorer
 Custom colormap???
-Flexing images
+Flexing images -> un poil plus difficile que prevu, je t'explique quand on a temps
 
 === Biblio peut-être intéressent pour Microscopie à Fluorescence ===
 Analytical Methods, Correlative Microscopy and Software Tools for Quantitative Single Molecule Localization Microscopy. (n.d.).
