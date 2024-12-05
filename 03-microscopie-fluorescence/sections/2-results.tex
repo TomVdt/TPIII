@@ -7,14 +7,14 @@ Then choosing a single molecule, \software{Scipy} library was used for two-dimen
     \centering
     \includegraphics[scale=1]{figures/beads_inset_zoom.pdf}
     \label{fig:beads_inset_zoom}
-    \caption{Whole acquisition and zoom on fluorescent beads which was studied.}
+    \caption{Whole acquisition and zoom on fluorescent beads which was studied. MUST FIX: la fenetre (les lims) n'est pas la même.}
 \end{figure}
 
 
 \subsection{STORM imaging of micro-tubules}
 \begin{figure}[htbp]
-    \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=\textwidth]{figures/microtubules_width_acquisition.PNG}
+    \begin{subfigure}{0.5\textwidth}    % trim left bottom right top
+        \includegraphics[width=\textwidth, trim={1cm 1.5cm 1cm 5cm}, clip]{figures/microtubules_width_acquisition.PNG}
         \caption{}
         \label{fig:microtubules_width_acquisition}
     \end{subfigure}

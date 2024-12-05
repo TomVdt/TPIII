@@ -10,25 +10,25 @@ Matteo: beautify width microtubule
 === Current state des images à flexer ===
 Différentes options possibles:
 - on regarde dans le logiciel NEO Analysis la manière plus simple d'éxporter en PNG -> simple, ça se visualise bien, mais c'est moins cool
+- Scatter des points avec couleur relative à l'intensité du point et peut-être alpha aussi?
 - on imshow le tiff (peut-etre avec le package microfilm qui permet de mettre une scalebar très utile) -> marche relativement bien, faut juste bidouiller un peu avec les parametres
 - check si le NEO analysis permet d'avoir un tiff plus simple à plotter
-- interpolated 2d histogram (https://colab.research.google.com/drive/14OCvRUAUFp9JXK6HVyj18fndGY92-Dsx?usp=sharing#scrollTo=cwhMCgAIPb_l) -> classe, on a déja le code, on peut citer l'article scientifique, c'est la methode qui est vraiment utilisé en  recherche parce qu'on commence des coordonnées des molecules localisées, donne des bonnes images mais il faut encore y travailler un peu
+- interpolated 2d histogram (WITH GAUSSIAN STUFF) (https://colab.research.google.com/drive/14OCvRUAUFp9JXK6HVyj18fndGY92-Dsx?usp=sharing#scrollTo=cwhMCgAIPb_l) -> classe, on a déja le code, on peut citer l'article scientifique, c'est la methode qui est vraiment utilisé en  recherche parce qu'on commence des coordonnées des molecules localisées, donne des bonnes images mais il faut encore y travailler un peu
 
 === Plots ===
-Est-ce qu'on utilise le diagram du microscope de la notice (fig. 3.1) ou on le refait?
 Inset axis améliorer
 Custom colormap???
-Flexing images -> un poil plus difficile que prevu, je t'explique quand on a temps
+Flexing images -> gaussian seems to be the coolest way
 
 === Biblio peut-être intéressent pour Microscopie à Fluorescence ===
-Analytical Methods, Correlative Microscopy and Software Tools for Quantitative Single Molecule Localization Microscopy. (n.d.).
-Diaspro, A. (Ed.). (2011). Optical Fluorescence Microscopy: From the Spectral to the Nano Dimension. Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-642-15175-0
-Fürstenberg, A., & Heilemann, M. (2013). Single-molecule localization microscopy – near-molecular spatial resolution in light microscopy with photoswitchable fluorophores. Physical Chemistry Chemical Physics, 15(36), 14919. https://doi.org/10.1039/c3cp52289j
-Šachl, R., & Amaro, M. (Eds.). (2023). Fluorescence Spectroscopy and Microscopy in Biology (Vol. 20). Springer International Publishing. https://doi.org/10.1007/978-3-031-30362-3
+- Analytical Methods, Correlative Microscopy and Software Tools for Quantitative Single Molecule Localization Microscopy. (n.d.).
+- Diaspro, A. (Ed.). (2011). Optical Fluorescence Microscopy: From the Spectral to the Nano Dimension. Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-642-15175-0
+- Fürstenberg, A., & Heilemann, M. (2013). Single-molecule localization microscopy – near-molecular spatial resolution in light microscopy with photoswitchable fluorophores. Physical Chemistry Chemical Physics, 15(36), 14919. https://doi.org/10.1039/c3cp52289j
+- Šachl, R., & Amaro, M. (Eds.). (2023). Fluorescence Spectroscopy and Microscopy in Biology (Vol. 20). Springer International Publishing. https://doi.org/10.1007/978-3-031-30362-3
 
-https://en.wikipedia.org/wiki/Tubulin pour comprendre un peu c'est quoi les microtubules
+- https://en.wikipedia.org/wiki/Tubulin pour comprendre un peu c'est quoi les microtubules
 
-10.3389/fbinf.2021.817254 semble très intéressant
+- 10.3389/fbinf.2021.817254 semble très intéressant
 
 === Ouverture ===
 Localisation in the axial dimension (details in Fürstenberg, 2013)
