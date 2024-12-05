@@ -1,30 +1,35 @@
 \section{Results}
 \subsection{Localization precision of the microscope}
-100 images acquired for every wavelength.
-Then choosing a single molecule, \software{Scipy} library was used for two-dimensional gaussian fit.
+A set of 100 images of the fluorescent $0.1 \mu$m beads was acquired for each laser wavelength.
+An isolated bead was selected and its (two-dimensional) intensity profile was fitted in all images with a (two-dimensional) gaussian curve, using the \verb|curve_fit| \software{Scipy} function. 
+The mean and standard variation of the resulting curve provide the $(x,y)$ localisation of the bead and EMPIRICAL PSF
+An example of the result of the localization, superimposed on one of the images acquired with the 488 nm laser, is depicted in \autoref{fig:beads_inset_zoom}. 
+THUS FOUND EMPIRICAL PSF OF
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/beads_inset_zoom.pdf}
+    \caption{Whole acquisition (488 nm) and zoom on selected fluorescent bead. MUST FIX: la fenetre (les lims) n'est pas la même.}
     \label{fig:beads_inset_zoom}
-    \caption{Whole acquisition and zoom on fluorescent beads which was studied. MUST FIX: la fenetre (les lims) n'est pas la même.}
 \end{figure}
 
 
 \subsection{STORM imaging of micro-tubules}
 \begin{figure}[htbp]
-    \begin{subfigure}{0.5\textwidth}    % trim left bottom right top
-        \includegraphics[width=\textwidth, trim={1cm 1.5cm 1cm 5cm}, clip]{figures/microtubules_width_acquisition.PNG}
+    \begin{subfigure}[b]{0.49\textwidth}    % trim left bottom right top
+        \centering
+        \raisebox{0.5cm}{\includegraphics[width=0.9\textwidth, trim={1cm 1.5cm 1cm 5cm}, clip]{figures/microtubules_width_acquisition.PNG}}
         \caption{}
         \label{fig:microtubules_width_acquisition}
     \end{subfigure}
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
         \includegraphics[scale=1]{figures/microtubules_width.pdf}
         \caption{}
         \label{fig:microtubules_width_analysis}
     \end{subfigure}
     \label{fig:microtubules_width}
-    \caption{Intensity profile along a microtubule strand?}
+    \caption{Intensity profile along a microtubule strand: (a) screen capture of the profile acquisition using the \software{Fiji} processing package, (b) the intensity profile averaged over the portion of length considered.}
 \end{figure}
 
 \begin{figure}
