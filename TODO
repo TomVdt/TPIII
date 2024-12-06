@@ -16,7 +16,6 @@ Différentes options possibles:
 - interpolated 2d histogram (WITH GAUSSIAN STUFF) (https://colab.research.google.com/drive/14OCvRUAUFp9JXK6HVyj18fndGY92-Dsx?usp=sharing#scrollTo=cwhMCgAIPb_l) -> classe, on a déja le code, on peut citer l'article scientifique, c'est la methode qui est vraiment utilisé en  recherche parce qu'on commence des coordonnées des molecules localisées, donne des bonnes images mais il faut encore y travailler un peu
 
 === Plots ===
-Les trois wavelengths dans le meme plot pour le hist du sigma PSF?
 Moyennes des positions: https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py
 Inset axis améliorer
 Custom colormap???
