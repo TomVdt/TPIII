@@ -17,6 +17,7 @@ Différentes options possibles:
 
 === Plots ===
 Les trois wavelengths dans le meme plot pour le hist du sigma PSF?
+Moyennes des positions: https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py
 Inset axis améliorer
 Custom colormap???
 Flexing images -> gaussian seems to be the coolest way
