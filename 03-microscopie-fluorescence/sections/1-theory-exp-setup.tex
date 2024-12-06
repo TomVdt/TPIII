@@ -31,6 +31,22 @@ Also people use reversed epifluorescence microscopes which are better for this a
 The PSF is a tool/way to characterise the performance of a microscope.
 EXPLANATION OF PSF WITH FORMULAS
 
+All microscopes have a limited resolution for how small a point-like light source can appear. The shape of the point measured in through the microscope is described by the point spread function, or PSF, and caracterises the performance of a particular microscope. The light intensity $I(x, y)$ as measured by the microscope can then be described as a convolution between the density of emitters $O(x, y)$ and the PSF:
+\begin{equation}
+    I(x, y) = \operatorname{PSF}(x, y) \star O(x, y)
+\end{equation}
+Under the assumption that the PSF is only influenced by the diffraction of light, its form can be found to be an Airy Disk, which is mathematically described by
+\begin{equation}
+    I(X) = I_0 \left[ \frac{2 J_1(X)}{X} \right]^{2}, \quad X = \frac{2\pi r \textrm{NA}}{\lambda}
+\end{equation}
+where $r$ is the radial coordinate, NA is the numerical aperture of the optical system, and $\lambda$ is the wavelength of the light. $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first $0$ of the Bessel function.
+% Also define resolution for Airy Disk needed if using that method...
+For practical reasons, a 2D Gaussian approximation of parameters $\mu_x$, $\mu_y$, and $\sigma$, the means and standard deviation, is often made due to its closeness with this Bessel function. The width of the PSF is then related to the standard deviation through
+\begin{equation}
+    \sigma = 0.21 \frac{\lambda}{\textrm{NA}}
+    \label{eq:PSF_width_gaussian}
+\end{equation}
+
 
 \subsection{Single Molecule Localization Microscopy}
 How a single molecule is localised 
@@ -41,6 +57,8 @@ How a single molecule is localised
 
 \subsection{Fluorescence Photophysics}
 The behaviour of Fluorophores, the energetic states (rapidly), Photoswitching (not Photoactivation because that's used in PALM, but we're doing STORM)
+
+Fluorescence is a property of some substances decsribing its ability to capture photons and reemit a photon of lower energy after a small duration. This phenomenon can be explained by the flurescent particle switching to an excited state
 
 \subsection{STORM} [mais on peut le mettre dans un autre paragraph] \\
 As a result (of the localization precision), two fluorescent molecules whose images overlap are impossible to localize.
