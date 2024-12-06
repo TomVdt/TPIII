@@ -10,6 +10,7 @@ res/
 *.tif
 # THICC FILES
 03-microscopie-fluorescence/data/microtubules/*
+03-microscopie-fluorescence/data/imaging/*
 
 ## https://github.com/github/gitignore/blob/main/TeX.gitignore
 ## Core latex/pdflatex auxiliary files:
