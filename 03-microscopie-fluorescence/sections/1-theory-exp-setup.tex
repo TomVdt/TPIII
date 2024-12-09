@@ -20,17 +20,13 @@ This mode of observation, where the excitation light is delivered to the specime
 is known as epi-illumination.
 \hl{The following is cut and copy, modifier}It solves the problem of the excitation light dominating the weaker fluorescence signal, as most of the excitation light propagates away from the objective after leaving  the sample.
 
-THINGS WHICH CAN BE REMOVED IF SPACE IS NECESSARY:
-Epi-illumination iluminates the whole sample at once, in order to BLABLA. 
-Other illumination geometries include BLABLABLA.
-Also people use reversed epifluorescence microscopes which are better for this and that.
-
+% THINGS WHICH CAN BE REMOVED IF SPACE IS NECESSARY:
+% Epi-illumination iluminates the whole sample at once, in order to BLABLA. 
+% Other illumination geometries include BLABLABLA.
+% Also people use reversed epifluorescence microscopes which are better for this and that.
 
 
 \subsection{The Point Spread Function}
-% The PSF is a tool/way to characterise the performance of a microscope.
-% EXPLANATION OF PSF WITH FORMULAS
-
 All microscopes have a limited resolution for how small a point-like light source can appear. The shape of the point measured in through the microscope is described by the point spread function, or PSF, and caracterises the performance of a particular microscope. The light intensity $I(x, y)$ of point-like light sources as measured by the microscope can then be described as a convolution between the density of emitters $O(x, y)$ and the PSF:
 \begin{equation}
     I(x, y) = \operatorname{PSF}(x, y) \star O(x, y)
@@ -39,44 +35,37 @@ Under the assumption that the PSF is only influenced by the diffraction of light
 \begin{equation}
     I(X) = I_0 \left[ \frac{2 J_1(X)}{X} \right]^{2}, \quad X = \frac{2\pi r \textrm{NA}}{\lambda}
 \end{equation}
-where $r$ is the radial coordinate, NA is the numerical aperture of the optical system, and $\lambda$ is the wavelength of the light. $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first $0$ of the Bessel function.
+where $r$ is the radial coordinate, NA is the numerical aperture of the optical system, and $\lambda$ is the wavelength of the light. \hl{and} $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first $0$ of the Bessel function.
 % Also define resolution for Airy Disk needed if using that method...
-For practical reasons, a 2D Gaussian approximation of parameters $\mu_x$, $\mu_y$, and $\sigma$, the means and standard deviation, is often made due to its closeness with airy disk intensity function. The width of the PSF is then related to the standard deviation through
+For practical reasons \hl{justifier (dire que c'est plus facile/rapide à calculer)}, a 2D \hl{two-dimensional} Gaussian approximation of \hl{of x and y means mux, muy and standard deviation sigma} parameters $\mu_x$, $\mu_y$, and $\sigma$, the means and standard deviation, is often made due to its closeness with airy disk intensity function. The width of the PSF is then related to the standard deviation through \hl{citation ou expliquer}
 \begin{equation}
     \sigma = 0.21 \frac{\lambda}{\textrm{NA}}
     \label{eq:PSF_width_gaussian}
 \end{equation}
-
+\hl{en plus c'est faux ça non? l'équation décrit la PSF width, qui \emph{théoriquement} est égale à sigma, mais ce n'est pas une liaison directe entre std et psf width.}
 
 \subsection{Single Molecule Localization Microscopy}
-In most cases, the smallest object a fluerescence microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated on the order of 10 nm for visible light. This technique is called Single Molecule Localization Microscopy, or SMLM. Multiple fitting techniques exist, each with their pros and cons. In this report, a 2D Gaussian will be fitted to the image:
+In most cases, the smallest object a fluerescence microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is \hl{with a certain degree of uncertainty or not?} located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated on the order of 10 nm for visible light. This technique is called Single Molecule Localization Microscopy, or SMLM. Multiple fitting techniques exist, each with their pros and cons. In this report, a 2D Gaussian will be fitted to the image:
 \begin{equation}
     f(x, y) = a \exp \left[ \frac{(x-\mu_x)^2 + (y-\mu_y)^2}{2 \sigma^2} \right] + b
 \end{equation}
 where $\mu_x$ and $\mu_y$ give the position of the molecule and $\sigma$ is related to the PSF as discussed previously.
 
-% How a single molecule is localised 
-% (CAN MAYBE GO IN PSF? IDK LA NOTICE SÉPARE LES DEUX)
-
-% (AUSSI ON POURRAIT METTRE PHOTOPHYSICS AVANT, PUIS EXPLIQUER TOUT D'UN COUP SMLM ET STORM (CÀD COMMENT ON LOCALISE UNE MOLECULE ET COMMENT ON SWITCH ON ET OFF POUR PRENDRE 10,000 PHOTOS ET RECONSTRUIRE UNE IMAGE))
-
+\hl{Peut-etre un poil trop de répetition avec le paragraphe d'avant. Aussi on pourrait emphatiser un peu plus que regarder objet plus pétits que moitié wavelength est vraiment le but de faire tout ça}
 
 \subsection{Fluorescence Photophysics}
-% The behaviour of Fluorophores, the energetic states (rapidly), Photoswitching (not Photoactivation because that's used in PALM, but we're doing STORM)
+Fluorescence is a property of some substances describing its \hl{their} ability to capture photons and re\hl{-}emit a photon of lower energy after a small duration. This phenomenon can be explained by the fluorescent particle transitioning from its ground state to an excited state, after which it relaxes to a lower energy state. The decay back to the ground state then causes the emission of a photon of a higher wavelength (\hl{and thus} lower energy) than the excitation photon due to energy lost in the transition to a lower energy excited state. It is also possible for the fluorescent particle to decay without emitting a photon. These transitions usually happen on the order of $10^{-9}$ s.
 
-Fluorescence is a property of some substances describing its ability to capture photons and reemit a photon of lower energy after a small duration. This phenomenon can be explained by the fluorescent particle transitioning from its ground state to an excited state, after which it relaxes to a lower energy state. The decay back to the ground state then causes the emission of a photon of a higher wavelength (lower energy) than the excitation photon due to energy lost in the transition to a lower energy excited state. It is also possible for the fluorescent particle to decay without emitting a photon. These transitions usually happen on the order of $10^{-9}$ s.
-
-\hl{a quel point faut aller dans les détails? je pense pas que ce soit super utile de presenter toutes les probas d'absorbtion, d'émission et efficacité quantique}
-
-The most common fluorophores have multiple energy levels to which the excited state can decay to, as shown in \autoref{fig:energy_level_fluorophore}. From the excited state $^1\textrm F_1$, there is a small probability that the fluorophore decays to a lower excited state $^3\textrm F$. In this state, it can react with the compounds in the buffer to to either return to the ground state or reach a third excited state, the radical anion state. This energy state is quite unreactive and therefore has a long lifetime, much larger than the lifetime of the other states. That means that in this state, the fluorophore can be considered "disabled" or "off". By modulating the compounds in the buffer and the light intensity on the sample, it is possible to only have a small subset of fluorophores active, in an "on" state.
+The most common \hl{are we sure?} fluorophores have multiple energy levels to which the excited state can decay to, as shown \hl{depicted, illustrated} in \autoref{fig:energy_level_fluorophore}. From the excited state $^1\textrm F_1$, there is a small probability that the fluorophore decays to a lower excited state $^3\textrm F$. In this state, it can react with the compounds in the buffer \hl{what buffer? we didn't talk about it yet} to to either return to the ground state or reach a third excited state, the radical anion state. This energy state is quite unreactive and therefore has a long lifetime, much larger than the lifetime of the other states. That means that in this state, the fluorophore can be considered "disabled" or "off". By modulating the compounds in the buffer and the light intensity on the sample, it is possible to only have a small subset of fluorophores active, in an "on" state.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/alexafluor-jablonski-diagram.png}
     \caption{Energy level diagram of fluorophores from the Alexafluor and ATTO families \cite{vandelinde-natureprotocols-2011}}
     \label{fig:energy_level_fluorophore}
 \end{figure}
+\hl{mayybe epxliquer photoswitching car c'est à la base de tout ce qu'on a fait, surtout comme on devra discuter de l'action des différents lasers et UV.}
 
-\subsection{STORM} [mais on peut le mettre dans un autre paragraph] \\
+\subsection{STORM}
 As a result (of the localization precision), two fluorescent molecules whose images overlap are impossible to localize.
 The localization of dense distributions of emitters, such as fluorophores attached to cellular structures, must therefore be carried out with more [advanced] techniques than the [simple] capture of an image.
 One such technique based on photoswitching \hl{check si on a déja parlé de photoswitching, sinon on inverse l'ordre} is stochastic optical reconstruction microscopy (STORM).
@@ -88,30 +77,32 @@ For this technique to be effective, the density of molecules being read out
 enough for the distance between emitting molecules to be large
 compared to the diﬀraction limit, so that individual fluorophores
 can be spatially resolved \cite{furstenberg_single-molecule_2013}.
-THAT'S WHY WE BALANCE THINGS WITH LASER POWER AND BLABLA (MIEUX ÉCRIRE PHOTOSWITCHING AVANT)
+THIS IS DONE BY BALANCING THE POWER OF THE LASER (REF PHOTOSWITCHING AVANT)
 
-\subsection{Image reconstruction [IDK SI ON A L'ÉSPACE ON PEUT FAIRE RESUMÉ DE ÇA]}
-\hl{Cut and copy de }\cite{furstenberg_single-molecule_2013}
-Once the positions of all the single fluorescence emitters have
-been determined, they can be used to reconstruct an image.
-Although this process seems trivial, many diﬀerent ways exist,
-the simplest being to draw every localization by a point of defined
-size and fixed intensity (binary scale). Such a map of coordinates
-is however often not a satisfactory way of representing the imaged
-structure, both for reasons of accuracy and aesthetics.
-Another way to depict position information in an image is to
-define a pixel grid with a predefined pixel size. Within each pixel,
-all positions are counted and this number is assigned as the
-intensity value of the pixel (2D-histogramming of the positions),87
-as shown in the examples in Fig. 4. Alternatively, each position
-can be plotted together with the position uncertainty or localiza-
-tion accuracy. For this, a normalized Gaussian intensity distribu-
-tion is drawn at the determined position. The standard deviation
-of this distribution equates the localization accuracy (blurring).36
-The image appears thereby less dotty; connected structures and
-increased spot densities are better recognizable. The structural
-resolution of the image is decreased by this method by a factor of
-O2 due to the unknown true position of the emitting molecule.
+\subsection{Image reconstruction}
+\hl{On pourrait très rapidement expliquer ici comment on a obtenu les images, à la place de le dire en experimental setup, ça semble un peu plus théorique.
+Suffit de remanier ce text en bas et citer l'article dont on a utilisé l'algorithme.}
+% \hl{Cut and copy de }\cite{furstenberg_single-molecule_2013}
+% Once the positions of all the single fluorescence emitters have
+% been determined, they can be used to reconstruct an image.
+% Although this process seems trivial, many diﬀerent ways exist,
+% the simplest being to draw every localization by a point of defined
+% size and fixed intensity (binary scale). Such a map of coordinates
+% is however often not a satisfactory way of representing the imaged
+% structure, both for reasons of accuracy and aesthetics.
+% Another way to depict position information in an image is to
+% define a pixel grid with a predefined pixel size. Within each pixel,
+% all positions are counted and this number is assigned as the
+% intensity value of the pixel (2D-histogramming of the positions),87
+% as shown in the examples in Fig. 4. Alternatively, each position
+% can be plotted together with the position uncertainty or localiza-
+% tion accuracy. For this, a normalized Gaussian intensity distribu-
+% tion is drawn at the determined position. The standard deviation
+% of this distribution equates the localization accuracy (blurring).36
+% The image appears thereby less dotty; connected structures and
+% increased spot densities are better recognizable. The structural
+% resolution of the image is decreased by this method by a factor of
+% O2 due to the unknown true position of the emitting molecule.
 
 \subsection{Experimental setup}
 All results contained in this document were obtained using an Abbelight SAFe 180 Single Molecule Localization Microscope, an Oxxius ?? laser engine and a Hamamatsu ORCA-Fusion digital CMOS camera.
@@ -128,46 +119,46 @@ Software used:
 Data acquisition was conducted using the NEO Live Imaging software, the localization precision study was conducted using a custom algorithm which made use of the \software{Scipy} Python package, while the STORM data was analysed with the NEO Analysis software and then imaged [as described in \cite{martens_raw_2022}].
 Also FiJi.
 
-\subsection{UTILE POUR ÉCRIRE:}
-Selected quotes from \cite{furstenberg_single-molecule_2013}:
-\begin{quote}
-    Super-resolution methods that combine photoswitchable
-    fluorophores with single-molecule imaging achieve their superior
-    spatial resolution by temporally breaking down the total fluores-
-    cence into pieces in which the signal level allows single emitters to
-    be observed. To that end, the density of molecules being read out
-    (that is, in an emissive state) at the same time must stay low
-    enough for the distance between emitting molecules to be large
-    compared to the diﬀraction limit, so that individual fluorophores
-    can be spatially resolved. \cite{furstenberg_single-molecule_2013}
-\end{quote}
-\begin{quote}
-    In essence, single-molecule localization microscopy relies on
-    three basic points (Fig. 3): (i) the use of photoswitchable
-    fluorescent probes, (ii) the repeated detection of many isolated
-    emitters and the determination of their position (localization),
-    and (iii) the generation of a super-resolution image from single-
-    molecule localization data. In each imaging frame, only few
-    molecules are allowed to reside in their fluorescent state
-    (‘‘on’’ state), so that single emitters can be spatially resolved
-    and localized despite a high labelling density. The majority of
-    the labels are kept in their non-fluorescent state (‘‘oﬀ’’ state) in
-    a stochastic way, most commonly dependent on the irradiation
-    intensity or a chemical reagent. The contrast between the on
-    and oﬀ states is crucial as the signal-to-background ratio will
-    determine the precision of the localization. \cite{furstenberg_single-molecule_2013}
-\end{quote}
-\begin{quote}
-    The simplest
-    approach for estimating the lateral position (x, y) of an emitter
-    is to calculate the intensity-weighted centroid of the detected
-    intensity distribution. Another possibility is to fit a model
-    function that resembles the point-spread function (PSF) of
-    the microscope system to the detected intensity distribution
-    of single emitters. Two-dimensional Gaussian normal distribu-
-    tions or a radial Airy pattern are frequently chosen as model
-    functions. The fitting can be performed either by least-squares
-    minimization or by maximum likelihood estimation algo-
-    rithms.71,73,74 A third method is the correlation of the data
-    with a known intensity distribution of the microscope PSF. \cite{furstenberg_single-molecule_2013}
-\end{quote}
+% \subsection{UTILE POUR ÉCRIRE:}
+% Selected quotes from \cite{furstenberg_single-molecule_2013}:
+% \begin{quote}
+%     Super-resolution methods that combine photoswitchable
+%     fluorophores with single-molecule imaging achieve their superior
+%     spatial resolution by temporally breaking down the total fluores-
+%     cence into pieces in which the signal level allows single emitters to
+%     be observed. To that end, the density of molecules being read out
+%     (that is, in an emissive state) at the same time must stay low
+%     enough for the distance between emitting molecules to be large
+%     compared to the diﬀraction limit, so that individual fluorophores
+%     can be spatially resolved. \cite{furstenberg_single-molecule_2013}
+% \end{quote}
+% \begin{quote}
+%     In essence, single-molecule localization microscopy relies on
+%     three basic points (Fig. 3): (i) the use of photoswitchable
+%     fluorescent probes, (ii) the repeated detection of many isolated
+%     emitters and the determination of their position (localization),
+%     and (iii) the generation of a super-resolution image from single-
+%     molecule localization data. In each imaging frame, only few
+%     molecules are allowed to reside in their fluorescent state
+%     (‘‘on’’ state), so that single emitters can be spatially resolved
+%     and localized despite a high labelling density. The majority of
+%     the labels are kept in their non-fluorescent state (‘‘oﬀ’’ state) in
+%     a stochastic way, most commonly dependent on the irradiation
+%     intensity or a chemical reagent. The contrast between the on
+%     and oﬀ states is crucial as the signal-to-background ratio will
+%     determine the precision of the localization. \cite{furstenberg_single-molecule_2013}
+% \end{quote}
+% \begin{quote}
+%     The simplest
+%     approach for estimating the lateral position (x, y) of an emitter
+%     is to calculate the intensity-weighted centroid of the detected
+%     intensity distribution. Another possibility is to fit a model
+%     function that resembles the point-spread function (PSF) of
+%     the microscope system to the detected intensity distribution
+%     of single emitters. Two-dimensional Gaussian normal distribu-
+%     tions or a radial Airy pattern are frequently chosen as model
+%     functions. The fitting can be performed either by least-squares
+%     minimization or by maximum likelihood estimation algo-
+%     rithms.71,73,74 A third method is the correlation of the data
+%     with a known intensity distribution of the microscope PSF. \cite{furstenberg_single-molecule_2013}
+% \end{quote}
