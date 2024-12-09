@@ -28,10 +28,10 @@ Also people use reversed epifluorescence microscopes which are better for this a
 
 
 \subsection{The Point Spread Function}
-The PSF is a tool/way to characterise the performance of a microscope.
-EXPLANATION OF PSF WITH FORMULAS
+% The PSF is a tool/way to characterise the performance of a microscope.
+% EXPLANATION OF PSF WITH FORMULAS
 
-All microscopes have a limited resolution for how small a point-like light source can appear. The shape of the point measured in through the microscope is described by the point spread function, or PSF, and caracterises the performance of a particular microscope. The light intensity $I(x, y)$ as measured by the microscope can then be described as a convolution between the density of emitters $O(x, y)$ and the PSF:
+All microscopes have a limited resolution for how small a point-like light source can appear. The shape of the point measured in through the microscope is described by the point spread function, or PSF, and caracterises the performance of a particular microscope. The light intensity $I(x, y)$ of point-like light sources as measured by the microscope can then be described as a convolution between the density of emitters $O(x, y)$ and the PSF:
 \begin{equation}
     I(x, y) = \operatorname{PSF}(x, y) \star O(x, y)
 \end{equation}
@@ -41,7 +41,7 @@ Under the assumption that the PSF is only influenced by the diffraction of light
 \end{equation}
 where $r$ is the radial coordinate, NA is the numerical aperture of the optical system, and $\lambda$ is the wavelength of the light. $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first $0$ of the Bessel function.
 % Also define resolution for Airy Disk needed if using that method...
-For practical reasons, a 2D Gaussian approximation of parameters $\mu_x$, $\mu_y$, and $\sigma$, the means and standard deviation, is often made due to its closeness with this Bessel function. The width of the PSF is then related to the standard deviation through
+For practical reasons, a 2D Gaussian approximation of parameters $\mu_x$, $\mu_y$, and $\sigma$, the means and standard deviation, is often made due to its closeness with airy disk intensity function. The width of the PSF is then related to the standard deviation through
 \begin{equation}
     \sigma = 0.21 \frac{\lambda}{\textrm{NA}}
     \label{eq:PSF_width_gaussian}
@@ -49,16 +49,32 @@ For practical reasons, a 2D Gaussian approximation of parameters $\mu_x$, $\mu_y
 
 
 \subsection{Single Molecule Localization Microscopy}
-How a single molecule is localised 
+In most cases, the smallest object a fluerescence microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated on the order of 10 nm for visible light. This technique is called Single Molecule Localization Microscopy, or SMLM. Multiple fitting techniques exist, each with their pros and cons. In this report, a 2D Gaussian will be fitted to the image:
+\begin{equation}
+    f(x, y) = a \exp \left[ \frac{(x-\mu_x)^2 + (y-\mu_y)^2}{2 \sigma^2} \right] + b
+\end{equation}
+where $\mu_x$ and $\mu_y$ give the position of the molecule and $\sigma$ is related to the PSF as discussed previously.
+
+% How a single molecule is localised 
 % (CAN MAYBE GO IN PSF? IDK LA NOTICE SÉPARE LES DEUX)
 
 % (AUSSI ON POURRAIT METTRE PHOTOPHYSICS AVANT, PUIS EXPLIQUER TOUT D'UN COUP SMLM ET STORM (CÀD COMMENT ON LOCALISE UNE MOLECULE ET COMMENT ON SWITCH ON ET OFF POUR PRENDRE 10,000 PHOTOS ET RECONSTRUIRE UNE IMAGE))
 
 
 \subsection{Fluorescence Photophysics}
-The behaviour of Fluorophores, the energetic states (rapidly), Photoswitching (not Photoactivation because that's used in PALM, but we're doing STORM)
+% The behaviour of Fluorophores, the energetic states (rapidly), Photoswitching (not Photoactivation because that's used in PALM, but we're doing STORM)
 
-Fluorescence is a property of some substances decsribing its ability to capture photons and reemit a photon of lower energy after a small duration. This phenomenon can be explained by the flurescent particle switching to an excited state
+Fluorescence is a property of some substances describing its ability to capture photons and reemit a photon of lower energy after a small duration. This phenomenon can be explained by the fluorescent particle transitioning from its ground state to an excited state, after which it relaxes to a lower energy state. The decay back to the ground state then causes the emission of a photon of a higher wavelength (lower energy) than the excitation photon due to energy lost in the transition to a lower energy excited state. It is also possible for the fluorescent particle to decay without emitting a photon. These transitions usually happen on the order of $10^{-9}$ s.
+
+\hl{a quel point faut aller dans les détails? je pense pas que ce soit super utile de presenter toutes les probas d'absorbtion, d'émission et efficacité quantique}
+
+The most common fluorophores have multiple energy levels to which the excited state can decay to, as shown in \autoref{fig:energy_level_fluorophore}. From the excited state $^1\textrm F_1$, there is a small probability that the fluorophore decays to a lower excited state $^3\textrm F$. In this state, it can react with the compounds in the buffer to to either return to the ground state or reach a third excited state, the radical anion state. This energy state is quite unreactive and therefore has a long lifetime, much larger than the lifetime of the other states. That means that in this state, the fluorophore can be considered "disabled" or "off". By modulating the compounds in the buffer and the light intensity on the sample, it is possible to only have a small subset of fluorophores active, in an "on" state.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/alexafluor-jablonski-diagram.png}
+    \caption{Energy level diagram of fluorophores from the Alexafluor and ATTO families \cite{vandelinde-natureprotocols-2011}}
+    \label{fig:energy_level_fluorophore}
+\end{figure}
 
 \subsection{STORM} [mais on peut le mettre dans un autre paragraph] \\
 As a result (of the localization precision), two fluorescent molecules whose images overlap are impossible to localize.
