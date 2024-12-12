@@ -15,13 +15,13 @@ The same was done in \autoref{fig:comparison_sigma} for the uncertainty on the l
 \begin{figure}[htbp]
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \fbox{\includegraphics[scale=1]{figures/comparison_mu.pdf}}
+        {\includegraphics[scale=1]{figures/comparison_mu.pdf}}
         \caption{}
         \label{fig:comparison_mu}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \fbox{\includegraphics[scale=1]{figures/comparison_sigma.pdf}}
+        {\includegraphics[scale=1]{figures/comparison_sigma.pdf}}
         \caption{}
         \label{fig:comparison_sigma}
     \end{subfigure}
@@ -33,7 +33,7 @@ the localisations carried out using each of the three different wavelengths clus
 This is due to a drifting of the fluorescent beads in the focal plane (see \autoref{fig:beads_drifting}), the three acquisitions being separated by intervals of time much longer than the time scale of a single acquisition.
 \begin{figure}
     \centering
-    \fbox{\includegraphics[scale=1]{figures/beads_drifting.pdf}}
+    {\includegraphics[scale=1]{figures/beads_drifting.pdf}}
     \caption{Drifting between acquisitions of the studied fluorescent bead.}
     \label{fig:beads_drifting}
 \end{figure}
@@ -41,7 +41,6 @@ Moreover, the uncertainties on the localisation for the different wavelengths ap
 These values were compared with those expected from \autoref{eq:PSF_width_gaussian} for the PSF width associated to each mesure.
 As shown in \autoref{fig:comparison_PSF}, while increasing with $\lambda$ as predicted,
 the observed PSF width is higher than the one expected.
-
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/comparison_PSF.pdf}
@@ -49,7 +48,34 @@ the observed PSF width is higher than the one expected.
     \label{fig:comparison_PSF}
 \end{figure}
 
+
 \subsection{STORM imaging of micro-tubules}
+A set of three STORM images of microtubules in COS7 cells are presented in \autoref{fig:microtubules_images}.
+IN A ISOLATED STRAND, IN B AND C CAN SEE CELL AND NUCLEUS AND STUFF.
+%
+\begin{figure}
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=\textwidth]{figures/microtubules_image1.png}
+        \caption{}
+        \label{fig:microtubules_image1}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=\textwidth]{figures/microtubules_image4.png}
+        \caption{}
+        \label{fig:microtubules_image2}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=\textwidth]{figures/microtubules_image6.png}
+        \caption{}
+        \label{fig:microtubules_image3}
+    \end{subfigure}
+    \caption{STORM imaging of microtubules in COS7 cells.}
+    \label{fig:microtubules_images}
+\end{figure}
+%
+An analysis of the intensity profile along the cross section of the microtubule strand in \autoref{fig:microtubules_image1} showed the presence of two separated peaks, separated by a distance of ???.
+The portion of filament studied and the resulting intensity profile are depicted in \autoref{fig:microtubules_width}.
+%
 \begin{figure}[htbp]
     \begin{subfigure}[b]{0.49\textwidth}    % trim left bottom right top
         \centering
@@ -63,27 +89,15 @@ the observed PSF width is higher than the one expected.
         \caption{}
         \label{fig:microtubules_width_analysis}
     \end{subfigure}
-    \label{fig:microtubules_width}
     \caption{Intensity profile along a microtubule strand: (a) screen capture of the profile acquisition using the \software{Fiji} processing package, (b) the intensity profile averaged over the portion of length considered.}
+    \label{fig:microtubules_width}
 \end{figure}
 
-\begin{figure}
-    \begin{subfigure}{0.32\textwidth}
-        \includegraphics[width=\textwidth]{figures/microtubules_image1.png}
-        \caption{}
-    \end{subfigure}
-    \begin{subfigure}{0.32\textwidth}
-        \includegraphics[width=\textwidth]{figures/microtubules_image4.png}
-        \caption{}
-    \end{subfigure}
-    \begin{subfigure}{0.32\textwidth}
-        \includegraphics[width=\textwidth]{figures/microtubules_image6.png}
-        \caption{}
-    \end{subfigure}
-    \caption{STORM imaging of microtubules in COS7 cells.}
-\end{figure}
 
 \subsection{Mitochondria}
+A set of six STORM images of mitochondria in COS7 cells are presented in \autoref{fig:mitochondria_images}.
+SEVERAL STRUCTURES ETC ETC
+%
 \begin{figure}
     \begin{subfigure}{0.32\textwidth}
         \includegraphics[width=\textwidth]{figures/mitochondria_image6.png}
@@ -109,5 +123,10 @@ the observed PSF width is higher than the one expected.
         \includegraphics[width=\textwidth]{figures/mitochondria_image10.png}
         \caption{}
     \end{subfigure}
-    \caption{Mitochondrial structures REDUIRE CONTRASTE}
+    \caption{Mitochondrial structures REDUIRE CONTRASTE et fix dimensions}
+    \label{fig:mitochondria_images}
 \end{figure}
+
+A set of 18 randomly picked mitochondria were measured in diameter, between 0.70 and 2 \unit{\micro m}
+
+PLOT?
