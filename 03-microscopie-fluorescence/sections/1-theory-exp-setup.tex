@@ -1,33 +1,22 @@
 \section{Theory and experimental setup}
 
-\subsection{Epifluorescence Microscopes}
-A common architecture for fluorescence microscopes is that of an upright epifluorescence microscope, pictured in \autoref{fig:epifluorescence_microscope}.
+\subsection{Fluorescence Photophysics} \label{sec:fluorescence_photophysics}
+Fluorescence is a property of some substances describing their ability to capture photons and re-emit a photon of lower energy after a small duration. This phenomenon can be explained by the fluorescent particle transitioning from its ground state to an excited state, after which it relaxes to a lower energy state. The decay back to the ground state then causes the emission of a photon of a higher wavelength (and thus lower energy) than the excitation photon due to energy lost in the transition to a lower energy excited state. It is also possible for the fluorescent particle to decay without emitting a photon. These transitions usually happen on time scales of the order of $10^{-9}$ seconds \cite{douglass_notice_2023}.
 
-\begin{figure}[htbp]  
+Commonly, fluorophores have multiple energy levels to which the excited state can decay to, as depicted in \autoref{fig:energy_level_fluorophore}. For them to function properly, the fluorophores have to be mixed in a buffer that provides reagents for the fluorophores to return to their ground state. \hl{VERY NICE} After being excited by an incident photon, there is a small probability that the fluorophore decays to a lower excited state ($^3\textrm F$ in the figure). In this state, it can react with the compounds in the buffer to to either return to the ground state or reach a third excited state, the radical anion state. This state is quite unreactive and therefore has a long lifetime, much larger than the lifetime of the other states.
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=8cm]{figures/epifluorescence-microscope.png}
-    \caption{Epifluorescence microscope \cite{douglass_notice_2023} [can be put as wrapfig]}
-    \label{fig:epifluorescence_microscope}
+    \includegraphics[width=0.7\textwidth]{figures/alexafluor-jablonski-diagram.png}
+    \caption{Energy level diagram of fluorophores from the Alexafluor and ATTO families \cite{vandelinde-natureprotocols-2011}}
+    \label{fig:energy_level_fluorophore}
 \end{figure}
 
-Light emitted from a source such as a laser or a high-intensity LED enters the microscope and is reflected into the objective lens by a dichroic mirror, capable of reflecting some wavelengths of light and transmitting others (a passband filter)\cite{douglass_notice_2023}.
-The excitation light is then focused by the objective lens onto the studied sample, where it excites the fluorescent molecules therein\footnote{lol} present.
-The fluorescent light emitted by the molecules is collimated by the same objective lens and passes again through the dichroic mirror, which therefore acts as a beam splitter, separating the excitation and emission light paths\cite{sachl_introduction_2022}.
-Finally, a second lens, known as tube lens, focuses the parallel rays coming from the objective lens and forms the image of the sample on the camera or eyepiece.
-This setup using two lenses, called an infinity-corrected system, allows to add or replace optical elements (such as filters or additional beamsplitters) in the space between the two lenses (the infinity space) without disturbing/modifying the wavefront of the light and thus keeping the same focus and magnification.
-
-This mode of observation, where the excitation light is delivered to the specimen by the same objective lens which is used for collecting the fluorescence, 
-is known as epi-illumination.
-\hl{The following is cut and copy, modifier}It solves the problem of the excitation light dominating the weaker fluorescence signal, as most of the excitation light propagates away from the objective after leaving  the sample.
-
-% THINGS WHICH CAN BE REMOVED IF SPACE IS NECESSARY:
-% Epi-illumination iluminates the whole sample at once, in order to BLABLA. 
-% Other illumination geometries include BLABLABLA.
-% Also people use reversed epifluorescence microscopes which are better for this and that.
+In the radical anion state, the fluorophore can be considered "disabled" or \textsc{off}, as it does not fluoresce. Fluorophores that can fluoresce are refered to as being \textsc{on}. Some fluorophores may get stuck in an \textsc{off} state, a \textsc{bleached} state. \emph{Photoswitching} is a technique that aims to control the number of fluorophores in the \textsc{on} and \textsc{off} state, by modulating the compounds in the buffer, the light intensity, and through the use of different wavelengths on the sample. 
+% This technique is the basis for STORM.
 
 
-\subsection{The Point Spread Function}
-All microscopes have a limited resolution for how small a point-like light source can appear. The shape of the point measured in through the microscope is described by the point spread function, or PSF, and caracterises the performance of a particular microscope. The light intensity $I(x, y)$ of point-like light sources as measured by the microscope can then be described as a convolution between the density of emitters $O(x, y)$ and the PSF:
+\subsection{The Point Spread Function} \label{sec:PSF}
+All optical microscopes have a limited resolution for how small a point-like light source can appear. The shape of the point measured in through the microscope is described by the point spread function, or PSF, and caracterises the performance of a particular microscope. The light intensity $I(x, y)$ of point-like light sources as measured by the microscope can then be described as a convolution between the density of emitters $O(x, y)$ and the PSF:
 \begin{equation}
     I(x, y) = \operatorname{PSF}(x, y) \star O(x, y)
 \end{equation}
@@ -35,10 +24,11 @@ Under the assumption that the PSF is only influenced by the diffraction of light
 \begin{equation}
     I(X) = I_0 \left[ \frac{2 J_1(X)}{X} \right]^{2}, \quad X = \frac{2\pi r \textrm{NA}}{\lambda}
 \end{equation}
-where $r$ is the radial coordinate, NA is the numerical aperture of the optical system, $\lambda$ is the wavelength of the light, and $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first $0$ of the Airy disk, located at $\Delta X \approx 3.8317$, or $\Delta r \approx 0.61 \lambda / \textrm{NA}$.
+where $r$ is the radial coordinate, NA is the numerical aperture of the optical system, $\lambda$ is the wavelength of the light, and $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first zero of the Airy disk, located at $\Delta X \approx 3.8317$, or $\Delta r \approx 0.61 \lambda / \textrm{NA}$.
+\hl{Je sais que ça vient de la notice, mais comment c'est possible que le zéro ne depend pas de lambda ou de NA}
 
-\subsection{Single Molecule Localization Microscopy}
-In most cases, the smallest object a fluerescence microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is \hl{with a certain degree of uncertainty or not?} located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated on the order of 10 nm for visible light \cite{douglass_notice_2023}, which is much more precise than what the wavelength by itself would allow. This technique is called Single Molecule Localization Microscopy, or SMLM. Multiple fitting techniques exist, each with their pros and cons. In this report, a two dimensional Gaussian will be fitted to the image, as an approximation of the Airy disk intensity function, as it is more efficient computationaly \cite{douglass_notice_2023}:
+\subsection{Single Molecule Localization Microscopy} \label{sec:SMLM}
+In most cases, the smallest object a fluerescence \hl{an optical, rather} microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is \hl{with a certain degree of uncertainty or not?} located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated on the order of 10 nm for visible light \cite{douglass_notice_2023}, which is much more precise than what the wavelength by itself would allow. This technique is called Single Molecule Localization Microscopy, or SMLM. Multiple fitting techniques exist, each with their pros and cons \hl{advantages and disadvantages}. In this report, a two-dimensional Gaussian will be fitted to the image, as an approximation of the Airy disk intensity function, as it is more efficient \vbox{computationally \cite{douglass_notice_2023}\footnote{a two-dimensional Gaussian curve will be used as an approximation of blabla [to fit the image], as is is more blabla}:}
 \begin{equation}
     f(x, y) = a \exp \left[ \frac{(x-\mu_x)^2 + (y-\mu_y)^2}{2 \sigma^2} \right] + b
 \end{equation}
@@ -47,40 +37,32 @@ where $\mu_x$ and $\mu_y$ give the position of the molecule and $\sigma$ is the 
     \sigma \approx 0.21 \frac{\lambda}{\textrm{NA}}
     \label{eq:PSF_width_gaussian}
 \end{equation}
-% \hl{Peut-etre un poil trop de répetition avec le paragraphe d'avant. Aussi on pourrait emphatiser un peu plus que regarder objet plus pétits que moitié wavelength est vraiment le but de faire tout ça}
 
-\subsection{Fluorescence Photophysics}
-Fluorescence is a property of some substances describing their ability to capture photons and re-emit a photon of lower energy after a small duration. This phenomenon can be explained by the fluorescent particle transitioning from its ground state to an excited state, after which it relaxes to a lower energy state. The decay back to the ground state then causes the emission of a photon of a higher wavelength (and thus lower energy) than the excitation photon due to energy lost in the transition to a lower energy excited state. It is also possible for the fluorescent particle to decay without emitting a photon. These transitions usually happen on the order of $10^{-9}$ s \cite{douglass_notice_2023}.
 
-Commonly, fluorophores have multiple energy levels to which the excited state can decay to, as depicted in \autoref{fig:energy_level_fluorophore}. For them to function properly, the fluorophores have to be mixed in a buffer that provides reagents for the fluorophores to return to their ground state. After being excited by an incident photon, there is a small probability that the fluorophore decays to a lower excited state depicted $^3\textrm F$. In this state, it can react with the compounds in the buffer to to either return to the ground state or reach a third excited state, the radical anion state. This state is quite unreactive and therefore has a long lifetime, much larger than the lifetime of the other states.
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/alexafluor-jablonski-diagram.png}
-    \caption{Energy level diagram of fluorophores from the Alexafluor and ATTO families \cite{vandelinde-natureprotocols-2011}}
-    \label{fig:energy_level_fluorophore}
-\end{figure}
-
-In the radical anion state, the fluorophore can be considered "disabled" or \textsc{off}, as it does not fluoresce. Fluorophores that can fluoresce are refered to as being \textsc{on}. Some fluorophores may get stuck in an \textsc{off} state, a \textsc{bleached} state. \emph{Photoswitching} is a technique that aims to control the number of fluorophores in the \textsc{on} and \textsc{off} state, by modulating the compounds in the buffer, the light intensity, and through the use of different wavelengths, on the sample. This technique is the basis for STORM.
-% \hl{mayybe epxliquer photoswitching car c'est à la base de tout ce qu'on a fait, surtout comme on devra discuter de l'action des différents lasers et UV.}
-
-\subsection{STORM}
-As a result (of the localization precision), two fluorescent molecules whose images overlap are impossible to localize.
-The localization of dense distributions of emitters, such as fluorophores attached to cellular structures, must therefore be carried out with more [advanced] techniques than the [simple] capture of an image.
-One such technique based on photoswitching \hl{check si on a déja parlé de photoswitching, sinon on inverse l'ordre} is stochastic optical reconstruction microscopy (STORM).
-It relies on the principle that we can localize all the fluorophores in an image by keeping only a subset(a part of it) switched on.
+\subsection{STORM} \label{sec:STORM}
+It is then possible to easily locate an isolated molecule, but as a consequence of the uncertainty associated, two fluorescent molecules whose images overlap are impossible to localize.
+The localization of dense distributions of emitters, such as fluorophores attached to cellular structures, must therefore be carried out with techniques more complex than the single capture of an image.
+One such technique based on photoswitching is stochastic optical reconstruction microscopy (STORM).
+It relies on the principle that we can localize all the fluorophores in an image by keeping only part of them switched on at a time.
 Then by capturing a high number of images (at minimum on the order of the 10,000), each with a stochastically determined subset of fluorophores switched on, and by localizing the molecules in each, a list of all resolved emitter positions can be obtained, from which a super-resolved image is rendered.
 
 For this technique to be effective, the density of molecules being read out
 (that is, in an emissive state) at the same time must stay low
 enough for the distance between emitting molecules to be large
-compared to the diﬀraction limit, so that individual fluorophores
+compared to the diffraction limit, so that individual fluorophores
 can be spatially resolved \cite{furstenberg_single-molecule_2013}.
-THIS IS DONE BY BALANCING THE POWER OF THE LASER (REF PHOTOSWITCHING AVANT)
+This is accomplished by finetuning the parameters involved in photoswitching, mentioned in \autoref{sec:fluorescence_photophysics}.
 
 \subsection{Image reconstruction}
-\hl{On pourrait très rapidement expliquer ici comment on a obtenu les images, à la place de le dire en experimental setup, ça semble un peu plus théorique.
-Suffit de remanier ce text en bas et citer l'article dont on a utilisé l'algorithme.}
+% \hl{On pourrait très rapidement expliquer ici comment on a obtenu les images, à la place de le dire en experimental setup, ça semble un peu plus théorique.
+% Suffit de remanier ce text en bas et citer l'article dont on a utilisé l'algorithme.}
 % \hl{Cut and copy de }\cite{furstenberg_single-molecule_2013}
+Once the positions of all the single fluorescence emitters have been determined, there are many possible ways to reconstruct an image.
+The simplest would be to draw a point of fixed intensity in every localization position, or to draw a two-dimensional histogram by defining a pixel grid and assigning to each pixel an intensity proportional to the number of localised molecules contained.
+These two approaches, however, often do not form a good representation of the imaged structure, both for reasons of accuracy and aesthetical clarity.
+In this experiment, the approach taken was the one described in detail in \cite{martens_raw_2022}:
+the positions of the molecules were plotted together with their uncertainty, by drawing in each position a normalised Gaussian intensity distribution.
+In this way, the images appear less dotty and connected structures and increased spot densities are better recognisable.
 % Once the positions of all the single fluorescence emitters have
 % been determined, they can be used to reconstruct an image.
 % Although this process seems trivial, many diﬀerent ways exist,
@@ -102,20 +84,41 @@ Suffit de remanier ce text en bas et citer l'article dont on a utilisé l'algori
 % resolution of the image is decreased by this method by a factor of
 % O2 due to the unknown true position of the emitting molecule.
 
-\subsection{Experimental setup}
-All results contained in this document were obtained using an Abbelight SAFe 180 Single Molecule Localization Microscope, an Oxxius ?? laser engine and a Hamamatsu ORCA-Fusion digital CMOS camera.
+\subsection{Epifluorescence Microscopes} \label{sec:epifluorescence_microscopes}
+A common architecture for fluorescence microscopes is that of an upright epifluorescence microscope, pictured in \autoref{fig:epifluorescence_microscope}.
+
+\begin{figure}[htbp]  
+    \centering
+    \includegraphics[width=8cm]{figures/epifluorescence-microscope.png}
+    \caption{Epifluorescence microscope \cite{douglass_notice_2023} [can be put as wrapfig]}
+    \label{fig:epifluorescence_microscope}
+\end{figure}
+
+Light emitted from a source such as a laser or a high-intensity LED enters the microscope and is reflected into the objective lens by a dichroic mirror, capable of reflecting some wavelengths of light and transmitting others.
+The excitation light is then focused by the objective lens onto the studied sample, where it excites the fluorescent molecules present.
+The fluorescent light emitted by the molecules is collimated by the same objective lens and passes again through the dichroic mirror, which acts as a beam splitter, separating the excitation and emission light paths \cite{sachl_introduction_2022}.
+Finally, a second lens, known as tube lens, focuses the parallel rays coming from the objective lens and forms the image of the sample on the camera or eyepiece.
+This setup using two lenses is called an infinity-corrected system and allows to add or replace optical elements, such as filters or additional beamsplitters, in the \emph{infinity space} between the two lenses  without modifying the wavefront of the light, and thus keeping the same focus and magnification.
+
+This mode of observation, where the excitation light is delivered to the specimen by the same objective lens which is used for collecting the fluorescence, is known as epi-illumination.
+It is particularly useful to solve the problem of the excitation light dominating the weaker fluorescence signal, as most of the excitation light propagates away from the objective after leaving the sample \cite{douglass_notice_2023}.
+
+\subsection{Experimental setup} \label{sec:experimental_setup}
+All the results contained in this document were obtained using an Abbelight SAFe 180 Single Molecule Localization Microscope powered by an Oxxius ?? laser engine and a Hamamatsu model C14440-20UP ORCA-Fusion digital CMOS camera.
 Three different laser wavelengths were used: \mbox{488 nm}, \mbox{561 nm} and \mbox{647 nm}.
 
-First, in order to test the performance of the microscope, the localization precision of single fluorescente molecules was estimated.
-TetraSpeck\textsuperscript{\texttrademark} Microspheres, 0.1 $\mu$m diameter fluorescent beads.
+First, in order to test the performance of the microscope, the localization precision of single fluorescent molecules was estimated.
+These were approximated by \hl{this was carried out using} 0.1 $\mu$m diameter fluorescent beads (TetraSpeck\textsuperscript{\texttrademark} Microspheres).
+STORM images of several cellular structures were then acquired:
+microtubules, mitochondria and clathrine.
 
-Then STORM imaging of tubulin. Tubulin in COS7 cells labeled with AlexaFluor 647 fluorescent dye.
+Tubulin in COS7 cells labeled with AlexaFluor 647 fluorescent dye.
 
 Then mitochondria, also using AlexaFluor 647 as fluorescent marker for the mitochondrial outer membrane in COS7 cells.
 
-Software used:
-Data acquisition was conducted using the NEO Live Imaging software, the localization precision study was conducted using a custom algorithm which made use of the \software{Scipy} Python package, while the STORM data was analysed with the NEO Analysis software and then imaged [as described in \cite{martens_raw_2022}].
-Also FiJi.
+% Software used:
+% Data acquisition was conducted using the NEO Live Imaging software, the localization precision study was conducted using a custom algorithm which made use of the \software{Scipy} Python package, while the STORM data was analysed with the NEO Analysis software and then imaged [as described in \cite{martens_raw_2022}].
+% Also FiJi.
 
 % \subsection{UTILE POUR ÉCRIRE:}
 % Selected quotes from \cite{furstenberg_single-molecule_2013}:
