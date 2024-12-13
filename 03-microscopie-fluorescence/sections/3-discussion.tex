@@ -1,7 +1,11 @@
 \section{Discussion}
-\paragraph{Experimental PSF was higher than theoretical}
-The beads are old (which can be deduced from the fact that the beads do not blink).
-As a consequence, they are not a good estimate for the resolution of the microscope.
+\paragraph{PSF}
+The experimentally measured PSF was a bit larger (about $30$\% higher) than would be expected by the theory. When capturing the images of the beads, it was noticed that they did not blink, even at a higher laser power. This is not the normal behavior of the fluorescent beads used, as they should blink due to \emph{photoswitching}. The absence of blinking is hypothesised to be caused by the age of the beads. Because the PSF model assumes a blinking behavior, the beads cannot accuratly be used to estimate the PSF.
+
+The effect of different wavelengh did howether yield satisfying results, as the width of the PSF decreased for a smaller wavelength, in a quasi-linear manner. Smaller wavelenghts give a better resolution, which is expected as they should allow \hl{manque un mot hmmm} to distinguish smaller features in samples.
+
+\paragraph{SMLM}
+The regression using a two dimensionnal Gaussian on the images of the beads allowed for a sub-pixel localisation of the beads, which is the goal of SMLM. The precision of this localisation was on found to be of about $3$ nm, which is much lower than the order of $10$ nm uncertainty that would be expected. For this particular case, the high precision can be linked to the high number of measurements of the position of a single bead, which is unfeasable in actual SMLM, where one cannot be certain of measuring exactly the same fluorophore due to potential overlapping. In the case of the beads, a clearly seperated bead was chosen, thus leading to a high number of position measurements and a higher final precision.
 
 \paragraph{drifting}
 \cite{martens_raw_2022} talks a lot about drifting, might be interesting
