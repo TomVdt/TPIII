@@ -33,8 +33,22 @@ the localisations carried out using each of the three different wavelengths clus
 This is due to a drifting of the fluorescent beads in the focal plane (see \autoref{fig:beads_drifting}), the three acquisitions being separated by intervals of time much longer than the time scale of a single acquisition.
 \begin{figure}
     \centering
-    {\includegraphics[scale=1]{figures/beads_drifting.pdf}}
-    \caption{Drifting between acquisitions of the studied fluorescent bead.}
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=\textwidth]{figures/beads_drifting_647nm.pdf}
+        \caption{}
+        \label{fig:beads_drifting_647nm}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=\textwidth]{figures/beads_drifting_561nm.pdf}
+        \caption{}
+        \label{fig:beads_drifting_561nm}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \includegraphics[width=\textwidth]{figures/beads_drifting_488nm.pdf}
+        \caption{}
+        \label{fig:beads_drifting_488nm}
+    \end{subfigure}
+    \caption{Drifting between acquisitions of the studied fluorescent bead during the consecutive acquisitions with the (a) 647 nm (b) 561 nm and (c) 488 nm lasers.}
     \label{fig:beads_drifting}
 \end{figure}
 Moreover, the uncertainties on the localisation for the different wavelengths appear to center around different points, the 488 nm laser resulting the most precise of the three.
@@ -44,7 +58,7 @@ the observed PSF width is higher than the one expected.
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/comparison_PSF.pdf}
-    \caption{LABELS ET DIFFERENT COULEURS OU MARKER}
+    \caption{Measured Gaussian PSF width compared to the theory, for mulitple laser wavelengths.}
     \label{fig:comparison_PSF}
 \end{figure}
 
