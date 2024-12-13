@@ -13,6 +13,7 @@ res/
 03-microscopie-fluorescence/data/mitochondria/*
 03-microscopie-fluorescence/data/clathrin/*
 03-microscopie-fluorescence/data/imaging/*
+03-microscopie-fluorescence/cahier/*
 
 ## https://github.com/github/gitignore/blob/main/TeX.gitignore
 ## Core latex/pdflatex auxiliary files:
