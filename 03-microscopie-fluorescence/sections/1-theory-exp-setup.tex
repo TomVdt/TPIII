@@ -25,7 +25,6 @@ Under the assumption that the PSF is only influenced by the diffraction of light
     I(X) = I_0 \left[ \frac{2 J_1(X)}{X} \right]^{2}, \quad X = \frac{2\pi r \textrm{NA}}{\lambda}
 \end{equation}
 where $r$ is the radial coordinate, NA is the numerical aperture of the optical system, $\lambda$ is the wavelength of the light, and $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first zero of the Airy disk, located at $\Delta X \approx 3.8317$, or $\Delta r \approx 0.61 \lambda / \textrm{NA}$.
-\hl{Je sais que ça vient de la notice, mais comment c'est possible que le zéro ne depend pas de lambda ou de NA}
 
 \subsection{Single Molecule Localization Microscopy} \label{sec:SMLM}
 In most cases, the smallest object a fluerescence \hl{an optical, rather} microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is \hl{with a certain degree of uncertainty or not?} located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated on the order of 10 nm for visible light \cite{douglass_notice_2023}, which is much more precise than what the wavelength by itself would allow. This technique is called Single Molecule Localization Microscopy, or SMLM. Multiple fitting techniques exist, each with their pros and cons \hl{advantages and disadvantages}. In this report, a two-dimensional Gaussian will be fitted to the image, as an approximation of the Airy disk intensity function, as it is more efficient \vbox{computationally \cite{douglass_notice_2023}\footnote{a two-dimensional Gaussian curve will be used as an approximation of blabla [to fit the image], as is is more blabla}:}
@@ -41,7 +40,7 @@ where $\mu_x$ and $\mu_y$ give the position of the molecule and $\sigma$ is the 
 
 \subsection{STORM} \label{sec:STORM}
 It is then possible to easily locate an isolated molecule, but as a consequence of the uncertainty associated, two fluorescent molecules whose images overlap are impossible to localize.
-The localization of dense distributions of emitters, such as fluorophores attached to cellular structures, must therefore be carried out with techniques more complex than the single capture of an image.
+The localization of dense distributions of emitters, such as fluorophores attached to cellular structures, must therefore be carried out with techniques more complex than CONVENTIONAL the single capture of an image.
 One such technique based on photoswitching is stochastic optical reconstruction microscopy (STORM).
 It relies on the principle that we can localize all the fluorophores in an image by keeping only part of them switched on at a time.
 Then by capturing a high number of images (at minimum on the order of the 10,000), each with a stochastically determined subset of fluorophores switched on, and by localizing the molecules in each, a list of all resolved emitter positions can be obtained, from which a super-resolved image is rendered.
