@@ -1,18 +1,29 @@
 \section{Discussion}
 \paragraph{PSF}
-The experimentally measured PSF was a bit larger (about $30$\% higher) than would be expected by the theory. When capturing the images of the beads, it was noticed that they did not blink, even at a higher laser power. This is not the normal behavior of the fluorescent beads used, as they should blink due to \emph{photoswitching}. The absence of blinking is hypothesised to be caused by the age of the beads. Because the PSF model assumes a blinking behavior, the beads cannot accuratly be used to estimate the PSF.
+The experimentally measured PSF was a bit \hl{slightly} larger (\hl{a value} about $30$\% higher) than what would be expected by the theory. When capturing the images of the beads, it was noticed that they did not blink, even with a higher laser power. This is not the expected behavior of the fluorescent beads used, as they should blink due to \emph{photoswitching}. The absence of blinking is hypothesised to be caused by the age of the beads, which makes them inaccurate for the purpose of the PSF estimation.
+% . Because the PSF model assumes a blinking behavior, the beads cannot accuratly be used to estimate the PSF.
 
-The effect of different wavelengh did howether yield satisfying results, as the width of the PSF decreased for a smaller wavelength, in a quasi-linear manner. Smaller wavelenghts give a better resolution, which is expected as they should enable distinguishing smaller features in samples, because of the diffraction of light.
+The effect of different wavelengh did howether yield satisfying results, as the width of the PSF decreased for a smaller wavelength, in a quasi-linear manner. Smaller wavelenghts give a better resolution, which is expected as they should enable distinguishing smaller features in samples, because of the lower diffraction limit.
 
 \paragraph{SMLM}
-The regression using a two dimensionnal Gaussian on the images of the beads allowed for a sub-pixel localisation of the beads, which is the goal of SMLM. The precision of this localisation was on found to be of about $3$ nm, which is much lower than the order of $10$ nm uncertainty that would be expected. For this particular case, the high precision can be linked to the high number of measurements of the position of a single bead, which is unfeasable in actual SMLM, where one cannot be certain of measuring exactly the same fluorophore due to potential overlapping. In the case of the beads, a clearly seperated bead was chosen, thus leading to a high number (100) of position measurements and a higher final precision.
+The regression using a two-dimensional Gaussian on the images of the beads allowed for a sub-pixel localisation of the beads, which is the goal of SMLM. The precision of this localisation was found to be of about $3$ nm, which is much lower than the order of $10$ nm uncertainty that would be expected (as mentioned in \autoref{sec:SMLM}). For this particular case, the high precision can be linked to the high number of measurements of the position of a single bead, which is unfeasable in actual SMLM, where one cannot be certain of measuring exactly the same fluorophore due to the potential overlapping. In the case of the beads, a clearly seperated bead was chosen, thus leading to a high number (100) of position measurements and a higher final precision.
 
 \paragraph{drifting}
-\cite{martens_raw_2022} talks a lot about drifting, might be interesting
+The drifting of the molecules in the $(x,y)$ focal plane has been observed to be negligeable in the time scale of the acquisitions made, which is around 10 minutes.
+Longer acquisitions would however be severely affected by the drifting, as was remarked from \autoref{fig:comparison_wavelengths} and \autoref{fig:beads_drifting}.
+In these cases, algorithms for drift correction would be necessary to obtain clear images.
+The same observations apply to the drifting in the $z$ direction: for short acquisitions it is possible (and sometimes preferable) to acquire data without an automatic focus of the image.
+
 
 \paragraph{Diameter of microtubules}
-\verb|INSERT PLENTY OF BIOLOGY| \\
-larger than expected, show how most articles find good thing but that one has our same stuff idk why
+The presence of two peaks in the line profile of the analysed microtubule (\autoref{fig:microtubules_width}), caused by a higher density of localisations on the edges, is expected as a consequence of projecting a three-dimensional cylinder on a two-dimensional plane \cite{douglass_notice_2023}.
+The distance between these peaks, which in this experiment was found to be around $210$ nm, is then equivalent to the diameter of the microtubule.
+However, electron microscopy studies have found values between 23 and 17 for the diameter [CITATION], a much lower value.
+Studies conducted using STORM imaging found values of diameter between 48 and 51 nm \cite{bharadwaj_advancing_2024}, between 37 and 40 nm \cite{douglass_super-resolution_2016} and ANOTHER ONE.
+These values are larger than the ones expected from the precise electron microscopy studies, due to the size of the antibodies used for fluorescence labeling \cite{douglass_notice_2023}, but still an order of magnitude lower than the results presently obtained.
+A possible explanation comes from \cite{dong_stochastic_2015} and \cite{wang_blind_2017}.
+These two studies have measured the distance between two separate microtubules which adjacent formed a bundle and found in two different configurations 63 nm and $\sim$240 nm.
+It is therefore possible that the microtubule studied was not isolated, but rather formed a bundle with another one 210 nm away.
 
 \paragraph{Diameter of mitochondria}
 According to the literature \hl{FIND SOURCE}, mitochondria cross sections range from $0.75$ to $3$ \si{\micro\meter\squared}. In this experiment, the cross sections of mitochondria ranged between $0.7$ and $1.95$ \si{\micro\meter\squared}, aligning with the literature. The supersampled images show that the mitochondria have very varied shapes: stretched out, curved or round. It was also observed that the some mitochondria were slimmer in their middle. Due to these factors, measuring a cross section of a mitochondrion can sometimes be a bit arbitrary.
