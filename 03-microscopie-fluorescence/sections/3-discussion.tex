@@ -2,10 +2,10 @@
 \paragraph{PSF}
 The experimentally measured PSF was a bit larger (about $30$\% higher) than would be expected by the theory. When capturing the images of the beads, it was noticed that they did not blink, even at a higher laser power. This is not the normal behavior of the fluorescent beads used, as they should blink due to \emph{photoswitching}. The absence of blinking is hypothesised to be caused by the age of the beads. Because the PSF model assumes a blinking behavior, the beads cannot accuratly be used to estimate the PSF.
 
-The effect of different wavelengh did howether yield satisfying results, as the width of the PSF decreased for a smaller wavelength, in a quasi-linear manner. Smaller wavelenghts give a better resolution, which is expected as they should allow \hl{manque un mot hmmm} to distinguish smaller features in samples.
+The effect of different wavelengh did howether yield satisfying results, as the width of the PSF decreased for a smaller wavelength, in a quasi-linear manner. Smaller wavelenghts give a better resolution, which is expected as they should enable distinguishing smaller features in samples, because of the diffraction of light.
 
 \paragraph{SMLM}
-The regression using a two dimensionnal Gaussian on the images of the beads allowed for a sub-pixel localisation of the beads, which is the goal of SMLM. The precision of this localisation was on found to be of about $3$ nm, which is much lower than the order of $10$ nm uncertainty that would be expected. For this particular case, the high precision can be linked to the high number of measurements of the position of a single bead, which is unfeasable in actual SMLM, where one cannot be certain of measuring exactly the same fluorophore due to potential overlapping. In the case of the beads, a clearly seperated bead was chosen, thus leading to a high number of position measurements and a higher final precision.
+The regression using a two dimensionnal Gaussian on the images of the beads allowed for a sub-pixel localisation of the beads, which is the goal of SMLM. The precision of this localisation was on found to be of about $3$ nm, which is much lower than the order of $10$ nm uncertainty that would be expected. For this particular case, the high precision can be linked to the high number of measurements of the position of a single bead, which is unfeasable in actual SMLM, where one cannot be certain of measuring exactly the same fluorophore due to potential overlapping. In the case of the beads, a clearly seperated bead was chosen, thus leading to a high number (100) of position measurements and a higher final precision.
 
 \paragraph{drifting}
 \cite{martens_raw_2022} talks a lot about drifting, might be interesting
@@ -15,8 +15,11 @@ The regression using a two dimensionnal Gaussian on the images of the beads allo
 larger than expected, show how most articles find good thing but that one has our same stuff idk why
 
 \paragraph{Diameter of mitochondria}
+According to the literature \hl{FIND SOURCE}, mitochondria sizes range from $0.7$ to $3$ \si{\micro\meter}. In this experiment, the sizes of mitochondria ranged between $0.7$ and $1.95$ \si{\micro\meter}. The supersampled images show that the mitochondria have very varied shapes: stretched out, curved or round. It was also observed that the some mitochondria were slimmer in their middle. Due to these factors, measuring a "width" of a mitochondrion is sometimes arbitrary.
 
 \paragraph{effect of laser, uv, different wavelengths}
 
 \paragraph{Acquisition parameters}
-exposure time, number of frame, drift correction(not necessary in our case because of short time scale), filtering
+During the image acquisitions, the effects of varying the camera exposure time and number of captured frames were observed. Firstly, the exposure time was varied between 50 and 100 ms, at different places in the sample. For a sparsly illuminated region, a higher exposure time can be useful to increase the detection rate of fluorophores, at the cost of increasing background noise. A higher exposure time lead to a greater definition of the feature in the sample. For the frame count, it was noticed that a lower number of frames (about 3000) did not yield enough data to construct a satisfying superesolution image, as some features were not well defined. A higher number of frames gives better results for SMLM, at the cost of capture and computation time. There are however diminishing returns in increasing the frame count. Another issue with increasing either the frame count or exposure time is that the effects of drifting are much more visible, in which case a drift correction would be needed.
+
+TODO: filtering, more drift correction?
