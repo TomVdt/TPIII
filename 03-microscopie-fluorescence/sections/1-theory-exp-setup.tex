@@ -103,54 +103,11 @@ This mode of observation, where the excitation light is delivered to the specime
 It is particularly useful to solve the problem of the excitation light dominating the weaker fluorescence signal, as most of the excitation light propagates away from the objective after leaving the sample \cite{douglass_notice_2023}.
 
 \subsection{Experimental setup} \label{sec:experimental_setup}
-This experiment was caried out using an Abbelight SAFe 180 Single Molecule Localization Microscope, coupled to a laser engine and a Hamamatsu digital CMOS camera. Four different laser were used: a red laser at \mbox{647 nm}, a green laser at \mbox{561 nm}, a blue/cyan laser at \mbox{488 nm} and a UV laser at \mbox{405 nm}.
+This experiment was carried out using an Abbelight SAFe 180 Single Molecule Localization Microscope, coupled to a laser engine and a Hamamatsu digital CMOS camera. Four different lasers were used: a red laser at \mbox{647 nm}, a green laser at \mbox{561 nm}, a blue/cyan laser at \mbox{488 nm} and a UV laser at \mbox{405 nm}.
 
-Using 0.1 \si{\micro\meter} diameter fluorescent beads (TetraSpeck\textsuperscript{\texttrademark} Microspheres), the PSF of this microscope will be determined, as described in \autoref{sec:PSF}. Then, STORM images of microtubules, mitochondria and clathrine from COS7 will be acquired. Most acquisitions will have an exposure time of $50$ ms, and \mbox{10 000} images will be taken to obtain the superesolved image. Superolved images are computed using the Neo Analysis software.
+Using 0.1 \si{\micro\meter} diameter fluorescent beads (TetraSpeck\textsuperscript{\texttrademark} Microspheres), the PSF of this microscope will be determined, as described in \autoref{sec:PSF}. Then, STORM images of microtubules, mitochondria and clathrine from COS7 will be acquired. Most acquisitions will have an exposure time of $50$ ms, and \mbox{10 000} images will be taken to obtain the super-resolved image. Super-resolved images are computed using the Neo Analysis software.
 
-% Software used:
-% Data acquisition was conducted using the NEO Live Imaging software, the localization precision study was conducted using a custom algorithm which made use of the \software{Scipy} Python package, while the STORM data was analysed with the NEO Analysis software and then imaged [as described in \cite{martens_raw_2022}].
-% Also FiJi.
-
-% \subsection{UTILE POUR ÉCRIRE:}
-% Selected quotes from \cite{furstenberg_single-molecule_2013}:
-% \begin{quote}
-%     Super-resolution methods that combine photoswitchable
-%     fluorophores with single-molecule imaging achieve their superior
-%     spatial resolution by temporally breaking down the total fluores-
-%     cence into pieces in which the signal level allows single emitters to
-%     be observed. To that end, the density of molecules being read out
-%     (that is, in an emissive state) at the same time must stay low
-%     enough for the distance between emitting molecules to be large
-%     compared to the diﬀraction limit, so that individual fluorophores
-%     can be spatially resolved. \cite{furstenberg_single-molecule_2013}
-% \end{quote}
-% \begin{quote}
-%     In essence, single-molecule localization microscopy relies on
-%     three basic points (Fig. 3): (i) the use of photoswitchable
-%     fluorescent probes, (ii) the repeated detection of many isolated
-%     emitters and the determination of their position (localization),
-%     and (iii) the generation of a super-resolution image from single-
-%     molecule localization data. In each imaging frame, only few
-%     molecules are allowed to reside in their fluorescent state
-%     (‘‘on’’ state), so that single emitters can be spatially resolved
-%     and localized despite a high labelling density. The majority of
-%     the labels are kept in their non-fluorescent state (‘‘oﬀ’’ state) in
-%     a stochastic way, most commonly dependent on the irradiation
-%     intensity or a chemical reagent. The contrast between the on
-%     and oﬀ states is crucial as the signal-to-background ratio will
-%     determine the precision of the localization. \cite{furstenberg_single-molecule_2013}
-% \end{quote}
-% \begin{quote}
-%     The simplest
-%     approach for estimating the lateral position (x, y) of an emitter
-%     is to calculate the intensity-weighted centroid of the detected
-%     intensity distribution. Another possibility is to fit a model
-%     function that resembles the point-spread function (PSF) of
-%     the microscope system to the detected intensity distribution
-%     of single emitters. Two-dimensional Gaussian normal distribu-
-%     tions or a radial Airy pattern are frequently chosen as model
-%     functions. The fitting can be performed either by least-squares
-%     minimization or by maximum likelihood estimation algo-
-%     rithms.71,73,74 A third method is the correlation of the data
-%     with a known intensity distribution of the microscope PSF. \cite{furstenberg_single-molecule_2013}
-% \end{quote}
+\subsection{A bit of biology} \label{sec:biology}
+Microtubules are hollow, cylindrical polymers of tubulin proteins which measure 25 nm
+in diameter and vary in length from a fraction of a micrometer to hundreds of micrometers \cite{lodish_molecular_2004}.
+They are one of the components forming the cytoskeleton, the network of filaments that extends from the nucleus to the membrane and gives the cell its shape \cite{douglass_notice_2023}.
