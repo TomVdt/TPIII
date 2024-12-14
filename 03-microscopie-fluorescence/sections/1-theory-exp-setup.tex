@@ -27,7 +27,7 @@ Under the assumption that the PSF is only influenced by the diffraction of light
 where $r$ is the radial coordinate, NA is the numerical aperture of the optical system, $\lambda$ is the wavelength of the light, and $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first zero of the Airy disk, located at $\Delta X \approx 3.8317$, or $\Delta r \approx 0.61 \lambda / \textrm{NA}$.
 
 \subsection{Single Molecule Localization Microscopy} \label{sec:SMLM}
-In most cases, the smallest object an optical microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated on the order of 10 nm for visible light \cite{douglass_notice_2023}, which is much more precise than what the wavelength by itself would allow. This technique is called Single Molecule Localization Microscopy, or SMLM. Multiple fitting techniques exist, each with their advantages and disadvantages. In this report, a two-dimensional Gaussian will be fitted to the image, as an approximation of the Airy disk intensity function, as it is more efficient \vbox{computationally \cite{douglass_notice_2023}\footnote{a two-dimensional Gaussian curve will be used as an approximation of blabla [to fit the image], as is is more blabla}:}
+In most cases, the smallest object an optical microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated on the order of 10 nm for visible light \cite{douglass_notice_2023}, which is much more precise than what the wavelength of visible light would allow. This technique is called Single Molecule Localization Microscopy, or SMLM. Multiple fitting techniques exist, each with their advantages and disadvantages. In this report, a two-dimensional Gaussian curve will be used as an approximation of the Airy disk intensity function to the image, as it is more efficient \mbox{computationally \cite{douglass_notice_2023}}
 \begin{equation}
     f(x, y) = a \exp \left[ \frac{(x-\mu_x)^2 + (y-\mu_y)^2}{2 \sigma^2} \right] + b
 \end{equation}
@@ -40,10 +40,10 @@ where $\mu_x$ and $\mu_y$ give the position of the molecule and $\sigma$ is the 
 
 \subsection{STORM} \label{sec:STORM}
 It is then possible to easily locate an isolated molecule, but as a consequence of the uncertainty associated, two fluorescent molecules whose images overlap are impossible to localize.
-The localization of dense distributions of emitters, such as fluorophores attached to cellular structures, must therefore be carried out with techniques more complex than CONVENTIONAL the single capture of an image.
+The localization of dense distributions of emitters, such as fluorophores attached to cellular structures, must therefore be carried out with techniques more complex than the \hl{conventional} single capture of an image.
 One such technique based on photoswitching is stochastic optical reconstruction microscopy (STORM).
-It relies on the principle that we can localize all the fluorophores in an image by keeping only part of them switched on at a time.
-Then by capturing a high number of images (at minimum on the order of the 10,000), each with a stochastically determined subset of fluorophores switched on, and by localizing the molecules in each, a list of all resolved emitter positions can be obtained, from which a super-resolved image is rendered.
+It relies on the principle that we can localize all the fluorophores in an image by keeping only part of them \hl{in the \textsc{on} state} switched on at a time.
+Then by capturing a high number of images (at minimum on the order of the 10,000) \hl{source? ca dépend beaucoup de ce que t'observe d'apres moi}, each with a stochastically determined subset of fluorophores switched on, and by localizing the molecules in each, a list of all resolved emitter positions can be obtained, from which a super-resolved \hl{superesolved} image is rendered.
 
 For this technique to be effective, the density of molecules being read out
 (that is, in an emissive state) at the same time must stay low
@@ -84,7 +84,7 @@ In this way, the images appear less dotty and connected structures and increased
 % O2 due to the unknown true position of the emitting molecule.
 
 \subsection{Epifluorescence Microscopes} \label{sec:epifluorescence_microscopes}
-A common architecture for fluorescence microscopes is that of an upright epifluorescence microscope, pictured in \autoref{fig:epifluorescence_microscope}.
+A common architecture for fluorescence microscopes is that of an upright epifluorescence microscope, pictured in \autoref{fig:epifluorescence_microscope}. \hl{no end of paragraph?}
 
 \begin{figure}[htbp]  
     \centering
