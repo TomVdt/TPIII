@@ -68,7 +68,7 @@ A common architecture for fluorescence microscopes is that of an upright epifluo
 \begin{figure}[htbp]  
     \centering
     \includegraphics[width=8cm]{figures/epifluorescence-microscope.png}
-    \caption{Epifluorescence microscope \cite{douglass_notice_2023} [can be put as wrapfig]}
+    \caption{Epifluorescence microscope \cite{douglass_notice_2023}}
     \label{fig:epifluorescence_microscope}
 \end{figure}
 %
@@ -81,18 +81,22 @@ This setup using two lenses is called an infinity-corrected system and allows to
 This mode of observation, where the excitation light is delivered to the specimen by the same objective lens which is used for collecting the fluorescence, is known as epi-illumination.
 It is particularly useful to solve the problem of the excitation light dominating the weaker fluorescence signal, as most of the excitation light propagates away from the objective after leaving the sample \cite{douglass_notice_2023}.
 
+
+\subsection{A bit of biology} \label{sec:biology}
+In this report the following structures from eukaryotic cells, i.e. cells possessing a membrane-bound nucleus, were studied:
+\begin{itemize}
+    \item Microtubules: hollow, cylindrical polymers of tubulin proteins which measure 25 nm
+    in diameter and vary in length from a fraction of a micrometer to hundreds of \mbox{micrometers \cite{lodish_molecular_2004}.}
+    They are one of the components forming the cytoskeleton, the network of filaments that extends from the nucleus to the membrane and gives the cell its shape \cite{douglass_notice_2023}.
+    \item Mitochondria: energy-transforming and signaling organelles that constitute part of the cell information processing system \cite{picard_mitochondrial_2022}. They are diverse in shapes and size, with a diameter between 0.5 and 1 \unit{\micro m} \cite{douglass_notice_2023}. METS CROSS SECTION
+    \item Clathrin: a protein involved in the formation of vesicles, on the cytoplasmatic side of the cell. 
+    Clathrin-coated pits allow for molecules from the extracellular environment to be transported into the cell \cite{douglass_notice_2023}.
+\end{itemize}
+
+
 \subsection{Experimental setup} \label{sec:experimental_setup}
 This experiment was carried out using an Abbelight SAFe 180 Single Molecule Localization Microscope, coupled to a laser engine and a Hamamatsu digital CMOS camera. Four different lasers were used: a red laser at \mbox{647 nm}, a green laser at \mbox{561 nm}, a blue/cyan laser at \mbox{488 nm} and a UV laser at \mbox{405 nm}.
 
-Using 0.1 \si{\micro\meter} diameter fluorescent beads (TetraSpeck\textsuperscript{\texttrademark} Microspheres), the PSF of this microscope will be determined, as described in \autoref{sec:PSF}. Then, STORM images of microtubules, mitochondria and clathrine from COS7 will be acquired. Most acquisitions will have an exposure time of $50$ ms, and \mbox{10 000} images will be taken to obtain the super-resolved image. Super-resolved images are computed using the Neo Analysis software.
+Using 0.1 \si{\micro\meter} diameter fluorescent beads (TetraSpeck\textsuperscript{\texttrademark} Microspheres), the PSF of this microscope will be determined, as described in \autoref{sec:PSF}. Then, STORM images of microtubules, mitochondria and clathrine from COS7 will be acquired. Most acquisitions will use an exposure time of $50$ ms, and \mbox{10 000} images will be taken to obtain the super-resolved image. Super-resolved images are computed using the Neo Analysis software.
 
-\subsection{A bit of biology} \label{sec:biology}
-\hl{talk about the cell in general before? like "the base of all life as we know it is in cells blabla" or sth (present noyau, membrane, cytoplasme et c'est goodenough je crois)}
-In this report the following stuff from cells was studied
-\begin{itemize}
-    \item Microtubules are hollow, cylindrical polymers of tubulin proteins which measure 25 nm
-    in diameter and vary in length from a fraction of a micrometer to hundreds of \mbox{micrometers \cite{lodish_molecular_2004}.}
-    They are one of the components forming the cytoskeleton, the network of filaments that extends from the nucleus to the membrane and gives the cell its shape \cite{douglass_notice_2023}.
-    \item Mitochondria
-    \item Clathrin
-\end{itemize}
+
