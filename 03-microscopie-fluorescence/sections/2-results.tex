@@ -1,17 +1,20 @@
 \section{Results} \label{sec:results}
 \subsection{Localization precision of the microscope} \label{sec:results_beads}
-A set of 100 images of the fluorescent 0.1 $\mu$m beads was \hl{were} acquired for each of the laser wavelengths.
-An isolated bead was selected and its intensity profile was fitted in all images with a two-dimensional \hl{G}aussian curve. 
+A set of 100 images of the fluorescent 0.1 $\mu$m beads were acquired for each of the laser wavelengths.
+An isolated bead was selected and its intensity profile was fitted in all images with a two-dimensional Gaussian curve. 
 The mean and standard variation of the resulting curve provide the $(x,y)$ localisation of the bead and the width of its PSF, as described in \autoref{sec:SMLM}.
 An example of the result of the localization, superimposed on one of the images acquired with the 647 nm laser, is depicted in \autoref{fig:beads_inset_zoom}.
+%
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/beads_inset_zoom.pdf}
     \caption{Fluorescent beads imaging using 647 nm laser: whole acquisition  and zoom on selected bead with localised position.}
     \label{fig:beads_inset_zoom}
 \end{figure}
+%
 The distributions of the relative $x$ and $y$ positions obtained from each image are pictured in \autoref{fig:comparison_mu}.
 The same was done in \autoref{fig:comparison_sigma} for the uncertainty on the localisation.
+%
 \begin{figure}[htbp]
     \begin{subfigure}{0.49\textwidth}
         \centering
@@ -28,9 +31,11 @@ The same was done in \autoref{fig:comparison_sigma} for the uncertainty on the l
     \caption{Comparison of (a) localisation position and (b) uncertainty distributions for the three different laser wavelengths. One pixel corresponds to $108$ nm.}
     \label{fig:comparison_wavelengths}
 \end{figure}
+%
 The figures allow for a couple of immediate observations:
 the localisations carried out using each of the three different wavelengths cluster around three different points, though the sample wasn't moved between acquisitions.
 This is due to a drifting of the fluorescent beads in the focal plane (see \autoref{fig:beads_drifting}), the three acquisitions being separated by intervals of time much longer than the time scale of a single acquisition.
+%
 \begin{figure}
     \centering
     \begin{subfigure}{0.32\textwidth}
@@ -51,6 +56,7 @@ This is due to a drifting of the fluorescent beads in the focal plane (see \auto
     \caption{Drifting between acquisitions of the studied fluorescent bead during the consecutive acquisitions with the (a) 647 nm (b) 561 nm and (c) 488 nm lasers.}
     \label{fig:beads_drifting}
 \end{figure}
+%
 Moreover, the uncertainties on the localisation for the different wavelengths appear to center around different points, the 488 nm laser resulting the most precise of the three.
 These values were compared with those expected from \autoref{eq:PSF_width_gaussian} for the PSF width associated to each mesure.
 As shown in \autoref{fig:comparison_PSF}, while increasing with $\lambda$ as predicted,
@@ -58,7 +64,7 @@ the observed PSF width is higher than the one expected.
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/comparison_PSF.pdf}
-    \caption{Measured Gaussian PSF width compared to the theory, for mulitple laser wavelengths.}
+    \caption{Measured Gaussian PSF width compared to theoretical values, for multiple laser wavelengths.}
     \label{fig:comparison_PSF}
 \end{figure}
 
@@ -113,34 +119,6 @@ STORM images of the mitochondrial network in COS7 cells (see \autoref{fig:mitoch
 In the measured set of 18 mitochondria, the diameter ranged between 0.70 and 2 \unit{\micro m}, with an average of $1.4$ \unit{\micro m}.
 \hl{TODO for TOM: remesurer tout ca, j'ai mesuré la largeur et pas le cross-section et c'est le cross section qui est important}
 %
-% \begin{figure}
-%     \begin{subfigure}{0.32\textwidth}
-%         \includegraphics[width=\textwidth]{figures/mitochondria_image6.png}
-%         \caption{}
-%     \end{subfigure}
-%     \begin{subfigure}{0.32\textwidth}
-%         \includegraphics[width=\textwidth]{figures/mitochondria_image4.png}
-%         \caption{}
-%     \end{subfigure}
-%     \begin{subfigure}{0.32\textwidth}
-%         \includegraphics[width=\textwidth]{figures/mitochondria_image11.png}
-%         \caption{}
-%     \end{subfigure}
-%     \begin{subfigure}{0.32\textwidth}
-%         \includegraphics[width=\textwidth]{figures/mitochondria_image9.png}
-%         \caption{}
-%     \end{subfigure}
-%     \begin{subfigure}{0.32\textwidth}
-%         \includegraphics[width=\textwidth]{figures/mitochondria_image12.png}
-%         \caption{}
-%     \end{subfigure}
-%     \begin{subfigure}{0.32\textwidth}
-%         \includegraphics[width=\textwidth]{figures/mitochondria_image10.png}
-%         \caption{}
-%     \end{subfigure}
-%     \caption{Mitochondrial structures REDUIRE CONTRASTE et fix dimensions}
-%     \label{fig:mitochondria_images}
-% \end{figure}
 \begin{figure}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/mitochondria_image4.png}
@@ -177,6 +155,6 @@ It is possible in these images to recognise the outer boundaries of the cytoplas
         \caption{}
         \label{fig:clathrin_image6}
     \end{subfigure}
-    \caption{STORM imaging of labeled clathrin in COS7 cells.}
+    \caption{STORM imaging of labeled clathrin in COS7 cells. \hl{Je dirais on en garde deux, les autre peuvent aller en Annexe}}
     \label{fig:clathrin_images}
 \end{figure}
