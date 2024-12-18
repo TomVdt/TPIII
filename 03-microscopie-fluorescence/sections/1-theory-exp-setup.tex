@@ -3,7 +3,7 @@
 \subsection{Fluorescence Photophysics} \label{sec:fluorescence_photophysics}
 Fluorescence is a property of some substances describing their ability to capture photons and re-emit a photon of lower energy after a small duration. This phenomenon can be explained by the fluorescent particle transitioning from its ground state to an excited state, after which it relaxes to a lower energy state. The decay back to the ground state then causes the emission of a photon of a higher wavelength (and thus lower energy) than the excitation photon due to energy lost in the transition to a lower energy excited state. It is also possible for the fluorescent particle to decay without emitting a photon. These transitions usually happen on time scales of the order of $10^{-9}$ seconds \cite{douglass_notice_2023}.
 
-Commonly, fluorophores have multiple energy levels to which the excited state can decay to, as depicted in \autoref{fig:energy_level_fluorophore}. For them to function properly, the fluorophores have to be mixed in a buffer that provides reagents for the fluorophores to return to their ground state. After being excited by an incident photon, there is a small probability that the fluorophore decays to a lower excited state ($^3\textrm F$ in the figure). In this state, it can react with the compounds in the buffer to to either return to the ground state or reach a third excited state, the radical anion state. This state is quite unreactive and therefore has a long lifetime, much larger than the lifetime of the other states.
+Commonly, fluorophores have multiple energy levels to which the excited state can decay to, as depicted in \autoref{fig:energy_level_fluorophore}. For them to function properly for microscopy, the fluorophores have to be mixed in a buffer that provides reagents for the fluorophores to return to their ground state. After being excited by an incident photon, there is a small probability that the fluorophore decays to a lower excited state ($^3\textrm F$ in the figure). In this state, it can react with the compounds in the buffer to either return to the ground state or reach a third excited state, the radical anion state. This state is quite unreactive and therefore has a much longer lifetime than the other states.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/alexafluor-jablonski-diagram.png}
@@ -11,12 +11,12 @@ Commonly, fluorophores have multiple energy levels to which the excited state ca
     \label{fig:energy_level_fluorophore}
 \end{figure}
 
-In the radical anion state, the fluorophore can be considered \enquote{disabled} or \textsc{off}, as it does not fluoresce. Fluorophores that can fluoresce are refered to as being \textsc{on}. Some fluorophores may get stuck in an \textsc{off} state, a \textsc{bleached} state. \emph{Photoswitching} is a technique that aims to control the number of fluorophores in the \textsc{on} and \textsc{off} state, by modulating the compounds in the buffer, the light intensity, and through the use of different wavelengths on the sample. 
+In the radical anion state, the fluorophore can be considered \enquote{disabled} or \textsc{off}, as it does not fluoresce. Fluorophores that can fluoresce are referred to as being \textsc{on}. Some fluorophores may get stuck in an \textsc{off} state, a \textsc{bleached} state. \emph{Photoswitching} is a technique that aims to control the number of fluorophores in the \textsc{on} and \textsc{off} state by modulating the compounds in the buffer, the light intensity, and through the use of different wavelengths on the sample. 
 % This technique is the basis for STORM.
 
 
 \subsection{The Point Spread Function} \label{sec:PSF}
-All optical microscopes have a limited resolution for how small a point-like light source can appear. The shape of the point measured in through the microscope is described by the point spread function, or PSF, and caracterises the performance of a particular microscope. The light intensity $I(x, y)$ of point-like light sources as measured by the microscope can then be described as a convolution between the density of emitters $O(x, y)$ and the PSF:
+All optical microscopes have a limited resolution for how small a point-like light source can appear. The shape of the point measured in through the microscope is described by the point spread function, or PSF, which caracterises the performance of a particular microscope. The light intensity $I(x, y)$ of point-like light sources as measured by the microscope can then be described as a convolution between the density of emitters $O(x, y)$ and the PSF:
 \begin{equation}
     I(x, y) = \operatorname{PSF}(x, y) \star O(x, y)
 \end{equation}
@@ -27,7 +27,7 @@ Under the assumption that the PSF is only influenced by the diffraction of light
 where $r$ is the radial coordinate, NA is the numerical aperture of the optical system, $\lambda$ is the wavelength of the light, and $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first zero of the Airy disk, located at $\Delta X \approx 3.8317$, or $\Delta r \approx 0.61 \lambda / \textrm{NA}$.
 
 \subsection{Single Molecule Localization Microscopy} \label{sec:SMLM}
-In most cases, the smallest object an optical microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated on the order of 10 nm for visible light \cite{douglass_notice_2023}, which is much more precise than what the wavelength of visible light would allow. This technique is called Single Molecule Localization Microscopy, or SMLM. Multiple fitting techniques exist, each with their advantages and disadvantages. In this report, a two-dimensional Gaussian curve will be used as an approximation of the Airy disk intensity function to the image, as it is more efficient \mbox{computationally \cite{douglass_notice_2023}}
+In most cases, the smallest object an optical microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated with a precision on the order of 10 nm for visible light \cite{douglass_notice_2023}, which is much more precise than what the wavelength of visible light would allow. This technique is called single molecule localization microscopy, or SMLM. Multiple fitting techniques exist, each with their advantages and disadvantages. In this report, a two-dimensional Gaussian curve will be used as an approximation of the Airy disk intensity function to the image, as it is more efficient \mbox{computationally \cite{douglass_notice_2023}}
 \begin{equation}
     f(x, y) = a \exp \left[ \frac{(x-\mu_x)^2 + (y-\mu_y)^2}{2 \sigma^2} \right] + b
 \end{equation}
@@ -39,7 +39,7 @@ where $\mu_x$ and $\mu_y$ give the position of the molecule and $\sigma$ is the 
 
 
 \subsection{STORM} \label{sec:STORM}
-It is then possible to easily locate an isolated molecule, but as a consequence of the uncertainty associated, two fluorescent molecules whose images overlap are impossible to localize.
+The gaussian fitting allows to locate an isolated molecule, but as a consequence of the uncertainty associated, two fluorescent molecules whose images overlap are impossible to localize.
 The localization of dense distributions of emitters, such as fluorophores attached to cellular structures, must therefore be carried out with techniques more complex than the single capture of an image.
 One such technique based on photoswitching is stochastic optical reconstruction microscopy (STORM).
 It relies on the principle that we can localize all the fluorophores in an image by keeping only part of them in the \textsc{on} state  at a time.
