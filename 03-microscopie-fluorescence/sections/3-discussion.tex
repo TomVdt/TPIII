@@ -33,7 +33,8 @@ According to the literature, mitochondria cross sections range from $0.75$ to $3
 \paragraph{Acquisition parameters}
 During the image acquisitions, the effects of varying the camera exposure time and number of captured frames were observed. Firstly, the exposure time was varied between 50 and 100 ms, at different places in the sample. It was found that for a sparsely illuminated region, a higher exposure time can be useful to increase the detection rate of fluorophores, at the cost of increasing background noise. A higher exposure time lead to a greater definition of the features in the sample. For the frame count, it was noticed that a lower number of frames (about 3000) did not yield enough data to construct a satisfying super-resolution image, as some features were not well defined. A higher number of frames gives better results for SMLM, at the cost of capture and computation time. There are however diminishing returns in increasing the frame count. Another issue with increasing either the frame count or exposure time is that the effects of drifting are much more visible, in which case accurate drift correction is needed.
 
-TODO: filtering, more drift correction?
+A filtering of the acquired localisations based on bad values of uncertainty wasn't necessary to obtain good images.
+In fact, the imaging process detailed in \autoref{sec:imaging} already differentiates between accurate and inaccurate localisation by varying the width of the superimposed Gaussian curves.
 
 \paragraph{Depth of samples}
 Damn thats deep
