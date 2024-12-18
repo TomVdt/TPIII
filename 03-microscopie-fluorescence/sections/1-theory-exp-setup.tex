@@ -11,7 +11,7 @@ Commonly, fluorophores have multiple energy levels to which the excited state ca
     \label{fig:energy_level_fluorophore}
 \end{figure}
 
-In the radical anion state, the fluorophore can be considered \enquote{disabled} or \textsc{off}, as it does not fluoresce. Fluorophores that can fluoresce are referred to as being \textsc{on}. Some fluorophores may get stuck in an \textsc{off} state, a \textsc{bleached} state. \emph{Photoswitching} is a technique that aims to control the number of fluorophores in the \textsc{on} and \textsc{off} state by modulating the compounds in the buffer, the light intensity, and through the use of different wavelengths on the sample. 
+In the radical anion state, the fluorophore can be considered \enquote{disabled} or \textsc{off}, as it does not fluoresce. Fluorophores that can fluoresce are referred to as being \textsc{on}. Some fluorophores may get stuck in an \textsc{off} state, a \textsc{bleached} state. \emph{Photoswitching} is a technique that aims to control the number of fluorophores in the \textsc{on} and \textsc{off} state by modulating the compounds in the buffer, the light intensity, and through the use of different illumination wavelengths on the sample. 
 % This technique is the basis for STORM.
 
 
@@ -24,10 +24,10 @@ Under the assumption that the PSF is only influenced by the diffraction of light
 \begin{equation}
     I(X) = I_0 \left[ \frac{2 J_1(X)}{X} \right]^{2}, \quad X = \frac{2\pi r \textrm{NA}}{\lambda}
 \end{equation}
-where $r$ is the radial coordinate, NA is the numerical aperture of the optical system, $\lambda$ is the wavelength of the light, and $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first zero of the Airy disk, located at $\Delta X \approx 3.8317$, or $\Delta r \approx 0.61 \lambda / \textrm{NA}$.
+where $r=\sqrt{x^2+y^2}$ is the radial coordinate, NA is the numerical aperture of the optical system, $\lambda$ is the wavelength of the light, and $J_1$ is the first order Bessel function of the first kind. The size or width of the PSF can then be defined by the first zero of the Airy disk, located at $\Delta X \approx 3.8317$, or $\Delta r \approx 0.61 \lambda / \textrm{NA}$.
 
 \subsection{Single Molecule Localization Microscopy} \label{sec:SMLM}
-In most cases, the smallest object an optical microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated with a precision on the order of 10 nm for visible light \cite{douglass_notice_2023}, which is much more precise than what the wavelength of visible light would allow. This technique is called single molecule localization microscopy, or SMLM. Multiple fitting techniques exist, each with their advantages and disadvantages. In this report, a two-dimensional Gaussian curve will be used as an approximation of the Airy disk intensity function to the image, as it is more efficient \mbox{computationally \cite{douglass_notice_2023}}
+In most cases, the smallest object an optical microscope can observe has a size of about half of the wavelength of light. However, a fluorescent molecule as observed through the microscope is located in the middle of the image it produces, that is, its PSF. By fitting the PSF to the image of a single molecule, its position can be estimated with a precision on the order of 10 nm for visible light \cite{douglass_notice_2023}, which is much more precise than what the wavelength of visible light would allow. This technique is called single molecule localization microscopy, or SMLM. Multiple fitting techniques exist, each with their advantages and disadvantages. In this report, a two-dimensional Gaussian curve of the following form will be used as an approximation of the Airy disk intensity function to the image, as it is more efficient \mbox{computationally \cite{douglass_notice_2023}}:
 \begin{equation}
     f(x, y) = a \exp \left[ \frac{(x-\mu_x)^2 + (y-\mu_y)^2}{2 \sigma^2} \right] + b
 \end{equation}
@@ -40,10 +40,10 @@ where $\mu_x$ and $\mu_y$ give the position of the molecule and $\sigma$ is the 
 
 \subsection{STORM} \label{sec:STORM}
 The gaussian fitting allows to locate an isolated molecule, but as a consequence of the uncertainty associated, two fluorescent molecules whose images overlap are impossible to localize.
-The localization of dense distributions of emitters, such as fluorophores attached to cellular structures, must therefore be carried out with techniques more complex than the single capture of an image.
+The localization of dense distributions of emitters, such as fluorophores attached to cellular structures, must therefore be carried out with techniques more complex than the capture of a single image.
 One such technique based on photoswitching is stochastic optical reconstruction microscopy (STORM).
 It relies on the principle that we can localize all the fluorophores in an image by keeping only part of them in the \textsc{on} state  at a time.
-Then by capturing a large number of images, each with a stochastically determined subset of fluorophores switched on, and by localizing the molecules in each, a list of all resolved emitter positions can be obtained, from which a super-resolved image is rendered.
+By then capturing a large number of images, each with a stochastically determined subset of fluorophores switched on, and by localizing the molecules in each image, a list of all resolved emitter positions can be obtained, from which a super-resolved image is rendered.
 
 For this technique to be effective, the density of molecules being read out
 (that is, in an emissive state) at the same time must stay low
