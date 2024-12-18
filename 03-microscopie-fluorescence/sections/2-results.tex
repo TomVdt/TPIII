@@ -1,11 +1,11 @@
 \section{Results} \label{sec:results}
 \subsection{Localization precision of the microscope} \label{sec:results_beads}
-A set of 100 images of the fluorescent 0.1 $\mu$m beads were acquired for each of the laser wavelengths.
+A set of 100 images of the fluorescent 0.1 \unit{\micro m} beads were acquired for each of the laser wavelengths.
 An isolated bead was selected and its intensity profile was fitted in all images with a two-dimensional Gaussian curve. 
 The mean and standard variation of the resulting curve provide the $(x,y)$ localisation of the bead and the width of its PSF, as described in \autoref{sec:SMLM}.
 An example of the result of the localization, superimposed on one of the images acquired with the 647 nm laser, is depicted in \autoref{fig:beads_inset_zoom}.
 %
-\begin{figure}[htbp]
+\begin{figure}[hb]
     \centering
     \includegraphics[scale=1]{figures/beads_inset_zoom.pdf}
     \caption{Fluorescent beads imaging using 647 nm laser: whole acquisition  and zoom on selected bead with localised position.}
@@ -63,8 +63,9 @@ As shown in \autoref{fig:comparison_PSF}, while increasing with $\lambda$ as pre
 the observed PSF width is higher than the one expected.
 \begin{figure}[htbp]
     \centering
+    \vspace{-0.5cm}
     \includegraphics[scale=1]{figures/comparison_PSF.pdf}
-    \caption{Measured Gaussian PSF width compared to theoretical values, for multiple laser wavelengths.}
+    \caption{Measured Gaussian PSF width compared with theoretical values, for multiple laser wavelengths.}
     \label{fig:comparison_PSF}
 \end{figure}
 
@@ -88,12 +89,12 @@ A set of three STORM images of microtubules in COS7 cells are presented in \auto
         \caption{}
         \label{fig:microtubules_image6}
     \end{subfigure}
-    \caption{STORM imaging of microtubules in COS7 cells.}
+    \caption{STORM images of microtubules in COS7 cells.}
     \label{fig:microtubules_images}
 \end{figure}
 %
 \autoref{fig:microtubules_image1} shows an isolated microtubule, while in \autoref{fig:microtubules_image4} and \autoref{fig:microtubules_image6} it is possible to distinguish the overall structure of the cytoskeleton, composed of a large number of microtubules, and the nuclei of the cells, recognisable as the circular areas of lower localisation density.
-An analysis of the intensity profile along the cross section of the microtubule strand in \autoref{fig:microtubules_image1} showed the presence of two separated peaks, separated by a distance of $(210 \pm 5)$ nm.
+An analysis of the intensity profile along the cross section of the microtubule strand in \autoref{fig:microtubules_image1} showed the presence of two distinct peaks, separated by a distance of $(210 \pm 5)$ nm.
 The portion of filament studied and the resulting intensity profile are depicted in \autoref{fig:microtubules_width}.
 %
 \begin{figure}[htbp]
@@ -114,7 +115,7 @@ The portion of filament studied and the resulting intensity profile are depicted
 \end{figure}
 
 
-\subsection{Mitochondria} \label{sec:results_mitochondria}
+\subsection{STORM imaging of mitochondria} \label{sec:results_mitochondria}
 STORM images of the mitochondrial network in COS7 cells (see \autoref{fig:mitochondria_images}) were able to distinguish individual mitochondria surrounding the nucleus, for which the cross section could then be determined.
 In the measured set of 18 mitochondria, the cross sections ranged from $(0.8 \pm 0.1)$ \unit{\micro\meter\squared} to $(4.3 \pm 0.3)$ \unit{\micro\meter\squared}, with an average of $(2.21 \pm 0.06)$ \unit{\micro\meter\squared}. The complete set of measurements are shown in \autoref{tab:mitochondria_cross_sections}.
 %
@@ -148,10 +149,10 @@ In the measured set of 18 mitochondria, the cross sections ranged from $(0.8 \pm
 \end{table}
 
 
-\subsection{Clathrin} \label{sec:results_clathrin}
+\subsection{STORM imaging of clathrin} \label{sec:results_clathrin}
 Several STORM images of the labeled clathrin in COS7 cells were acquired, such as the ones presented in \autoref{fig:clathrin_images}.
 It is possible in these images to recognise the outer boundaries of the cytoplasm (the circular areas of low localisation density, larger than the nuclei observed in \autoref{sec:results_microtubules} and \autoref{sec:results_mitochondria}), enclosed by the cell membrane on which the clathrin is found.
-
+%
 \begin{figure}
     \centering
     \begin{subfigure}{0.49\textwidth}
@@ -167,3 +168,5 @@ It is possible in these images to recognise the outer boundaries of the cytoplas
     \caption{STORM imaging of labeled clathrin in COS7 cells.}
     \label{fig:clathrin_images}
 \end{figure}
+
+The Annex contains additional STORM images of both mitochondria and clathrin acquired during the experiments (see \autoref{fig:extra_mitochondria_images} and \autoref{fig:extra_clathrin_images}).

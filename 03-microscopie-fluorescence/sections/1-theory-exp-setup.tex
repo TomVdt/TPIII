@@ -64,6 +64,11 @@ In this way, the images appear less dotty, and connected structures and increase
 
 \subsection{Epifluorescence Microscopes} \label{sec:epifluorescence_microscopes}
 A common architecture for fluorescence microscopes is that of an upright epifluorescence microscope, pictured in \autoref{fig:epifluorescence_microscope}.
+Light emitted from a source such as a laser or a high-intensity LED enters the microscope and is reflected into the objective lens by a dichroic mirror, capable of reflecting some wavelengths of light and transmitting others.
+The excitation light is then focused by the objective lens onto the studied sample, where it excites the fluorescent molecules present.
+The fluorescent light emitted by the molecules is collimated by the same objective lens and passes again through the dichroic mirror, which acts as a beam splitter, separating the excitation and emission light paths \cite{sachl_introduction_2022}.
+Finally, a second lens, known as tube lens, focuses the parallel rays coming from the objective lens and forms the image of the sample on the camera or eyepiece.
+This setup using two lenses is called an infinity-corrected system and allows to add or replace optical elements, such as filters or additional beamsplitters, in the \emph{infinity space} between the two lenses  without modifying the wavefront of the light, and thus keeping the same focus and magnification.
 %
 \begin{figure}[htbp]  
     \centering
@@ -72,11 +77,6 @@ A common architecture for fluorescence microscopes is that of an upright epifluo
     \label{fig:epifluorescence_microscope}
 \end{figure}
 %
-Light emitted from a source such as a laser or a high-intensity LED enters the microscope and is reflected into the objective lens by a dichroic mirror, capable of reflecting some wavelengths of light and transmitting others.
-The excitation light is then focused by the objective lens onto the studied sample, where it excites the fluorescent molecules present.
-The fluorescent light emitted by the molecules is collimated by the same objective lens and passes again through the dichroic mirror, which acts as a beam splitter, separating the excitation and emission light paths \cite{sachl_introduction_2022}.
-Finally, a second lens, known as tube lens, focuses the parallel rays coming from the objective lens and forms the image of the sample on the camera or eyepiece.
-This setup using two lenses is called an infinity-corrected system and allows to add or replace optical elements, such as filters or additional beamsplitters, in the \emph{infinity space} between the two lenses  without modifying the wavefront of the light, and thus keeping the same focus and magnification.
 
 This mode of observation, where the excitation light is delivered to the specimen by the same objective lens which is used for collecting the fluorescence light, is known as epi-illumination.
 It is particularly useful to solve the problem of the excitation light dominating the weaker fluorescence signal, as most of the excitation light propagates away from the objective after leaving the sample \cite{douglass_notice_2023}.
@@ -97,6 +97,4 @@ This report studied the following structures from eukaryotic cells, i.e.\ cells 
 \subsection{Experimental setup} \label{sec:experimental_setup}
 This experiment was carried out using an Abbelight SAFe 180 Single Molecule Localisation Microscope, coupled to a laser engine and a Hamamatsu digital CMOS camera. Four different lasers were used: a red laser at \mbox{647 nm}, a green laser at \mbox{561 nm}, a blue/cyan laser at \mbox{488 nm} and a UV laser at \mbox{405 nm}.
 
-Using 0.1 \si{\micro\meter} diameter fluorescent beads (TetraSpeck\textsuperscript{\texttrademark} Microspheres), the PSF of this microscope was determined, as described in \autoref{sec:PSF}. Then, STORM images of microtubules, mitochondria and clathrin from COS7 cells will be acquired. Most acquisitions will use an exposure time of $50$ ms, and \mbox{10 000} images will be taken to obtain the super-resolved image. Super-resolved images are computed using the Neo Analysis software.
-
-
+Using 0.1 \si{\micro\meter} diameter fluorescent beads (TetraSpeck\textsuperscript{\texttrademark} Microspheres), the PSF of this microscope was determined, as described in \autoref{sec:PSF}. Then, STORM images of microtubules, mitochondria and clathrin from COS7 cells were acquired. Most acquisitions  used an exposure time of $50$ ms, and \mbox{10 000} images were taken to obtain the super-resolved image. The localisations are computed using the Neo Analysis software.
