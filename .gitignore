@@ -14,6 +14,7 @@ res/
 03-microscopie-fluorescence/data/clathrin/*
 03-microscopie-fluorescence/data/imaging/*
 03-microscopie-fluorescence/cahier/*
+04-radiotelescope/data/*
 
 ## https://github.com/github/gitignore/blob/main/TeX.gitignore
 ## Core latex/pdflatex auxiliary files:
