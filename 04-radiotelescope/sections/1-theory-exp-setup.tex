@@ -1,12 +1,14 @@
 \section{Theory and experimental setup}
-\subsection{Coordinates}
-To operate a radio telescope, a good understanding of coordinate systems is in order:
-three main ones are used: \hl{On peut mettre ça dans des paragraphes ou subparagraphes si long}
+\subsection{Coordinate systems}
+When operating a radio telescope, three main coordinate systems are used to locate objects on the celestial sphere: \hl{citation ici pour "grouper" les trois points? Je n'ai utilisé que} \cite{carroll_introduction_2007}
 \begin{itemize}
-    \item Azimuth / altitude (Az/Alt): tied to observer blabla
-    \item Right Ascension / Declination (RA/Dec): tied to sky blabla
-    \item Galactic coordinates: \verb|absolute|
+    \item The \textbf{Altitude-Azimuth} (Alt-Az) coordinate system is based on the observer's local horizon. The altitude $h$ is the angle measured from the horizon to the object along a circle which passes through the object itself and the point on the celestial sphere directly above the observer, i.e. the zenith. The azimuth $a$ is the angle measured along the horizon eastward from north to the circle used for the measure of altitude. \hl{Desavantages du système?} \cite{carroll_introduction_2007}
+    \item The \textbf{Right Ascension-Declination} (Ra-Dec) coordinate system, also called \textbf{Equatorial}, is based on the latitude-longitude system of Earth, thus removing the dependency on the position of the observer, but does not participate in the planet's rotation. Declination $\delta$ is the equivalent of latitude and measured in degrees north or south of the celestial equator. Right ascension $\alpha$ is analogous to longitude and is measured eastward along the celestial equator from the vernal equinox, i.e. the position of the Sun at Spring equinox, to the object's hour circle, i.e. the circle passing throught the object and the north celestial pole.
+    \item The \textbf{Galactic} coordinate system is often used when studying the structure and kinematics of the Milky Way, exploiting the natural symmetry introduced by the existance of the Galactic disk. The intersection of the midplane of the Galaxy with the celestial sphere defines the Galactic equator. Galactic latitude $b$ is measured north or south of the Galactic equator along a circle which passes through the North Galactic Pole. Galactic longitude $l$ is measured east along the Galactic equator, starting from near the Galactic center to the point of intersection with the circle used to measure the latitude.
 \end{itemize}
+[Knowledge of the observer's latitude and local time allows to convert between Alt-Az and Equatorial]
+Starting from their definitions, spherical trigonometry allows to convert between Equatorial and Galactic coordinates: CHECK PAGE 900 OF \Cite{carroll_introduction_2007}
+
 \subsection{[How a radio telescope works]}
 
 \subsection{The H 21 cm line}
