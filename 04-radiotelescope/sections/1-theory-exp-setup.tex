@@ -6,8 +6,19 @@ When operating a radio telescope, three main coordinate systems are used to loca
     \item The \textbf{Right Ascension-Declination} (Ra-Dec) coordinate system, also called \textbf{Equatorial}, is based on the latitude-longitude system of Earth, thus removing the dependency on the position of the observer, but does not participate in the planet's rotation. Declination $\delta$ is the equivalent of latitude and measured in degrees north or south of the celestial equator. Right ascension $\alpha$ is analogous to longitude and is measured eastward along the celestial equator from the vernal equinox, i.e. the position of the Sun at Spring equinox, to the object's hour circle, i.e. the circle passing throught the object and the north celestial pole.
     \item The \textbf{Galactic} coordinate system is often used when studying the structure and kinematics of the Milky Way, exploiting the natural symmetry introduced by the existance of the Galactic disk. The intersection of the midplane of the Galaxy with the celestial sphere defines the Galactic equator. Galactic latitude $b$ is measured north or south of the Galactic equator along a circle which passes through the North Galactic Pole. Galactic longitude $l$ is measured east along the Galactic equator, starting from near the Galactic center to the point of intersection with the circle used to measure the latitude.
 \end{itemize}
-[Knowledge of the observer's latitude and local time allows to convert between Alt-Az and Equatorial]
-Starting from their definitions, spherical trigonometry allows to convert between Equatorial and Galactic coordinates: CHECK PAGE 900 OF \Cite{carroll_introduction_2007}
+The methods of spherical trigonometry allow to convert between equatorial and Galactic coordinates \Cite{carroll_introduction_2007}. To make the transformation from equatorial to Galactic (assuming epoch J2000.0):
+\begin{align}
+    \sin b &= \sin \deltaNGP \sin \delta + \cos \deltaNGP \cos \delta \cos (\alpha - \alphaNGP) \\
+    \cos b \sin(\lNCP - l) &= \cos \delta \sin(\alpha - \alphaNGP) \\
+    \cos b \cos (\lNCP - l) &= \cos \deltaNGP \sin \delta - \sin \deltaNGP \cos \delta \cos(\alpha - \alphaNGP)
+\end{align}
+To make the reverse transformation from Galactic to equatorial (again assuming epoch J2000.0):
+\begin{align}
+    \sin \delta &= \sin \deltaNGP \sin b + \cos \deltaNGP \cos b \cos (\lNCP - l) \\
+    \cos \delta \sin(\alpha - \alphaNGP) &= \cos b \sin(\lNCP - l) \\
+    \cos \delta \sin(\alpha - \alphaNGP) &= \cos \deltaNGP \sin b - \sin \deltaNGP \cos b \cos (\lNCP - l)
+\end{align}
+Where $\alphaNGP = 12^{\text{h}} 51^{\text{m}} 26.28^{\text{s}}$ and $\deltaNGP = 28^{\circ}7' 41.7''$ are the J2000.0 equatorial coordinates of the north Galactic pole ($b = 90^{\circ}$) and $\lNCP = 123^{\circ} 55' 55.2''$ is the J2000.0 Galactic longitude of the north celestial pole.
 
 \subsection{Radio astronomy }
 Sources of radio emission are of two possible forms, thermal and non-thermal.
@@ -35,24 +46,27 @@ From observing the Hydrogen gas in the outer branches of the Milky Way, the angu
 \end{equation}
 
 \subsection{The VEGA Small Radio Telescope}
+The Very Elegant Galactic Antenna (VEGA) is an example of a Small Radio Telescope (SRT): \hl{explain what it is}.
 
 The receiving antenna of a radio telescope serves a dual purpose: it concentrates the weak signals from the sources (in such a way that they can then be processed by the electronics) and it selects the area of the sky from which the signal is to be received \cite{lauterbach_radio_2022}.
-Parabolic reflectors are well suited for this purpose, concentrating the incident waves at the focal point, where the feed, i.e. WHAT IT IS, is placed.
-
-Feeds take several forms, each suited to a certain frequency range \cite{lauterbach_radio_2022}. In the case of VEGA, a copper helix was installed, of dimensions BLABLA.
+Parabolic reflectors (\hl{dishes}) are well suited for this purpose, as they concentrate the incident waves at the focal point, where the feed, i.e. the component \hl{radiating element} which converts the radio waves into electric signals, is placed\footnotemark.
+Both reflector and feed need to be suited to the desired operation of the telescope.
+The dishes can have different sizes and \hl{blabla} and
+feeds take several forms, each suited to a certain frequency range and geometry \cite{lauterbach_radio_2022}. 
+In the case of VEGA, a parabola of diameter ???, with a field of view of solid angle around $20^{\circ}$ [???] is used to focus the signal on a copper helical feed of \hl{dimensions BLABLA}.
 
 The signal then passes through a series of filters and amplifiers
-
-Feed is an electronic circuit used to filter and amplify the desired band of frequencies (in our case blablabla).
 Then blabla is used to convert the analog signal into digital and into computer.
 
 [[In a radio telescope, the antenna usually points towards the sky with great eleva-
 tion. Therefore, thermal radiation from the ground below can hit the feed from the
 area outside the reflector (“spillover”, Fig. 3.5). The feed is therefore constructed
 in such a way that it receives less well from the edge of the parabolic reflector than
-from the centre.]]
+from the centre.]] \hl{peut etre mis comme exemple de comment il faut bien choisir dish et antenna}
 
 
 \hl{Géometrie, structure et circuit?}
 \cite{installation_manual_2022}
 \cite{interdisciplinary_project_2022}
+
+\footnotetext{More complex geometries can be used, to reduce noise ETC\ldots \cite{burke_introduction_2013}}

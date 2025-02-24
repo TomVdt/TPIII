@@ -36,13 +36,13 @@
 \let\temptwo\enditemize
 \renewenvironment{itemize}{\tempone\addtolength{\itemsep}{-0.4\baselineskip}}{\temptwo}
 % format autoref
-\renewcommand{\figureautorefname}{Fig.}
-\renewcommand{\tableautorefname}{Tab.}
+\renewcommand{\figureautorefname}{Fig.\hspace*{-1pt}}
+\renewcommand{\tableautorefname}{Tab.\hspace*{-1pt}}
 \renewcommand{\sectionautorefname}{Section}
 \renewcommand{\subsectionautorefname}{Section}
 % format autoref equations
 \def\equationautorefname~#1\null{%
-  Eq.~(#1)\null
+  Eq.~\hspace*{-1pt}(#1)\null
 }
 
 % Math macros
@@ -50,3 +50,8 @@
 \newcommand{\dd}[0]{\ensuremath{\textrm{d}}}
 \newcommand{\deriv}[2]{\ensuremath{\frac{\mathrm{d}#1}{\mathrm{d}#2}}}
 \newcommand{\dderiv}[2]{\ensuremath{\frac{\mathrm{d}^2#1}{\mathrm{d}#2^2}}}
+
+% Physics macros
+\newcommand{\alphaNGP}{\alpha_{\text{NGP}}}
+\newcommand{\deltaNGP}{\delta_{\text{NGP}}}
+\newcommand{\lNCP}{l_{\text{NCP}}}
