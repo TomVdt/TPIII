@@ -46,27 +46,19 @@ From observing the Hydrogen gas in the outer branches of the Milky Way, the angu
 \end{equation}
 
 \subsection{The VEGA Small Radio Telescope}
-The Very Elegant Galactic Antenna (VEGA) is an example of a Small Radio Telescope (SRT): \hl{explain what it is}.
+The Very Elegant Galactic Antenna (VEGA) was built in 2022 by a group of students from the EPFL Section of Physics, following the design of MIT Haystack Observatory's Small Radio Telescope (SRT): an observational instrument of small size and built on a low budget, which focuses on the study of the 21 cm hydrogen radiation line \cite{interdisciplinary_project_2022}.
 
-The receiving antenna of a radio telescope serves a dual purpose: it concentrates the weak signals from the sources (in such a way that they can then be processed by the electronics) and it selects the area of the sky from which the signal is to be received \cite{lauterbach_radio_2022}.
-Parabolic reflectors (\hl{dishes}) are well suited for this purpose, as they concentrate the incident waves at the focal point, where the feed, i.e. the component \hl{radiating element} which converts the radio waves into electric signals, is placed\footnotemark.
+The operation of a radio telescope depends primarily on its receiving antenna, which serves a dual purpose: it concentrates the weak signals from the sources (in such a way that they can then be processed by the electronics) and it selects the area of the sky from which the signal is to be received \cite{lauterbach_radio_2022}.
+Parabolic reflectors (\hl{dishes}) are well suited for this purpose, as they concentrate the incident waves at the focal point, where the feed, i.e. the component \hl{radiating element} which converts the radio waves into electric signals, is placed.
 Both reflector and feed need to be suited to the desired operation of the telescope.
-The dishes can have different sizes and \hl{blabla} and
-feeds take several forms, each suited to a certain frequency range and geometry \cite{lauterbach_radio_2022}. 
-In the case of VEGA, a parabola of diameter ???, with a field of view of solid angle around $20^{\circ}$ [???] is used to focus the signal on a copper helical feed of \hl{dimensions BLABLA}.
+The dishes can have different diameters and focal lengths, and
+feeds take several forms, each suited to a certain frequency range and dish geometry \cite{lauterbach_radio_2022}. 
+A thorough study of these parameters is needed to reduce as much as possible the noise captured by the antenna, e.g. the thermal radiation from the ground below the parabola, at a physical temperature of 280-290 K, which can hit the feed from the area outside the reflector (the \emph{spillover})\footnotemark \cite{burke_introduction_2013}.
+In the case of VEGA, a parabola of diameter $1.86$ m, with a field of view of solid angle around $20^{\circ}$ [???] is used to focus the signal on a copper helical feed of circumference $C = 21$ cm, radius $R = 3.34$ cm, pitch spacing $S = 5.25$ cm and pitch angle $\alpha = 14^{\circ}$. \hl{Est-ce qu'on met les études de radiation de l'antenne ici?}
 
-The signal then passes through a series of filters and amplifiers
-Then blabla is used to convert the analog signal into digital and into computer.
+\hl{The electric signal thus acquired is weak and noisy}.
+Once the electric signal is acquired, it passes first through a Low Noise Amplifier (LNA), composed of two amplifiers of total gain 42dB and a bandpass filter of frequency range 1376-1441 MHz, then a Bias Tee which suppresses the DC effects caused by the other components, and finally a second bandpass filter of frequency range 1395-1445 MHz \cite{interdisciplinary_project_2022}.
+The signal, now amplified and limited to the desired frequency range, is digitized using an RTL2832U demodulator. 
 
-[[In a radio telescope, the antenna usually points towards the sky with great eleva-
-tion. Therefore, thermal radiation from the ground below can hit the feed from the
-area outside the reflector (“spillover”, Fig. 3.5). The feed is therefore constructed
-in such a way that it receives less well from the edge of the parabolic reflector than
-from the centre.]] \hl{peut etre mis comme exemple de comment il faut bien choisir dish et antenna}
-
-
-\hl{Géometrie, structure et circuit?}
-\cite{installation_manual_2022}
-\cite{interdisciplinary_project_2022}
 
 \footnotetext{More complex geometries can be used, to reduce noise ETC\ldots \cite{burke_introduction_2013}}
