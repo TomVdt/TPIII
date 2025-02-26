@@ -20,10 +20,13 @@ To make the reverse transformation from Galactic to equatorial (again assuming e
 \end{align}
 Where $\alphaNGP = 12^{\text{h}} 51^{\text{m}} 26.28^{\text{s}}$ and $\deltaNGP = 28^{\circ}7' 41.7''$ are the J2000.0 equatorial coordinates of the north Galactic pole ($b = 90^{\circ}$) and $\lNCP = 123^{\circ} 55' 55.2''$ is the J2000.0 Galactic longitude of the north celestial pole.
 
-\subsection{Radio astronomy }
-Sources of radio emission are of two possible forms, thermal and non-thermal.
-Thermal is of two types blabla [one is the source of H 21 cm line]
-Non-thermal is synchroton and geosynchrotron? radiation.
+\subsection{Radio astronomy}
+As Earth is surrounded by an atmosphere, only two windows (ranges) of frequencies are open for observation from the ground: the optical and the radio.
+Radio emittions originate from a broad range of phenomena.
+A distinction must be made between physical processes which produce continuous radiation over a wider frequency range (thermal processes) and those that result in radiation only in a narrow frequency band, the line spectrum (non-thermal processes) \cite{lauterbach_radio_2022}.
+\hl{Here quickly talk about thermal}.
+\hl{Here quickly talk about non-thermal}.
+An example of non-thermal is the 21 cm radiation of neutral hydrogen.
 
 \subsection{The H 21 cm line}
 Neutral Hydrogen does not emit any radiation in the visible spectrum.
@@ -54,7 +57,7 @@ Both reflector and feed need to be suited to the desired operation of the telesc
 The dishes can have different diameters and focal lengths, and
 feeds take several forms, each suited to a certain frequency range and dish geometry \cite{lauterbach_radio_2022}. 
 A thorough study of these parameters is needed to reduce as much as possible the noise captured by the antenna, e.g. the thermal radiation from the ground below the parabola, at a physical temperature of 280-290 K, which can hit the feed from the area outside the reflector (the \emph{spillover})\footnotemark \cite{burke_introduction_2013}.
-In the case of VEGA, a parabola of diameter $1.86$ m, with a field of view of solid angle around $20^{\circ}$ [???] is used to focus the signal on a copper helical feed of circumference $C = 21$ cm, radius $R = 3.34$ cm, pitch spacing $S = 5.25$ cm and pitch angle $\alpha = 14^{\circ}$. \hl{Est-ce qu'on met les études de radiation de l'antenne ici?}
+In the case of VEGA, a parabola of diameter $1.86$ m, with a field of view of solid angle around $20^{\circ}$ [???] is used to focus the signal on a copper helical feed of circumference $C = 21$ cm, radius $R = 3.34$ cm, pitch spacing $S = 5.25$ cm and pitch angle $\alpha = 14^{\circ}$. \hl{Est-ce qu'on met le antenna pattern de l'antenne ici?}. The antenna pattern, as simulated using GRASP, is presented in figuer blabla.
 
 \hl{The electric signal thus acquired is weak and noisy}.
 Once the electric signal is acquired, it passes first through a Low Noise Amplifier (LNA), composed of two amplifiers of total gain 42dB and a bandpass filter of frequency range 1376-1441 MHz, then a Bias Tee which suppresses the DC effects caused by the other components, and finally a second bandpass filter of frequency range 1395-1445 MHz \cite{interdisciplinary_project_2022}.
