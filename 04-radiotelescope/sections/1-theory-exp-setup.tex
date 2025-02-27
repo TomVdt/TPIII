@@ -1,7 +1,7 @@
 \section{Theory and experimental setup}
 \subsection{Coordinate systems}
-When operating a radio telescope, three main coordinate systems are used to locate objects on the celestial sphere: \hl{citation ici pour "grouper" les trois points? Je n'ai utilisé que} \cite{carroll_introduction_2007}
-\hl{..., as explained in [...]}
+When operating a radio telescope, different coordinate systems can be used used to locate objects on the celestial sphere.
+As explained in \cite{carroll_introduction_2007}, three main ones are used in astronomy:
 \begin{itemize}
     \item The \textbf{Altitude-Azimuth} (Alt-Az) coordinate system is based on the observer's local horizon. The altitude $h$ is the angle measured from the horizon to the object along a circle which passes through the object itself and the point on the celestial sphere directly above the observer, i.e. the zenith. The azimuth $a$ is the angle measured along the horizon eastward from north to the circle used for the measure of altitude. \hl{Desavantages du système?} \cite{carroll_introduction_2007}
     \item The \textbf{Right Ascension-Declination} (Ra-Dec) coordinate system, also called \textbf{Equatorial}, is based on the latitude-longitude system of Earth, thus removing the dependency on the position of the observer, but does not participate in the planet's rotation. Declination $\delta$ is the equivalent of latitude and measured in degrees north or south of the celestial equator. Right ascension $\alpha$ is analogous to longitude and is measured eastward along the celestial equator from the vernal equinox, i.e. the position of the Sun at Spring equinox, to the object's hour circle, i.e. the circle passing throught the object and the north celestial pole.
@@ -22,32 +22,35 @@ To make the reverse transformation from Galactic to equatorial (again assuming e
 Where $\alphaNGP = 12^{\text{h}} 51^{\text{m}} 26.28^{\text{s}}$ and $\deltaNGP = 28^{\circ}7' 41.7''$ are the J2000.0 equatorial coordinates of the north Galactic pole ($b = 90^{\circ}$) and $\lNCP = 123^{\circ} 55' 55.2''$ is the J2000.0 Galactic longitude of the north celestial pole.
 
 \subsection{Radio astronomy}
-As Earth is surrounded by an atmosphere, only two windows (ranges) of frequencies are open for observation from the ground: \st{the} optical and \st{the} radio.
+As Earth is surrounded by an atmosphere, only two windows (ranges) of frequencies are open for observation from the ground: the optical one, ranging from ??? to ??? and the wider radio window, ranging from ??? to ???.
 Radio emittions originate from a broad range of phenomena.
 A distinction must be made between physical processes which produce continuous radiation over a wider frequency range (thermal processes) and those that result in radiation only in a narrow frequency band, the line spectrum (non-thermal processes) \cite{lauterbach_radio_2022}.
 \hl{Here quickly talk about thermal}.
 \hl{Here quickly talk about non-thermal}.
 An example of non-thermal is the 21 cm radiation of neutral hydrogen.
 
-\subsection{The H 21 cm line}
+\subsection{The Hydrogen 21 cm line}
+\hl{TODO: un peu de source, je peux m'en occuper}
+
 Neutral Hydrogen does not emit any radiation in the visible spectrum.
 However, it is possible to detect the presence of hydrogen through the observation of radio waves.
-In a non-exited state, neutral hydrogen can exist in two states: either both the spins of the electron and proton are aligned (state $F=1$), or the spins are opposite (state $F=0$).
+In a non-exited state, neutral hydrogen can exist in two states \hl{splitting caused by hyperfine structure}: either \st{both} the \hl{electron and proton} spins \st{of the electron and proton} are aligned (state $F=1$), or the spins are opposite (state $F=0$).
 The difference of energy between these two states is very small, on the order of $\Delta E = 6 \cdot 10^{-6}$ \si{\electronvolt} \cite{frederic_courbin_introduction_nodate}.
-When transitioning from $F=1$ to $F=0$, a photon of wavelength $\lambda_H = 21$ cm, corresponding to a frequency of $\nu_H = 1.42$ GHz gets emitted.
-While this transition is exceptionnaly rare, with an average duration of about $10$ million years between transitions, the abundance of hydrogen in the Universe allows radioastronomers to detect the presence of hydrogen.
+When transitioning from $F=1$ to $F=0$, a photon of wavelength $\lambda_H = 21$ cm, corresponding to a frequency of $\nu_H = 1.42$ GHz gets emitted \hl{on donne tout de suite la valeur exacte aussi?}.
+\hl{This frequency is known at a very precise value.}
+While this transition is exceptionally rare, with an average duration of about $10$ million years between transitions, the abundance of hydrogen in the Universe allows radioastronomers to detect the presence of hydrogen.
 
 % The spectral line radiation from neutral hydrogen gives the velocity and density of the interstellar medium \cite{burke_introduction_2013}.
 
 % The low hydrogen density ($\sim 1$ cm$^{-3}$) and long lifetime are compensated for by the very long lines of sight in the ISM (interstellar medium)\cite{burke_introduction_2013}.
 
 \subsection{Estimating the velocity field of the Milky Way}
-\hl{TODO: utiliser la version relativiste de Doppler?}
+\hl{TODO: utiliser la version relativiste de Doppler? Je ne sais pas,} \cite{lauterbach_radio_2022} \hl{utilise la version non-relativiste}
 
 When an observer moves relative to a wave source, the frequency of the wave perceived by the observer is different from the emitted wave.
 This is called the Doppler effect.
-In astronomy, this effect can be used to estimate the speed of distant objects, as the Doppler effect also applies to light waves.
-The observed frequency $\nu_O$ is linked to the source frequency $\nu_S$ by:
+In astronomy, this effect can be used to estimate the speed of distant objects, as the Doppler effect also applies to light waves \hl{EM waves}.
+The observed frequency $\nu_O$ is linked to the source frequency $\nu_S$ by \hl{source}:
 \begin{equation}
     \nu_O = \frac{c - v_O}{c + v_S} \nu_S
 \end{equation}
@@ -62,14 +65,14 @@ Only the components of velocity parallel to the axis connecting the source and t
 \end{figure}
 
 When observing distant hydrogen clouds in the Milky Way, the angular speed of the outer branches of the Milky Way can be calculated by using the Doppler shift of the H$21$ cm line.
-In the referential where the observer is at rest $v_O = 0$, and knowing the source and observed frequencies, the angular speed of the distant part of the galaxy can be found to be
+In the \st{referential} where the observer is at rest $v_O = 0$, and knowing the source and observed frequencies, the angular speed of the distant part of the galaxy can be found to be \hl{source}
 \begin{equation}
     v_S = c \frac{\nu_S - \nu_O}{\nu_O}
     \label{eq:doppler}
 \end{equation}
 
 \subsection{The VEGA Small Radio Telescope}
-\hl{Construit par Callista pas la section physique?}
+\hl{Construit par Callista pas la section physique? En fait j'ai pas compris, mais les trois étudiants à la base l'ont construit comme TP4}
 The Very Elegant Galactic Antenna (VEGA) was built in 2022 by a group of students from the EPFL Section of Physics, following the design of MIT Haystack Observatory's Small Radio Telescope (SRT): an observational instrument of small size and built on a low budget, which focuses on the study of the 21 cm hydrogen radiation line \cite{interdisciplinary_project_2022}.
 
 The operation of a radio telescope depends primarily on its receiving antenna, which serves a dual purpose: it concentrates the weak signals from the sources (in such a way that they can then be processed by the electronics) and it selects the area of the sky from which the signal is to be received \cite{lauterbach_radio_2022}.
@@ -78,7 +81,7 @@ Both reflector and feed need to be suited to the desired operation of the telesc
 The dishes can have different diameters and focal lengths, and
 feeds take several forms, each suited to a certain frequency range and dish geometry \cite{lauterbach_radio_2022}. 
 A thorough study of these parameters is needed to reduce as much as possible the noise captured by the antenna, e.g. the thermal radiation from the ground below the parabola, at a physical temperature of 280-290 K, which can hit the feed from the area outside the reflector (the \emph{spillover})\footnotemark \cite{burke_introduction_2013}.
-\hl{Utiliser une image de l'antenne + copper helical thingy?}
+\hl{Utiliser une image de l'antenne + copper helical thingy? Oui}
 In the case of VEGA, a parabola of diameter $1.86$ m, with a field of view of solid angle around $20^{\circ}$ [???] is used to focus the signal on a copper helical feed of circumference $C = 21$ cm, radius $R = 3.34$ cm, pitch spacing $S = 5.25$ cm and pitch angle $\alpha = 14^{\circ}$. \hl{Est-ce qu'on met le antenna pattern de l'antenne ici?}. The antenna pattern, as simulated using GRASP, is presented in figuer blabla.
 
 \hl{The electric signal thus acquired is weak and noisy}.
