@@ -36,16 +36,30 @@ The difference of energy between these two states is very small, on the order of
 When transitioning from $F=1$ to $F=0$, a photon of wavelength $\lambda_H = 21$ cm, corresponding to a frequency of $\nu_H = 1.42$ GHz gets emitted.
 While this transition is exceptionnaly rare, with an average duration of about $10$ million years between transitions, the abundance of hydrogen in the Universe allows radioastronomers to observe the presence of hydrogen.
 
-The spectral line radiation from neutral hydrogen gives the velocity and density of the interstellar medium \cite{burke_introduction_2013}.
+% The spectral line radiation from neutral hydrogen gives the velocity and density of the interstellar medium \cite{burke_introduction_2013}.
 
-The low hydrogen density ($\sim 1$ cm$^{-3}$) and long lifetime are compensated for by the very long lines of sight in the ISM (interstellar medium)\cite{burke_introduction_2013}.
+% The low hydrogen density ($\sim 1$ cm$^{-3}$) and long lifetime are compensated for by the very long lines of sight in the ISM (interstellar medium)\cite{burke_introduction_2013}.
 
 \subsection{Estimating the velocity field of the Milky Way}
-\hl{c'est écrit avec le cul donc a reformuler}
-When a source of waves and an observer move at different speeds along one axis, the Doppler effect takes place. The frequency of waves from sources moving away from the observer are shifted to a higher frequency, while sources moving away from the observer get shifted to a lower frequency. This also applies to radiowaves.
-From observing the Hydrogen gas in the outer branches of the Milky Way, the angular velocity of the galaxy can be estimated, using the relation TODO TODO TODO
+\hl{TODO: utiliser la version relativiste de Doppler?}
+
+When an observer moves relative to a wave source, the frequency of the wave perceived by the observer is different from the emitted wave. This is called the Doppler effect. In astronomy, this effect can be used to estimate the speed of distant objects, as the Doppler effect also applies to light waves. The observed frequency $\nu_O$ is linked to the source frequency $\nu_S$ by:
 \begin{equation}
-    \frac{\Delta \lambda}{\lambda_S} = \frac{v}{c} \implies v = c \frac{\Delta \lambda}{\lambda_S} = c \frac{\nu_S - \nu_O}{\nu_S}
+    \nu_O = \frac{c - v_O}{c + v_S} \nu_S
+\end{equation}
+where $c$ is the speed of the wave, in this case the speed of light, $v_O$ is the speed of the observer, and $v_S$ is the speed of the source. Only the components of velocity parallel to the axis connecting the source and the observer are taken into account, as shown in \autoref{fig:doppler_galaxy}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/doppler_galaxy.png}
+    \caption{The Doppler effect in the galaxy. $O$ reprents the observers position, $C$ the center of the Galaxy and $S_1$ the source of radiowaves. $v_{1R}$ and $v_{OR1}$ are the velocities taken into account for the Doppler effect. \cite{lauterbach_radio_2022}}
+    \label{fig:doppler_galaxy}
+\end{figure}
+
+When observing distant hydrogen clouds in the Milky Way, the angular speed of the outer branches of the Milky Way can be calculated by using the Doppler shift of the H$21$ cm line. In the referential where the observer is at rest $v_O = 0$, and knowing the source and observed frequencies, the angular speed of the distant part of the galaxy can be found to be
+\begin{equation}
+    v_S = c \frac{\nu_S - \nu_O}{\nu_O}
+    \label{eq:doppler}
 \end{equation}
 
 \subsection{The VEGA Small Radio Telescope}
