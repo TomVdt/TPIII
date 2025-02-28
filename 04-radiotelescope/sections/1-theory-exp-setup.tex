@@ -45,18 +45,17 @@ While this transition is exceptionally rare, with an average duration of about $
 % The low hydrogen density ($\sim 1$ cm$^{-3}$) and long lifetime are compensated for by the very long lines of sight in the ISM (interstellar medium)\cite{burke_introduction_2013}.
 
 \subsection{Estimating the velocity field of the Milky Way}
-\hl{TODO: utiliser la version relativiste de Doppler? Je ne sais pas,} \cite{lauterbach_radio_2022} \hl{utilise la version non-relativiste}
-
-\hl{Studying the hydrogen 21 cm radiation allows us to derive the relative velocity of interstellar medium and therefore of other parts f the milky way or even other galaxies. (Ou une autre phrase comme ça pour lier les deux sousections)}
+Studying the H21 cm radiation allows us to derive the relative velocity of interstellar medium and therefore of other parts of the Milky Way or even other galaxies.
 When an observer moves relative to a wave source, the frequency of the wave perceived by the observer is different from the emitted wave.
 This is called the Doppler effect.
-\hl{Je mettrai cette phrase après la formule:} In astronomy, this effect can be used to estimate the speed of distant objects, as the Doppler effect also applies to light waves \hl{EM waves}.
 The observed frequency $\nu_O$ is linked to the source frequency $\nu_S$ by \hl{[source]}:
 \begin{equation}
     \nu_O = \frac{c - v_O}{c + v_S} \nu_S
+    \label{eq:doppler_general}
 \end{equation}
 where $c$ is the speed of the wave, in this case the speed of light, $v_O$ is the speed of the observer, and $v_S$ is the speed of the source.
-Only the components of velocity parallel to the axis connecting the source and the observer are taken into account, as shown in \autoref{fig:doppler_galaxy}\hl{, since we only consider relative velocity}.
+Only the components of velocity parallel to the axis connecting the source and the observer are taken into account, as shown in \autoref{fig:doppler_galaxy}, since we only consider relative velocity.
+In astronomy, this effect can be used to estimate the speed of distant objects, as the Doppler effect also applies to electromagnetic waves.
 
 \begin{figure}[htbp]
     \centering
@@ -65,8 +64,8 @@ Only the components of velocity parallel to the axis connecting the source and t
     \label{fig:doppler_galaxy}
 \end{figure}
 
-\hl{Thus, }when observing \hl{the radio blabla from} distant hydrogen clouds in the Milky Way, the angular speed of the outer branches of the Milky Way can be calculated by \st{using} the Doppler shift of the H$21$ cm line \hl{because we know the actual value very precisely}.
-In the \st{referential} where the observer is at rest $v_O = 0$, and knowing the source and observed frequencies, the angular speed of the distant part of the galaxy can be found to be \hl{[source]}
+Thus, when observing the radio signal from distant hydrogen clouds in the Milky Way, the angular speed of the outer branches of the Milky Way can be calculated by the Doppler shift of the H$21$ cm line, whose frequency is known very precisely [citation].
+In the reference frame where the observer is at rest $v_O = 0$, and knowing the source and observed frequencies, the angular speed of the distant part of the galaxy can be found to be, using \autoref{eq:doppler_general}
 \begin{equation}
     v_S = c \frac{\nu_S - \nu_O}{\nu_O}
     \label{eq:doppler}
