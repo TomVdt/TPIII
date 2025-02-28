@@ -54,17 +54,16 @@ The observed frequency $\nu_O$ is linked to the source frequency $\nu_S$ by \hl{
     \label{eq:doppler_general}
 \end{equation}
 where $c$ is the speed of the wave, in this case the speed of light, $v_O$ is the speed of the observer, and $v_S$ is the speed of the source.
-Only the components of velocity parallel to the axis connecting the source and the observer are taken into account, as shown in \autoref{fig:doppler_galaxy}, since we only consider relative velocity.
-In astronomy, this effect can be used to estimate the speed of distant objects, as the Doppler effect also applies to electromagnetic waves.
+Only the components of velocity parallel to the axis connecting the source and the observer are taken into account, since we only consider relative velocity.
 
+As shown in \autoref{fig:doppler_galaxy}, this effect can be used in astronomy to estimate the speed of distant objects, as the Doppler effect also applies to electromagnetic waves.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\linewidth]{figures/doppler_galaxy.png}
+    \includegraphics[width=0.6\linewidth]{figures/doppler_galaxy.png}
     \caption{The Doppler effect in the galaxy. $O$ reprents the observers position, $C$ the center of the Galaxy and $S_1$ the source of radiowaves. $v_{1R}$ and $v_{OR1}$ are the velocities taken into account for the Doppler effect. \cite{lauterbach_radio_2022}}
     \label{fig:doppler_galaxy}
 \end{figure}
-
-Thus, when observing the radio signal from distant hydrogen clouds in the Milky Way, the angular speed of the outer branches of the Milky Way can be calculated by the Doppler shift of the H$21$ cm line, whose frequency is known very precisely [citation].
+When observing the radio signal from distant hydrogen clouds in the Milky Way, the angular speed of the outer branches of the Milky Way can be calculated by the Doppler shift of the H$21$ cm line, whose frequency is known very precisely [citation].
 In the reference frame where the observer is at rest $v_O = 0$, and knowing the source and observed frequencies, the angular speed of the distant part of the galaxy can be found to be, using \autoref{eq:doppler_general}
 \begin{equation}
     v_S = c \frac{\nu_S - \nu_O}{\nu_O}
@@ -72,21 +71,31 @@ In the reference frame where the observer is at rest $v_O = 0$, and knowing the 
 \end{equation}
 
 \subsection{The VEGA Small Radio Telescope}
-\hl{Construit par Callista pas la section physique? En fait j'ai pas compris, mais les trois étudiants à la base l'ont construit comme TP4}
 The Very Elegant Galactic Antenna (VEGA) was built in 2022 by a group of students from the EPFL Section of Physics, following the design of MIT Haystack Observatory's Small Radio Telescope (SRT): an observational instrument of small size and built on a low budget, which focuses on the study of the 21 cm hydrogen radiation line \cite{interdisciplinary_project_2022}.
 
 The operation of a radio telescope depends primarily on its receiving antenna, which serves a dual purpose: it concentrates the weak signals from the sources (in such a way that they can then be processed by the electronics) and it selects the area of the sky from which the signal is to be received \cite{lauterbach_radio_2022}.
-Parabolic reflectors (\hl{dishes}) are well suited for this purpose, as they concentrate the incident waves at the focal point, where the feed, i.e. the component \hl{radiating element} which converts the radio waves into electric signals, is placed.
+Parabolic reflectors (also referred to as \emph{dishes}), are well suited for this purpose, as they concentrate the incident waves at the focal point, where the feed, i.e. the metal component which converts the radio waves into electric signals, is placed.
 Both reflector and feed need to be suited to the desired operation of the telescope.
 The dishes can have different diameters and focal lengths, and
 feeds take several forms, each suited to a certain frequency range and dish geometry \cite{lauterbach_radio_2022}. 
-A thorough study of these parameters is needed to reduce as much as possible the noise captured by the antenna, e.g. the thermal radiation from the ground below the parabola, at a physical temperature of 280-290 K, which can hit the feed from the area outside the reflector (the \emph{spillover})\footnotemark \cite{burke_introduction_2013}.
-\hl{Utiliser une image de l'antenne + copper helical thingy? Oui}
-In the case of VEGA, a parabola of diameter $1.86$ m, with a field of view of solid angle around $20^{\circ}$ [???] is used to focus the signal on a copper helical feed of circumference $C = 21$ cm, radius $R = 3.34$ cm, pitch spacing $S = 5.25$ cm and pitch angle $\alpha = 14^{\circ}$. \hl{Est-ce qu'on met le antenna pattern de l'antenne ici?}. The antenna pattern, as simulated using GRASP, is presented in figuer blabla.
+A thorough study of these parameters is needed to reduce as much as possible the noise captured by the antenna, e.g. the thermal radiation from the ground below the parabola, at a physical temperature of 280-290 K, which can hit the feed from the area outside the reflector (the \emph{spillover}) \cite{burke_introduction_2013}.
+In the case of VEGA, a parabola of diameter $1.86$ m, with a field of view of solid angle around $(7 \pm 1)^{\circ}$ is used to focus the signal on a copper helical feed of circumference $C = 21$ cm, radius $R = 3.34$ cm, pitch spacing $S = 5.25$ cm and pitch angle $\alpha = 14^{\circ}$ \cite{rapport_interne_2024} \cite{interdisciplinary_project_2022}. The antenna pattern, describing the sensibility of the instrument as a function of the incident angle, was simulated in \cite{rapport_interne_2024} using the GRASP software package. The results are shown in \autoref{fig:antenna_pattern}.
 
-\hl{The electric signal thus acquired is weak and noisy}.
+\begin{figure}[htbp]
+    \begin{minipage}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=8cm]{figures/antenna_photo.png}
+        \caption{TEMP}
+        \label{fig:antenna_photo}
+    \end{minipage}
+    \begin{minipage}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=8cm]{figures/antenna_pattern.png}
+        \caption{Antenna pattern as simulated by ???}
+        \label{fig:antenna_pattern}
+    \end{minipage}
+\end{figure}
+
 Once the electric signal is acquired, it passes first through a Low Noise Amplifier (LNA), composed of two amplifiers of total gain 42dB and a bandpass filter of frequency range 1376-1441 MHz, then a Bias Tee which suppresses the DC effects caused by the other components, and finally a second bandpass filter of frequency range 1395-1445 MHz \cite{interdisciplinary_project_2022}.
 The signal, now amplified and limited to the desired frequency range, is digitized using an RTL2832U demodulator. 
 
-
-\footnotetext{More complex geometries can be used, to reduce noise ETC\ldots \cite{burke_introduction_2013}}
