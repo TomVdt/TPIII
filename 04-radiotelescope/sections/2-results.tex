@@ -1,16 +1,15 @@
 \section{Results}
 \subsection{Calibration}
-\hl{est-ce qu'on devrait utiliser $h$ et $a$ à la place de alt/az?}
 
-Due to \hl{small defects? limitations? in }the construction and hardware of the antenna, the pointing of the antenna doesn't always line up with the target. It is therefore necessary to calibrate it before pointing at distant objects. The Sun \st{being} \hl{is} the strongest discrete radio source in the sky \cite{burke_introduction_2013}, mostly due to black body radiation\hl{, and is therefore an ideal target for the calibration}.
-By configuring the antenna to point towards Sun, using its actual coordinates, and scanning the surrounding area in Az/Alt coordinates, the maximum average measured power gives the real position of the Sun in the specific antenna coordinates. The measured power and a linear interpolation of those values shown in \autoref{fig:calibration_contour} gives a correction \hl{to the pointing} of
+Due to small defects in the construction of the telescope and limitations of the motors of the dish and the antenna, the pointing of the antenna doesn't always line up with the target. It is therefore necessary to calibrate it before pointing at distant objects. The Sun is the strongest discrete radio source in the sky \cite{burke_introduction_2013}, mostly due to black body radiation, and is therefore an ideal target for the calibration.
+By configuring the antenna to point towards Sun, using its actual coordinates, and scanning the surrounding area in Az/Alt coordinates, the maximum average measured power gives the real position of the Sun in the specific antenna coordinates. The measured power and a linear interpolation of those values shown in \autoref{fig:calibration_contour} gives a correction to the pointing of
 \begin{equation}
-    \textrm{Az: } -(5.25 \pm 0.50)^\circ \qquad \textrm{Alt: } -(2.70 \pm 0.10)^\circ \\
+    \Delta a = -(5.25 \pm 0.50)^\circ \quad \textrm{and} \quad \Delta h = -(2.70 \pm 0.10)^\circ
 \end{equation}
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=1]{figures/calibration_contour.pdf}
-    \caption{Interpolation of signal power measured in the proximity of the sun. }
+    \caption{Interpolation of signal power measured in the proximity of the Sun.}
     \label{fig:calibration_contour}
 \end{figure}
 
