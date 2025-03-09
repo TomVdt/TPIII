@@ -22,14 +22,14 @@ To make the reverse transformation from Galactic to equatorial (again assuming e
 Where $\alphaNGP = 12^{\text{h}} 51^{\text{m}} 26.28^{\text{s}}$ and $\deltaNGP = 28^{\circ}7' 41.7''$ are the J2000.0 equatorial coordinates of the north Galactic pole ($b = 90^{\circ}$) and $\lNCP = 123^{\circ} 55' 55.2''$ is the J2000.0 Galactic longitude of the north celestial pole.
 
 \subsection{Sources of radio emissions}
-Because of Earth's atmosphere, only two ranges of frequencies are completely open for the observation from the ground of electromagnetic waves coming from space: the optical window, which ranges from ??? to ??? and is studied through optical telescopes, and the wider radio window, which ranges from ??? to ??? and is instead the focus of radio astronomy.
+Because of Earth's atmosphere, only two ranges of frequencies are completely open for the observation from the ground of electromagnetic waves coming from space: the optical window, which ranges from 300 nm to about 700 nm of wavelength and is studied through optical telescopes, and the wider radio window, which ranges from $30$ m to $0.3$ mm (respectevely frequencies of $10$ MHz and $1$ THz) and is instead the focus of radio astronomy \cite{condon_essential_2016}.
 
 Radio emissions originate from a broad range of phenomena.
 A distinction must be made between physical processes which produce continuous radiation over a wider frequency range (mainly thermal processes and synchrotron radiation) and those that result in radiation only in a narrow frequency band, i.e.\ a \emph{spectral line} \cite{lauterbach_radio_2022}.
 \begin{itemize}
-    \item Thermal radiation is the process by which any body with non-zero temperature radiates electromagnetic waves. It is commonly modelled by the continuous black-body radiation of Planck's law \cite{carroll_introduction_2007}.
-    \item Synchrotron emission originates instead from relativistic electrons spiraling along magnetic field lines \cite{maoz_astrophysics_2016}.
-    \item Line sources emit or absorb electromagnetic waves only at very specific frequencies, associated with a transition between states of the electrons in the atomic shell.
+    \item \textbf{Thermal radiation} is the process by which any body with non-zero temperature radiates electromagnetic waves. It is commonly modelled by the continuous black-body radiation of Planck's law \cite{carroll_introduction_2007}.
+    \item \textbf{Synchrotron emission} originates instead from relativistic electrons spiraling along magnetic field lines \cite{maoz_astrophysics_2016}.
+    \item \textbf{Line sources} emit or absorb electromagnetic waves only at very specific frequencies, associated with a transition between states of the electrons in the atomic shell.
 \end{itemize}
 
 \subsection{The hydrogen 21 cm line}
@@ -43,7 +43,7 @@ While this transition is exceptionally rare, with an average lifetime of about $
 \subsection{Estimating the velocity field of the Milky Way}
 Studying the H21 cm radiation allows us to derive the relative velocity of interstellar medium and therefore of other parts of the Milky Way or even other galaxies.
 In fact, when an observer moves relative to a wave source, the frequency of the wave perceived by the observer is different from the emitted wave, according to what is called the Doppler effect.
-The observed frequency $\nu_O$ is linked to the source frequency $\nu_S$ by \hl{[source stp Matteo c'est lequel de tes bouquins lmao]}:
+The observed frequency $\nu_O$ is linked to the source frequency $\nu_S$ by \cite{alonso_fundamental_1983}:
 \begin{equation}
     \nu_O = \frac{c - v_O}{c + v_S} \nu_S
     \label{eq:doppler_general}
@@ -74,19 +74,20 @@ Both reflector and feed need to be suited to the desired operation of the telesc
 The dishes can have different diameters and focal lengths, and
 feeds take several forms, each suited to a certain frequency range and dish geometry \cite{lauterbach_radio_2022}. 
 A thorough study of these parameters is needed to reduce as much as possible the noise captured by the antenna, e.g. the thermal radiation from the ground below the parabola, at a physical temperature of 280-290 K, which can hit the feed from the area outside the reflector (the \emph{spillover}) \cite{burke_introduction_2013}.
-In the case of VEGA, a parabola of diameter $1.86$ m, with a field of view of solid angle around $(7 \pm 1)^{\circ}$ is used to focus the signal on a copper helical feed of circumference $C = 21$ cm, radius $R = 3.34$ cm, pitch spacing $S = 5.25$ cm and pitch angle $\alpha = 14^{\circ}$ \cite{interdisciplinary_project_2022} \cite{rapport_interne_2024}. The antenna pattern, describing the sensibility of the instrument as a function of the incident angle, was simulated in \cite{rapport_interne_2024} using the GRASP software package. The results are shown in \autoref{fig:antenna_pattern}.
-
+In the case of VEGA, a parabola of diameter $1.86$ m, with a field of view of solid angle around $(7 \pm 1)^{\circ}$ is used to focus the signal on a copper helical feed of circumference $C = 21$ cm, radius $R = 3.34$ cm, pitch spacing $S = 5.25$ cm and pitch angle $\alpha = 14^{\circ}$ \cite{interdisciplinary_project_2022} \cite{rapport_interne_2024}, which is depicted in \autoref{fig:antenna_photo}. The antenna pattern, describing the sensibility of the instrument as a function of the incident angle, was simulated in \cite{rapport_interne_2024} using the GRASP software package. The results are shown in \autoref{fig:antenna_pattern}.
 \begin{figure}[htbp]
     \begin{minipage}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=8cm]{figures/antenna_photo.png}
-        \caption{TEMP}
+        \captionsetup{width=.9\textwidth}
+        \includegraphics[height=6.5cm]{figures/antenna_photo.png}
+        \caption{The copper helical feed in use on VEGA}
         \label{fig:antenna_photo}
     \end{minipage}
     \begin{minipage}[t]{0.5\textwidth}
         \centering
-        \includegraphics[width=8cm]{figures/antenna_pattern.png}
-        \caption{Antenna pattern as simulated using the GRASP software package \cite{rapport_interne_2024}}
+        \captionsetup{width=.9\textwidth}
+        \includegraphics[height=7cm]{figures/antenna_pattern.png}
+        \caption{Antenna pattern of the feed mounted on the dish, as simulated using the GRASP software package \cite{rapport_interne_2024}}
         \label{fig:antenna_pattern}
     \end{minipage}
 \end{figure}
