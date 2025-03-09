@@ -43,12 +43,12 @@ While this transition is exceptionally rare, with an average lifetime of about $
 \subsection{Estimating the velocity field of the Milky Way}
 Studying the H21 cm radiation allows us to derive the relative velocity of interstellar medium and therefore of other parts of the Milky Way or even other galaxies.
 In fact, when an observer moves relative to a wave source, the frequency of the wave perceived by the observer is different from the emitted wave, according to what is called the Doppler effect.
-The observed frequency $\nu_O$ is linked to the source frequency $\nu_S$ by \cite{alonso_fundamental_1983}:
+The observed frequency $\nu_\textrm{observer}$ is linked to the source frequency $\nu_\textrm{source}$ by \cite{alonso_fundamental_1983}:
 \begin{equation}
-    \nu_O = \frac{c - v_O}{c + v_S} \nu_S
+    \nu_\textrm{observer} = \frac{c - v_\textrm{observer}}{c + v_\textrm{source}} \nu_\textrm{source}
     \label{eq:doppler_general}
 \end{equation}
-where $c$ is the speed of the wave, in this case the speed of light, $v_O$ is the speed of the observer, and $v_S$ is the speed of the source.
+where $c$ is the speed of the wave, in this case the speed of light, $v_\textrm{observer}$ is the speed of the observer, and $v_\textrm{source}$ is the speed of the source.
 Only the components of velocity parallel to the axis connecting the source and the observer are taken into account, since we only consider relative velocity.
 
 As shown in \autoref{fig:doppler_galaxy}, this effect can be used in astronomy to estimate the speed of distant objects, as the Doppler effect also applies to electromagnetic waves.
@@ -59,9 +59,9 @@ As shown in \autoref{fig:doppler_galaxy}, this effect can be used in astronomy t
     \label{fig:doppler_galaxy}
 \end{figure}
 When observing the radio signal from distant hydrogen clouds in the Milky Way, the angular speed of the outer branches of the Milky Way can be calculated by the Doppler shift of the H$21$ cm line, whose frequency is known very precisely [citation].
-In the reference frame where the observer is at rest $v_O = 0$, and knowing the source and observed frequencies, the angular speed of the distant part of the galaxy can be found to be, using \autoref{eq:doppler_general}
+In the reference frame where the observer is at rest, $v_\textrm{observer} = 0$, and knowing the source and observed frequencies, the angular speed of the distant part of the galaxy can be found to be, using \autoref{eq:doppler_general}
 \begin{equation}
-    v_S = c \frac{\nu_S - \nu_O}{\nu_O} \qquad \textrm{OR IF NOT IN REST FRAME} \qquad v_S = \frac{\nu_S}{\nu_O}(c - v_O) - c
+    v_\textrm{source} = c \frac{\nu_\textrm{source} - \nu_\textrm{observer}}{\nu_\textrm{observer}}
     \label{eq:doppler}
 \end{equation}
 
