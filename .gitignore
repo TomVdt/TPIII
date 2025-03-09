@@ -8,6 +8,7 @@ __pycache__
 .DS_Store
 res/
 *.tif
+*.bkp
 # THICC FILES
 03-microscopie-fluorescence/data/microtubules/*
 03-microscopie-fluorescence/data/mitochondria/*
