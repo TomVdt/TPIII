@@ -1,6 +1,8 @@
 \section{Results}
 \subsection{Calibration}
-Due to \hl{small defects in }the construction and hardware of the antenna, the pointing of the antenna doesn't always line up with the target. It is therefore necessary to calibrate it before pointing at distant objects. The Sun \st{being} \hl{is} the strongest discrete radio source in the sky \cite{burke_introduction_2013}, mostly due to black body radiation\hl{, and is therefore an ideal target for the calibration}.
+\hl{est-ce qu'on devrait utiliser $h$ et $a$ à la place de alt/az?}
+
+Due to \hl{small defects? limitations? in }the construction and hardware of the antenna, the pointing of the antenna doesn't always line up with the target. It is therefore necessary to calibrate it before pointing at distant objects. The Sun \st{being} \hl{is} the strongest discrete radio source in the sky \cite{burke_introduction_2013}, mostly due to black body radiation\hl{, and is therefore an ideal target for the calibration}.
 By configuring the antenna to point towards Sun, using its actual coordinates, and scanning the surrounding area in Az/Alt coordinates, the maximum average measured power gives the real position of the Sun in the specific antenna coordinates. The measured power and a linear interpolation of those values shown in \autoref{fig:calibration_contour} gives a correction \hl{to the pointing} of
 \begin{equation}
     \textrm{Az: } -5.25^\circ \qquad \textrm{Alt: } -2.70^\circ \\
@@ -13,11 +15,28 @@ By configuring the antenna to point towards Sun, using its actual coordinates, a
 \end{figure}
 
 \subsection{Distinguishing signal and noise}
-The signal must be cleaned of the [] noise.
-To this end, measures were taken with the telescope pointed towards a nearby building, in order for the spectrum to only contain the noise (same noise which will then appear in actual measures).
+\hl{Doutes sur la figure: (1) on garde le semilogy dans le cleaned up? (2) on enleve le pic au milieu dans le unprocessed ou plutot on coupe un peu la figure pour mieux voir la courbe mas on garde quand meme le pic? (3)}
 
-Measure BM building, measure actual H21 source, divide actual by noise to extract the signal from noise, apply some filter and voilà, a nice signal
-
+The signal received by the antenna inherently contains noise which must be removed for the data to be properly analysed.
+To this end, a [measure was taken] with the telescope pointed towards a nearby building, so that the registered spectrum  contained only the noise [proper to] the telescope location, which is expected to be found in all the signals received by the antenna.
+The spectra of all the subsequently acquired signals were then divided by this noise spectrum, obtaining  signal-to-noise ratios which were further cleaned up by applying a moving average filter.
+An example of the application of this pipeline is depicted in \autoref{fig:process_example}.
+\begin{figure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[scale=1]{figures/raw_signal.pdf}
+        \caption{}
+        \label{fig:raw_signal}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[scale=1]{figures/clean_signal.pdf}
+        \caption{}
+        \label{fig:clean_signal}
+    \end{subfigure}
+    \caption{Unprocessed and Processed}
+    \label{fig:process_example}
+\end{figure}
 \subsection{Velocity field of the Milky Way}
 Probing arms of milky way
 
