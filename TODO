@@ -1,9 +1,9 @@
 === À faire ===
 - Source  R_0 (10.1051/0004-6361/201935656) V_0 (10.1088/0004-637X/783/2/130)
-- Écrire preuve formules pour courbe galaxie
 - Incertitudes
 - Implementer et tester tangential method
-- Le show=False ne marche pas dans le processing des données
+- Noter definition decibel
+- broken axis pour signal raw
 
 === Theory and experimental setup ===
 On peut mettre en bold ou emph les noms des coordonnées dans les differents systèmes, pour les reperer plus rapidement dans le texte.
