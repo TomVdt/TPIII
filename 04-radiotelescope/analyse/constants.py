@@ -21,3 +21,6 @@ OORT_A = ufloat(15.3e3, 0.4e3)  # m s−1 kpc−1
 # dB = 10 * log10(amplitude)
 def to_dB(x):
     return 10 * log10(x)
+
+def deg2rad(deg: float) -> float:
+    return pi * deg / 180
