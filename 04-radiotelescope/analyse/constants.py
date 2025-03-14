@@ -15,6 +15,7 @@ METERS_PER_PARSEC = 3.0857e16
 R0 = 8.5  # kpc, IAU
 V0 = 220e3  # m/s, source: IAU apparently, unable to find
 OORT_A = ufloat(15.3e3, 0.4e3)  # m s−1 kpc−1
+OORT_B = ufloat(-11.9e3, 0.4)  # m s−1 kpc−1
 
 # Using dB scale
 # https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.psd.html
