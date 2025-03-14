@@ -66,17 +66,46 @@ In the reference frame where the observer is at rest, $v_\textrm{observer} = 0$,
 \end{equation}
 
 \subsection{Extracting the actual speed of distant objects}
-Using the Doppler effect only yields the relative velocity between the source, the hydrogen cloud, and the observer. However, to obtain the velocity field of the Milky Way, the true velocity is needed. By approximating the orbits of object within the Milky Way to circular orbits, the angular velocity can be found. There exist multiple methods to achieve this. \hl{TODO: merge des phrases}
+Using the Doppler effect only yields the relative velocity between the source, the hydrogen cloud, and the observer. However, to obtain the velocity field of the Milky Way, the actual velocity is needed. In a first approximation, the orbits of the observed hydrogen cloud and the Sun are considered circular, which makes it possible to estimate the angular velocity of the hydrogen clouds. Multiple methods exist, although they only apply on a limited portion of the galaxy.
 
-\paragraph{Tangent-velocity method ($\ell < 90^\circ$)}
-TODO
+\paragraph{Tangent method}
+This method assumes that the observed hydrogen cloud orbits at a radius $R < R_0$, where $R_0$ is the radius of the Sun's orbit around the galactic center. In a single spectrum, multiple different clouds, moving at different relative velocities $V_{r,i}$, can be observed. If we then assume that the line of sight is tangent to the orbit of the cloud, the projection of its angular velocity $V$ on the line of sight would be maximal, and thus yield the largest relative velocity. Under these assumptions
+\begin{equation}
+    V = V_{r,\textrm{max}} + V_0 \sin(\ell)
+\end{equation}
+where $V_0$ is the angular velocity of the Sun and $\ell$ is the galactic longitude. The radius $R$ of its orbit can then be found to be
+\begin{equation}
+    R = R_0 \sin(\ell)
+\end{equation}
+Due to the assumption that the angular velocity is aligned with the line of sight, this methods yields a lower bound for the true angular velocity of the cloud.
 
-\paragraph{Generalised tangent ($\ell < 90^\circ$)}
-TODO
-proof in \autoref{sec:proof_inner_circle}
+\paragraph{Generalised tangent}
+In reality, the measured cloud will almost never move perfectly aligned with the line of sight. It is possible to find a more general equation linking the observed relative velocity $V_r$, $R$, and $V$:
+\begin{equation}
+    V = \frac{R}{R_0} \left( \frac{V_r}{\sin(\ell)} + V_0 \right)
+\end{equation}
+A proof is given in \autoref{sec:proof_inner_circle}. This equation is however not suffient to solve for the two unknowns $R$ and $V$. To obtain an estimate of the radius of the orbit, the approximation
+\begin{equation*}
+    V \approx V_0
+\end{equation*}
+can be made, which gives
+\begin{equation*}
+    R = R_0 \frac{V_0 \sin(\ell)}{V_0 \sin(\ell) + V_r}
+\end{equation*}
+\hl{EXPLAIN MORE}
 
-\paragraph{Matteo method\texttrademark\copyright \ ($90^\circ < \ell < 270^\circ$)}
-TODO
+\paragraph{Oort constants} The Oort constants
+\begin{equation}
+    A = \frac{V_r}{d \sin(2\ell)} \qquad B = \frac{V_t}{d} - A \cos(2\ell)
+\end{equation}
+describe the local motion of stars near the Sun, where $V_t$ corresponds to the component of the relative velocity perpendicular to the line of sight \hl{CITE OORT}. Recent studies \hl{CITE SOURCE} estimated these constants to be
+\begin{equation*}
+    A = (15.3 \pm 0.4) \ \si{\kilo\meter\per\second\per\kilo\parsec} \qquad B = -(11.9 \pm 0.4) \ \si{\kilo\meter\per\second\per\kilo\parsec}
+\end{equation*}
+These constants are valid when the distance $d$ between the Sun and the object is much smaller than the radii of their orbits. If this condition is satisfied, the angular velocity can be found to be (proof in \autoref{sec:oort_method})
+\begin{equation*}
+    V = \sqrt{(V_r + V_0 \sin(\ell)^2 + (d(B + A\cos(2\ell)) - V_0 \cos(\ell))^2)}
+\end{equation*}
 
 \subsection{The VEGA Small Radio Telescope}
 The Very Elegant Galactic Antenna (VEGA) was built in 2022 by a group of students from the EPFL Section of Physics, following the design of MIT Haystack Observatory's Small Radio Telescope (SRT): an observational instrument of small size and built on a low budget, which focuses on the study of the 21 cm hydrogen radiation line \cite{interdisciplinary_project_2022}.
