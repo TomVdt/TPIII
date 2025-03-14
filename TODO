@@ -1,10 +1,6 @@
 === À faire ===
 - Source  R_0 (10.1051/0004-6361/201935656) V_0 (10.1088/0004-637X/783/2/130)
 - Incertitudes
-- Implementer et tester tangential method
-- Noter definition decibel
-- broken axis pour signal raw
-- plot structure spirale
 
 === Theory and experimental setup ===
 On peut mettre en bold ou emph les noms des coordonnées dans les differents systèmes, pour les reperer plus rapidement dans le texte.
