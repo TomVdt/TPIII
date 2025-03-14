@@ -16,8 +16,8 @@ res/
 03-microscopie-fluorescence/data/imaging/*
 03-microscopie-fluorescence/cahier/*
 04-radiotelescope/data/*
-!04-radiotelescope/data/*.npy
-!04-radiotelescope/data/h*.json
+!04-radiotelescope/data/salsa/
+!04-radiotelescope/data/vega1/
 
 ## https://github.com/github/gitignore/blob/main/TeX.gitignore
 ## Core latex/pdflatex auxiliary files:
