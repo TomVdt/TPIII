@@ -16,6 +16,7 @@ res/
 03-microscopie-fluorescence/data/imaging/*
 03-microscopie-fluorescence/cahier/*
 04-radiotelescope/data/*
+04-radiotelescope/cahier/*
 !04-radiotelescope/data/salsa/
 !04-radiotelescope/data/vega1/
 !04-radiotelescope/data/vega2/
