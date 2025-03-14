@@ -1,0 +1,1 @@
+{"dev_args": "hackrf=0,bias=1", "rf_gain": 48.0, "if_gain": 25.0, "bb_gain": 18.0, "frequency": 1420000000.0, "bandwidth": 2460000.0, "channels": 2048, "t_sample": 1.0, "duration": 60.0, "loc": [46.5194444, 6.565, 411.0], "ra_dec": [334.3792, 56.7903], "az_alt": [51.174713, 66.283325]}
