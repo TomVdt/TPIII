@@ -4,3 +4,6 @@
 
 === Theory and experimental setup ===
 On peut mettre en bold ou emph les noms des coordonnées dans les differents systèmes, pour les reperer plus rapidement dans le texte.
+
+Median has no intrinsic physical significance.
+Average reduces noise by a specific amount, it resolves to having larger bin width.

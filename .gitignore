@@ -18,6 +18,7 @@ res/
 04-radiotelescope/data/*
 !04-radiotelescope/data/salsa/
 !04-radiotelescope/data/vega1/
+!04-radiotelescope/data/calibration_processed/
 
 ## https://github.com/github/gitignore/blob/main/TeX.gitignore
 ## Core latex/pdflatex auxiliary files:

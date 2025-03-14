@@ -16,7 +16,7 @@ By configuring the antenna to point towards Sun, using its actual coordinates, a
 \subsection{Distinguishing signal and noise}
 The signal received by the antenna inherently contains noise which must be removed for the data to be properly analysed.
 To this end, a [measure was taken] with the telescope pointed towards a nearby building, so that the registered spectrum  contained only the noise [proper to] the telescope location, which is expected to be found in all the signals received by the antenna.
-The spectra of all the subsequently acquired signals were then divided by this noise spectrum, obtaining  signal-to-noise ratios which were further cleaned up by applying a moving average filter.
+The spectra of all the subsequently acquired signals were then divided by this noise spectrum, obtaining  signal-to-noise ratios which were further cleaned up by applying a moving average filter \hl{or median in some cases?}.
 An example of the application of this pipeline is depicted in \autoref{fig:process_example}.
 \begin{figure}
     \begin{subfigure}{0.49\textwidth}
