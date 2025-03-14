@@ -3,7 +3,7 @@
 
 Due to small defects in the construction of the telescope and limitations of the motors of the dish and the antenna, the pointing of the antenna doesn't always line up with the target. It is therefore necessary to calibrate it before pointing at distant objects. The Sun is the strongest discrete radio source in the sky \cite{burke_introduction_2013}, mostly due to black body radiation, and is therefore an ideal target for the calibration.
 By configuring the antenna to point towards Sun, using its actual coordinates, and scanning the surrounding area in Az/Alt coordinates, the maximum average measured power gives the real position of the Sun in the specific antenna coordinates. The measured power and a linear interpolation of those values shown in \autoref{fig:calibration_contour} gives a correction to the pointing of
-\begin{equation}
+\begin{equation} \label{eq:offset}
     \Delta a = -(5.25 \pm 0.50)^\circ \quad \textrm{and} \quad \Delta h = -(2.70 \pm 0.10)^\circ
 \end{equation}
 \begin{figure}[htbp]
@@ -15,7 +15,7 @@ By configuring the antenna to point towards Sun, using its actual coordinates, a
 
 \subsection{Distinguishing signal and noise}
 The signal received by the antenna inherently contains noise which must be removed for the data to be properly analysed.
-To this end, a [measure was taken] with the telescope pointed towards a nearby building, so that the registered spectrum  contained only the noise [proper to] the telescope location, which is expected to be found in all the signals received by the antenna.
+To this end, a signal measure was taken with the telescope pointed towards a nearby building, so that the registered spectrum  contained only the noise characteristic of the telescope location, which is expected to be found in all the signals received by the antenna.
 The spectra of all the subsequently acquired signals were then divided by this noise spectrum, obtaining  signal-to-noise ratios which were further cleaned up by applying a moving average filter \hl{or median in some cases?}.
 An example of the application of this pipeline is depicted in \autoref{fig:process_example}.
 \begin{figure}
@@ -36,11 +36,17 @@ An example of the application of this pipeline is depicted in \autoref{fig:proce
 \end{figure}
 
 
-\subsection{Velocity field of the Milky Way}
-Probing arms of milky way
+\subsection{Velocity curve of the Milky Way}
+A series (\hl{different series?}) of spectra were acquired pointing VEGA to Galactic coordinates $b = 0$ and $3 \leq \ell \leq 160$ \hl{check valeurs exactes}, spanning almost half of the galactic plane.
+Once the frequency shift of the hydrogen 21 cm line was identified in each spectra, \hl{the methods presented in the Theory or Annex} were used to derive the velocity of the hydrogen cloud observed, its distance from the Galactic Center and its distance from the Solar System.
+\autoref{fig:VEGA_velocity_curve} depicts the velocity curves obtained using \hl{the different methods}.
+\hl{Ici décrire les courbes et les differences obtenues avec les differentes methodes}.
 
-Talk about orientation (i.e. sky visible at measuring time),
-We neglect movement of Earth inside solar system.
+By combining the distance of the hydrogen from Earth and the angle at which the measures were taken, a map of the Galaxy was produced as shown in \autoref{fig:VEGA_galaxy_map}. One can see how a spiral pattern was produced by the data.
+
+À METTRE AVEC LES METHODES?: The movement of Earth inside the Solar System was neglected.
+
+Talk about orientation (i.e. sky visible at measuring time)
 
 \begin{figure}[htbp]
     \begin{minipage}[t]{0.5\textwidth}
@@ -60,7 +66,8 @@ We neglect movement of Earth inside solar system.
 \end{figure}
 
 \subsection{Comparison with SALSA}
-Since VEGA is very young, we compared with a more mature telescope: SALSA, the Torre SRT in Onsala Observatory, Sweden.
+Since VEGA is very young, we wished to test the data analysis pipeline with a more mature telescope: one of the three SALSA (Such A Lovely Small Antenna) radio telescopes, based in Onsala Observatory, Sweden.
+It is an antenna of similar size and conception and VEGA
 
 Built-in correction for movement of Earth in solar system
 \begin{figure}[htbp]
