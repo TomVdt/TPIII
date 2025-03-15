@@ -33,7 +33,7 @@ A distinction must be made between physical processes which produce continuous r
 \end{itemize}
 
 \subsection{The hydrogen 21 cm line}
-An example of spectral line is the 21 cm radiation of atomic hydrogen.
+An example of spectral line is the 21 cm radiation of atomic hydrogen, also known as the H21 or HI line.
 Neutral hydrogen does not emit any radiation in the visible spectrum, but it is possible to detect its presence in the interstellar medium (ISM) through the observation of radio waves.
 When not excited, neutral hydrogen can exist in two states: either the electron and proton spins are aligned (state $F=1$), or they're opposite (state $F=0$).
 Because of the interaction between the nucleus magnetic dipole moment and the electron orbital magnetic field, these two states have a very small difference in energy of $\Delta E = 5.88$ \si{\micro\electronvolt} (a splitting known as \emph{hyperfine structure} of the ground state) \cite{lauterbach_radio_2022}.
@@ -41,7 +41,7 @@ When transitioning from $F=1$ to $F=0$, a photon frequency of \mbox{$f_H = 1.420
 While this transition is exceptionally rare, with an average lifetime of about $11$ million years between transitions, and hydrogen density is low ($\sim 1$ cm$^{-3}$), its abundance and the very long lines of sight in the ISM allow radioastronomers to detect its presence in the Universe \cite{burke_introduction_2013}.
 
 \subsection{Estimating the velocity field of the Milky Way}
-Studying the H21 cm radiation allows us to derive the relative velocity of interstellar medium and therefore of other parts of the Milky Way or even other galaxies.
+Studying the HI line allows us to derive the relative velocity of interstellar medium and therefore of other parts of the Milky Way or even other galaxies.
 In fact, when an observer moves relative to a wave source, the frequency of the wave perceived by the observer is different from the emitted wave, according to what is called the Doppler effect.
 The observed frequency $f_\textrm{observer}$ is linked to the source frequency $f_\textrm{source}$ by \cite{alonso_fundamental_1983}:
 \begin{equation}
@@ -66,14 +66,15 @@ In the reference frame where the observer is at rest, $v_\textrm{observer} = 0$,
 \end{equation}
 
 \subsection{Extracting the actual velocity of distant objects}
+\label{sec:velocity_of_clouds}
 Using the Doppler effect only yields the relative velocity between the source, the hydrogen cloud, and the observer. However, to obtain the velocity field of the Milky Way, the actual velocity is needed. In a first approximation, the orbits of the observed hydrogen cloud and the Sun are considered circular, which makes it possible to estimate the angular velocity of the hydrogen clouds. Multiple methods exist, although they only apply on a limited portion of the galaxy.
 
 \paragraph{Tangent method}
-This method assumes that the observed hydrogen cloud orbits at a radius $R < R_0$, where $R_0$ is the radius of the Sun's orbit around the galactic center. In a single spectrum, multiple different clouds, moving at different relative velocities $V_{r,i}$, can be observed. If we then assume that the line of sight is tangent to the orbit of the cloud, the projection of its angular velocity $V$ on the line of sight would be maximal, and thus yield the largest relative velocity. Under these assumptions
+This method assumes that the observed hydrogen cloud orbits at a radius $R < R_0$, where $R_0$ is the radius of the Sun's orbit around the galactic center. In a single spectrum, multiple different clouds, moving at different relative velocities $V_{r,i}$, can be observed. If we then assume that the line of sight is tangent to the orbit of the cloud, the projection of its angular velocity $V$ on the line of sight would be maximal, and thus yield the largest relative velocity. Under these assumptions,
 \begin{equation}
     V = V_{r,\textrm{max}} + V_0 \sin(\ell)
 \end{equation}
-where $V_0$ is the angular velocity of the Sun and $\ell$ is the galactic longitude. The radius $R$ of its orbit can then be found to be
+where $V_0$ is the angular velocity of the observer, here the Sun, and $\ell$ is the galactic longitude. The radius $R$ of its orbit can then be found to be
 \begin{equation}
     R = R_0 \sin(\ell)
 \end{equation}
@@ -86,14 +87,15 @@ In reality, the measured cloud will almost never move perfectly aligned with the
     \label{eq:generalised_tangent}
 \end{equation}
 A proof is given in \autoref{sec:proof_generalised_tangent}. This equation is however not suffient to solve for the two unknowns $R$ and $V$. To obtain an estimate of the radius of the orbit, the approximation
-\begin{equation*}
+\begin{equation}
     V \approx V_0
-\end{equation*}
+\end{equation}
 can be made, which gives
-\begin{equation*}
+\begin{equation}
     R = R_0 \frac{V_0 \sin(\ell)}{V_0 \sin(\ell) + V_r}
-\end{equation*}
-If given an estimate for the distance $d$ between the cloud and the observer, such as using an Oort constant, \autoref{eq:generalised_tangent} can be used to find an estimate of the velocity instead, where $R = \sqrt{R_0^2 + d^2 - 2 R_0 d \cos(\ell)}$.
+\end{equation}
+This can then be used to estimate the distance to the cloud, which is shown in \autoref{sec:distance_with_tangent_method}.
+If instead given an estimate for the distance $d$ between the cloud and the observer, such as using an Oort constant, \autoref{eq:generalised_tangent} can be used to find an estimate of the velocity instead, where $R = \sqrt{R_0^2 + d^2 - 2 R_0 d \cos(\ell)}$.
 
 \paragraph{Oort constants} The Oort constants
 \begin{equation}
