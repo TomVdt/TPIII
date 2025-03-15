@@ -13,7 +13,7 @@ SAMPLE_RATE = 2_048_000
 H21 = 1.420405751768e9  # Hz
 METERS_PER_PARSEC = 3.0857e16
 R0 = 8.5  # kpc, IAU
-V0 = 220e3  # m/s, source: IAU apparently, unable to find
+V0 = ufloat(220e3, 10e3)  # m/s, source: IAU apparently, unable to find
 OORT_A = ufloat(15.3e3, 0.4e3)  # m s−1 kpc−1
 OORT_B = ufloat(-11.9e3, 0.4)  # m s−1 kpc−1
 
