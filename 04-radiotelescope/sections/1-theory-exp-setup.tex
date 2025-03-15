@@ -83,8 +83,9 @@ Due to the assumption that the angular velocity is aligned with the line of sigh
 In reality, the measured cloud will almost never move perfectly aligned with the line of sight. It is possible to find a more general equation linking the observed relative velocity $V_r$, $R$, and $V$:
 \begin{equation}
     V = \frac{R}{R_0} \left( \frac{V_r}{\sin(\ell)} + V_0 \right)
+    \label{eq:generalised_tangent}
 \end{equation}
-A proof is given in \autoref{sec:proof_inner_circle}. This equation is however not suffient to solve for the two unknowns $R$ and $V$. To obtain an estimate of the radius of the orbit, the approximation
+A proof is given in \autoref{sec:proof_generalised_tangent}. This equation is however not suffient to solve for the two unknowns $R$ and $V$. To obtain an estimate of the radius of the orbit, the approximation
 \begin{equation*}
     V \approx V_0
 \end{equation*}
@@ -92,7 +93,7 @@ can be made, which gives
 \begin{equation*}
     R = R_0 \frac{V_0 \sin(\ell)}{V_0 \sin(\ell) + V_r}
 \end{equation*}
-\hl{EXPLAIN MORE}
+If given an estimate for the distance $d$ between the cloud and the observer, such as using an Oort constant, \autoref{eq:generalised_tangent} can be used to find an estimate of the velocity instead, where $R = \sqrt{R_0^2 + d^2 - 2 R_0 d \cos(\ell)}$.
 
 \paragraph{Oort constants} The Oort constants
 \begin{equation}
