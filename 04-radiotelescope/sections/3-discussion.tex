@@ -10,9 +10,10 @@ It would be necessary to apply this calibration to the pointing of VEGA, but unf
 
 Resultats à comparer avec \cite{ou_dark_2024}, \cite{jia_research_2022}, \cite{mroz_rotation_2019}
 
+The Oort constants method and the generalised tangent method seem to yield similar results.
+
 \paragraph{Limits of the Oort constants}
 In the velocity curve produced using the VEGA telescope, the angular velocity estimate produced by the Oort method seems to break down for larger galactic longitudes ($\ell > VALEUR$). When observing at larger longitudes, the telescope may be measuring a further spiral \hl{NAME THE SPIRAL?} of the Milky Way, very far away from the observer. This would mean that the condition for the distance to the object being much smaller than the radius of the orbits of the observer or object, would no longer hold. 
 
 \paragraph{VEGA interface}
-\hl{peut-etre pas nécessaire mais je pense utile}
-Due to the small age of the VEGA telescope, its interface is still very barebones, which hindered some of the experiments. Further work would be needed to exploit the full capability of the telescope, such as adding software-level calibration, which would automatically apply a correction to the Az/Alt coordinates in every pointing mode, or having real-time feedback of the measurement in progress. As seen in the signals outputed by the VEGA pipeline, compared to SALSA, there are still improvements to be made, like a stronger removal of the DC component in the signal and better noise removal, while avoiding the "double hill" pattern visible in the raw spectra. A scripting interface would also help for operations such as calibration or scanning the Milky Way.
+Due to the small age of the VEGA telescope, its interface is still very barebones, \hl{a fact} which hindered some of the experiments. Further work would be needed to exploit the full capability of the telescope, such as adding software-level calibration, which would automatically apply a correction to the Az/Alt coordinates in every pointing mode, or having real-time feedback of the measurement in progress. As seen in the signals outputted by the VEGA pipeline, compared to SALSA, there are still improvements to be made, like a stronger removal of the DC component in the signal and better noise removal, while avoiding the "double hill" pattern visible in the raw spectra. A scripting interface would also help for operations such as calibration or scanning the Milky Way.

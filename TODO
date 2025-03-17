@@ -5,7 +5,8 @@
 === Theory and experimental setup ===
 Utilisation de "speed" vs "velocity": lequel dans quel contexte?
 
-On peut mettre en bold ou emph les noms des coordonnées dans les differents systèmes, pour les reperer plus rapidement dans le texte.
-
 Median has no intrinsic physical significance.
 Average reduces noise by a specific amount, it resolves to having larger bin width.
+
+== Code ==
+IMPORTANT: CHANGER V0 EN 240 PM 8 KM S^-1

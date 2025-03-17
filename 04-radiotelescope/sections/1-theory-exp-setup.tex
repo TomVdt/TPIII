@@ -37,7 +37,7 @@ An example of spectral line is the 21 cm radiation of atomic hydrogen, also know
 Neutral hydrogen does not emit any radiation in the visible spectrum, but it is possible to detect its presence in the interstellar medium (ISM) through the observation of radio waves.
 When not excited, neutral hydrogen can exist in two states: either the electron and proton spins are aligned (state $F=1$), or they're opposite (state $F=0$).
 Because of the interaction between the nucleus magnetic dipole moment and the electron orbital magnetic field, these two states have a very small difference in energy of $\Delta E = 5.88$ \si{\micro\electronvolt} (a splitting known as \emph{hyperfine structure} of the ground state) \cite{lauterbach_radio_2022}.
-When transitioning from $F=1$ to $F=0$, a photon frequency of \mbox{$f_H = 1.420405751768$ GHz} gets emitted, corresponding to a wavelength of \mbox{$\lambda_H = 21.106114054160$ cm} in vacuum \cite{hellwig_measurement_1970}. This value is known very precisely, up to $10^{-12}$ Hz.
+When transitioning from $F=1$ to $F=0$, a photon frequency of \mbox{$f_H = 1.420405751768$\ldots GHz} gets emitted, corresponding to a wavelength of \mbox{$\lambda_H = 21.106114054160$\ldots cm} in vacuum \cite{hellwig_measurement_1970}. This value is known very precisely, up to $10^{-12}$ Hz.
 While this transition is exceptionally rare, with an average lifetime of about $11$ million years between transitions, and hydrogen density is low ($\sim 1$ cm$^{-3}$), its abundance and the very long lines of sight in the ISM allow radioastronomers to detect its presence in the Universe \cite{burke_introduction_2013}.
 
 \subsection{Estimating the velocity field of the Milky Way}
@@ -58,7 +58,7 @@ As shown in \autoref{fig:doppler_galaxy}, this effect can be used in astronomy t
     \caption{The Doppler effect in the galaxy. $O$ reprents the observers position, $C$ the center of the Galaxy and $S_1$ the source of radiowaves. $v_{1R}$ and $v_{OR1}$ are the velocities taken into account for the Doppler effect. \cite{lauterbach_radio_2022}}
     \label{fig:doppler_galaxy}
 \end{figure}
-When observing the radio signal from distant hydrogen clouds in the Milky Way, the angular speed of the outer branches of the Milky Way can be calculated by the Doppler shift of the H$21$ cm line, whose frequency is known very precisely [citation].
+When observing the radio signal from distant hydrogen clouds in the Milky Way, the angular speed of the outer branches of the Milky Way can be calculated by the Doppler shift of the H$21$ cm line.
 In the reference frame where the observer is at rest, $v_\textrm{observer} = 0$, and knowing the source and observed frequencies, the angular speed of the distant part of the galaxy can be found to be, using \autoref{eq:doppler_general}
 \begin{equation}
     v_\textrm{source} = c \frac{f_\textrm{source} - f_\textrm{observer}}{f_\textrm{observer}}
@@ -67,14 +67,14 @@ In the reference frame where the observer is at rest, $v_\textrm{observer} = 0$,
 
 \subsection{Extracting the actual velocity of distant objects}
 \label{sec:velocity_of_clouds}
-Using the Doppler effect only yields the relative velocity between the source, the hydrogen cloud, and the observer. However, to obtain the velocity field of the Milky Way, the actual velocity is needed. In a first approximation, the orbits of the observed hydrogen cloud and the Sun are considered circular, which makes it possible to estimate the angular velocity of the hydrogen clouds. Multiple methods exist, although they only apply on a limited portion of the galaxy.
+Using the Doppler effect only yields the relative velocity between the source, the hydrogen cloud, and the observer. However, to obtain the velocity field of the Milky Way, the actual velocity is needed. In a first approximation, the orbits of the observed hydrogen cloud and the Sun are considered circular, which makes it possible to estimate the angular velocity of the hydrogen clouds. Multiple methods exist, although they only apply on a limited portion\hl{s?} of the galaxy.
 
 \paragraph{Tangent method}
-This method assumes that the observed hydrogen cloud orbits at a radius $R < R_0$, where $R_0$ is the radius of the Sun's orbit around the galactic center. In a single spectrum, multiple different clouds, moving at different relative velocities $V_{r,i}$, can be observed. If we then assume that the line of sight is tangent to the orbit of the cloud, the projection of its angular velocity $V$ on the line of sight would be maximal, and thus yield the largest relative velocity. Under these assumptions,
+This method assumes that the observed hydrogen cloud orbits at a radius $R < R_0$, where $R_0 = (8178 \pm 13)$ pc is the radius of the Sun's orbit around the galactic center \cite{the_gravity_collaboration_geometric_2019}. In a single spectrum, multiple different clouds, moving at different relative velocities $V_{r,i}$, can be observed. If we then assume that the line of sight is tangent to the orbit of the cloud, the projection of its angular velocity $V$ on the line of sight would be maximal, and thus yield the largest relative velocity. Under these assumptions,
 \begin{equation}
     V = V_{r,\textrm{max}} + V_0 \sin(\ell)
 \end{equation}
-where $V_0$ is the angular velocity of the observer, here the Sun, and $\ell$ is the galactic longitude. The radius $R$ of its orbit can then be found to be
+where $V_0 = (240 \pm 8)$ {km s$^{-1}$} is the \hl{angular?} velocity of the observer, \st{here} the Sun, and $\ell$ is the galactic longitude \cite{reid_trigonometric_2014}. The radius $R$ of its orbit can then be found to be
 \begin{equation}
     R = R_0 \sin(\ell)
 \end{equation}
@@ -101,7 +101,7 @@ If instead given an estimate for the distance $d$ between the cloud and the obse
 \begin{equation}
     A = \frac{V_r}{d \sin(2\ell)} \qquad B = \frac{V_t}{d} - A \cos(2\ell)
 \end{equation}
-describe the local motion of stars near the Sun, where $V_t$ corresponds to the component of the relative velocity perpendicular to the line of sight \hl{CITE OORT}. Recent studies \hl{CITE SOURCE} estimated these constants to be
+describe the local motion of stars near the Sun, where $V_t$ corresponds to the component of the relative velocity perpendicular to the line of sight \cite{carroll_introduction_2007}. Recent studies (see \cite{bovy_galactic_2017}) estimated these constants to be
 \begin{equation*}
     A = (15.3 \pm 0.4) \ \si{\kilo\meter\per\second\per\kilo\parsec} \qquad B = -(11.9 \pm 0.4) \ \si{\kilo\meter\per\second\per\kilo\parsec}
 \end{equation*}
