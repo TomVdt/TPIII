@@ -22,7 +22,7 @@ To make the reverse transformation from Galactic to equatorial (again assuming e
 Where $\alphaNGP = 12^{\text{h}} 51^{\text{m}} 26.28^{\text{s}}$ and $\deltaNGP = 28^{\circ}7' 41.7''$ are the equatorial coordinates of the north Galactic pole ($b = 90^{\circ}$) and $\lNCP = 123^{\circ} 55' 55.2''$ is the Galactic longitude of the north celestial pole.
 
 \subsection{Sources of radio emissions}
-Because of Earth's atmosphere, only two ranges of frequencies are completely open for the observation from the ground of electromagnetic waves coming from space: the optical window, which ranges from \hl{wavelengths of} 300 nm to about 700 nm \st{of wavelength} and is studied through optical telescopes, and the wider radio window, which ranges from $30$ m to $0.3$ mm (frequencies of $10$ MHz and $1$ THz respectively) and is instead the focus of radio astronomy \cite{condon_essential_2016}.
+Because of Earth's atmosphere, only two ranges of frequencies are completely open for the observation from the ground of electromagnetic waves coming from space: the optical window, which ranges from {wavelengths of} 300 nm to about 700 nm and is studied through optical telescopes, and the wider radio window, which ranges from $30$ m to $0.3$ mm (frequencies of $10$ MHz and $1$ THz respectively) and is instead the focus of radio astronomy \cite{condon_essential_2016}.
 
 Radio emissions originate from a broad range of phenomena.
 A distinction must be made between physical processes which produce continuous radiation over a wider frequency range (mainly thermal processes and synchrotron radiation) and those that result in radiation only in a narrow frequency band, i.e.\ a \emph{spectral line} \cite{lauterbach_radio_2022}.
@@ -37,8 +37,8 @@ An example of spectral line is the 21 cm radiation of atomic hydrogen, also know
 Neutral hydrogen does not emit any radiation in the visible spectrum, but it is possible to detect its presence in the interstellar medium (ISM) through the observation of radio waves.
 When in the ground state, neutral hydrogen can exist in two states: either the electron and proton spins are aligned (state $F=1$), or they're opposite (state $F=0$).
 Because of the interaction between the nucleus magnetic dipole moment and the electron orbital magnetic field, these two states have a very small difference in energy of $\Delta E = 5.88$ \si{\micro\electronvolt} (a splitting known as \emph{hyperfine structure} of the ground state) \cite{lauterbach_radio_2022}.
-When transitioning from $F=1$ to $F=0$, a photon frequency of \mbox{$f_H = 1.420405751768$\ldots GHz} gets emitted, corresponding to a wavelength of \mbox{$\lambda_H = 21.106114054160$\ldots cm} in vacuum \cite{hellwig_measurement_1970}. This value is known very precisely, up to $10^{-12}$ Hz.
-While this transition is exceptionally rare, with an average lifetime of about $11$ million years between transitions, and hydrogen density is low ($\sim 1$ \hl{atom per} cm$^{-3}$), its abundance and the very long lines of sight in the ISM allow radioastronomers to detect its presence in the Universe \cite{burke_introduction_2013}.
+When transitioning from $F=1$ to $F=0$, a photon frequency of around \mbox{$f_H = 1.4204$ GHz} gets emitted, corresponding to a wavelength of around \mbox{$\lambda_H = 21.1061$ cm} in vacuum \cite{hellwig_measurement_1970}. This value is known very precisely, up to $10^{-12}$ Hz.
+While this transition is exceptionally rare, with an average lifetime of about $11$ million years between transitions, and hydrogen density is low ($\sim 1$ {atom /} cm$^{3}$), its abundance and the very long lines of sight in the ISM allow radioastronomers to detect its presence in the Universe \cite{burke_introduction_2013}.
 
 \subsection{Estimating the velocity field of the Milky Way}
 Studying the HI line allows us to derive the relative velocity of interstellar medium and therefore of other parts of the Milky Way or even other galaxies.
@@ -49,7 +49,7 @@ The observed frequency $f_\textrm{observer}$ is linked to the source frequency $
     \label{eq:doppler_general}
 \end{equation}
 where $c$ is the speed of the wave, in this case the speed of light, $v_\textrm{observer}$ is the speed of the observer, and $v_\textrm{source}$ is the speed of the source.
-Only the components of velocity parallel to the axis connecting the source and the observer are taken into account \hl{for Doppler effect to take place} \st{, since we only consider relative velocity}.
+Only the components of velocity parallel to the axis connecting the source and the observer are taken into account {for Doppler effect to take place}.
 
 As shown in \autoref{fig:doppler_galaxy}, this effect can be used in astronomy to estimate the speed of distant objects, as the Doppler effect also applies to electromagnetic waves.
 \begin{figure}[htbp]
@@ -67,10 +67,10 @@ In the reference frame where the observer is at rest, $v_\textrm{observer} = 0$,
 
 \subsection{Extracting the actual velocity of distant objects}
 \label{sec:velocity_of_clouds}
-Using the Doppler effect only yields the relative velocity between the source, the hydrogen cloud, and the observer. However, to obtain the velocity field of the Milky Way, the actual velocity is needed. In a first approximation, the orbits of the observed hydrogen cloud and the Sun are considered circular, which makes it possible to estimate the angular velocity of the hydrogen clouds. Multiple methods exist, although they only apply on a limited portion\hl{s?} of the galaxy.
+Using the Doppler effect only yields the relative velocity between the source, the hydrogen cloud, and the observer. However, to obtain the velocity field of the Milky Way, the actual velocity is needed. In a first approximation, the orbits of the observed hydrogen cloud and the Sun are considered circular, which makes it possible to estimate the angular velocity of the hydrogen clouds. Multiple methods exist, although each only applies on a limited portion of the galaxy.
 
 \paragraph{Tangent method}
-This method assumes that the observed hydrogen cloud orbits at a radius $R < R_0$, where $R_0 = (8178 \pm 13)$ pc is the radius of the Sun's orbit around the galactic center \cite{the_gravity_collaboration_geometric_2019}. In a single spectrum, multiple different clouds, moving at different relative velocities $V_{r,i}$, can be observed. If we then assume that the line of sight is tangent to the orbit of the cloud, the projection of its angular velocity $V$ on the line of sight would be maximal, and thus yield the largest relative velocity. Under these assumptions,
+This method assumes that the observed hydrogen cloud orbits at a radius $R < R_0$, where $R_0 = (8178 \pm 13)$ pc is the radius of the Sun's orbit around the galactic \mbox{center \cite{the_gravity_collaboration_geometric_2019}.} In a single spectrum, multiple different clouds, moving at different relative velocities $V_{r,i}$, can be observed. If we then assume that the line of sight is tangent to the orbit of the cloud, the projection of its angular velocity $V$ on the line of sight would be maximal, and thus yield the largest relative velocity. Under these assumptions,
 \begin{equation}
     V = V_{r,\textrm{max}} + V_0 \sin(\ell)
 \end{equation}
@@ -78,7 +78,7 @@ where $V_0 = (240 \pm 8)$ {km s$^{-1}$} is the angular velocity of the observer 
 \begin{equation}
     R = R_0 \sin(\ell)
 \end{equation}
-Due to the assumption that the angular velocity is aligned with the line of sight, this methods yields a lower bound for the true angular velocity of the cloud.
+Due to the assumption that the angular velocity is aligned with the line of sight, this method yields a lower bound for the true angular velocity of the cloud.
 
 \paragraph{General equation}
 In reality, the measured cloud will almost never move perfectly aligned with the line of sight. It is possible to find a more general equation linking the observed relative velocity $V_r$, $R$, and $V$:
@@ -91,11 +91,11 @@ A proof is given in \autoref{sec:proof_generalised_tangent}. This equation is ho
     V \approx V_0
 \end{equation}
 can be made, which gives
-\begin{equation}
+\begin{equation} \label{eq:general_radius}
     R = R_0 \frac{V_0 \sin(\ell)}{V_0 \sin(\ell) + V_r}
 \end{equation}
 This can then be used to estimate the distance to the cloud, which is shown in \autoref{sec:distance_with_tangent_method}.
-If instead given an estimate for the distance $d$ between the cloud and the observer, such as using an Oort constant, \autoref{eq:generalised_tangent} can be used to find an estimate of the velocity instead, where $R = \sqrt{R_0^2 + d^2 - 2 R_0 d \cos(\ell)}$.
+If instead an estimate for the distance $d$ between the cloud and the observer can be found, either using an Oort constant or through observations, \autoref{eq:generalised_tangent} can be used to find an estimate of the velocity instead, where $R = \sqrt{R_0^2 + d^2 - 2 R_0 d \cos(\ell)}$.
 
 \paragraph{Oort constants} The Oort constants
 \begin{equation}
@@ -125,7 +125,7 @@ In the case of VEGA, a parabola of diameter $1.86$ m, with a field of view of so
         \centering
         \captionsetup{width=.9\textwidth}
         \includegraphics[height=6.5cm]{figures/antenna_photo.png}
-        \caption{The copper helical feed in use on VEGA \cite{rapport_interne_2024}}
+        \caption{The copper helical feed in use on VEGA \cite{rapport_interne_2024}.}
         \label{fig:antenna_photo}
     \end{minipage}
     \begin{minipage}[t]{0.5\textwidth}
