@@ -4,11 +4,24 @@ The velocities obtained with tangential are lower limit.
 Indeed, we make the assumption that the relative velocity obtained from the Doppler formula is the maximal projection on the axis joining the solar system and the observed hydrogen cloud, but this is not necessarily the case.
 PROBLEM: those obtained with vector are lower so bruh.
 
-\paragraph{[overrall shape of curve]}
+\paragraph{Comparison with the literature}
 Resultats à comparer avec \cite{ou_dark_2024}, \cite{jia_research_2022}, \cite{mroz_rotation_2019}
 
-Based on \cite{sakhawat_hossain_salsa_2018} it seems that the curve obtained in \autoref{fig:VEGA_velocity_curve} is characteristic of measures taken with $b \neq 0$. It could be the error in pointing of the telescope which is responsible: we were not actually pointing precisely at the galactic plane. As we know, the pointing is off by the values presented in \autoref{eq:offset}.
-It would be necessary to apply this calibration to the pointing of VEGA, but unfortunately limitations in the software used to operate the antenna made it  impossible to acquire in this way the precise values of the orientation of the antenna which are needed to determine the velocity curve.
+The velocity curve resulting of VEGA's measures, depicted in \autoref{fig:VEGA_velocity_curve}, contains values of the same order of magnitude as the those contained in the latest articles treating the same subject.
+Both \cite{ou_dark_2024} and \cite{eilers_circular_2019} for example, using parallax measurements from the \emph{Gaia} mission, measured slightly decreasing velocities for radii between $6$ kpc and $25$ kpc, from $230$ to around $200$ \unit{km \per s}.
+These results are also in good agreement with the analysis based on Galactic Cepheids in \cite{mroz_rotation_2019}.
+When it comes to the general behaviour of the velocity curve, though, VEGA's results differ in a number of ways.
+First, the values obtained by using the tangent method are lower at $R \approx 6$ kpc and increase with the radius up to $R \approx 9$ kpc.
+This is however consistent with the fact that the tangent method provides a lower bound to values of velocity.
+Then, the method [which uses $V \approx V_0$] yields a plateau around $225$ \unit{km \per s} \hl{of which the behaviour was not identified?}
+\hl{Finally, Oort didn't work.}
+
+On the hardware side of things, two [facts] could explain the difference between our results and the literature's. 
+A first problem is the antenna's low resolution coupled with the presence of noise [which couldn't be filtered]. This could have lead to the misidentification of peaks and thus the incorrect measurements of the H21 frequency shift. 
+Secondly, the measures in \cite{sakhawat_hossain_salsa_2018} seem to indicate that the curve obtained in \autoref{fig:VEGA_velocity_curve} is characteristic of measures taken with $b \neq 0$. 
+It was determined in \autoref{sec:calibration} that VEGA's pointing is off by the values contained in \autoref{eq:offset}.
+This offset is high enough for the antenna not to point towards the middle of the galactic plane width: considering the time of observation, the actual galactic latitude of the measures is estimated at $b \approx 5^{\circ}$.
+For better results it would have been necessary to apply the calculated calibration to the pointing of VEGA, but limitations in the software used to operate the antenna made it unfortunately impossible to acquire in this way the precise values of the orientation of the antenna which are needed to determine the velocity curve.
 
 The Oort constants method and the generalised tangent method seem to yield similar results.
 
