@@ -1,18 +1,19 @@
 \section{Discussion}
-The velocity curve resulting of VEGA's measures, depicted in \autoref{fig:VEGA_velocity_curve}, contains values of the same order of magnitude as the those contained in the latest articles treating the same subject.
+The velocity curve resulting of VEGA's measures, depicted in \autoref{fig:VEGA_velocity_curve}, contains values of the same order of magnitude as those contained in the latest articles treating the same subject.
 Both \cite{ou_dark_2024} and \cite{eilers_circular_2019} for example, using parallax measurements from the \emph{Gaia} mission, measured slightly decreasing velocities for radii between $6$ kpc and $25$ kpc, from $230$ to around $200$ \unit{km \per s}.
 These results are also in good agreement with the analysis based on Galactic Cepheids in \cite{mroz_rotation_2019}.
 When it comes to the general behaviour of the velocity curve, though, VEGA's results differ in a number of ways.
 
 \paragraph{Tangent method} 
 Velocities obtained using the tangent method yielded for both telescopes a quasi-linear behavior for radii between $2$ and $8$ kpc. Although this is different from the results in \cite{ou_dark_2024}, \cite{eilers_circular_2019} and \cite{mroz_rotation_2019}, the method is supposed to yield a lower bound for the velocity, and thus still remains compatible with those measures.
+According to the simulations carried out in \cite{chemin_incorrect_2015}, the tangent method is also not ideal for estimating velocities close to the galactic center \mbox{($R < 4$ kpc)}, due to the asymmetry of the galaxy, especially near the center.
 
 \paragraph{General equation}
-The general equation method, when applied to longitudes $\ell < 90^\circ$, also yielded velocities above the velocities found using the tangent method. According to the simulations done in \cite{chemin_incorrect_2015}, the tangent method is not ideal for estimating velocities close to the galactic center \mbox{($R < 4$ kpc)}, due to the asymmetry of the galaxy, especially near the center.
-Between the three tested methods, the general equation, combined with the Oort constant $A$ to find an estimate for the distance, yielded the most compatible results with the literature. If these results can be considered trustworthy, the velocities obtained using this method provide evidence for the existence of so-called dark matter, as the velocity profile does not follow a solid disk rotation, for which the velocity is $V \propto R$, nor Keplerian rotation for which $V \propto 1/R$, but are rather independent of $R$. Due to the uncertainty for the validity of the obtained results however, no model was fit to the data.
+The general equation method, when applied to longitudes $\ell < 90^\circ$, also yielded velocities above those found using the tangent method. 
+Between the three tested methods, the general equation, combined with the Oort constant $A$ to find an estimate for the distance, yielded the most compatible results with the literature. If these results can be considered trustworthy, the velocities obtained using this method provide evidence for the existence of so-called dark matter, as the velocity profile does not follow a solid disk rotation, for which the velocity is $V \propto R$, nor Keplerian rotation for which $V \propto 1/R$, but are rather independent of $R$ \cite{horellou_SALSA_2015}. Due to the uncertainty for the validity of the obtained results however, no model was fit to the data.
 
 \paragraph{Limits of the Oort constants}
-In the velocity curve produced using the VEGA telescope, the angular velocity estimate produced by the Oort method seems to break down for larger galactic longitudes ($\ell > 130^\circ$). An explanation for this behavior could be that the distance to the measured cloud becomes much larger than the $R-R_0$, conditions under which the Oort constants do not hold.
+In the velocity curve produced using the VEGA telescope, the angular velocity estimate produced by the Oort method seems to break down for larger galactic longitudes ($\ell > 130^\circ$). An explanation for this behavior could be that the distance to the measured cloud becomes much larger than the difference $R-R_0$, conditions under which the Oort constants do not hold.
 As highlighted previously, this method reconstructed neither the shape nor the approximate velocities expected from the literature.
 Given that the estimate for the radius of the orbit, the distance and the transverse relative velocity $V_t$ are given by the Oort constants, it was determined that this method should not be used to calculate the velocity curve when the distance to the observed object is not known, as it cannot be verified that the assumptions hold otherwise.
 
@@ -22,14 +23,14 @@ A first problem is the antenna's low resolution coupled with the occasional pres
 Secondly, the measures in \cite{sakhawat_hossain_salsa_2018} seem to indicate that the curve obtained in \autoref{fig:VEGA_velocity_curve} is characteristic of measures taken with $b \neq 0$. 
 It was determined in \autoref{sec:calibration} that VEGA's pointing is off by the values contained in \autoref{eq:offset}.
 This offset is high enough for the antenna not to point towards the middle of the galactic plane width: considering the time of observation, the actual galactic latitude of the measures is estimated at $b \approx 5^{\circ}$.
-For better results it would have been necessary to apply the calculated calibration to the pointing of VEGA, but limitations in the software used to operate the antenna made it unfortunately impossible to acquire in this way the precise values of the orientation of the antenna which are needed to determine the velocity curve.
+For better results it would have been necessary to apply the calculated calibration to the pointing of VEGA, but limitations in the software used to operate the antenna made it impossible to acquire in this way the precise values of the orientation of the antenna which are needed to determine the velocity curve.
 
 
 \paragraph{Comparison with SALSA}
-The measures taken with SALSA yieldied a velocity curve of similar aspect than VEGA's, albeit a much cleaner one:
+The measures taken with SALSA yielded a velocity curve of similar aspect than VEGA's, albeit a much cleaner one:
 the biggest difference when comparing the spectra taken with the two antennas was indeed the lower noise level in SALSA, as visible in \autoref{sec:fittings}. 
 This greatly simplified the localisation of the HI peaks, and guaranteed that real peaks were identified instead of possible noise.
-A calibration option was also present, although in the interest of time it was not used. Much like in VEGA, this could be the source of the lower-than-expected values of velocity obtained for small $R$. 
+A calibration option was also present, although in the interest of time it was not used. Much like in VEGA, if the antenna was not correctly calibrated this could be the source of the lower-than-expected values of velocity obtained for small $R$. 
 SALSA also featured a built-in correction for the movement of Earth in the Solar System, although the errors from estimating distance and the radius of the orbit greatly overshadowed the correction in radial relative velocity of about $\Delta V_r \approx 5$ km/s.
 
 
