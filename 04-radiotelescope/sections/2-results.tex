@@ -17,7 +17,7 @@ The signal received by the antenna inherently contains noise which must be remov
 To this end, a signal measure was taken with the telescope pointed towards a nearby building, so that the registered spectrum  contained only the noise characteristic of the telescope location, which is expected to be found in all the signals received by the antenna.
 The spectra of all the subsequently acquired signals were then divided by this noise spectrum, obtaining  signal-to-noise ratios which were further cleaned up by applying a moving average filter of $5$ bins of width.
 An example of the application of this pipeline is depicted in \autoref{fig:process_example}.
-\begin{figure}
+\begin{figure}[h]
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[scale=1]{figures/raw_signal.pdf}
@@ -38,7 +38,7 @@ An example of the application of this pipeline is depicted in \autoref{fig:proce
 \subsection{Velocity curve of the Milky Way}
 A scan of the Milky Way was acquired by pointing VEGA to Galactic coordinates $b = (0\pm 1)^\circ$ and $18^\circ \leq \ell \leq 135^\circ$, spanning almost half of the galactic plane. The region $180^\circ < \ell < 360^\circ$ was never visible at the time of the measurements.
 Using multiple gaussian fits, as can be seen in \autoref{sec:fittings}, \autoref{fig:fit_VEGA}, the frequency shift of the HI line and thus the radial relative velocity $V_r$ of the object for each spectrum was found. The methods presented in \autoref{sec:velocity_of_clouds} were used to derive the velocity of the hydrogen cloud observed, its distance from the Galactic Center and its distance from the Solar System.
-\autoref{fig:VEGA_velocity_curve} depicts the velocity curves obtained for each method. For $R < R_0$, the velocity seems to grow linearly up to around $V=180$ km/s. In the region $R > R_0$, multiple behaviors are observed: one branch remains approximately constant at around $240$ km/s, while another branch grows linearly to above \mbox{$500$ km/s.}
+\autoref{fig:VEGA_velocity_curve} depicts the velocity curves obtained for each method. For $R < R_0$, the velocity seems to grow linearly up to around $V=180$ \si{\kilo\meter\per\second}. In the region $R > R_0$, multiple behaviors are observed: one branch remains approximately constant at around $240$ \si{\kilo\meter\per\second}, while another branch grows to above \mbox{$500$ \si{\kilo\meter\per\second}}
 
 By combining the distance of the hydrogen from Earth and the angle at which the measurements were taken, a map of the observed regions of the Galaxy was produced as shown in \autoref{fig:VEGA_galaxy_map}. One can see how a spiral pattern was produced by the data.
 
@@ -55,7 +55,7 @@ By combining the distance of the hydrogen from Earth and the angle at which the 
         \centering
         \captionsetup{width=.95\textwidth}
         \includegraphics[scale=1]{figures/VEGA_galaxy_map.pdf}
-        \caption{Position of the hydrogen clouds observed by VEGA, as derived from \autoref{eq:general_radius} WITH RADIUS SPECIAL AND METHOD SPECIAL.}
+        \caption{Position of the hydrogen clouds observed by VEGA. Obtained for $\ell < 90^\circ$ using \autoref{eq:general_radius}. Only showing the positive solution for the distance $d_+$}
         \label{fig:VEGA_galaxy_map}
     \end{minipage}
 \end{figure}

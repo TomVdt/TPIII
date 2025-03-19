@@ -1,11 +1,12 @@
+\newpage
 \section{Discussion}
 The velocity curve resulting of VEGA's measures, depicted in \autoref{fig:VEGA_velocity_curve}, contains values of the same order of magnitude as those contained in the latest articles treating the same subject.
-Both \cite{ou_dark_2024} and \cite{eilers_circular_2019} for example, using parallax measurements from the \emph{Gaia} mission, measured slightly decreasing velocities for radii between $6$ kpc and $25$ kpc, from $230$ to around $200$ \unit{km \per s}.
+Both \cite{ou_dark_2024} and \cite{eilers_circular_2019} for example, using parallax measurements from the \emph{Gaia} mission, measured slightly decreasing velocities for radii between $6$ kpc and $25$ kpc, from $230$ \si{\kilo\meter\per\second} to around \mbox{$200$ \si{\kilo\meter\per\second}}.
 These results are also in good agreement with the analysis based on Galactic Cepheids in \cite{mroz_rotation_2019}.
 When it comes to the general behaviour of the velocity curve, though, VEGA's results differ in a number of ways.
 
 \paragraph{Tangent method} 
-Velocities obtained using the tangent method yielded for both telescopes a quasi-linear behavior for radii between $2$ and $8$ kpc. Although this is different from the results in \cite{ou_dark_2024}, \cite{eilers_circular_2019} and \cite{mroz_rotation_2019}, the method is supposed to yield a lower bound for the velocity, and thus still remains compatible with those measures.
+Velocities obtained using the tangent method yielded for both telescopes a quasi-linear behavior for radii between $2$ kpc and $8$ kpc. Although this is different from the results in \cite{ou_dark_2024}, \cite{eilers_circular_2019} and \cite{mroz_rotation_2019}, the method is supposed to yield a lower bound for the velocity, and thus still remains compatible with those measures.
 According to the simulations carried out in \cite{chemin_incorrect_2015}, the tangent method is also not ideal for estimating velocities close to the galactic center \mbox{($R < 4$ kpc)}, due to the asymmetry of the galaxy, especially near the center.
 
 \paragraph{General equation}
@@ -19,7 +20,7 @@ Given that the estimate for the radius of the orbit, the distance and the transv
 
 \paragraph{Limitations in the operation of the antenna}
 For what concerns the hardware of the antenna, two facts could explain the difference between our results and the literature's. 
-A first problem is the antenna's low resolution coupled with the occasional presence of unexpected noise in the acquired spectra. This could have lead to the misidentification of peaks and thus the incorrect measurements of the H21 frequency shift. 
+A first problem is the antenna's low resolution coupled with the occasional presence of unexpected noise in the acquired spectra. This could have lead to the misidentification of peaks and thus the incorrect measurements of the HI frequency shift. 
 Secondly, the measures in \cite{sakhawat_hossain_salsa_2018} seem to indicate that the curve obtained in \autoref{fig:VEGA_velocity_curve} is characteristic of measures taken with $b \neq 0$. 
 It was determined in \autoref{sec:calibration} that VEGA's pointing is off by the values contained in \autoref{eq:offset}.
 This offset is high enough for the antenna not to point towards the middle of the galactic plane width: considering the time of observation, the actual galactic latitude of the measures is estimated at $b \approx 5^{\circ}$.
@@ -36,7 +37,7 @@ SALSA also featured a built-in correction for the movement of Earth in the Solar
 
 
 \paragraph{VEGA interface}
-Due to the young age of the VEGA telescope, its interface is still very barebones, a factor which hindered some of the experiments. Further work would be needed to exploit the full capability of the telescope, such as adding software-level calibration, which would automatically apply a correction to the Az/Alt coordinates in every pointing mode, having real-time feedback of the measurement in progress, and a scripting interface which would help for operations such as calibration or scanning the Milky Way. As seen in the signals outputted by the VEGA pipeline, compared to SALSA, there are still improvements to be made in the antenna hardware too, like a stronger removal of the DC component in the signal and better noise removal, all while avoiding the "double hill" pattern visible in the raw spectra. 
+Due to the young age of the VEGA telescope, its interface is still very barebones, a factor which hindered some of the experiments. Further work would be needed to exploit the full capability of the telescope, such as adding software-level calibration, which would automatically apply a correction to the Az/Alt coordinates in every pointing mode, having real-time feedback of the measurement in progress, and a scripting interface which would help for operations such as calibration or scanning the Milky Way. As seen in the signals outputted by the VEGA pipeline, compared to SALSA, there are still improvements to be made in the antenna hardware too, like a stronger removal of the DC component in the signal, which is very visible in \autoref{fig:raw_signal}, and better noise removal, all while avoiding the "double hill" pattern visible in the raw spectra. 
 A different geometry for the feed could also be used, such as a secondary reflector attached at the focal point of the antenna, reflecting the incoming waves into the center of the parabolic reflector, where a feed with a small aperture angle can then be attached (Gregory or Cassegrain
 beam path), a setup which would decrease the noise caused by the spillover \cite{lauterbach_radio_2022}.
 These improvements could open the way for other types of observation, such as the detection of Galactic high-velocity clouds or even, after modifying the feed,  extra-galactic objects such as external galaxies or pulsars. 
