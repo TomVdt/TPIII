@@ -1,12 +1,2 @@
 === À faire ===
-- Source  R_0 (10.1051/0004-6361/201935656) V_0 (10.1088/0004-637X/783/2/130)
-- Incertitudes
-
-=== Theory and experimental setup ===
-Utilisation de "speed" vs "velocity": lequel dans quel contexte?
-
-Median has no intrinsic physical significance.
-Average reduces noise by a specific amount, it resolves to having larger bin width.
-
-== Code ==
-IMPORTANT: CHANGER V0 EN 240 PM 8 KM S^-1
+Le TP ptdr

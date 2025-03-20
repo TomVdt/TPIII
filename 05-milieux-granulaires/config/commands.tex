@@ -1,0 +1,57 @@
+% % Smallcaps autoref
+% \let\oldautoref=\autoref
+% \renewcommand{\autoref}[1]{\textsc{\oldautoref{#1}}}
+
+% Legendes correctes
+% \captionsetup[figure]{name=Figure}
+% \captionsetup[table]{name=Tableau}
+
+% Template de mes couilles
+\makeatletter
+\renewcommand{\section}{\@startsection {section}{1}{\z@}
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus.2ex}%
+	{\normalfont\normalsize\bfseries}}
+\makeatother
+
+\makeatletter
+\renewcommand{\subsection}{\@startsection {subsection}{1}{\z@}%
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus.2ex}%
+	{\normalfont\normalsize\bfseries}}
+\makeatother
+
+\newcommand{\couille}[4]{
+	\begin{center}
+		\large\textbf{#1}\\%
+		\large Group N$^\circ$#2: #3\\%
+		\large \today\qquad Assistant: #4\\%
+	\end{center}
+}
+
+% bullet itemize
+\setlist[itemize]{label={$\vcenter{\hbox{\scriptsize$\bullet$}}$}, leftmargin=0.6cm, topsep=-3pt}
+% smaller space between itemize
+\let\tempone\itemize
+\let\temptwo\enditemize
+\renewenvironment{itemize}{\tempone\addtolength{\itemsep}{-0.4\baselineskip}}{\temptwo}
+% format autoref
+\renewcommand{\figureautorefname}{Fig.\hspace*{-1pt}}
+\renewcommand{\tableautorefname}{Tab.\hspace*{-1pt}}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+% format autoref equations
+\def\equationautorefname~#1\null{%
+  Eq.~\hspace*{-1pt}(#1)\null
+}
+
+% Math macros
+\newcommand{\absfrac}[2]{\ensuremath{\left|\frac{#1}{#2}\right|}}
+\newcommand{\dd}[0]{\ensuremath{\textrm{d}}}
+\newcommand{\deriv}[2]{\ensuremath{\frac{\mathrm{d}#1}{\mathrm{d}#2}}}
+\newcommand{\dderiv}[2]{\ensuremath{\frac{\mathrm{d}^2#1}{\mathrm{d}#2^2}}}
+
+% Physics macros
+\newcommand{\alphaNGP}{\alpha_{\text{NGP}}}
+\newcommand{\deltaNGP}{\delta_{\text{NGP}}}
+\newcommand{\lNCP}{l_{\text{NCP}}}
