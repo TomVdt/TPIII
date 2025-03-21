@@ -1,0 +1,1 @@
+Freq (Hz)	PSD/Measured Spectrum: Power CH2 (Vrms/rtHz)	Freq Response Module (Vrms)	Freq Response Im part (Unitless Power)
