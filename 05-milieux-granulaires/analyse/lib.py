@@ -52,7 +52,7 @@ def load(dataset_name: str) -> list[Step]:
 # Functions for fits
 def modulus_chi(x: np.ndarray, I: float, w0: float, alpha: float) -> np.ndarray:
     return 1 / np.sqrt(
-        (I * (w0**2 - x**2))**2 + (alpha * x)**2
+        (I * (x**2 - w0**2))**2 + (alpha * x)**2
     )
 
 # https://stackoverflow.com/questions/18926031/how-to-extract-a-subset-of-a-colormap-as-a-new-colormap-in-matplotlib
