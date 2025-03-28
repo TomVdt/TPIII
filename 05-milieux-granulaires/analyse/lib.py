@@ -51,9 +51,16 @@ def load(dataset_name: str) -> list[Step]:
     return data
 
 # Functions for fits
-def modulus_chi(x: np.ndarray, I: float, w0: float, alpha: float) -> np.ndarray:
+def modulus_chi(f: np.ndarray, I: float, w0: float, alpha: float) -> np.ndarray:
+    w = 2 * np.pi * f
     return 1 / np.sqrt(
-        (I * (x**2 - w0**2))**2 + (alpha * x)**2
+        (I * (w**2 - w0**2))**2 + (alpha * w)**2
+    )
+
+def imag_chi(f: np.ndarray, I: float, w0: float, alpha: float) -> np.ndarray:
+    w = 2 * np.pi * f
+    return alpha * w / (
+        (I * (w**2 - w0**2))**2 + (alpha * w)**2
     )
 
 def moving_average(spectrum: np.ndarray, window_size: int) -> np.ndarray:
