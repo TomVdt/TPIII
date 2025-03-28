@@ -1,7 +1,11 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from matplotlib import colors
+from uncertainties import Variable
+from uncertainties import unumpy as unp
 from dataclasses import dataclass
 from glob import glob
+import warnings
 from scipy.ndimage import uniform_filter1d
 
 @dataclass
@@ -24,9 +28,11 @@ def load(dataset_name: str) -> list[Step]:
     data_files.sort(key=lambda s: int(s.split('step')[-1][:-4]))
     data: list[Step] = []
 
+    prev_freq = None
     for i, file in enumerate(data_files):
         try:
-            freq, psd, chi_abs, chi_im = np.loadtxt(file, skiprows=1, delimiter='\t', unpack=True)
+            with warnings.catch_warnings(record=True):
+                freq, psd, chi_abs, chi_im = np.loadtxt(file, skiprows=1, delimiter='\t', unpack=True)
         except ValueError:
             print(f"WARNING: data is fucked for {file}")
             continue
@@ -37,8 +43,13 @@ def load(dataset_name: str) -> list[Step]:
             print(f"WARNING: data is fucked for {file}")
             continue
         if np.allclose(freq, 0):
-            print(f"WARNING: data is fucked for {file}, trying to recover freqs...")
-            freq = np.arange(5, 70 + 0.0001, 0.1625)
+            print(f"WARNING: data is fucked for {file}, trying to recover freqs... ", end='')
+            if prev_freq is not None:
+                print("Used previous freqs")
+                freq = prev_freq.copy()
+            else:
+                print("Generated artificial freqs between 5 and 70")
+                freq = np.arange(5, 70 + 0.0001, 0.1625)
 
         data.append(
             Step(
@@ -47,8 +58,13 @@ def load(dataset_name: str) -> list[Step]:
                 freq, psd, chi_abs, np.abs(chi_im)
             )
         )
+        prev_freq = freq
     
     return data
+
+def denoise_dataset(dataset: list[Step], noise: Step) -> None:
+    for step in dataset:
+        step.psd /= noise.psd
 
 # Functions for fits
 def modulus_chi(f: np.ndarray, I: float, w0: float, alpha: float) -> np.ndarray:
@@ -63,6 +79,23 @@ def imag_chi(f: np.ndarray, I: float, w0: float, alpha: float) -> np.ndarray:
         (I * (w**2 - w0**2))**2 + (alpha * w)**2
     )
 
+# Doing fits
+def do_fit_alpha(dataset: list[Step], alpha_with_err: np.ndarray) -> tuple[Variable, Variable]:
+    amplitude = np.array([step.imposed_vibration for step in dataset])
+    alpha = unp.nominal_values(alpha_with_err)
+    alpha_err = unp.std_devs(alpha_with_err)
+
+    plt.errorbar(amplitude, alpha, yerr=alpha_err, ls='none')
+
+    coefs, cov = np.polyfit(np.log(amplitude), np.log(alpha), 1, cov=True)
+    xx = np.linspace(min(amplitude), max(amplitude), 50)
+    yy = np.exp(np.polyval(coefs, np.log(xx)))
+    plt.plot(xx, yy)
+    
+    coefs_err = unp.uarray(coefs, np.sqrt(np.diag(cov)))
+    return coefs_err
+
+# Utils
 def moving_average(spectrum: np.ndarray, window_size: int) -> np.ndarray:
     """
     Applies a moving average filter to the given spectrum.
