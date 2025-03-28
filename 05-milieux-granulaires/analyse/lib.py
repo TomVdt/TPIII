@@ -2,6 +2,7 @@ import numpy as np
 from matplotlib import colors
 from dataclasses import dataclass
 from glob import glob
+from scipy.ndimage import uniform_filter1d
 
 @dataclass
 class Step:
@@ -43,7 +44,7 @@ def load(dataset_name: str) -> list[Step]:
             Step(
                 file,
                 imposed_vibration, gamma, step_time,
-                freq, psd, chi_abs, chi_im
+                freq, psd, chi_abs, np.abs(chi_im)
             )
         )
     
@@ -54,6 +55,12 @@ def modulus_chi(x: np.ndarray, I: float, w0: float, alpha: float) -> np.ndarray:
     return 1 / np.sqrt(
         (I * (x**2 - w0**2))**2 + (alpha * x)**2
     )
+
+def moving_average(spectrum: np.ndarray, window_size: int) -> np.ndarray:
+    """
+    Applies a moving average filter to the given spectrum.
+    """
+    return uniform_filter1d(spectrum, size=window_size, mode='nearest')
 
 # https://stackoverflow.com/questions/18926031/how-to-extract-a-subset-of-a-colormap-as-a-new-colormap-in-matplotlib
 def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):
