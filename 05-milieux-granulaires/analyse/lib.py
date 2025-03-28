@@ -21,10 +21,10 @@ class Step:
 
 # Load data
 def load(dataset_name: str) -> list[Step]:
-    metadata_file = glob(f'../data/{dataset_name}/*-exp?.txt')
+    metadata_file = glob(f'../data/{dataset_name}/*-*?.txt')
     metadata = np.loadtxt(metadata_file[0], skiprows=1, delimiter='\t')
 
-    data_files = glob(f'../data/{dataset_name}/*-exp?_step*.txt')
+    data_files = glob(f'../data/{dataset_name}/*-*?_step*.txt')
     data_files.sort(key=lambda s: int(s.split('step')[-1][:-4]))
     data: list[Step] = []
 
