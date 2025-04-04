@@ -21,10 +21,10 @@ class Step:
 
 # Load data
 def load(dataset_name: str) -> list[Step]:
-    metadata_file = glob(f'../data/{dataset_name}/*-*?.txt')
+    metadata_file = glob(f'../data/{dataset_name}/*-*.txt')
     metadata = np.loadtxt(metadata_file[0], skiprows=1, delimiter='\t')
 
-    data_files = glob(f'../data/{dataset_name}/*-*?_step*.txt')
+    data_files = glob(f'../data/{dataset_name}/*-*_step*.txt')
     data_files.sort(key=lambda s: int(s.split('step')[-1][:-4]))
     data: list[Step] = []
 
@@ -53,9 +53,9 @@ def load(dataset_name: str) -> list[Step]:
 
         data.append(
             Step(
-                file,
-                imposed_vibration, gamma, step_time,
-                freq, psd, chi_abs, np.abs(chi_im)
+                filename=file,
+                imposed_vibration=imposed_vibration, gamma=gamma, step_time=step_time,
+                freqs=freq, psd=psd, chi_abs=chi_abs, chi_im=np.abs(chi_im)
             )
         )
         prev_freq = freq
