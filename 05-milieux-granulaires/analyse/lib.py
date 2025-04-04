@@ -22,7 +22,9 @@ class Step:
 # Load data
 def load(dataset_name: str) -> list[Step]:
     metadata_file = glob(f'../data/{dataset_name}/*-*.txt')
-    metadata = np.loadtxt(metadata_file[0], skiprows=1, delimiter='\t')
+    metadata_file = min(metadata_file, key=len)
+    metadata = np.loadtxt(metadata_file, skiprows=1, delimiter='\t')
+    assert metadata.shape[0] < 50
 
     data_files = glob(f'../data/{dataset_name}/*-*_step*.txt')
     data_files.sort(key=lambda s: int(s.split('step')[-1][:-4]))
