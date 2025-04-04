@@ -1,1 +1,62 @@
 \section{Theory and experimental setup}
+\subsection{Introduction}
+Systems in thermodynamic equilibrium depend only on a defined set of parameters, indipendent of the system history.
+As this is not the case for non-equilibrium systems, such as vibrating granular media, the standard laws of thermodynamics do not apply and the kinetic definition of temperature cannot be applied.
+The fluctuation-dissipation theorem allows for a more general definition of temperature
+
+\subsection{Experimental setup}
+Torsion pendulum with conical probe, immerged in a granular medium.
+A function generator connected to a motor puts the medium in vibration, using white noise (300 to 900 Hz) of amplitude proportional to the voltage $V$ applied.
+The pendulum can only rotate around its axis and it is subject to granular agitation: a laser reflected on a mirror fixed on its axis allows to measure the angular position $\theta$ as a function of time.
+
+couple
+
+\begin{table}[htbp]
+    \begin{tabular}{c c c}
+        Material & Diameter [mm] & Average mass [mg] \\
+        \hline
+        Glass & $1.99 \pm 0.02$ & 1.9\\
+        Sand & ?? & 0.2 \\
+        Plastic & ?? &  $(19.8 \pm 0.1)$
+    \end{tabular}
+\end{table}
+
+\subsection{Langevin equation}
+The system, a damped harmonic oscillator of moment of inertia $I$, subject to an external couple $C$ (bobine) and an aleatory fluctuating force (microscopic collisions of null average), follows Langevin's equation
+\begin{equation}
+    I \langle \ddot{\theta} (t) \rangle + \alpha \langle \dot{\theta}(t) \rangle + I \omega_0^2 \langle \theta(t) \rangle = C(t)
+\end{equation}
+
+\subsection{Power Spectral Density}
+When no couple is applied, the fluctuations of the pendulum around its position equilibrium are solely caused by the interaction with the medium. We define the Power Spectral Density (PSD)
+\begin{equation}
+    S(\omega) = \lim_{\tau \rightarrow \infty} \frac{2}{\tau} \left\langle \left| \tilde{\theta}_\tau (\omega) \right|^2 \right\rangle
+\end{equation}
+which can be found to be
+\begin{equation}
+    S(\omega) = \frac{2q}{I^2(\omega^2 - \omega_0^2)^2 + \alpha^2 \omega^2}
+\end{equation}
+
+\subsection{Susceptibility}
+When the system is subject to external couple $C$, its response is given by the susceptibility function $\chi$, defined by
+% \begin{equation}
+%     \langle \theta (t) \rangle = \int \mathrm{d}t' \chi(t - t') C(t')
+% \end{equation}
+\begin{equation}
+    \tilde{\theta} (\omega) = \tilde{\chi}(\omega) \tilde{C}(\omega)
+\end{equation}
+And by taking the Fourier transform of the Langevin equation we get
+\begin{equation}
+    \left|\tilde{\chi} (\omega)\right| = \frac{1}{\sqrt{I^2 ( \omega^2 - \omega^2_0)^2 + \alpha^2 \omega^2}};\quad \tilde{\chi}'' (\omega) = \frac{\alpha \omega}{I^2 (\omega^2 - \omega_0^2)^2 + \alpha^2 \omega^2}
+\end{equation}
+
+\subsection{Fluctuation-Dissipation Theorem}
+In a system at equilibrium the equipartition theorem gives $q = 2 \alpha k_B T$, so that
+\begin{equation}
+    \frac{S(\omega) \omega}{4 \tilde{\chi}'' (\omega)} = k_B T
+\end{equation}
+The FDT is not valid fot non-equilibrium systems, but it offers a way to generalise the notion of temperature by defining an effective temperature $T_{\text{eff}}$ such that
+\begin{equation}
+    \frac{S(\omega) \omega}{4 \tilde{\chi}'' (\omega)} = k_B T_{\text{eff}}
+\end{equation}
+Regardless of the system, if the theorem is satisfied the effective temperature is constant.
