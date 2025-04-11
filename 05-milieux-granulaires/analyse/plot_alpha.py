@@ -26,6 +26,7 @@ mpl.rcParams["figure.figsize"] = (12*INCH_PER_CM, 12*INCH_PER_CM)
 
 # ===== params =====
 dir = "../data/"
+source="im" # modulus or im
 c_glass = 'C0'
 c_plastic = 'C3'
 c_sand = 'C1'
@@ -33,29 +34,29 @@ fit_text_size = 14
 material_text_size = 14
 
 # ===== Data loading =====
-glass_im = np.load(f"{dir}glass_alpha_im.npz", allow_pickle=True)
-glass_im_amplitude, glass_im_alpha, glass_im_coefs, glass_im_cov = glass_im["arr_0"], glass_im["arr_1"], glass_im["arr_2"], glass_im["arr_3"]
-plastic_im = np.load(f"{dir}plastic_alpha_im.npz", allow_pickle=True)
-plastic_im_amplitude, plastic_im_alpha, plastic_im_coefs, plastic_im_cov = plastic_im["arr_0"], plastic_im["arr_1"], plastic_im["arr_2"], plastic_im["arr_3"]
-sand_im = np.load(f"{dir}sand_alpha_im.npz", allow_pickle=True)
-sand_im_amplitude, sand_im_alpha, sand_im_coefs, sand_im_cov = sand_im["arr_0"], sand_im["arr_1"], sand_im["arr_2"], sand_im["arr_3"]
+glass = np.load(f"{dir}glass_alpha_{source}.npz", allow_pickle=True)
+glass_amplitude, glass_alpha, glass_coefs, glass_cov = glass["arr_0"], glass["arr_1"], glass["arr_2"], glass["arr_3"]
+plastic = np.load(f"{dir}plastic_alpha_{source}.npz", allow_pickle=True)
+plastic_amplitude, plastic_alpha, plastic_coefs, plastic_cov = plastic["arr_0"], plastic["arr_1"], plastic["arr_2"], plastic["arr_3"]
+sand = np.load(f"{dir}sand_alpha_{source}.npz", allow_pickle=True)
+sand_amplitude, sand_alpha, sand_coefs, sand_cov = sand["arr_0"], sand["arr_1"], sand["arr_2"], sand["arr_3"]
 
 
 # ===== Errorbars =====
 fig, ax = plt.subplots(1,1)
 
-plt.errorbar(glass_im_amplitude, nom_vals(glass_im_alpha),
-             yerr=std_devs(glass_im_alpha),
+plt.errorbar(glass_amplitude, nom_vals(glass_alpha),
+             yerr=std_devs(glass_alpha),
              ls='', c=c_glass,
              label='Glass'
              )
-plt.errorbar(plastic_im_amplitude, nom_vals(plastic_im_alpha),
-             yerr=std_devs(plastic_im_alpha),
+plt.errorbar(plastic_amplitude, nom_vals(plastic_alpha),
+             yerr=std_devs(plastic_alpha),
              ls='', c=c_plastic,
              label='Plastic'
              )
-plt.errorbar(sand_im_amplitude, nom_vals(sand_im_alpha),
-             yerr=std_devs(sand_im_alpha),
+plt.errorbar(sand_amplitude, nom_vals(sand_alpha),
+             yerr=std_devs(sand_alpha),
              ls='', c=c_sand,
              label='Sand'
              )
@@ -63,18 +64,18 @@ plt.errorbar(sand_im_amplitude, nom_vals(sand_im_alpha),
 # ===== Fits =====
 offset = 0.6
 
-xx_glass = np.linspace(min(glass_im_amplitude), glass_im_amplitude[-7], 50)
-yy_glass = np.exp(np.polyval(glass_im_coefs, np.log(xx_glass)))
+xx_glass = np.linspace(min(glass_amplitude), glass_amplitude[-7], 50)
+yy_glass = np.exp(np.polyval(glass_coefs, np.log(xx_glass)))
 plt.plot(xx_glass, yy_glass * offset,
          c=c_glass)
 
-xx_plastic = np.linspace(min(plastic_im_amplitude), plastic_im_amplitude[-9], 50)
-yy_plastic = np.exp(np.polyval(plastic_im_coefs, np.log(xx_plastic)))
+xx_plastic = np.linspace(min(plastic_amplitude), plastic_amplitude[-9], 50)
+yy_plastic = np.exp(np.polyval(plastic_coefs, np.log(xx_plastic)))
 plt.plot(xx_plastic, yy_plastic*offset,
          c=c_plastic)
 
-xx_sand = np.linspace(min(sand_im_amplitude), sand_im_amplitude[-5], 50)
-yy_sand = np.exp(np.polyval(sand_im_coefs, np.log(xx_sand)))
+xx_sand = np.linspace(min(sand_amplitude), sand_amplitude[-5], 50)
+yy_sand = np.exp(np.polyval(sand_coefs, np.log(xx_sand)))
 plt.plot(xx_sand, yy_sand*offset,
          c=c_sand)
 
@@ -98,19 +99,19 @@ position_on_line = 3
 additional_offset=0.65
 
 plt.text(xx_glass[position_on_line], yy_glass[position_on_line]*offset*additional_offset,
-         f"$\\sim {glass_im_coefs[0]:.2f}$", size=fit_text_size,
+         f"$\\sim {glass_coefs[0]:.2f}$", size=fit_text_size,
          rotation=-42,
          rotation_mode='anchor',
         #  c=c_glass
          )
 plt.text(xx_sand[position_on_line], yy_sand[position_on_line]*offset*additional_offset,
-         f"$\\sim {sand_im_coefs[0]:.2f}$", size=fit_text_size,
+         f"$\\sim {sand_coefs[0]:.2f}$", size=fit_text_size,
          rotation=-42,
          rotation_mode='anchor',
         #  c=c_sand
          )
 plt.text(xx_plastic[position_on_line], yy_plastic[position_on_line]*offset*additional_offset,
-         f"$\\sim {plastic_im_coefs[0]:.2f}$", size=fit_text_size,
+         f"$\\sim {plastic_coefs[0]:.2f}$", size=fit_text_size,
          rotation=-33,
          rotation_mode='anchor',
         #  c=c_plastic
