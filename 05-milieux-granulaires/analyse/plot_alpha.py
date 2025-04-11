@@ -16,12 +16,12 @@ std_devs = unp.std_devs
 
 mpl.rcParams.update(rcParams)
 
-# mpl.rcParams['savefig.bbox'] = 'standard'
+mpl.rcParams['savefig.bbox'] = 'standard'
 mpl.rcParams["figure.figsize"] = (12*INCH_PER_CM, 12*INCH_PER_CM)
-# mpl.rcParams["figure.subplot.left"]   = 0.21
-# mpl.rcParams['figure.subplot.right']  = 0.75
-# mpl.rcParams['figure.subplot.top']    = 0.97
-# mpl.rcParams['figure.subplot.bottom'] = 0.2
+mpl.rcParams["figure.subplot.left"]   = 0.19
+mpl.rcParams['figure.subplot.right']  = 0.99
+mpl.rcParams['figure.subplot.top']    = 0.99
+mpl.rcParams['figure.subplot.bottom'] = 0.14
 
 
 # ===== params =====
@@ -125,4 +125,4 @@ plt.ylabel(r'Friction coefficient $\alpha$ [kg m$^2$ s$^{-1}$]')
 
 # ax.legend(bbox_to_anchor=(0.5,0.5))
 
-plt.savefig('../figures/alpha_together.png', bbox_inches='tight')
+plt.savefig('../figures/alpha_together.png')

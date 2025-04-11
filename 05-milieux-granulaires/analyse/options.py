@@ -3,7 +3,7 @@ from constants import *
 rcParams = {
     # Text appearance
     "text.usetex": True,
-    "font.family": "serif",
+    # "font.family": "serif",
     "text.latex.preamble": "\n".join([
         r"\usepackage[utf8]{inputenc}",
         r"\setlength{\parindent}{0pt}",

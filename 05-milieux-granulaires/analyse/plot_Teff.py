@@ -1,8 +1,6 @@
 import numpy as np
-# import scipy as sc
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-# import matplotlib.mlab as mlab
 from matplotlib.ticker import ScalarFormatter
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 
@@ -18,12 +16,12 @@ std_devs = unp.std_devs
 
 mpl.rcParams.update(rcParams)
 
-# mpl.rcParams['savefig.bbox'] = 'standard'
-mpl.rcParams["figure.figsize"] = (36*INCH_PER_CM, 12*INCH_PER_CM)
-# mpl.rcParams["figure.subplot.left"]   = 0.21
-# mpl.rcParams['figure.subplot.right']  = 0.75
-# mpl.rcParams['figure.subplot.top']    = 0.97
-# mpl.rcParams['figure.subplot.bottom'] = 0.2
+mpl.rcParams['savefig.bbox'] = 'standard'
+mpl.rcParams["figure.figsize"] = (24*INCH_PER_CM, 10*INCH_PER_CM)
+mpl.rcParams["figure.subplot.left"]   = 0.085
+mpl.rcParams['figure.subplot.right']  = 1.05
+mpl.rcParams['figure.subplot.top']    = 0.97
+mpl.rcParams['figure.subplot.bottom'] = 0.15
 
 # ===== Params =====
 datasets= ['250321-exp7', '250404-sand2', '250404-plastic6']
@@ -31,16 +29,15 @@ material_text_size = 22
 
 # ===== Subplots =====
 fig, axs = plt.subplots(1,3, 
-                       layout='constrained', 
+                    #    layout='constrained', 
                        sharey='row',
                     #    gridspec_kw={'wspace': 0.1, 'hspace': 0.005}
                        )
+plt.subplots_adjust(wspace=0.06)
 # == padding ==
-fig.get_layout_engine().set(w_pad=8 / 72, h_pad=4 / 72, 
-                            hspace=0.0, wspace=0.0
-                            )
-
-
+# fig.get_layout_engine().set(w_pad=5 / 72, h_pad=4 / 72, 
+#                             hspace=0.0, wspace=0.0
+#                             )
 # ===== Data analysis and plot =====
 for i, dataset in enumerate(datasets):
     data = load(dataset)
@@ -85,33 +82,37 @@ for i, dataset in enumerate(datasets):
     # )
 
 # ===== Annotations =====
+material_text_position = (0.06, 0.91)
+material_text_padding=0.18
 axs[0].text(
-            0.05,0.92, "Glass",
+            material_text_position[0],material_text_position[1], "Glass",
             size=material_text_size,
             horizontalalignment='left',
             verticalalignment='center',
             transform = axs[0].transAxes,
-            bbox=dict(facecolor='none', edgecolor='black', boxstyle='round,pad=0.3')
+            bbox=dict(facecolor='none', edgecolor='black', boxstyle=f'round,pad={material_text_padding}')
             )
 axs[1].text(
-            0.05,0.92, "Sand",
+            material_text_position[0],material_text_position[1], "Sand",
             size=material_text_size,
             horizontalalignment='left',
             verticalalignment='center',
             transform = axs[1].transAxes,
-            bbox=dict(facecolor='none', edgecolor='black', boxstyle='round,pad=0.3')
+            bbox=dict(facecolor='none', edgecolor='black', boxstyle=f'round,pad={material_text_padding}')
             )
 axs[2].text(
-            0.05,0.92, "Plastic",
+            material_text_position[0],material_text_position[1], "Plastic",
             size=material_text_size,
             horizontalalignment='left',
             verticalalignment='center',
             transform = axs[2].transAxes,
-            bbox=dict(facecolor='none', edgecolor='black', boxstyle='round,pad=0.3')
+            bbox=dict(facecolor='none', edgecolor='black', boxstyle=f'round,pad={material_text_padding}')
             )
 
 
-clb = fig.colorbar(plt.cm.ScalarMappable(norm, cmap), ax=axs, label="Vibration amplitude [V]")
+clb = fig.colorbar(plt.cm.ScalarMappable(norm, cmap), ax=axs, 
+                   label="Vibration amplitude [V]",
+                   pad=0.01)
 # clb.ax.set_xticks(ticks = [round(min_amplitude), round(max_amplitude)], minor=False)
 # clb.ax.set_title("Vibration amplitude [V]", loc='left')
 
