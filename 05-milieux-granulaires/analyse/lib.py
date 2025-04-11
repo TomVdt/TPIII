@@ -82,14 +82,14 @@ def imag_chi(f: np.ndarray, I: float, w0: float, alpha: float) -> np.ndarray:
     )
 
 # Doing fits
-def do_fit_alpha(dataset: list[Step], alpha_with_err: np.ndarray, savedata_location: str = '') -> tuple[Variable, Variable]:
+def do_fit_alpha(dataset: list[Step], alpha_with_err: np.ndarray, idx_select: list, savedata_location: str = '') -> tuple[Variable, Variable]:
     amplitude = np.array([step.imposed_vibration for step in dataset])
     alpha = unp.nominal_values(alpha_with_err)
     alpha_err = unp.std_devs(alpha_with_err)
 
     plt.errorbar(amplitude, alpha, yerr=alpha_err, ls='none')
 
-    coefs, cov = np.polyfit(np.log(amplitude), np.log(alpha), 1, cov=True)
+    coefs, cov = np.polyfit(np.log(amplitude[idx_select]), np.log(alpha[idx_select]), 1, cov=True)
     xx = np.linspace(min(amplitude), max(amplitude), 50)
     yy = np.exp(np.polyval(coefs, np.log(xx)))
     plt.plot(xx, yy)
@@ -97,7 +97,7 @@ def do_fit_alpha(dataset: list[Step], alpha_with_err: np.ndarray, savedata_locat
     coefs_err = unp.uarray(coefs, np.sqrt(np.diag(cov)))
 
     if (savedata_location != ''):
-        np.savez(savedata_location, amplitude, alpha_with_err)
+        np.savez(savedata_location, amplitude, alpha_with_err, coefs, cov)
     return coefs_err
 
 # Utils
@@ -113,3 +113,13 @@ def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):
         'trunc({n},{a:.2f},{b:.2f})'.format(n=cmap.name, a=minval, b=maxval),
         cmap(np.linspace(minval, maxval, n)))
     return new_cmap
+
+def adjust_lightness(color, amount=0.5):
+    import matplotlib.colors as mc
+    import colorsys
+    try:
+        c = mc.cnames[color]
+    except:
+        c = color
+    c = colorsys.rgb_to_hls(*mc.to_rgb(c))
+    return colorsys.hls_to_rgb(c[0], max(0, min(1, amount * c[1])), c[2])

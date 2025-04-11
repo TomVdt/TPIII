@@ -58,7 +58,7 @@ rcParams = {
 
     # Grid
     'axes.axisbelow' : True,
-    'axes.grid' : True,
+    'axes.grid' : False,
     'grid.linestyle' : '-',
     'grid.linewidth': 1,
     'grid.alpha': 0.75,
