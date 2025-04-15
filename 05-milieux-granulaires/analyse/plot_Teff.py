@@ -18,14 +18,14 @@ mpl.rcParams.update(rcParams)
 
 mpl.rcParams['savefig.bbox'] = 'standard'
 mpl.rcParams["figure.figsize"] = (24*INCH_PER_CM, 10*INCH_PER_CM)
-mpl.rcParams["figure.subplot.left"]   = 0.085
+mpl.rcParams["figure.subplot.left"]   = 0.09
 mpl.rcParams['figure.subplot.right']  = 1.05
 mpl.rcParams['figure.subplot.top']    = 0.97
-mpl.rcParams['figure.subplot.bottom'] = 0.15
+mpl.rcParams['figure.subplot.bottom'] = 0.17
 
 # ===== Params =====
 datasets= ['250321-exp7', '250404-sand2', '250404-plastic6']
-material_text_size = 22
+material_text_size = 20
 
 # ===== Subplots =====
 fig, axs = plt.subplots(1,3, 

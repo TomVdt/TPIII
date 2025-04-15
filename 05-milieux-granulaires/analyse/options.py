@@ -14,12 +14,12 @@ rcParams = {
     ]),
 
     # Text size
-    "axes.labelsize": 16,
-    "font.size": 16,
-    "legend.fontsize": 16,
-    "xtick.labelsize": 16,
-    "ytick.labelsize": 16,
-    # 'lines.markersize': 16,
+    "axes.labelsize": 18,
+    "font.size": 18,
+    "legend.fontsize": 18,
+    "xtick.labelsize": 18,
+    "ytick.labelsize": 18,
+    # 'lines.markersize': 18,
 
     # Figure options
     "figure.figsize": (12*INCH_PER_CM, 12*INCH_PER_CM),

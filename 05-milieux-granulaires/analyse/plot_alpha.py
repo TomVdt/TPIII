@@ -18,10 +18,10 @@ mpl.rcParams.update(rcParams)
 
 mpl.rcParams['savefig.bbox'] = 'standard'
 mpl.rcParams["figure.figsize"] = (12*INCH_PER_CM, 12*INCH_PER_CM)
-mpl.rcParams["figure.subplot.left"]   = 0.19
-mpl.rcParams['figure.subplot.right']  = 0.99
-mpl.rcParams['figure.subplot.top']    = 0.99
-mpl.rcParams['figure.subplot.bottom'] = 0.14
+mpl.rcParams["figure.subplot.left"]   = 0.2
+mpl.rcParams['figure.subplot.right']  = 0.98
+mpl.rcParams['figure.subplot.top']    = 0.98
+mpl.rcParams['figure.subplot.bottom'] = 0.15
 
 
 # ===== params =====
@@ -30,8 +30,12 @@ source="im" # modulus or im
 c_glass = 'C0'
 c_plastic = 'C3'
 c_sand = 'C1'
+c_box_glass = 'black'
+c_box_plastic = 'black'
+c_box_sand = 'black'
 fit_text_size = 14
-material_text_size = 14
+material_text_size = 16
+material_text_padding=0.2
 
 # ===== Data loading =====
 glass = np.load(f"{dir}glass_alpha_{source}.npz", allow_pickle=True)
@@ -81,17 +85,20 @@ plt.plot(xx_sand, yy_sand*offset,
 
 # ===== Annotations =====
 # == Materials ==
-plt.text(2e0, 3e-3, "Sand",
-         c=adjust_lightness(c_sand, 1),
-         size=material_text_size
+plt.text(2e0,2e-3, "Sand",
+         c=c_box_sand,
+         size=material_text_size,
+         bbox=dict(facecolor='none', edgecolor=c_box_sand, boxstyle=f'round,pad={material_text_padding}')
          )
-plt.text(2e0, 3e-4, "Glass",
-         c=adjust_lightness(c_glass, 1),
-         size=material_text_size
+plt.text(2e0, 3.5e-4, "Glass",
+         c=c_box_glass,
+         size=material_text_size,
+         bbox=dict(facecolor='none', edgecolor=c_box_glass, boxstyle=f'round,pad={material_text_padding}')
          )
 plt.text(5e-1, 2e-2, "Plastic",
-         c=adjust_lightness(c_plastic,1),
-         size=material_text_size
+         c=c_box_plastic,
+         size=material_text_size,
+         bbox=dict(facecolor='none', edgecolor=c_box_plastic, boxstyle=f'round,pad={material_text_padding}')
          )
 
 # == Slope ==
