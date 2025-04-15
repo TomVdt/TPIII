@@ -3,10 +3,11 @@ from constants import *
 rcParams = {
     # Text appearance
     "text.usetex": True,
-    # "font.family": "serif",
+    "font.family": "sans-serif",
     "text.latex.preamble": "\n".join([
         r"\usepackage[utf8]{inputenc}",
         r"\setlength{\parindent}{0pt}",
+        r"\usepackage{sfmath}",
         # r"\usepackage[detect-all]{siunitx}",
         # r"\usepackage{mathabx}",
         # r"\usepackage{amsmath}",
