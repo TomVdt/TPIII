@@ -1,3 +1,4 @@
+# In[]
 import numpy as np
 import scipy as sc
 import matplotlib as mpl
@@ -17,7 +18,7 @@ std_devs = unp.std_devs
 mpl.rcParams.update(rcParams)
 
 mpl.rcParams['savefig.bbox'] = 'standard'
-mpl.rcParams["figure.figsize"] = (12*INCH_PER_CM, 12*INCH_PER_CM)
+mpl.rcParams["figure.figsize"] = (12*INCH_PER_CM, 10*INCH_PER_CM)
 mpl.rcParams["figure.subplot.left"]   = 0.2
 mpl.rcParams['figure.subplot.right']  = 0.98
 mpl.rcParams['figure.subplot.top']    = 0.98
@@ -127,7 +128,7 @@ plt.text(xx_plastic[position_on_line], yy_plastic[position_on_line]*offset*addit
 # ===== Figure =====
 plt.yscale('log')
 plt.xscale('log')
-plt.xlabel(r'Oscillation amplitude [V]')
+plt.xlabel(r'Vibration amplitude [V]')
 plt.ylabel(r'Friction coefficient $\alpha$ [kg m$^2$ s$^{-1}$]')
 
 # ax.legend(bbox_to_anchor=(0.5,0.5))
