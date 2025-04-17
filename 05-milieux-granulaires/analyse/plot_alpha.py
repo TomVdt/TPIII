@@ -18,11 +18,13 @@ std_devs = unp.std_devs
 mpl.rcParams.update(rcParams)
 
 mpl.rcParams['savefig.bbox'] = 'standard'
-mpl.rcParams["figure.figsize"] = (12*INCH_PER_CM, 10*INCH_PER_CM)
+mpl.rcParams["figure.figsize"] = (14*INCH_PER_CM, 10*INCH_PER_CM)
 mpl.rcParams["figure.subplot.left"]   = 0.2
 mpl.rcParams['figure.subplot.right']  = 0.98
 mpl.rcParams['figure.subplot.top']    = 0.98
 mpl.rcParams['figure.subplot.bottom'] = 0.15
+mpl.rcParams['axes.spines.right'] = False
+mpl.rcParams['axes.spines.top'] = False
 
 
 # ===== params =====
@@ -125,11 +127,21 @@ plt.text(xx_plastic[position_on_line], yy_plastic[position_on_line]*offset*addit
         #  c=c_plastic
          )
 
+plt.annotate(
+    'Increasing\nfluidity', (8, 1e-2), (8, 5e-4),
+    horizontalalignment="center", verticalalignment="center",
+    arrowprops=dict(
+        arrowstyle='<-', color="k",
+    ),
+)
+
 # ===== Figure =====
 plt.yscale('log')
 plt.xscale('log')
 plt.xlabel(r'Vibration amplitude [V]')
 plt.ylabel(r'Friction coefficient $\alpha$ [kg m$^2$ s$^{-1}$]')
+plt.xlim(plt.xlim()[0], 15)
+
 
 # ax.legend(bbox_to_anchor=(0.5,0.5))
 
