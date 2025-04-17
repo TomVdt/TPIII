@@ -6,7 +6,7 @@ from uncertainties import unumpy as unp
 from dataclasses import dataclass
 from glob import glob
 import warnings
-from scipy.ndimage import uniform_filter1d
+from scipy.ndimage import uniform_filter1d, median_filter
 
 @dataclass
 class Step:
@@ -106,6 +106,12 @@ def moving_average(spectrum: np.ndarray, window_size: int) -> np.ndarray:
     Applies a moving average filter to the given spectrum.
     """
     return uniform_filter1d(spectrum, size=window_size, mode='nearest')
+
+def moving_median(spectrum: np.ndarray, window_size: int) -> np.ndarray:
+    """
+    Applies a moving average filter to the given spectrum.
+    """
+    return median_filter(spectrum, size=window_size)
 
 # https://stackoverflow.com/questions/18926031/how-to-extract-a-subset-of-a-colormap-as-a-new-colormap-in-matplotlib
 def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):

@@ -1,3 +1,4 @@
+# In[]:
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -63,7 +64,7 @@ for i, dataset in enumerate(datasets):
         axs[i].loglog(step.freqs, kB_Teff[k], c=color)
         plt.xlim(10,55)
         axs[i].set_xlabel(r"$f$ [Hz]")
-        axs[0].set_ylabel(r"$k_B T_\textrm{eff}$ [J]")
+        axs[0].set_ylabel(r"$k_B T_\textsf{eff}$ [J]")
 
     axs[i].xaxis.set_major_formatter(ScalarFormatter())
     # ax[i].xaxis.set_minor_formatter(ScalarFormatter())

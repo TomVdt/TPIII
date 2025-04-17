@@ -23,7 +23,7 @@ rcParams = {
 
     # Figure options
     "figure.figsize": (12*INCH_PER_CM, 12*INCH_PER_CM),
-    'figure.dpi': 150,
+    'figure.dpi': 300,
     'axes.titlesize': 16,
     'axes.linewidth': 1.5,
     'lines.color': 'grey',
