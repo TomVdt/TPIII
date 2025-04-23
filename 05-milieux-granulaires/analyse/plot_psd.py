@@ -35,11 +35,13 @@ chosen3 = data[15]
 chosen4 = data[17]
 all_chosen = [chosen1, chosen2, chosen3, chosen4]
 
+# ==== Data plot =====
 cmap = truncate_colormap(plt.cm.Blues, 0.4, 1.0)
 norm = mpl.colors.Normalize(vmin=chosen4.imposed_vibration, vmax=chosen1.imposed_vibration)
 for chosen in all_chosen:
     plt.loglog(chosen.freqs, chosen.psd, c=cmap(chosen.imposed_vibration))
 
+# ==== Annotation arrow ====
 lims = plt.xlim()
 plt.xlim(lims[0], 80)
 plt.annotate(
@@ -49,6 +51,7 @@ plt.annotate(
         arrowstyle='<-', color="k",
     ))
 
+# ==== Ticks ====
 ax = plt.gca()
 ax.xaxis.minorticks_off()
 ax.xaxis.set_major_formatter(mpl.ticker.ScalarFormatter())
@@ -56,6 +59,21 @@ plt.xticks([10,20,30,40,50])
 # plt.xticks([10])
 plt.xlabel(r"Frequency [Hz]")
 plt.ylabel(r"PSD [rad$^{2}$ Hz$^{-1}$]")
+
+# ==== Material label ====
+material_text_size=16
+material_text_position = (0.04, 0.07)
+material_text_padding=0.18
+ax.text(
+            material_text_position[0],material_text_position[1], "Sand",
+            size=material_text_size,
+            horizontalalignment='left',
+            verticalalignment='center',
+            transform = ax.transAxes,
+            bbox=dict(facecolor='none', edgecolor='black', boxstyle=f'round,pad={material_text_padding}')
+            )
+
+
 plt.tight_layout()
 plt.savefig('../figures/sand_psd_nice.png')
 plt.show()

@@ -18,7 +18,7 @@ std_devs = unp.std_devs
 mpl.rcParams.update(rcParams)
 
 # mpl.rcParams['savefig.bbox'] = 'standard'
-mpl.rcParams["figure.figsize"] = (25*INCH_PER_CM, 8*INCH_PER_CM)
+mpl.rcParams["figure.figsize"] = (24*INCH_PER_CM, 7.5*INCH_PER_CM)
 # mpl.rcParams["figure.subplot.left"]   = 0.21
 # mpl.rcParams['figure.subplot.right']  = 0.75
 # mpl.rcParams['figure.subplot.top']    = 0.97
@@ -77,6 +77,19 @@ arr = ax[1].annotate(
         connectionstyle="arc3,rad=-0.2"
     ))
 ax[1].annotate("Fits", (.5, .5), xycoords=arr, ha='center', va='bottom')
+
+# ==== Material label ====
+material_text_size=16
+material_text_position = (0.04, 0.11)
+material_text_padding=0.18
+ax[0].text(
+            material_text_position[0],material_text_position[1], "Plastic",
+            size=material_text_size,
+            horizontalalignment='left',
+            verticalalignment='center',
+            transform = ax[0].transAxes,
+            bbox=dict(facecolor='none', edgecolor='black', boxstyle=f'round,pad={material_text_padding}')
+            )
 
 
 ax[0].xaxis.minorticks_off()
