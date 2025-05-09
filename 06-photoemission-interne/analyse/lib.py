@@ -2,6 +2,7 @@ from dataclasses import dataclass
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.constants import elementary_charge, k
+from constants import *
 from glob import glob
 
 
@@ -34,6 +35,11 @@ def plot_IV(data: Data):
     plt.xlabel('Tension [V]')
     plt.ylabel('Current [mA]')
 
+def resistance_to_temperature(ohm: float) -> float:
+    return ohm * RESISTANCE_SLOPE + RESISTANCE_OFFSET
 
 def curve_IV(I: np.ndarray[float], T, I_s, n, R) -> np.ndarray[float]:
     return (n*k*T / elementary_charge) * np.log(I/I_s + 1) + R*I
+
+if __name__ == '__main__':
+    print(resistance_to_temperature(80))
