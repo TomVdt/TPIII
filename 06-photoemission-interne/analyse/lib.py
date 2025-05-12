@@ -34,11 +34,6 @@ def load(path: str) -> list[Data]:
         )
     return data
 
-def plot_IV(data: Data):
-    plt.plot(data.I, data.V)
-    plt.xlabel('Current [mA]')
-    plt.ylabel('Voltage [V]')
-
 def resistance_to_temperature(ohm: float) -> float:
     return ohm * RESISTANCE_SLOPE + RESISTANCE_OFFSET
 
