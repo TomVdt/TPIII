@@ -11,7 +11,7 @@ class Data:
     filename: str
     I: np.ndarray[float]
     V: np.ndarray[float]
-    temperature: float
+    temperature: ufloat
 
 def load(path: str) -> list[Data]:
     data_files = glob(f'../data/{path}/*.tsv')
@@ -24,12 +24,13 @@ def load(path: str) -> list[Data]:
         # Extract temperature (Ohm)
         ohm_lower, ohm_upper, *_ = map(float, file.split("/")[-1][:-4].split('-'))
         T = (resistance_to_temperature(ohm_lower) + resistance_to_temperature(ohm_upper)) / 2
+        err_T = abs(resistance_to_temperature(ohm_lower) - resistance_to_temperature(ohm_upper)) / 2
         data.append(
             Data(
                 filename=file,
                 I=I[V>0],
                 V=V[V>0],
-                temperature=T
+                temperature=ufloat(T,err_T)
             )
         )
     return data
