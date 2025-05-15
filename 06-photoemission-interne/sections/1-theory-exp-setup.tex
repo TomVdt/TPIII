@@ -25,30 +25,43 @@ This behaviour is the basis of an array of electronic components, like Schottky 
 
 \subsection{Measurement of barrier height}
 \hl{Alternativement une sous-section pour chaque méthode}
-In this work the Schottky barrier of a Au-Si \hl{??} MS was determined using two different methods:
+The Schottky barrier of a Au-Si \hl{??} metal-semiconductor junction was determined using two different methods:
 
+\paragraph{Current-Voltage curves}
+The current flow in metal-semiconductor junctions is due to a variety of transport processes.
+The principal one is the emission of electrons from the semiconductor over the potential barrier into the metal, as modeled by Bethe's thermionic-emission theory \cite{sze_physics_2007}.
+It predicts that the density of current $J$ is tied to voltage $V$ by the equation
+\begin{equation} \label{eq:thermionic_emission_current}
+    J = J_S \left( e^{\frac{qV}{n k_B T}} - 1 \right), \quad \text{\hl{with}} \quad J_S = A^{**} T^2 e^{-\frac{q \phi_b}{k_B T}},
+\end{equation}
+where $q$ is the charge \hl{of the electron}, $k_B$ is Boltzmann's constant, $T$ is the temperature of the junction, $n$ is the ideality factor and $A^{**}$ is Richardson's constant.
+When conducting measures, one must take into account the sample surface $A$ and the presence of a resistance in series $R$, such that
+\begin{equation}
+    I = I_S \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right) = A A^{**} T^2 \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right)
+\end{equation}
 
-\paragraph{Current-Tension curves}
-\emph{explain/present Thermionic-Emission Theory}
+\hl{Est-ce qu'on dit qu'on invertit pour fit ou pas?}
 \begin{equation} \label{eq:IV-curve}
     V = \frac{n k_N T}{q} \ln \left( \frac{I}{I_S} +1 \right) + RI
 \end{equation}
-For electrons ($n$-type Si), $A^{**}$ in the field range $10^4$ to $2\times 10^5$ V/cm remains essentially at a constant value of about 110 \unit{A cm^{-2} K^2}.
 
-A $100 \%$ increase in $A^{**}$ will cause an increase of only $0.018$ V in $\phi_b$.
+\hl{A bunch of interesting stuff, might add:}
+[For electrons ($n$-type Si), $A^{**}$ in the field range $10^4$ to $2\times 10^5$ V/cm remains essentially at a constant value of about 110 \unit{A cm^{-2} K^2}.]
 
-The principal mechanism responsible for the current flow at the majority of Schottky diodes on non-degenerate semiconductors has been shown by various studies to be the thermionic emission process \cite{tung_recent_2001}.
+[ A $100 \%$ increase in $A^{**}$ will cause an increase of only $0.018$ V in $\phi_b$. ]
 
-Even though $n$ is known as the  "ideality" factor, its numerical value actually reflects the departure from ideality; namely, the larger $n$ is, the less "ideal" is said of the SB \cite{tung_recent_2001}.
-Generally speaking, the ideality factor is an indicator of the bias dependence of the SBH. With increasing forward bias, there is a tendency for the effective SBH which controls the current transport to also increase, giving rise to $n > 1$.
+
+[Even though $n$ is known as the  "ideality" factor, its numerical value actually reflects the departure from ideality; namely, the larger $n$ is, the less "ideal" is said of the SB \cite{tung_recent_2001}.
+Generally speaking, the ideality factor is an indicator of the bias dependence of the SBH. With increasing forward bias, there is a tendency for the effective SBH which controls the current transport to also increase, giving rise to $n > 1$.]
+
 
 \paragraph{Photoelectric measurement}
-
+Photon pousse électron à faire du sport.
 
 \subsection{Setup for I-V measures}
-The sample, a Au-Si junction, was put in a cryostat to lower and control its temperature.
+The sample, a Au-Si junction of size ??, was put in a cryostat to lower and control its temperature, which was measured through a Pt resistance thermometer.
+To acquire the $I$-$V$ curves, a function generator was set up to sweep the voltage applied on the sample at a frequency of $16$ mHz \hl{(with a period of 62.5 s)} between $0$ and $2.5$ V while an amperemeter measured the current. 
 Measures were conducted between $124 \pm ?$ and $296\pm?$ K. 
-A function generator sweeped the applied voltage at a frequency of $??$ Hz between $0$ and $2.5$ V while an amperemeter measured the current.
 
-The curves were fit using \autoref{eq:IV-curve} to obtain parameters blablabla.
+The curves were then fit using \autoref{eq:IV-curve} to obtain parameters blablabla.
 Then $\phi_b$.
