@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.constants import elementary_charge, k
+from scipy.constants import elementary_charge, k, h, c
 from constants import *
 from glob import glob
 
@@ -37,6 +37,9 @@ def load(path: str) -> list[Data]:
 
 def resistance_to_temperature(ohm: float) -> float:
     return ohm * RESISTANCE_SLOPE + RESISTANCE_OFFSET
+
+def wavelength_nm_to_energy(wavelength: float) -> float:
+    return h * c / (wavelength * 1e-9) * EV_PER_JOULE
 
 def curve_IV(I: np.ndarray[float], T, I_s, n, R) -> np.ndarray[float]:
     return (n*k*T / elementary_charge) * np.log(I/I_s + 1) + R*I
