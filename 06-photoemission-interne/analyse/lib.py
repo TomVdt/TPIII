@@ -13,6 +13,15 @@ class Data:
     V: np.ndarray[float]
     temperature: ufloat
 
+@dataclass
+class Calibration:
+    sensor: str
+    filter: int
+    min_lambda: float
+    max_lambda: float
+    lambd: np.ndarray[float]
+    intensity: np.ndarray[float]
+
 def load(path: str) -> list[Data]:
     data_files = glob(f'../data/{path}/*.tsv')
     data_files.sort()
@@ -20,7 +29,7 @@ def load(path: str) -> list[Data]:
     for i, file in enumerate(data_files):
         # print(file, i)
         # V [V], I [mA]
-        V, I = np.loadtxt(file, delimiter='\t', unpack=True,converters=lambda s: s.replace(',', '.'))
+        V, I = np.loadtxt(file, delimiter='\t', unpack=True, converters=lambda s: s.replace(',', '.'))
         # Extract temperature (Ohm)
         ohm_lower, ohm_upper, *_ = map(float, file.split("/")[-1][:-4].split('-'))
         T = (resistance_to_temperature(ohm_lower) + resistance_to_temperature(ohm_upper)) / 2
