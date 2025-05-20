@@ -56,7 +56,21 @@ Generally speaking, the ideality factor is an indicator of the bias dependence o
 
 
 \paragraph{Photoelectric measurement}
-Photon pousse électron à faire du sport.
+\hl{TODO: etre consistant entre phib energie et potentiel, definir le q}
+Photons carry an energy proportional to their frequency, that is $E = h \nu$.
+When an electron absorbs such a photon, it absorbs its energy and reaches an excited state.
+If this happens in the Metal-SC junction, two effects can occur.
+If the energy of the photon $h\nu$ is greater than the Schottky barrier energy $q\phi_b$, the electron can cross the potential barrier, and move with the internal electric field of the junction.
+This effect is called internal photoemission.
+Therefore, when light at specific frequencies is shone onto the junction, a current $I$ can be measured accross the sample.
+This current can be found to be \cite{notice}
+\begin{equation}
+    I \sim (h \nu - q \phi_b)^2
+    \label{eq:fowler}
+\end{equation}
+If the energy of the incident photon exites an electron to an energy larger than the gap between the valence and conduction bands $E_\textrm{gap}$, an effect known as absorbtion occurs.
+This creates electron-hole pairs which under the influence of the internal electric field of the junction create a current in the sample.
+This effect corresponds to the way solar panels work \cite{notice}.
 
 \subsection{Setup for I-V measures}
 The sample, a Au-Si junction of size ??, was put in a cryostat to lower and control its temperature, which was measured through a Pt resistance thermometer.
@@ -64,3 +78,6 @@ To acquire the $I$-$V$ curves, a function generator was set up to sweep the volt
 % Measures were conducted between $124 \pm ?$ and $296\pm?$ K. 
 
 The curves were then fit using \autoref{eq:IV-curve} to obtain parameter $I_S$, which is used to derive the barrier height $\phi_b$.
+
+\subsection{Setup for internal photoemission}
+Using a similar setup with a cryostat, light from a monochromator was shone onto the sample, at varying wavelengths. Due to how the monochromator works, different filters referenced in \autoref{sec:filters} were used to remove higher order diffractions. A calibration was carried out on each of the filters to correct the measurements on the sample to an equal number of incident photons, by dividing the measured spectra by the calibration spectrum of the selected filter.
