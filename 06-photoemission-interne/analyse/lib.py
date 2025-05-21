@@ -5,6 +5,8 @@ from scipy.constants import elementary_charge, k, h, c
 from constants import *
 from glob import glob
 
+lower_lambd = 200
+upper_lambd = 2600
 
 @dataclass
 class IV:
@@ -63,6 +65,9 @@ def load_calibration(path: str) -> list[Calibration]:
         upper = int(upper)
         filterr = int(filterr)
 
+        signal[signal < 0] = 0
+        signal /= np.max(signal)
+
         data = Calibration(
             sensor=sensor, filter=filterr, min_lambda=lower, max_lambda=upper,
             lambd=np.linspace(lower, upper, len(t), endpoint=True),
@@ -78,14 +83,17 @@ def load_photocurrent(path:str) -> list[Photocurrent]:
     dataset: list[Calibration] = []
     for i, file in enumerate(data_files):
         _, t, signal, _ = np.loadtxt(file, unpack=True, delimiter="\t", converters=lambda s: s.replace(',', '.'))
-        test_lower = 200
-        test_upper = 2600
-        lambd = np.linspace(test_lower, test_upper, len(t), endpoint=True) # [nm]
+        lambd = np.linspace(lower_lambd, upper_lambd, len(t), endpoint=True) # [nm]
         E = h * c / (lambd*1e-9) * EV_PER_JOULE # [eV]
 
-        dataset.append(Photocurrent(test_lower, test_upper, lambd, signal, E))
+        dataset.append(Photocurrent(lower_lambd, upper_lambd, lambd, signal, E))
     return dataset
     
+def apply_calibration(photocurrent:Photocurrent, calibration:Calibration) -> Photocurrent:
+    """UNTESTED"""
+    photocurrent.intensity *= calibration.intensity
+    return photocurrent
+
 def resistance_to_temperature(ohm: float) -> float:
     return ohm * RESISTANCE_SLOPE + RESISTANCE_OFFSET
 
