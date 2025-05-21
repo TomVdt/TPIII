@@ -1,2 +1,6 @@
-[ ] Trouver aire de la diode (est à 1cm² pour l'instant)
-[ ] Quel métal? Quel semiconducteur??
+Approches possibles pour appliquer calibration:
+- Utiliser un array fixe de lambdas -> rallonger à la main les spectres de calibration et couper à la main les spectres des mesure de photocourant
+- Array variable de lambdas -> pour chaque mesure de photocourant il faut couper ad hoc les courbes de calibration
+
+Enlever contribution detecteur:
+- interpolation (np.interp)

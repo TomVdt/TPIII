@@ -58,6 +58,11 @@ def load_calibration(path: str) -> list[Calibration]:
     data_files = glob(f'../data/{path}/*.tsv')
     data_files.sort()
     dataset: list[Calibration] = []
+
+    # sensor responsivity removal
+    # sensor_lambd, sensor_responsivity = np.loadtxt("../data/sensor-responsivity/calib.txt", unpack=True, delimiter="\t")
+
+
     for i, file in enumerate(data_files):
         _, t, signal, _ = np.loadtxt(file, unpack=True, delimiter="\t", converters=lambda s: s.replace(',', '.'))
         sensor, filterr, lower, upper = file.split('/')[-1][:-4].split('-')
@@ -65,8 +70,15 @@ def load_calibration(path: str) -> list[Calibration]:
         upper = int(upper)
         filterr = int(filterr)
 
+        # TODO: Fill the rest of the spectrum with zeros
+
         signal[signal < 0] = 0
+
+
         signal /= np.max(signal)
+        # TODO BUT IN A SEPARATE FUNCTION
+        # if sensor == "low":
+        #     signal /= low_sensor_responsivity
 
         data = Calibration(
             sensor=sensor, filter=filterr, min_lambda=lower, max_lambda=upper,
@@ -91,7 +103,7 @@ def load_photocurrent(path:str) -> list[Photocurrent]:
     
 def apply_calibration(photocurrent:Photocurrent, calibration:Calibration) -> Photocurrent:
     """UNTESTED"""
-    photocurrent.intensity *= calibration.intensity
+    photocurrent.intensity /= calibration.intensity
     return photocurrent
 
 def resistance_to_temperature(ohm: float) -> float:
