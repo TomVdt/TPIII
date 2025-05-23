@@ -15,4 +15,4 @@ RESISTANCE_OFFSET = 303 - RESISTANCE_SLOPE * RESISTANCE_303K
 # Actual constant
 
 A_G = 1.12e6  # A / m² / K² [notice]
-A = 1e-4  # m² [aire de la diode, estimated]
+A = 0.9e-4  # m² [aire de la diode] 0.0009+/-6.726812023536856e-05
