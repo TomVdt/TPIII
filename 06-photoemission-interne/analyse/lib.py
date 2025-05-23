@@ -98,18 +98,6 @@ def load_calibration(path: str) -> list[Calibration]:
 
         signal[signal < 0] = 0  # negative values begone
 
-        # Fill the rest of the spectrum with zeros
-        # if (sensor=='low'):
-        #     lambda_section_after = np.linspace(upper, highest_lambd_studied, num=(nb_values['photocurrent'] - lambd_values.size))
-        #     signal_section_after = np.zeros(nb_values['photocurrent'] - lambd_values.size)
-        #     lambd_values = np.concat((lambd_values, lambda_section_after))
-        #     signal = np.concat((signal, signal_section_after))
-        # elif (sensor=='mid'):
-
-        # else:
-        #     print("WARNING: MID and HIGH sensors not implemented")
-        # Maximum response should be 1
-
         lambd_values, signal = fill_spectrum(lambd_values, signal, lowest_lambd_studied, highest_lambd_studied, nb_values['photocurrent'])
         signal /= np.max(signal)
 
@@ -179,7 +167,7 @@ def fill_spectrum(old_lambd:np.ndarray[float], old_signal:np.ndarray[float], low
     return new_lambd, new_signal
 
 def remove_sensor_response(calibration_dataset: list[Calibration], sensor_dataset: list[SensorResponse]) -> list[Calibration]:
-    updated_calibration_dataset = calibration_dataset
+    updated_calibration_dataset = calibration_dataset.copy()
     for calibration in updated_calibration_dataset:
         for sensor in sensor_dataset:
             if calibration.sensor == sensor.sensor:
