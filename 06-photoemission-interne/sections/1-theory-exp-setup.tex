@@ -7,7 +7,7 @@ Consider a metal and an $n$-type semiconductor separated from each other, as dep
     \caption{}
     \label{fig:schottky_barrier}
 \end{figure}
-Their work function, defined as the energy difference between the vacuum level and the Fermi level $E_F$, is equal to $q \phi_m$ for the metal ($q$ is the charge of \hl{the electron?}) and to $q (\chi + \phi_n)$ for the semiconductor, where $q \chi$ is the electron affinity measured from the bottom of the conduction band $E_c$ to the vacuum and $q\phi_n$ is the energy difference between $E_c$ and $E_F$ \cite{sze_physics_2007}.
+Their work function, defined as the energy difference between the vacuum level and the Fermi level $E_F$, is equal to $q \phi_m$ for the metal ($q$ is the elementary charge) and to $q (\chi + \phi_n)$ for the semiconductor, where $q \chi$ is the electron affinity measured from the bottom of the conduction band $E_c$ to the vacuum and $q\phi_n$ is the energy difference between $E_c$ and $E_F$ \cite{sze_physics_2007}.
 When the two materials are put in contact, electrons flow from the semiconductor\hl{, where the mean energy is greatest,} to the metal until their Fermi levels line up.
 A negative charge is accumulated in the metal, and a correponding positive one in the semiconductor, causing the formation of an internal electric field and of a potential barrier known as \emph{Schottky barrier}.
 For an ideal metal-semiconductor contact, its height $\phi_b$ is the difference between the metal work function and the electron affinity of the semiconductor \cite{sze_physics_2007}:
@@ -24,26 +24,24 @@ This behaviour is the basis of an array of electronic components, like Schottky 
 \hl{Advantages of schottky diodes?}
 
 \subsection{Measurement of barrier height}
-\hl{Alternativement une sous-section pour chaque méthode}
-The Schottky barrier of a Au-Si \hl{??} metal-semiconductor junction was determined using two different methods:
+The Schottky barrier of a Au-Si metal-semiconductor junction was determined using two different methods:
 
 \paragraph{Current-Voltage curves}
 The current flow in metal-semiconductor junctions is due to a variety of transport processes.
 The principal one is the emission of electrons from the semiconductor over the potential barrier into the metal, as modeled by Bethe's thermionic-emission theory \cite{sze_physics_2007}.
 It predicts that the density of current $J$ is tied to voltage $V$ by the equation
 \begin{equation} \label{eq:thermionic_emission_current}
-    J = J_S \left( e^{\frac{qV}{n k_B T}} - 1 \right), \quad \text{\hl{with}} \quad J_S = A^{**} T^2 e^{-\frac{q \phi_b}{k_B T}},
+    J = J_S \left( e^{\frac{qV}{n k_B T}} - 1 \right), \quad \text{{with}} \quad J_S = A^{**} T^2 e^{-\frac{q \phi_b}{k_B T}},
 \end{equation}
-where $q$ is the charge \hl{of the electron}, $k_B$ is Boltzmann's constant, $T$ is the temperature of the junction, $n$ is the ideality factor and $A^{**}$ is Richardson's constant.
+where $q$ is the elementary charge, $k_B$ is Boltzmann's constant, $T$ is the temperature of the junction, $n$ is the ideality factor and $A^{**}$ is Richardson's constant.
 When conducting measures, one must take into account the sample surface $A$ and the presence of a resistance in series $R$, such that
 \begin{equation}
     I = I_S \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right) = A A^{**} T^2 \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right)
 \end{equation}
 
-\hl{Est-ce qu'on dit qu'on invertit pour fit ou pas?}
-\begin{equation} \label{eq:IV-curve}
-    V = \frac{n k_N T}{q} \ln \left( \frac{I}{I_S} +1 \right) + RI
-\end{equation}
+% \begin{equation} \label{eq:IV-curve}
+%     V = \frac{n k_N T}{q} \ln \left( \frac{I}{I_S} +1 \right) + RI
+% \end{equation}
 
 \hl{A bunch of interesting stuff, might add:}
 [For electrons ($n$-type Si), $A^{**}$ in the field range $10^4$ to $2\times 10^5$ V/cm remains essentially at a constant value of about 110 \unit{A cm^{-2} K^2}.]
@@ -56,28 +54,28 @@ Generally speaking, the ideality factor is an indicator of the bias dependence o
 
 
 \paragraph{Photoelectric measurement}
-\hl{TODO: etre consistant entre phib energie et potentiel, definir le q}
 Photons carry an energy proportional to their frequency, that is $E = h \nu$.
-When an electron absorbs such a photon, it absorbs its energy and reaches an excited state.
-If this happens in the Metal-SC junction, two effects can occur.
-If the energy of the photon $h\nu$ is greater than the Schottky barrier energy $q\phi_b$, the electron can cross the potential barrier, and move with the internal electric field of the junction.
+When an electron absorbs such a photon, it \hl{can} absorb\st{s} its energy and reach\st{es} an excited state.
+If this happens in the Metal-SC \hl{need consistency for naming} junction, two \hl{different} effects can occur.
+If the energy of the photon $h\nu$ is greater than the Schottky barrier energy $\Phi_b := q\phi_b$, the electron can cross the potential barrier, and move with the internal electric field of the junction.
 This effect is called internal photoemission.
-Therefore, when light at specific frequencies is shone onto the junction, a current $I$ can be measured accross the sample.
+Therefore, when light at specific frequencies is shone onto the junction, a \hl{photo}current $I$ can be measured across the sample.
 This current can be found to be \cite{notice}
 \begin{equation}
-    I \sim (h \nu - q \phi_b)^2
+    I \sim (h \nu - \Phi_b)^2
     \label{eq:fowler}
 \end{equation}
-If the energy of the incident photon exites an electron to an energy larger than the gap between the valence and conduction bands $E_\textrm{gap}$, an effect known as absorbtion occurs.
+If \hl{instead} the energy of the incident photon excites an electron to an energy larger than the gap between the valence and conduction bands $E_\textrm{gap}$, an effect known as absorbtion occurs.
 This creates electron-hole pairs which under the influence of the internal electric field of the junction create a current in the sample.
-This effect corresponds to the way solar panels work \cite{notice}.
+This \hl{phenomenon is the basis of how solar panels work} effect corresponds to the way solar panels work \cite{notice}.
 
-\subsection{Setup for I-V measures}
-The sample, a Au-Si junction of size ??, was put in a cryostat to lower and control its temperature, which was measured through a Pt resistance thermometer.
+\subsection{Experimental setup}
+\paragraph{I-V measures}
+The sample, a Au-Si junction of size $0.9 \pm ??$ \unit{\cm\squared} was put in a cryostat to lower and control its temperature, which was measured through a Pt resistance thermometer.
 To acquire the $I$-$V$ curves, a function generator was set up to sweep the voltage applied on the sample at a frequency of $16$ mHz \hl{(with a period of 62.5 s)} between $0$ and $2.5$ V while an amperemeter measured the current. 
 % Measures were conducted between $124 \pm ?$ and $296\pm?$ K. 
 
-The curves were then fit using \autoref{eq:IV-curve} to obtain parameter $I_S$, which is used to derive the barrier height $\phi_b$.
+The curves were then fit using \autoref{eq:thermionic_emission_current} to obtain parameter $I_S$, which is used to derive the barrier height $\phi_b$.
 
-\subsection{Setup for internal photoemission}
-Using a similar setup with a cryostat, light from a monochromator was shone onto the sample, at varying wavelengths. Due to how the monochromator works, different filters referenced in \autoref{sec:filters} were used to remove higher order diffractions. A calibration was carried out on each of the filters to correct the measurements on the sample to an equal number of incident photons, by dividing the measured spectra by the calibration spectrum of the selected filter.
+\paragraph{Internal photoemission}
+Using a similar setup with a cryostat, light from a monochromator was shone onto the sample, at varying wavelengths. Due to how the monochromator works \hl{???}, \hl{the} different filters referenced in \autoref{sec:filters} were used to remove higher order diffractions. A calibration was carried out on each of the filters to correct the measurements on the sample to an equal number of incident photons, by dividing the measured spectra by the calibration spectrum of the selected filter.
