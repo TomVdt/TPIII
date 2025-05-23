@@ -25,7 +25,7 @@ rcParams = {
     'lines.color': 'grey',
     'lines.linewidth' : 1,
     'scatter.marker': '+',
-    'errorbar.capsize': 4,
+    'errorbar.capsize': 0,
     'axes.formatter.useoffset': False,
     # 'axes.spines.right': False,  # spineless smh
     # 'axes.spines.top': False,
