@@ -51,6 +51,7 @@ class Photocurrent:
     lambd: np.ndarray[float]
     intensity: np.ndarray[float]
     E: np.ndarray[float]
+    T: int
 
 
 # ======================== auxiliary loading functions ======================= #
@@ -123,10 +124,12 @@ def load_photocurrent(path:str) -> list[Photocurrent]:
     dataset: list[Calibration] = []
     for i, file in enumerate(data_files):
         _, t, signal, _ = np.loadtxt(file, unpack=True, delimiter="\t", converters=lambda s: s.replace(',', '.'))
+        _, T = file.split('/')[-1][:-4].split('-')
+
         lambd = np.linspace(lowest_lambd_studied, highest_lambd_studied, len(t), endpoint=True) # [nm]
         E = h * c / (lambd*1e-9) * EV_PER_JOULE # [eV]
 
-        dataset.append(Photocurrent(lowest_lambd_studied, highest_lambd_studied, lambd[:nb_values['photocurrent']], signal[:nb_values['photocurrent']], E[:nb_values['photocurrent']]))
+        dataset.append(Photocurrent(lowest_lambd_studied, highest_lambd_studied, lambd[:nb_values['photocurrent']], signal[:nb_values['photocurrent']], E[:nb_values['photocurrent']], T=T))
     return dataset
 
 def load_sensor_response(path:str) -> list[SensorResponse]:
