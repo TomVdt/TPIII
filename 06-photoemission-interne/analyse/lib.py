@@ -125,7 +125,7 @@ def load_photocurrent(path:str) -> list[Photocurrent]:
     for i, file in enumerate(data_files):
         _, t, signal, _ = np.loadtxt(file, unpack=True, delimiter="\t", converters=lambda s: s.replace(',', '.'))
         _, T, _ = file.split('/')[-1][:-4].split('-')
-
+        T = int(T)
         lambd = np.linspace(lowest_lambd_studied, highest_lambd_studied, len(t), endpoint=True) # [nm]
 
         lambd, signal = fill_spectrum(lambd, signal, lowest_lambd_studied, highest_lambd_studied, nb_values['photocurrent'])
