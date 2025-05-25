@@ -35,7 +35,7 @@ It predicts that the density of current $J$ is tied to voltage $V$ by the equati
 \end{equation}
 where $q$ is the elementary charge, $k_B$ is Boltzmann's constant, $T$ is the temperature of the junction, $n$ is the ideality factor and $A^{**}$ is Richardson's constant.
 When conducting measures, one must take into account the sample surface $A$ and the presence of a resistance in series $R$, such that
-\begin{equation}
+\begin{equation} \label{eq:iv_curve}
     I = I_S \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right) = A A^{**} T^2 \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right)
 \end{equation}
 
@@ -75,7 +75,14 @@ The sample, a Au-Si junction of size $0.9 \pm ??$ \unit{\cm\squared} was put in 
 To acquire the $I$-$V$ curves, a function generator was set up to sweep the voltage applied on the sample at a frequency of $16$ mHz \hl{(with a period of 62.5 s)} between $0$ and $2.5$ V while an amperemeter measured the current. 
 % Measures were conducted between $124 \pm ?$ and $296\pm?$ K. 
 
-The curves were then fit using \autoref{eq:thermionic_emission_current} to obtain parameter $I_S$, which is used to derive the barrier height $\phi_b$.
+The curves were then fit using \autoref{eq:iv_curve} to obtain parameter $I_S$, which is used to derive the barrier height $\phi_b$.
+
+Another way is RICHARDSON'S PLOT ????
+\begin{equation} \label{eq:richardson}
+    \ln \left(\frac{I_s}{T^2}\right) = \ln(A A^{**}) - \frac{q \phi_b}{k_B T}
+\end{equation}
 
 \paragraph{Internal photoemission}
-Using a similar setup with a cryostat, light from a monochromator was shone onto the sample, at varying wavelengths. Due to how the monochromator works \hl{???}, \hl{the} different filters referenced in \autoref{sec:filters} were used to remove higher order diffractions. A calibration was carried out on each of the filters to correct the measurements on the sample to an equal number of incident photons, by dividing the measured spectra by the calibration spectrum of the selected filter.
+Using a similar setup with a cryostat, light from a monochromator was shone onto the sample, at varying wavelengths. Due to how the monochromator works \hl{???}, \hl{the} different filters referenced in \autoref{sec:filters} were used to remove higher order diffractions \hl{BRAZIL?}. A calibration was carried out on each of the filters to correct the measurements on the sample to an equal number of incident photons, by dividing the measured spectra by the calibration spectrum of the selected filter.
+
+\hl{Fit + intercept with $x$ axis?}
