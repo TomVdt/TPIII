@@ -1,15 +1,15 @@
 \section{Theory and experimental setup}
 \subsection{Metal-semiconductor junctions}
-Consider a metal and an $n$-type semiconductor separated from each other, as depicted on the left of \autoref{fig:schottky_barrier}.
+Consider a metal and an $n$-type semiconductor separated from each other, as depicted on the left hand side of \autoref{fig:schottky_barrier}.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=12cm]{figures/schottky_barrier.png}
-    \caption{Metal-Semiconductor interface energy levels before (left) and after contact (right) \cite{}}
+    \caption{Metal-Semiconductor interface energy levels before (left) and after contact (right) \hl{TODO:} \cite{}}
     \label{fig:schottky_barrier}
 \end{figure}
-Their work function, defined as the energy difference between the vacuum level and the Fermi level $E_F$, is equal to $q \phi_m$ for the metal, with $q$ the elementary charge, and to $q (\chi + \phi_n)$ for the semiconductor, where $q \chi$ is the electron affinity measured from the bottom of the conduction band energy $E_c$ to the vacuum and $q\phi_n$ is the energy difference between $E_c$ and $E_F$ \cite{sze_physics_2007}.
+Their work function, defined as the energy difference between the vacuum level and the Fermi level $E_F$, is equal to $q \phi_m$ for the metal, with $q$ the elementary charge, and \hl{equal} to $q (\chi + \phi_n)$ for the semiconductor, where $q \chi$ is the electron affinity measured from the bottom of the conduction band \hl{energy} $E_c$ to the vacuum and $q\phi_n$ is the energy difference between $E_c$ and $E_F$ \cite{sze_physics_2007}.
 When the two materials are put in contact, electrons flow from the semiconductor, where the mean energy is greatest, to the metal until their Fermi levels line up.
-A negative charge is accumulated in the metal, and a correponding positive one in the semiconductor, causing the formation of an internal electric field and of a potential barrier known as \emph{Schottky barrier} (SB).
+A negative charge is accumulated in the metal, and a correponding positive one in the semiconductor, causing the formation of an internal electric field and of a potential barrier known as \emph{Schottky barrier} \hl{(SB) TODO: voir si on utilise l'abbreviation}.
 For an ideal metal-semiconductor contact, its height \hl{TODO: faudra etre consistant avec ce qu'on appelle la hauteur} $\phi_b$ is the difference between the metal work function and the electron affinity of the semiconductor \cite{sze_physics_2007}:
 \begin{equation} \label{eq:barrier_height}
     q\phi_b = q(\phi_m - \chi)
@@ -27,12 +27,12 @@ The Schottky barrier of a Au-Si metal-semiconductor junction was determined usin
 
 \paragraph{Current-Voltage curves}
 The current flow in metal-semiconductor junctions is due to a variety of transport processes.
-The principal one is the emission of electrons from the semiconductor over the potential barrier into the metal, as modeled by Bethe's thermionic-emission theory \cite{sze_physics_2007}.
-It predicts that the density of current $J$ is tied to voltage $V$ by the equation
+The principal one is the emission of electrons from the semiconductor over the potential barrier into the metal, as modeled by Bethe's thermionic emission theory \cite{sze_physics_2007}.
+It predicts that the density of current $J$ is tied to the voltage $V$ by the equation
 \begin{equation} \label{eq:thermionic_emission_current}
     J = J_S \left( e^{\frac{qV}{n k_B T}} - 1 \right), \quad \text{{with}} \quad J_S = A^{**} T^2 e^{-\frac{q \phi_b}{k_B T}},
 \end{equation}
-where $q$ is the elementary charge, $k_B$ is Boltzmann's constant, $T$ is the temperature of the junction, $n$ is the ideality factor and $A^{**}$ is Richardson's constant.
+where $q$ is the elementary charge, $k_B$ is Boltzmann's constant, $T$ is the temperature of the junction, $n$ is the ideality factor and $A^{**}$ is Richardson's constant, \hl{which depends on the type of junction}.
 When conducting measures, one must take into account the sample surface $A$ and the resistance of the junction, modeled by a resistance in series $R$, such that
 \begin{equation} \label{eq:iv_curve}
     I = I_S \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right) = A A^{**} T^2 e^{-\frac{q\phi_b}{k_BT}} \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right)
