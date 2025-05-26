@@ -35,7 +35,7 @@ It predicts that the density of current $J$ is tied to voltage $V$ by the equati
 where $q$ is the elementary charge, $k_B$ is Boltzmann's constant, $T$ is the temperature of the junction, $n$ is the ideality factor and $A^{**}$ is Richardson's constant.
 When conducting measures, one must take into account the sample surface $A$ and the resistance of the junction, modeled by a resistance in series $R$, such that
 \begin{equation} \label{eq:iv_curve}
-    I = I_S \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right) = A A^{**} T^2 \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right)
+    I = I_S \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right) = A A^{**} T^2 e^{-\frac{q\phi_b}{k_BT}} \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right)
 \end{equation}
 
 % \begin{equation} \label{eq:IV-curve}
@@ -70,18 +70,27 @@ This phenomenon is the basis of how solar panels work \cite{notice}.
 
 \subsection{Experimental setup}
 \paragraph{I-V measures}
-The sample, a Au-Si junction of size $0.9 \pm ??$ \unit{\cm\squared} was put in a cryostat to lower and control its temperature, which was measured through a Pt resistance thermometer.
-To acquire the $I$-$V$ curves, a function generator was set up to sweep the voltage applied on the sample at a frequency of $16$ mHz \hl{(with a period of 62.5 s)} between $0$ and $2.5$ V while an amperemeter measured the current. 
-% Measures were conducted between $124 \pm ?$ and $296\pm?$ K. 
+The sample, a Au-Si junction of surface area $A = (0.90 \pm 0.07)$ \unit{\cm\squared} was put in a cryostat to lower and control its temperature, which was measured through a Pt100 temperature probe.
+To acquire the $I$-$V$ curves, a function generator was set up to sweep the voltage applied on the sample at a frequency of $16$ mHz between $-2.5$ and $2.5$ V while an amperemeter measured the current accross the junction. 
+% \hl{For results IMO} Measures were conducted between $124 \pm ?$ and $296\pm?$ K. 
 
-The curves were then fit using \autoref{eq:iv_curve} to obtain parameter $I_S$, which is used to derive the barrier height $\phi_b$.
-
-Another way is RICHARDSON'S PLOT ????
+Using least-squares regression, the obtained curves were then fit according to \autoref{eq:iv_curve} to obtain the parameter $I_S$, which is used to derive the barrier height
+\begin{equation}
+    \Phi_b = k_B T \ln\left(\frac{A A^{**} T^2}{I_s}\right)
+\end{equation}
+If $\Phi_b$ can be considered independent from the temperature, an alternative derivation using a Richardson plot can be made, by linear regression in a $\ln(I_s/T^2)$ vs $1/T$ plot, derived from \autoref{eq:iv_curve}:
 \begin{equation} \label{eq:richardson}
     \ln \left(\frac{I_s}{T^2}\right) = \ln(A A^{**}) - \frac{q \phi_b}{k_B T}
 \end{equation}
+However, this equation can give wrong results in the case of a non-ideal diode, i.e. for $n \gg 2$. In this case, a modified Richardson plot can be used, for which the equation is modified as \cite{bhuiyan_new_1988}
+\begin{equation} \label{eq:modified_richardson}
+    n(T) \ln \left(\frac{I_s}{T^2}\right) = \ln(A A^{**}) - \frac{q \phi_b}{k_B T}
+\end{equation}
 
 \paragraph{Internal photoemission}
-Using a similar setup with a cryostat, light from a monochromator was shone onto the sample, at varying wavelengths. Due to how the monochromator works \hl{???}, \hl{the} different filters referenced in \autoref{sec:filters} were used to remove higher order diffractions \hl{BRAZIL?}. A calibration was carried out on each of the filters to correct the measurements on the sample to an equal number of incident photons, by dividing the measured spectra by the calibration spectrum of the selected filter.
+Using a similar setup with a cryostat, light from a monochromator was shone onto the sample, at varying wavelengths.
+Due to the monochromator using a diffraction grating to obtain different wavelength, the different filters referenced in \autoref{sec:filters} were used to remove higher order diffractions \hl{BRAZIL? I see your point but it was one of the tasks...}.
+A calibration was carried out on each of the filters to correct the measurements on the sample to an equal number of incident photons, by dividing the measured spectra by the calibration spectrum of the selected filter.
 
-\hl{Fit + intercept with $x$ axis?}
+After calibration, a plot of $\sqrt{I}$ as a function of the incident photon energy was made, which according to \autoref{eq:fowler} yields a linear relation.
+This allows to find the Schottky barrier height $\Phi_b$ at the intercept between the x-axis and a fit of the linear region.
