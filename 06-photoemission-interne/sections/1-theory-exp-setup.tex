@@ -9,7 +9,7 @@ Consider a metal and an $n$-type semiconductor separated from each other, as dep
 \end{figure}
 Their work function, defined as the energy difference between the vacuum level and the Fermi level $E_F$, is equal to $q \phi_m$ for the metal, with $q$ the elementary charge, and {equal} to $q (\chi + \phi_n)$ for the semiconductor, where $q \chi$ is the electron affinity measured from the bottom of the conduction band {energy} $E_c$ to the vacuum and $q\phi_n$ is the energy difference between $E_c$ and $E_F$ \cite{sze_physics_2007}.
 When the two materials are put in contact, electrons flow from the semiconductor, where the mean energy is greatest, to the metal until their Fermi levels line up.
-A negative charge is accumulated in the metal, and a correponding positive one in the semiconductor, causing the formation of an internal electric field and of a potential barrier known as \emph{Schottky barrier} \hl{(SB) TODO: voir si on utilise l'abbreviation}.
+A negative charge is accumulated in the metal, and a correponding positive one in the semiconductor, causing the formation of an internal electric field and of a potential barrier known as \emph{Schottky barrier} (SB).
 For an ideal metal-semiconductor contact, its height $\Phi_b$ is the difference between the metal work function and the electron affinity of the semiconductor \cite{sze_physics_2007}:
 \begin{equation} \label{eq:barrier_height}
     \Phi_b := q\phi_b = q(\phi_m - \chi)
@@ -21,7 +21,6 @@ More complex models must be applied when the layer is known to be larger.
 
 This barrier gives the junction rectifying properties, as it must be surmounted for the electrons to flow from the metal into the semiconductor.
 This behaviour is the basis of an array of electronic components, like Schottky diodes and transistors.
-\hl{The low barrier height makes for good properties like blablabla}
 
 \subsection{Measurement of barrier height}
 The Schottky barrier of a Au-Si metal-semiconductor junction was determined using two different methods:
@@ -52,7 +51,7 @@ When conducting measures, one must also take into account the sample surface $A$
 Photons carry an energy proportional to their frequency, that is $E = h \nu$.
 When an electron absorbs such a photon, it can absorb its energy and reach an excited state.
 If this happens in the metal-semiconductor junction, two effects can occur.
-If the energy of the photon $h\nu$ is greater than the Schottky barrier energy $\Phi_b := q\phi_b$, the electron can cross the potential barrier, and move with the internal electric field of the junction.
+If the energy of the photon $h\nu$ is greater than the Schottky barrier height $\Phi_b$, the electron can cross the potential barrier, and move with the internal electric field of the junction.
 This effect is called internal photoemission.
 Therefore, when light at specific frequencies is shone onto the junction, a photocurrent $I$ can be measured across the sample.
 This current can be found to be \cite{notice}
@@ -87,7 +86,7 @@ However, this equation can give wrong results in the case of a non-ideal diode, 
 Using a similar setup with a cryostat, light from a monochromator was shone onto the sample, at varying wavelengths.
 Due to the monochromator using a diffraction grating to obtain different wavelength, the different filters referenced in \autoref{sec:filters} were used to remove higher order diffractions.
 A calibration was carried out on each of the filters to correct the measurements on the sample to an equal number of incident photons, by dividing the measured spectra by the calibration spectrum of the selected filter.
-The \hl{calibration curves} used were included in \autoref{sec:calibration_curves}.
+The calibration curves obtained are included in \autoref{sec:calibration_curves}.
 
 After calibration, a plot of $\sqrt{I}$ as a function of the incident photon energy was made, which according to \autoref{eq:fowler} yields a linear relation.
 This allows to find the Schottky barrier height $\Phi_b$ at the intercept between the x-axis and a fit of the linear region.
