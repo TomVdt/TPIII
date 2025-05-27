@@ -9,33 +9,40 @@ $\Phi_b$ was observed to rise linearly with the temperature, ranging from $0.20 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=1]{figures/iv-curves.pdf}
-    \caption{Current-Voltage curves measured over the metal-semiconductor junction at temperatures ranging from $(124 \pm 3)$ K to $(296 \pm 1)$ K and related fits. \hl{TODO: marges figures}}
-    \label{fig:iv-curves}
-\end{figure}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=1]{figures/iv-schottky-potential-temperature.pdf}
-    \caption{Schottky barrier height $\Phi_b$ as a function of temperature as obtained by I-V curves blabla. \hl{TODO: side by side with fig 2}}
-    \label{fig:iv-barrier-height}
+    \begin{minipage}[t]{0.49\textwidth}
+        \centering
+        {\includegraphics[scale=1]{figures/iv-curves.pdf}}
+        \captionsetup{width=.95\linewidth}
+        \captionof{figure}{Current-Voltage curves measured over the metal-semiconductor junction at temperatures ranging from $(124 \pm 3)$ K to $(296 \pm 1)$ K and related fits.}
+        \label{fig:iv-curves}
+    \end{minipage}
+    \begin{minipage}[t]{0.49\textwidth}
+        \centering
+        {
+        \includegraphics[scale=1]{figures/iv-schottky-potential-temperature.pdf}}
+        \captionsetup{width=.95\linewidth}
+        \captionof{figure}{Schottky barrier height $\Phi_b$ as a function of temperature as obtained by I-V curves blabla.}
+        \label{fig:iv-barrier-height}
+    \end{minipage}
 \end{figure}
 
 Although this results suggests a dependence in temperature of $\Phi_b$, a study of the barrier height using a Richardson plot was done. Due to the high uncertainty of the ideality factor obtained from the fits, as shown in \autoref{fig:ideality_factor}, the modified Richardson plot method was used. The obtained barrier height from the fit with \autoref{eq:modified_richardson} was found to be $\Phi_b = (1.51 \pm 0.02)$ eV.
 \begin{figure}[htbp]
     \centering
-    \begin{minipage}{0.49\textwidth}
+    \begin{minipage}[t]{0.49\textwidth}
         \centering
+        \captionsetup{width=.95\linewidth}
         \includegraphics[width=\textwidth]{figures/iv-ideality-factor.pdf}
         \captionof{figure}{Ideality factor $n$ as obtained by the the fits of the $I$-$V$ curves.}
         \label{fig:ideality_factor}
     \end{minipage}
-    \begin{minipage}{0.49\textwidth}
+    \begin{minipage}[t]{0.49\textwidth}
         \centering
+        \captionsetup{width=.95\linewidth}
         \includegraphics[width=\textwidth]{figures/richardson.pdf}
         \captionof{figure}{Modified Richardson plot.}
         \label{fig:richardson}
     \end{minipage}
-    \hl{TODO: fix figsize}
 \end{figure}
 
 \subsection{Internal photoemission} \label{sec:results_photoemission}
