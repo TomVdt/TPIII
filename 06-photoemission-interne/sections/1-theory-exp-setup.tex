@@ -4,15 +4,15 @@ Consider a metal and an $n$-type semiconductor separated from each other, as dep
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=12cm]{figures/schottky_barrier.png}
-    \caption{Metal-Semiconductor interface energy levels before (left) and after contact (right) \hl{TODO:} \cite{}}
+    \caption{Metal-Semiconductor interface energy levels before (left) and after contact (right) \cite{sze_physics_2007}}
     \label{fig:schottky_barrier}
 \end{figure}
-Their work function, defined as the energy difference between the vacuum level and the Fermi level $E_F$, is equal to $q \phi_m$ for the metal, with $q$ the elementary charge, and \hl{equal} to $q (\chi + \phi_n)$ for the semiconductor, where $q \chi$ is the electron affinity measured from the bottom of the conduction band \hl{energy} $E_c$ to the vacuum and $q\phi_n$ is the energy difference between $E_c$ and $E_F$ \cite{sze_physics_2007}.
+Their work function, defined as the energy difference between the vacuum level and the Fermi level $E_F$, is equal to $q \phi_m$ for the metal, with $q$ the elementary charge, and {equal} to $q (\chi + \phi_n)$ for the semiconductor, where $q \chi$ is the electron affinity measured from the bottom of the conduction band {energy} $E_c$ to the vacuum and $q\phi_n$ is the energy difference between $E_c$ and $E_F$ \cite{sze_physics_2007}.
 When the two materials are put in contact, electrons flow from the semiconductor, where the mean energy is greatest, to the metal until their Fermi levels line up.
 A negative charge is accumulated in the metal, and a correponding positive one in the semiconductor, causing the formation of an internal electric field and of a potential barrier known as \emph{Schottky barrier} \hl{(SB) TODO: voir si on utilise l'abbreviation}.
-For an ideal metal-semiconductor contact, its height \hl{TODO: faudra etre consistant avec ce qu'on appelle la hauteur} $\phi_b$ is the difference between the metal work function and the electron affinity of the semiconductor \cite{sze_physics_2007}:
+For an ideal metal-semiconductor contact, its height $\Phi_b$ is the difference between the metal work function and the electron affinity of the semiconductor \cite{sze_physics_2007}:
 \begin{equation} \label{eq:barrier_height}
-    q\phi_b = q(\phi_m - \chi)
+    \Phi_b := q\phi_b = q(\phi_m - \chi)
 \end{equation}
 
 Though we neglect surface-state effects, \autoref{eq:barrier_height} is generally valid \cite{sze_physics_2007}:
@@ -21,6 +21,7 @@ More complex models must be applied when the layer is known to be larger.
 
 This barrier gives the junction rectifying properties, as it must be surmounted for the electrons to flow from the metal into the semiconductor.
 This behaviour is the basis of an array of electronic components, like Schottky diodes and transistors.
+\hl{The low barrier height makes for good properties like blablabla}
 
 \subsection{Measurement of barrier height}
 The Schottky barrier of a Au-Si metal-semiconductor junction was determined using two different methods:
@@ -32,8 +33,13 @@ It predicts that the density of current $J$ is tied to the voltage $V$ by the eq
 \begin{equation} \label{eq:thermionic_emission_current}
     J = J_S \left( e^{\frac{qV}{n k_B T}} - 1 \right), \quad \text{{with}} \quad J_S = A^{**} T^2 e^{-\frac{q \phi_b}{k_B T}},
 \end{equation}
-where $q$ is the elementary charge, $k_B$ is Boltzmann's constant, $T$ is the temperature of the junction, $n$ is the ideality factor and $A^{**}$ is Richardson's constant, \hl{which depends on the type of junction}.
-When conducting measures, one must take into account the sample surface $A$ and the resistance of the junction, modeled by a resistance in series $R$, such that
+where $q$ is the elementary charge, $k_B$ is Boltzmann's constant, $T$ is the temperature of the junction, $n$ is the ideality factor and $A^{**}$ is Richardson's constant.
+Even though $n$ is known as the  "ideality" factor, its numerical value actually reflects the departure from ideality; namely, the larger $n$ is, the less "ideal" is said of the Schottky barrier \cite{tung_recent_2001}.
+Generally speaking, the ideality factor is an indicator of the bias dependence of $\Phi_b$:  With increasing forward bias, there is a tendency for the effective barrier height which controls the current transport to also increase, giving rise to $n > 1$.
+Richardson's constant $A^{**}$ on the other hand depends on the type of junction, but is otherwise of little impact to the final result:
+for $n$-type semiconductors, $A^{**}$ in the field range $10^4$ to $2\times 10^5$ V/cm remains essentially at a constant value of about 110 \unit{A cm^{-2} K^2}, and a $100 \%$ increase in $A^{**}$ would only cause an increase of $0.018$ V in $\phi_b$ \cite{sze_physics_2007}.
+
+When conducting measures, one must also take into account the sample surface $A$ and the resistance of the junction, modeled by a resistance in series $R$, such that
 \begin{equation} \label{eq:iv_curve}
     I = I_S \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right) = A A^{**} T^2 e^{-\frac{q\phi_b}{k_BT}} \left( e^{\frac{q (V- RI)}{n k_B T}} - 1\right)
 \end{equation}
@@ -41,16 +47,6 @@ When conducting measures, one must take into account the sample surface $A$ and 
 % \begin{equation} \label{eq:IV-curve}
 %     V = \frac{n k_N T}{q} \ln \left( \frac{I}{I_S} +1 \right) + RI
 % \end{equation}
-
-\hl{APPROVED A bunch of interesting stuff, might add:}
-[For electrons ($n$-type Si), $A^{**}$ in the field range $10^4$ to $2\times 10^5$ V/cm remains essentially at a constant value of about 110 \unit{A cm^{-2} K^2}.]
-
-[ A $100 \%$ increase in $A^{**}$ will cause an increase of only $0.018$ V in $\phi_b$. ]
-
-
-\hl{APPROVED, en plus utile pour modified richardson plot} [Even though $n$ is known as the  "ideality" factor, its numerical value actually reflects the departure from ideality; namely, the larger $n$ is, the less "ideal" is said of the SB \cite{tung_recent_2001}.
-Generally speaking, the ideality factor is an indicator of the bias dependence of the SBH \hl{TODO: introduire SBH? remplacer?}. With increasing forward bias, there is a tendency for the effective SBH which controls the current transport to also increase, giving rise to $n > 1$.]
-
 
 \paragraph{Photoelectric measurement}
 Photons carry an energy proportional to their frequency, that is $E = h \nu$.
@@ -71,7 +67,7 @@ This phenomenon is the basis of how solar panels work \cite{notice}.
 \subsection{Experimental setup}
 \paragraph{I-V measures}
 The sample, a Au-Si junction of surface area $A = (0.90 \pm 0.07)$ \unit{\cm\squared} was put in a cryostat to lower and control its temperature, which was measured through a Pt100 temperature probe.
-To acquire the $I$-$V$ curves, a function generator was set up to sweep the voltage applied on the sample at a frequency of $16$ mHz between $-2.5$ and $2.5$ V while an amperemeter measured the current accross the junction. 
+To acquire the $I$-$V$ curves, a function generator was set up to sweep the voltage applied on the sample at a frequency of $16$ mHz between $-2.5$ and $2.5$ V while an amperemeter measured the current across the junction. 
 % \hl{For results IMO} Measures were conducted between $124 \pm ?$ and $296\pm?$ K. 
 
 Using least-squares regression, the obtained curves were then fit according to \autoref{eq:iv_curve} to obtain the parameter $I_S$, which is used to derive the barrier height
@@ -89,8 +85,9 @@ However, this equation can give wrong results in the case of a non-ideal diode, 
 
 \paragraph{Internal photoemission}
 Using a similar setup with a cryostat, light from a monochromator was shone onto the sample, at varying wavelengths.
-Due to the monochromator using a diffraction grating to obtain different wavelength, the different filters referenced in \autoref{sec:filters} were used to remove higher order diffractions \hl{BRAZIL? I see your point but it was one of the tasks...}.
+Due to the monochromator using a diffraction grating to obtain different wavelength, the different filters referenced in \autoref{sec:filters} were used to remove higher order diffractions.
 A calibration was carried out on each of the filters to correct the measurements on the sample to an equal number of incident photons, by dividing the measured spectra by the calibration spectrum of the selected filter.
+The \hl{calibration curves} used were included in \autoref{sec:calibration_curves}.
 
 After calibration, a plot of $\sqrt{I}$ as a function of the incident photon energy was made, which according to \autoref{eq:fowler} yields a linear relation.
 This allows to find the Schottky barrier height $\Phi_b$ at the intercept between the x-axis and a fit of the linear region.
